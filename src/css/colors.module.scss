@@ -1,0 +1,38 @@
+@import './colors';
+
+.dark-blue {
+  color: $dark-blue;
+}
+
+.light-blue {
+  color: $light-blue;
+}
+
+.shade-blue {
+  color: $shade-blue;
+}
+
+.red,
+.error-red {
+  color: $error-red;
+}
+
+.green,
+.success-green {
+  color: $success-green;
+}
+
+.light-grey {
+  color: $light-grey;
+}
+.lightest-grey {
+  color: $lightest-grey;
+}
+
+.black {
+  color: $black;
+}
+
+.white {
+  color: $white;
+}

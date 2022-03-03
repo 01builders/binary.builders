@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="42" viewBox="0 0 50 42">
+  <g id="_01_Logo" data-name="01 Logo" transform="translate(3.197 -0.373)" opacity="0.894">
+    <g id="icon" transform="translate(-2.197)" opacity="0.752">
+      <text id="_0" data-name="0" transform="translate(11 33.373)" fill="#00fff9" font-size="37" font-family="PTMono-Bold, PT Mono" font-weight="700"><tspan x="-11" y="0">0</tspan></text>
+      <text id="_1" data-name="1" transform="translate(33 33.373)" fill="#00fff9" font-size="37" font-family="PTMono-Bold, PT Mono" font-weight="700"><tspan x="-11" y="0">1</tspan></text>
+    </g>
+    <g id="icon-2" data-name="icon" transform="translate(2.197)" opacity="0.752">
+      <text id="_0-2" data-name="0" transform="translate(10.606 33.373)" fill="#ff00c1" font-size="37" font-family="PTMono-Bold, PT Mono" font-weight="700"><tspan x="-11" y="0">0</tspan></text>
+      <text id="_1-2" data-name="1" transform="translate(32.606 33.373)" fill="#ff00c1" font-size="37" font-family="PTMono-Bold, PT Mono" font-weight="700"><tspan x="-11" y="0">1</tspan></text>
+    </g>
+    <text id="_0-3" data-name="0" transform="translate(10.803 33.373)" fill="#fff" font-size="37" font-family="PTMono-Bold, PT Mono" font-weight="700"><tspan x="-11" y="0">0</tspan></text>
+    <text id="_1-3" data-name="1" transform="translate(32.803 33.373)" fill="#fff" font-size="37" font-family="PTMono-Bold, PT Mono" font-weight="700"><tspan x="-11" y="0">1</tspan></text>
+  </g>
+</svg>

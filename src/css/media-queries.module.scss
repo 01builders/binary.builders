@@ -1,0 +1,9 @@
+@import './media-queries';
+
+:export {
+  sm: map-get($breakpoints, 'sm');
+  md: map-get($breakpoints, 'md');
+  lg: map-get($breakpoints, 'lg');
+  gr: map-get($breakpoints, 'gr');
+  xl: map-get($breakpoints, 'xl');
+}

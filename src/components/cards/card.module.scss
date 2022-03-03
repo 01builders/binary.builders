@@ -1,0 +1,85 @@
+@import '../../css/utils';
+
+.base {
+  display: flex;
+  border: $border-default;
+  border-radius: $border-radius-default;
+  background-color: $white;
+
+  .content {
+    position: relative;
+    flex: 1;
+    padding: 16px;
+
+    @include media('>=md') {
+      padding: 32px;
+    }
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    margin-left: -16px;
+
+    @include media('>=md') {
+      width: 64px;
+      margin-left: -32px;
+    }
+  }
+}
+
+.button {
+  text-align: left;
+  padding: 0;
+  align-items: center;
+
+  &:hover {
+    box-shadow: $box-shadow;
+    transition: all 100ms ease-out;
+  }
+}
+
+.border-none {
+  border-style: none;
+}
+
+.dashed {
+  border: $border-dashed;
+}
+
+.shaded {
+  background-color: $lightest-grey;
+}
+
+.with-banner {
+  border-top-width: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1;
+  padding: 8px 0;
+  border-top-left-radius: $border-radius-default;
+  border-top-right-radius: $border-radius-default;
+
+  &--light-blue {
+    background-color: $light-blue;
+    color: $white;
+  }
+
+  &--dark-blue {
+    background-color: $dark-blue;
+    color: $white;
+  }
+
+  &--black {
+    background-color: $black;
+    color: $white;
+  }
+}

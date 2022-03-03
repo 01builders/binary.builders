@@ -1,0 +1,14 @@
+.select__control,
+.select__control:hover {
+  height: 50px;
+  border-color: #6b7780 !important;
+}
+
+.select__control--is-focused {
+  border-color: #296EBD !important;
+  box-shadow: 0 0 0 1px #296EBD !important;
+}
+
+.select__indicators > .select__indicator-separator {
+  display: none;
+}

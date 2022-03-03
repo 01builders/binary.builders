@@ -1,0 +1,56 @@
+@import '../../../css/utils';
+.label {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-right: 16px;
+  }
+
+  @supports ( appearance: none ) or ( -moz-appearance: none ) or ( -webkit-appearance: none ) {
+    input {
+      appearance: none ;
+      -moz-appearance: none ;
+      -webkit-appearance: none ;
+      border: 2px solid currentcolor ;
+      border-radius: 4px;
+      box-sizing: content-box ;
+      color: $lighter-grey;
+      height: 18px ;
+      padding: 2px 2px 2px 2px ;
+      transition-duration: 300ms ;
+      transition-property: border-color, color ; /* Safari needed border-color. */
+      transition-timing-function: ease ;
+      width: 100%;
+    }
+
+    input:checked {
+      color: $light-blue ;
+    }
+
+    /*
+      NOTE: The ::after pseudo-selector is being applied to the INPUT itself,
+      not a parent element. I had no idea this even works! I can't find any
+      documented support on this (just some StackOverflow threads).
+    */
+    input::after {
+      background-color: $white;
+      content: "" ;
+      display: block ;
+      height: 100%;
+      width: 100%;
+      transition: background-color 300ms ease-in-out;
+    }
+
+    input:checked::after {
+      background-color: $light-blue;
+      content: url("./svg/checked.svg");
+    }
+  }
+
+  &.error {
+    input {
+      color: $error-red;
+    }
+  }
+}

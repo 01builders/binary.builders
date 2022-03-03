@@ -1,0 +1,42 @@
+@import '../../typography/typography.module.scss';
+
+.card {
+  padding: 16px;
+  padding-left: 52px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  position: relative;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  input[type='radio'] + .radio-displayed {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 20px;
+    height: 20px;
+    background-image: url('./svg/unchecked.svg');
+    margin-right: 16px;
+  }
+
+  input[type='radio']:checked + .radio-displayed {
+    background-image: url('./svg/checked.svg');
+  }
+
+  &.custom-input {
+    @extend .body1;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 8px;
+    padding: 16px;
+  }
+}

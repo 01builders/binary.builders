@@ -1,0 +1,35 @@
+@import '../../css/colors';
+@import '../../css/media-queries';
+
+.base {
+  display: inline-flex;
+
+  svg {
+    width: 100%;
+  }
+}
+
+.filled {
+  border-radius: 100%;
+
+  svg {
+    height: 20px;
+    width: 20px;
+
+    @include media('>=md') {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
+
+.icon {
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  display: block;
+  width: 100%;
+  text-align: center;
+}

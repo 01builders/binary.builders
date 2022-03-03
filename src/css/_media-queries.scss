@@ -1,0 +1,14 @@
+$breakpoints: (
+  sm: 320px,
+  // 320 to 767 = sm
+  md: 768px,
+  // 768 to 1023 = md
+  lg: 1024px,
+  // 1024 to 1600 = lg
+  gr: 1440px,
+  // 1440px to 1600px = gr
+  xl: 1600px,
+  // 1601+ = xl
+);
+
+@import './include-media';
