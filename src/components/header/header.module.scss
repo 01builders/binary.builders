@@ -16,9 +16,10 @@
     text-decoration: none;
 
     span {
-      font: normal normal bold 24px/100px Raleway;
-      font-family: Raleway, sans-serif;
+      font-family: 'PTMono-Bold', 'PT Mono', monospace;
       letter-spacing: 0px;
+      font-size: 2rem;
+      font-weight: bolder;
     }
 
     svg {

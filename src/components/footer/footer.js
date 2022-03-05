@@ -9,7 +9,7 @@ const Footer = (props) => {
   return (
     <div className={styles.footer}>
       <Typography className={styles.copyright} color="white">
-        &copy;&nbsp;{' '}{new Date().getFullYear()}&nbsp;Binary Holdings
+        &copy;&nbsp;{' '}{new Date().getFullYear()}&nbsp;BINARY HOLDINGS
       </Typography>
     </div>
   )
