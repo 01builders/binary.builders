@@ -67,7 +67,10 @@ const Landing = () => {
       </div>
       <div className={styles['stake-container']}>
         <div className={styles.title}>
-          <img src={stakeTitle} alt="Stake With Binary Holdings" />
+          {/* <img src={stakeTitle} alt="Stake With Binary Holdings" /> */}
+          <Typography align="center" color="white" variant="h1" className={styles.info}>
+            Stake With Binary Holdings
+          </Typography>
           <Typography align="center" color="white" className={styles.info}>
             Earn crypto native interest rates while simultaneously contributing to our supported Proof of Stake networks
           </Typography>
@@ -270,7 +273,7 @@ const Landing = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
