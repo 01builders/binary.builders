@@ -1,5 +1,9 @@
 @import "../../css/utils";
 
+.pfp {
+  width: 250px;
+  filter: grayscale(100%);
+}
 
 .landing-container {
   min-height: calc(100vh - 100px);

@@ -3,10 +3,15 @@ import React from 'react';
 import Typography from '../../components/typography';
 
 import fromZero from '../../assets/from-zero.png';
-import { ReactComponent as Binary }  from '../../assets/binary.svg';
+import { ReactComponent as Binary } from '../../assets/binary.svg';
 import stakeTitle from '../../assets/stake.png';
 import supportedTitle from '../../assets/supported-networks.png';
 import teamTitle from '../../assets/team-title.png';
+
+import shawn from '../../assets/shawn.jpg';
+import onur from '../../assets/onur.jpg';
+import marko from '../../assets/marko.png';
+import will from '../../assets/will.jpg';
 
 import { ReactComponent as Simple } from '../../assets/stake/simple.svg';
 import { ReactComponent as Safe } from '../../assets/stake/safe.svg';
@@ -62,7 +67,10 @@ const Landing = () => {
       </div>
       <div className={styles['stake-container']}>
         <div className={styles.title}>
-          <img src={stakeTitle} alt="Stake With Binary Holdings" />
+          {/* <img src={stakeTitle} alt="Stake With Binary Holdings" /> */}
+          <Typography align="center" color="white" variant="h1" className={styles.info}>
+            Stake With Binary Holdings
+          </Typography>
           <Typography align="center" color="white" className={styles.info}>
             Earn crypto native interest rates while simultaneously contributing to our supported Proof of Stake networks
           </Typography>
@@ -240,26 +248,32 @@ const Landing = () => {
         <img src={teamTitle} alt="Team" className={styles['title-img']} />
         <div className={styles.members}>
           <div className={styles.member}>
-            <img src="https://place-hold.it/240x250" className={styles.image} />
+            <img src={marko} alt="MARKO BARICEVIC" className={styles.pfp} />
             <Typography className={styles.name}>MARKO BARICEVIC</Typography>
             <Typography className={styles.title}>Founder</Typography>
             <Typography className={styles.bio}>Short bio goes here.</Typography>
           </div>
           <div className={styles.member}>
-            <img src="https://place-hold.it/240x250" className={styles.image} />
+            <img src={onur} alt="ONUR AKPOLAT" className={styles.pfp} />
+            <Typography className={styles.name}>ONUR AKPOLAT</Typography>
+            <Typography className={styles.title}>Founder</Typography>
+            <Typography className={styles.bio}>Short bio goes here.</Typography>
+          </div>
+          <div className={styles.member}>
+            <img src={shawn} alt="SHAWN TABRIZI" className={styles.pfp} />
             <Typography className={styles.name}>SHAWN TABRIZI</Typography>
             <Typography className={styles.title}>Founder</Typography>
             <Typography className={styles.bio}>Short bio goes here.</Typography>
           </div>
           <div className={styles.member}>
-            <img src="https://place-hold.it/240x250" className={styles.image} />
+            <img src={will} alt="WILL PANKIEWICZ" className={styles.pfp} />
             <Typography className={styles.name}>WILL PANKIEWICZ</Typography>
             <Typography className={styles.title}>Founder</Typography>
             <Typography className={styles.bio}>Short bio goes here.</Typography>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
