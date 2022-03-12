@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="131.649" height="126.023" viewBox="0 0 131.649 126.023">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.986" y1="0.442" x2="-0.03" y2="0.717" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ff00c1"/>
+      <stop offset="1" stop-color="#00fff9"/>
+    </linearGradient>
+    <filter id="Polygon_2" x="28.634" y="30.004" width="74.382" height="72.016" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.251"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="SIMPLE_Image" data-name="SIMPLE Image" transform="translate(-536.175 -1474.787)">
+    <g id="Hex_3" data-name="Hex 3">
+      <g id="Polygon_4" data-name="Polygon 4" transform="translate(536.175 1525.787) rotate(-30)" fill="none">
+        <path d="M76.5,0,102,43.315,76.5,86.63h-51L0,43.315,25.5,0Z" stroke="none"/>
+        <path d="M 26.07172393798828 1 L 1.160423278808594 43.31481552124023 L 26.07171630859375 85.62963104248047 L 75.92828369140625 85.62963104248047 L 100.8395767211914 43.31481552124023 L 75.92828369140625 1 L 26.07172393798828 1 M 25.50001525878906 0 L 76.5 0 L 102 43.31481552124023 L 76.5 86.62963104248047 L 25.5 86.62963104248047 L 0 43.31481552124023 L 25.50001525878906 0 Z" stroke="none" fill="#e739bc"/>
+      </g>
+      <circle id="Ellipse_23" data-name="Ellipse 23" cx="2.5" cy="2.5" r="2.5" transform="translate(643 1510)" fill="#ff00c1"/>
+    </g>
+    <g id="Hex_2" data-name="Hex 2">
+      <g id="Polygon_3" data-name="Polygon 3" transform="translate(556.781 1529.478) rotate(-30)" fill="none">
+        <path d="M52.5,0,70,29.815,52.5,59.63h-35L0,29.815,17.5,0Z" stroke="none"/>
+        <path d="M 18.07258224487305 0.9999961853027344 L 1.159538269042969 29.81481552124023 L 18.07258224487305 58.6296272277832 L 51.92742156982422 58.6296272277832 L 68.84046173095703 29.81481552124023 L 51.92742156982422 0.9999961853027344 L 18.07258224487305 0.9999961853027344 M 17.5 -3.814697265625e-06 L 52.5 -3.814697265625e-06 L 70 29.81481552124023 L 52.5 59.6296272277832 L 17.5 59.6296272277832 L 0 29.81481552124023 L 17.5 -3.814697265625e-06 Z" stroke="none" fill="#7cfbf8"/>
+      </g>
+      <circle id="Ellipse_36" data-name="Ellipse 36" cx="2.5" cy="2.5" r="2.5" transform="translate(570 1552)" fill="#7cfbf8"/>
+    </g>
+    <g id="Hex_1" data-name="Hex 1">
+      <g transform="matrix(1, 0, 0, 1, 536.18, 1474.79)" filter="url(#Polygon_2)">
+        <path id="Polygon_2-2" data-name="Polygon 2" d="M32.731,0l10.91,18.588L32.731,37.176H10.91L0,18.588,10.91,0Z" transform="translate(37.63 57.82) rotate(-30)" fill="url(#linear-gradient)"/>
+      </g>
+      <path id="Tick" d="M4247.979,1754.475l6.841,6.841,12.02-12.02" transform="translate(-3655.41 -217.507)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
