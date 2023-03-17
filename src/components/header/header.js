@@ -11,14 +11,14 @@ const Header = (props) => {
     <div className={styles.header}>
       <Typography className={styles.logo} component="a" href="/">
         <BinaryLogo />
-        <Typography color="white" component="span">B1NARY HOLDINGS</Typography>
+        <Typography color="white" component="span">B1NARY BUILDERS</Typography>
       </Typography>
       <Typography className={styles.stake} component="div">
-        <div className={styles.inside}>
+        <a className={styles.inside} target='_blank' rel="noreferrer" href='mailto:contact@binary.builders' style={{ textDecoration: 'none' }}>
           <Typography color="white" component="span">
-            STAKE NOW
+            REACH OUT
           </Typography>
-        </div>
+        </a>
       </Typography>
     </div>
   )
