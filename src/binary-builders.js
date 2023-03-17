@@ -5,9 +5,9 @@ import Footer from './components/footer/footer';
 
 import Landing from './views/landing/landing';
 
-import styles from './binary-holdings.module.scss';
+import styles from './binary-builders.module.scss';
 
-const BinaryHoldings = () => {
+const BinaryBuilders = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.main}>
@@ -19,4 +19,4 @@ const BinaryHoldings = () => {
   );
 }
 
-export default BinaryHoldings;
+export default BinaryBuilders;
