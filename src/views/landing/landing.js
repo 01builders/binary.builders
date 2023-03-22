@@ -8,15 +8,18 @@ import stakeTitle from '../../assets/stake.png';
 import supportedTitle from '../../assets/supported-networks.png';
 import teamTitle from '../../assets/team-title.png';
 
-import onur from '../../assets/onur.jpg';
-import marko from '../../assets/marko.png';
-import facu from '../../assets/facu.jpeg';
-import julien from '../../assets/julien.png';
-import noam from '../../assets/noam.jpeg';
-import len from '../../assets/len.png';
-import rafa from '../../assets/rafa.png';
-// import shawn from '../../assets/shawn.jpg';
-import clown from '../../assets/clown.png';
+import onur from '../../assets/team/onur.jpg';
+import marko from '../../assets/team/marko.png';
+import facu from '../../assets/team/facu.jpeg';
+import julien from '../../assets/team/julien.png';
+import noam from '../../assets/team/noam.jpeg';
+import len from '../../assets/team/len.png';
+import rafa from '../../assets/team/rafa.png';
+import stef from '../../assets/team/stef.png';
+import marc from '../../assets/team/marc.png';
+import sam from '../../assets/team/sam.jpeg';
+import frojdi from '../../assets/team/frojdi.jpeg';
+import bez from '../../assets/team/bez.jpeg';
 
 import { ReactComponent as Simple } from '../../assets/stake/simple.svg';
 import { ReactComponent as Safe } from '../../assets/stake/safe.svg';
@@ -26,6 +29,9 @@ import { ReactComponent as Cosmos } from '../../assets/networks/cosmos.svg';
 import Osmosis from '../../assets/osmosis-logo.png';
 import Evmos from '../../assets/evmos-logo.png';
 import Chihuahua from '../../assets/huahua-logo.png';
+import Stride from '../../assets/stride-logo.png';
+import Quasar from '../../assets/quasar-logo.png';
+import Noble from '../../assets/noble-logo.png';
 import Umee from '../../assets/umee-logo.png';
 import Numia from '../../assets/numia.png';
 import SDK from '../../assets/sdk-logo.png';
@@ -67,7 +73,7 @@ const Landing = () => {
         <div className={styles['reach-container']}>
         <div className={styles.reach}>
           <Typography className={styles.value}>
-            $100M+
+            $10M+
           </Typography>
           <Typography className={styles.info}>
             Total Assets Staked
@@ -162,12 +168,28 @@ const Landing = () => {
               <img src={Umee} alt="umee" className={styles.venture} width= '80%'/>
             </a>
           </div>
+        </div>
+        <div className={styles.cards}>
+        <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/stride?modal=validator&chain=stride-1&validator_address=stridevaloper1e4vye322gkjx8n85jgcclnc7nvdvu82arenpt9'>
+              <img src={Stride} alt="stride" className={styles.venture} width= '80%'/>
+            </a>
+          </div>
+          <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href=''>
+              <img src={Noble} alt="noble" className={styles.venture} width= '80%'/>
+            </a>
+          </div>
+          <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href=''>
+              <img src={Quasar} alt="quasar" className={styles.venture} width= '80%'/>
+            </a>
+          </div>
           <div className={styles['card-network']}>
             <a className={styles.icon} target='_blank' rel="noreferrer" href='https://chihuahua.omniflix.co/stake'>
               <img src={Chihuahua} alt="chihuahua" className={styles.venture} width= '80%'/>
             </a>
-          </div>
-          
+          </div> 
         </div>
           <Typography className={styles.sub}>
             Click icons to delegate
@@ -191,21 +213,15 @@ const Landing = () => {
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
           <div className={styles.member}>
-            <img src={clown} alt="ALEKSANDR BEZOBCHUK" className={styles.pfp} />
+            <img src={bez} alt="ALEKSANDR BEZOBCHUK" className={styles.pfp} />
             <Typography className={styles.name}>ALEKSANDR BEZOBCHUK</Typography>
             <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-          <div className={styles.member}>
-            <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
-            <Typography className={styles.name}>RAFAEL AVILES</Typography>
-            <Typography className={styles.title}>Numia</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
         </div>
         <div className={styles.members}>
           <div className={styles.member}>
-            <img src={clown} alt="STEF SPRINZ" className={styles.pfp} />
+            <img src={stef} alt="STEF SPRINZ" className={styles.pfp} />
             <Typography className={styles.name}>STEF SPRINZ</Typography>
             <Typography className={styles.title}>Builders Program</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
@@ -223,21 +239,26 @@ const Landing = () => {
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
           <div className={styles.member}>
-            <img src={clown} alt="MARC HÖFFL" className={styles.pfp} />
-            <Typography className={styles.name}>MARC HÖFFL</Typography>
+            <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
+            <Typography className={styles.name}>RAFAEL AVILES</Typography>
             <Typography className={styles.title}>Numia</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
         </div>
         <div className={styles.members}>
-          <div className={styles.member}>
-            <img src={clown} alt="FROJDI DYMYLJA" className={styles.pfp} />
+          {/* <div className={styles.member}>
+            <img src={frojdi} alt="FROJDI DYMYLJA" className={styles.pfp} />
             <Typography className={styles.name}>FROJDI DYMYLJA</Typography>
             <Typography className={styles.title}>Cosmos SDK</Typography>
+          </div> */}
+          <div className={styles.member}>
+            <img src={marc} alt="MARC HÖFFL" className={styles.pfp} />
+            <Typography className={styles.name}>MARC HÖFFL</Typography>
+            <Typography className={styles.title}>Numia</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
           <div className={styles.member}>
-            <img src={clown} alt="SAMANTHA RICOTTA" className={styles.pfp} />
+            <img src={sam} alt="SAM RICOTTA" className={styles.pfp} />
             <Typography className={styles.name}>SAMANTHA RICOTTA</Typography>
             <Typography className={styles.title}>Cosmos SDK</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
