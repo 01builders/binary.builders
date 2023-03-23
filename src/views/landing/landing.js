@@ -200,82 +200,66 @@ const Landing = () => {
       <div className={styles['team-container']}>
         <img src={teamTitle} alt="Team" className={styles['title-img']} />
         <div className={styles.members}>
-          <div className={styles.member}>
-            <img src={marko} alt="MARKO BARICEVIC" className={styles.pfp} />
-            <Typography className={styles.name}>MARKO BARICEVIC</Typography>
-            <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-          <div className={styles.member}>
-            <img src={onur} alt="ONUR AKPOLAT" className={styles.pfp} />
-            <Typography className={styles.name}>ONUR AKPOLAT</Typography>
-            <Typography className={styles.title}>Founder</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-          <div className={styles.member}>
-            <img src={bez} alt="ALEKSANDR BEZOBCHUK" className={styles.pfp} />
-            <Typography className={styles.name}>ALEKSANDR BEZOBCHUK</Typography>
-            <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-        </div>
-        <div className={styles.members}>
-          <div className={styles.member}>
-            <img src={stef} alt="STEF SPRINZ" className={styles.pfp} />
-            <Typography className={styles.name}>STEF SPRINZ</Typography>
-            <Typography className={styles.title}>Builders Program</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-          <div className={styles.member}>
-            <img src={len} alt="LEN SEITTER" className={styles.pfp} />
-            <Typography className={styles.name}>LEN SEITTER</Typography>
-            <Typography className={styles.title}>Builders Program</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-          <div className={styles.member}>
-            <img src={noam} alt="NOAM COHEN" className={styles.pfp} />
-            <Typography className={styles.name}>NOAM COHEN</Typography>
-            <Typography className={styles.title}>Builders Program</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-          <div className={styles.member}>
-            <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
-            <Typography className={styles.name}>RAFAEL AVILES</Typography>
-            <Typography className={styles.title}>Numia</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-        </div>
-        <div className={styles.members}>
-          {/* <div className={styles.member}>
-            <img src={frojdi} alt="FROJDI DYMYLJA" className={styles.pfp} />
-            <Typography className={styles.name}>FROJDI DYMYLJA</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
-          </div> */}
-          <div className={styles.member}>
-            <img src={marc} alt="MARC HÖFFL" className={styles.pfp} />
-            <Typography className={styles.name}>MARC HÖFFL</Typography>
-            <Typography className={styles.title}>Numia</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-          <div className={styles.member}>
-            <img src={sam} alt="SAM RICOTTA" className={styles.pfp} />
-            <Typography className={styles.name}>SAMANTHA RICOTTA</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-          <div className={styles.member}>
-            <img src={julien} alt="JULIEN ROBERT" className={styles.pfp} />
-            <Typography className={styles.name}>JULIEN ROBERT</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-          <div className={styles.member}>
-            <img src={facu} alt="FACUNDO MEDICA" className={styles.pfp} />
-            <Typography className={styles.name}>FACUNDO MEDICA</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
-            {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
-          </div>
-        </div>
+  <div className={styles.member}>
+    <img src={bez} alt="ALEKSANDR BEZOBCHUK" className={styles.pfp} />
+    <Typography className={styles.name}>ALEKSANDR BEZOBCHUK</Typography>
+    <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={facu} alt="FACUNDO MEDICA" className={styles.pfp} />
+    <Typography className={styles.name}>FACUNDO MEDICA</Typography>
+    <Typography className={styles.title}>Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={julien} alt="JULIEN ROBERT" className={styles.pfp} />
+    <Typography className={styles.name}>JULIEN ROBERT</Typography>
+    <Typography className={styles.title}>Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={len} alt="LEN SEITTER" className={styles.pfp} />
+    <Typography className={styles.name}>LEN SEITTER</Typography>
+    <Typography className={styles.title}>Builders Program</Typography>
+  </div>
+</div>
+<div className={styles.members}>
+  <div className={styles.member}>
+    <img src={marc} alt="MARC HÖFFL" className={styles.pfp} />
+    <Typography className={styles.name}>MARC HÖFFL</Typography>
+    <Typography className={styles.title}>Numia</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={marko} alt="MARKO BARICEVIC" className={styles.pfp} />
+    <Typography className={styles.name}>MARKO BARICEVIC</Typography>
+    <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={noam} alt="NOAM COHEN" className={styles.pfp} />
+    <Typography className={styles.name}>NOAM COHEN</Typography>
+    <Typography className={styles.title}>Builders Program</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={onur} alt="ONUR AKPOLAT" className={styles.pfp} />
+    <Typography className={styles.name}>ONUR AKPOLAT</Typography>
+    <Typography className={styles.title}>Founder</Typography>
+  </div>
+</div>
+<div className={styles.members}>
+  <div className={styles.member}>
+    <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
+    <Typography className={styles.name}>RAFAEL AVILES</Typography>
+    <Typography className={styles.title}>Numia</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={sam} alt="SAMANTHA RICOTTA" className={styles.pfp} />
+    <Typography className={styles.name}>SAMANTHA RICOTTA</Typography>
+    <Typography className={styles.title}>Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={stef} alt="STEF SPRINZ" className={styles.pfp} />
+    <Typography className={styles.name}>STEF SPRINZ</Typography>
+    <Typography className={styles.title}>Builders Program</Typography>
+  </div>
+</div>
       </div>
     </div >
   );
