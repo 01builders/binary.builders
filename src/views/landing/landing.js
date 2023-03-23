@@ -203,7 +203,7 @@ const Landing = () => {
           <div className={styles.member}>
             <img src={marko} alt="MARKO BARICEVIC" className={styles.pfp} />
             <Typography className={styles.name}>MARKO BARICEVIC</Typography>
-            <Typography className={styles.title}>Cosmos SDK Lead</Typography>
+            <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
           <div className={styles.member}>
@@ -215,7 +215,7 @@ const Landing = () => {
           <div className={styles.member}>
             <img src={bez} alt="ALEKSANDR BEZOBCHUK" className={styles.pfp} />
             <Typography className={styles.name}>ALEKSANDR BEZOBCHUK</Typography>
-            <Typography className={styles.title}>Cosmos SDK Technical Lead</Typography>
+            <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
         </div>
@@ -241,7 +241,7 @@ const Landing = () => {
           <div className={styles.member}>
             <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
             <Typography className={styles.name}>RAFAEL AVILES</Typography>
-            <Typography className={styles.title}>Numia Lead</Typography>
+            <Typography className={styles.title}>Numia</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
         </div>
@@ -254,25 +254,25 @@ const Landing = () => {
           <div className={styles.member}>
             <img src={marc} alt="MARC HÖFFL" className={styles.pfp} />
             <Typography className={styles.name}>MARC HÖFFL</Typography>
-            <Typography className={styles.title}>Numia Technical Lead</Typography>
+            <Typography className={styles.title}>Numia</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
           <div className={styles.member}>
             <img src={sam} alt="SAM RICOTTA" className={styles.pfp} />
             <Typography className={styles.name}>SAMANTHA RICOTTA</Typography>
-            <Typography className={styles.title}>Developer Relations Engineer</Typography>
+            <Typography className={styles.title}>Cosmos SDK</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
           <div className={styles.member}>
             <img src={julien} alt="JULIEN ROBERT" className={styles.pfp} />
             <Typography className={styles.name}>JULIEN ROBERT</Typography>
-            <Typography className={styles.title}>Cosmos SDK Engineer</Typography>
+            <Typography className={styles.title}>Cosmos SDK</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
           <div className={styles.member}>
             <img src={facu} alt="FACUNDO MEDICA" className={styles.pfp} />
             <Typography className={styles.name}>FACUNDO MEDICA</Typography>
-            <Typography className={styles.title}>Cosmos SDK Engineer</Typography>
+            <Typography className={styles.title}>Cosmos SDK</Typography>
             {/* <Typography className={styles.bio}>Short bio goes here.</Typography> */}
           </div>
         </div>
