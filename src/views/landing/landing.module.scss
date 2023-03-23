@@ -1,8 +1,14 @@
 @import "../../css/utils";
 
 .pfp {
-  width: 250px;
+  width: 200px;
   filter: grayscale(100%);
+}
+
+.section-header {
+  height: 2em;
+  padding-top: 5em;
+  padding-bottom: 2em;
 }
 
 .landing-container {
@@ -54,7 +60,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 250px;
+    margin-bottom: 5em;
     flex-direction: column;
 
     @include media('>md') {
@@ -91,7 +97,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 250px;
+    // margin-bottom: 250px;
 
     .title {
       display: flex;
@@ -99,7 +105,8 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 60px;
-      padding: 0 32px;
+      // padding: 0 32px;
+      width: 100%;
 
       img {
         max-width: 600px;
@@ -131,8 +138,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 360px;
-        height: 390px;
+        width: 250px;
+        height: 270px;
         padding: 20px;
         padding-bottom: 10px;
         box-sizing: border-box;
@@ -157,8 +164,8 @@
 
           svg {
             z-index: 1;
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
           }
         }
         .content {
@@ -173,9 +180,63 @@
             margin: 0;
           }
           .description {
-            width: 320px;
+            // width: 320px;
             height: 120px;
-            font: normal normal normal 15px/28px Raleway;
+            font: normal normal normal 12px/22px Raleway;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+            opacity: 1;
+          }
+        }
+      }
+      .card-network {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 120px;
+        height: 120px;
+        padding: 5px;
+        box-sizing: border-box;
+        margin-bottom: 16px;
+
+        background: #000000 0% 0% no-repeat padding-box;
+        border: 0.5px solid #FFFFFF33;
+        opacity: 1;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+
+        @include media('>md') {
+          &:not(:last-of-type) {
+            margin-right: 20px;
+          }
+        }
+
+        .icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          svg {
+            z-index: 1;
+            width: 80px;
+            height: 80px;
+          }
+        }
+        .content {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .title {
+            font: normal normal bold 20px/77px Raleway;
+            letter-spacing: 0px;
+            color: #FFFFFF;
+            opacity: 1;
+            margin: 0;
+          }
+          .description {
+            // width: 320px;
+            height: 120px;
+            font: normal normal normal 12px/22px Raleway;
             letter-spacing: 0px;
             color: #FFFFFF;
             opacity: 1;
@@ -344,10 +405,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 250px;
+    margin-bottom: 10em;
 
     .title {
       font: normal normal bold 40px/43px Raleway;
+      letter-spacing: 0px;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+
+    .sub {
+      font: normal normal normal 18px/23px Raleway;
       letter-spacing: 0px;
       color: #FFFFFF;
       opacity: 1;
@@ -364,7 +432,8 @@
       }
 
       .portfolio {
-        width: 100%;
+        width: 10em;
+        height: 1em;
         padding: 50px 70px;
         display: flex;
         justify-content: center;
@@ -380,6 +449,10 @@
             margin-right: 20px;
           }
         }
+      }
+
+      .venture {
+        height: 3em;
       }
     }
   }
@@ -421,19 +494,19 @@
         }
 
         .name {
-          font: normal normal bold 20px/25px Raleway;
+          font: normal normal bold 15px/20px Raleway;
           letter-spacing: 0px;
           color: #FFFFFF;
           opacity: 1;
         }
         .title {
-          font: normal normal 600 16px/60px Raleway;
+          font: normal normal 600 12px/60px Raleway;
           letter-spacing: 0px;
           color: #FFFFFF;
           opacity: 1;
         }
         .bio {
-          font: normal normal normal 15px/28px Raleway;
+          font: normal normal normal 12px/28px Raleway;
           letter-spacing: 0px;
           color: #FFFFFF;
           opacity: 1;

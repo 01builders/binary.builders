@@ -8,22 +8,34 @@ import stakeTitle from '../../assets/stake.png';
 import supportedTitle from '../../assets/supported-networks.png';
 import teamTitle from '../../assets/team-title.png';
 
-import shawn from '../../assets/shawn.jpg';
-import onur from '../../assets/onur.jpg';
-import marko from '../../assets/marko.png';
-import will from '../../assets/will.jpg';
+import onur from '../../assets/team/onur.jpg';
+import marko from '../../assets/team/marko.png';
+import facu from '../../assets/team/facu.jpeg';
+import julien from '../../assets/team/julien.png';
+import noam from '../../assets/team/noam.jpeg';
+import len from '../../assets/team/len.png';
+import rafa from '../../assets/team/rafa.png';
+import stef from '../../assets/team/stef.png';
+import marc from '../../assets/team/marc.png';
+import sam from '../../assets/team/sam.jpeg';
+import frojdi from '../../assets/team/frojdi.jpeg';
+import bez from '../../assets/team/bez.jpeg';
 
 import { ReactComponent as Simple } from '../../assets/stake/simple.svg';
 import { ReactComponent as Safe } from '../../assets/stake/safe.svg';
 import { ReactComponent as Secure } from '../../assets/stake/secure.svg';
 
-import { ReactComponent as Polkadot } from '../../assets/networks/polkadot.svg';
-import { ReactComponent as PolkadotProtocol } from '../../assets/networks/protocol-polkadot.svg';
-import { ReactComponent as PolkadotLogo } from '../../assets/networks/polkadot-logo-2.svg';
-import { ReactComponent as Kusama } from '../../assets/networks/kusama.svg';
-import { ReactComponent as KusamaProtocol } from '../../assets/networks/protocol-kusama.svg';
 import { ReactComponent as Cosmos } from '../../assets/networks/cosmos.svg';
-import { ReactComponent as CosmosProtocol } from '../../assets/networks/protocol-cosmos.svg';
+import Osmosis from '../../assets/osmosis-logo.png';
+import Evmos from '../../assets/evmos-logo.png';
+import Chihuahua from '../../assets/huahua-logo.png';
+import Stride from '../../assets/stride-logo.png';
+import Quasar from '../../assets/quasar-logo.png';
+import Noble from '../../assets/noble-logo.png';
+import Umee from '../../assets/umee-logo.png';
+import Numia from '../../assets/numia.png';
+import SDK from '../../assets/sdk-logo.png';
+import BuildersProgam from '../../assets/bp-logo.png';
 
 import styles from './landing.module.scss';
 
@@ -34,15 +46,34 @@ const Landing = () => {
         <div className={styles.content}>
           <img src={fromZero} alt="From Zero. To One." />
           <Typography className={styles.description}>
-            Binary Holdings is a trusted and secure staking service, supporting industry-leading networks to help build the future of Web3
+            We are a leading group of builders in the Interchain ecosystem providing a range of services with the goal to help building the future of Web3
           </Typography>
         </div>
         <Binary className={styles.binary} />
       </div>
-      <div className={styles['reach-container']}>
+      <div className={styles['portfolio-container']}>
+        <Typography className={styles.title}>Ventures</Typography>
+        <div className={styles.portfolios}>
+          <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://v1.cosmos.network/sdk' style={{ textDecoration: 'none' }}>
+            <img src={SDK} alt="SDK" className={styles.venture}/>
+          </a>
+          <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://numia.xyz/' style={{ textDecoration: 'none' }}>
+            <img src={Numia} alt="Numia" className={styles.venture}/>
+          </a>
+          <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://join.builders/' style={{ textDecoration: 'none' }}>
+            <img src={BuildersProgam} alt="BuildersProgram" className={styles.venture}/>
+          </a>
+        </div>
+      </div>
+      
+      <div className={styles['stake-container']}>
+      <div className={styles['portfolio-container']}>
+        <Typography className={styles.title}>Validator</Typography>
+        {/* <Typography className={styles.title}>Validator</Typography> */}
+        <div className={styles['reach-container']}>
         <div className={styles.reach}>
           <Typography className={styles.value}>
-            $100M+
+            $10M+
           </Typography>
           <Typography className={styles.info}>
             Total Assets Staked
@@ -65,12 +96,11 @@ const Landing = () => {
           </Typography>
         </div>
       </div>
-      <div className={styles['stake-container']}>
         <div className={styles.title}>
           {/* <img src={stakeTitle} alt="Stake With Binary Holdings" /> */}
-          <Typography align="center" color="white" variant="h1" className={styles.info}>
+          {/* <Typography align="center" color="white" variant="h1" className={styles.info}>
             Stake With Binary Holdings
-          </Typography>
+          </Typography> */}
           <Typography align="center" color="white" className={styles.info}>
             Earn crypto native interest rates while simultaneously contributing to our supported Proof of Stake networks
           </Typography>
@@ -85,7 +115,7 @@ const Landing = () => {
                 Simple
               </Typography>
               <Typography className={styles.description}>
-                Nominating has never been this easy. Everything you need to join us can be found on this site. Just install the Polkadot JS Extension.
+                Nominating has never been this easy. Everything you need to join us can be found on this site.
               </Typography>
             </div>
           </div>
@@ -111,167 +141,125 @@ const Landing = () => {
                 Secure
               </Typography>
               <Typography className={styles.description}>
-                Binary Holdings is managed by the engineers who built Kusama, Polkadot and Cosmos.
+                Binary Holdings is managed by the engineers who built the Cosmos SDK & the Interchain.
               </Typography>
             </div>
           </div>
         </div>
-      </div>
-      <div className={styles['supported-networks-container']}>
-        <img src={supportedTitle} alt="Supported Networks" />
-        <div className={styles.networks}>
-          <div className={styles.network}>
-            <div className={styles['company-wrapper']}>
-              <div className={styles.company}>
-                <Polkadot />
-                <Typography className={styles['network-title']}>
-                  Polkadot
-                </Typography>
-                <Typography className={styles['network-type']} component="div">
-                  <div className={styles.circle} />
-                  <Typography component="span">
-                    Mainnet
-                  </Typography>
-                </Typography>
-                <Typography className={styles.apr}>15% APR</Typography>
-              </div>
-            </div>
-            <div className={styles.info}>
-              <PolkadotProtocol />
-              <Typography className={styles.description}>
-                Polkadot is a scalable heterogeneous multi-chain allowing pooled security and trust-free interchain transactability.
-              </Typography>
-              <div className={styles.footer}>
-                <div className={styles.website}>
-                  <Typography>Website</Typography>
-                  <Typography component="a" href="https://polkadot.network" target="_blank" rel="noopener noreferrer">polkadot.network</Typography>
-                </div>
-                <Typography className={styles['stake-wrapper']} component="div">
-                  <div className={styles.stake}>
-                    <Typography color="white" component="span">
-                      STAKE NOW
-                    </Typography>
-                  </div>
-                </Typography>
-              </div>
-            </div>
+        <img src={supportedTitle} alt="Supported Networks" className={styles['section-header']}/>
+        <div className={styles.cards}>
+          <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/cosmos-hub?modal=validator&chain=cosmoshub-4&validator_address=cosmosvaloper1e4vye322gkjx8n85jgcclnc7nvdvu82axnr5ll'>
+              <Cosmos />
+            </a>
           </div>
-          <div className={styles.network}>
-            <div className={styles['company-wrapper']}>
-              <div className={styles.company}>
-                <Kusama />
-                <Typography className={styles['network-title']}>
-                  Kusama
-                </Typography>
-                <Typography className={styles['network-type']} component="div">
-                  <div className={styles.circle} />
-                  <Typography component="span">
-                    Mainnet
-                  </Typography>
-                </Typography>
-                <Typography className={styles.apr}>15% APR</Typography>
-              </div>
-            </div>
-            <div className={styles.info}>
-              <KusamaProtocol />
-              <Typography className={styles.description}>
-                Kusama is a canary network for Polkadot. It is technologically identical to Polkadot, but has more open and fast governance.
-              </Typography>
-              <div className={styles.footer}>
-                <div className={styles.website}>
-                  <Typography>Website</Typography>
-                  <Typography component="a" href="https://kusama.network" target="_blank" rel="noopener noreferrer">kusama.network</Typography>
-                </div>
-                <Typography className={styles['stake-wrapper']} component="div">
-                  <div className={styles.stake}>
-                    <Typography color="white" component="span">
-                      STAKE NOW
-                    </Typography>
-                  </div>
-                </Typography>
-              </div>
-            </div>
+          <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/osmosis?modal=validator&chain=osmosis-1&validator_address=osmovaloper15czt5nhlnvayqq37xun9s9yus0d6y26d5jws45'>
+              <img src={Osmosis} alt="osmosis" className={styles.venture} width= '80%'/>
+            </a>
           </div>
-          <div className={styles.network}>
-            <div className={styles['company-wrapper']}>
-              <div className={styles.company}>
-                <Cosmos />
-                <Typography className={styles['network-title']}>
-                  Cosmos
-                </Typography>
-                <Typography className={styles['network-type']} component="div">
-                  <div className={styles.circle} />
-                  <Typography component="span">
-                    Mainnet
-                  </Typography>
-                </Typography>
-                <Typography className={styles.apr}>10% APR</Typography>
-              </div>
-            </div>
-            <div className={styles.info}>
-              <CosmosProtocol />
-              <Typography className={styles.description}>
-                Cosmos is creating an ecosystem of connected blockchains, they also provide Tendermint SDK, whish developers can easily build their own blockchain.
-              </Typography>
-              <div className={styles.footer}>
-                <div className={styles.website}>
-                  <Typography>Website</Typography>
-                  <Typography component="a" href="https://cosmos.network" target="_blank" rel="noopener noreferrer">cosmos.network</Typography>
-                </div>
-                <Typography className={styles['stake-wrapper']} component="div">
-                  <div className={styles.stake}>
-                    <Typography color="white" component="span">
-                      STAKE NOW
-                    </Typography>
-                  </div>
-                </Typography>
-              </div>
-            </div>
+          <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/evmos?modal=validator&chain=evmos_9001-2&validator_address=evmosvaloper1vhuyfr9l7ytd0w9mtdx2033qrc0s6vjj8w37j6'>
+              <img src={Evmos} alt="evmos" className={styles.venture} width= '80%'/>
+            </a>
+          </div>
+          <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/umee?modal=validator&chain=umee-1&validator_address=umeevaloper1q5z5vdxtvqmf4eq37pm2xnytc69st382cadf0x'>
+              <img src={Umee} alt="umee" className={styles.venture} width= '80%'/>
+            </a>
           </div>
         </div>
-      </div>
-      <div className={styles['portfolio-container']}>
-        <Typography className={styles.title}>PORTFOLIO</Typography>
-        <div className={styles.portfolios}>
-          <div className={styles.portfolio}>
-            <PolkadotLogo />
+        <div className={styles.cards}>
+        <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/stride?modal=validator&chain=stride-1&validator_address=stridevaloper1e4vye322gkjx8n85jgcclnc7nvdvu82arenpt9'>
+              <img src={Stride} alt="stride" className={styles.venture} width= '80%'/>
+            </a>
           </div>
-          <div className={styles.portfolio}>
-            <KusamaProtocol />
+          <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href=''>
+              <img src={Noble} alt="noble" className={styles.venture} width= '80%'/>
+            </a>
           </div>
-          <div className={styles.portfolio}>
-            <CosmosProtocol />
+          <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href=''>
+              <img src={Quasar} alt="quasar" className={styles.venture} width= '80%'/>
+            </a>
           </div>
+          <div className={styles['card-network']}>
+            <a className={styles.icon} target='_blank' rel="noreferrer" href='https://chihuahua.omniflix.co/stake'>
+              <img src={Chihuahua} alt="chihuahua" className={styles.venture} width= '80%'/>
+            </a>
+          </div> 
+        </div>
+          <Typography className={styles.sub}>
+            Click icons to delegate
+          </Typography>
         </div>
       </div>
+      
       <div className={styles['team-container']}>
         <img src={teamTitle} alt="Team" className={styles['title-img']} />
         <div className={styles.members}>
-          <div className={styles.member}>
-            <img src={marko} alt="MARKO BARICEVIC" className={styles.pfp} />
-            <Typography className={styles.name}>MARKO BARICEVIC</Typography>
-            <Typography className={styles.title}>Founder</Typography>
-            <Typography className={styles.bio}>Short bio goes here.</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={onur} alt="ONUR AKPOLAT" className={styles.pfp} />
-            <Typography className={styles.name}>ONUR AKPOLAT</Typography>
-            <Typography className={styles.title}>Founder</Typography>
-            <Typography className={styles.bio}>Short bio goes here.</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={shawn} alt="SHAWN TABRIZI" className={styles.pfp} />
-            <Typography className={styles.name}>SHAWN TABRIZI</Typography>
-            <Typography className={styles.title}>Founder</Typography>
-            <Typography className={styles.bio}>Short bio goes here.</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={will} alt="WILL PANKIEWICZ" className={styles.pfp} />
-            <Typography className={styles.name}>WILL PANKIEWICZ</Typography>
-            <Typography className={styles.title}>Founder</Typography>
-            <Typography className={styles.bio}>Short bio goes here.</Typography>
-          </div>
-        </div>
+  <div className={styles.member}>
+    <img src={bez} alt="ALEKSANDR BEZOBCHUK" className={styles.pfp} />
+    <Typography className={styles.name}>ALEKSANDR BEZOBCHUK</Typography>
+    <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={facu} alt="FACUNDO MEDICA" className={styles.pfp} />
+    <Typography className={styles.name}>FACUNDO MEDICA</Typography>
+    <Typography className={styles.title}>Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={julien} alt="JULIEN ROBERT" className={styles.pfp} />
+    <Typography className={styles.name}>JULIEN ROBERT</Typography>
+    <Typography className={styles.title}>Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={len} alt="LEN SEITTER" className={styles.pfp} />
+    <Typography className={styles.name}>LEN SEITTER</Typography>
+    <Typography className={styles.title}>Builders Program</Typography>
+  </div>
+</div>
+<div className={styles.members}>
+  <div className={styles.member}>
+    <img src={marc} alt="MARC HÖFFL" className={styles.pfp} />
+    <Typography className={styles.name}>MARC HÖFFL</Typography>
+    <Typography className={styles.title}>Numia</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={marko} alt="MARKO BARICEVIC" className={styles.pfp} />
+    <Typography className={styles.name}>MARKO BARICEVIC</Typography>
+    <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={noam} alt="NOAM COHEN" className={styles.pfp} />
+    <Typography className={styles.name}>NOAM COHEN</Typography>
+    <Typography className={styles.title}>Builders Program</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={onur} alt="ONUR AKPOLAT" className={styles.pfp} />
+    <Typography className={styles.name}>ONUR AKPOLAT</Typography>
+    <Typography className={styles.title}>Founder</Typography>
+  </div>
+</div>
+<div className={styles.members}>
+  <div className={styles.member}>
+    <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
+    <Typography className={styles.name}>RAFAEL AVILES</Typography>
+    <Typography className={styles.title}>Numia</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={sam} alt="SAMANTHA RICOTTA" className={styles.pfp} />
+    <Typography className={styles.name}>SAMANTHA RICOTTA</Typography>
+    <Typography className={styles.title}>Cosmos SDK</Typography>
+  </div>
+  <div className={styles.member}>
+    <img src={stef} alt="STEF SPRINZ" className={styles.pfp} />
+    <Typography className={styles.name}>STEF SPRINZ</Typography>
+    <Typography className={styles.title}>Builders Program</Typography>
+  </div>
+</div>
       </div>
     </div >
   );
