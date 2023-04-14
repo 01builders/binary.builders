@@ -102,7 +102,7 @@ const Landing = () => {
                   </div>
                   <div className={styles.smallerbox}>
                     <div className={styles.imagebox}>
-                      <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://v1.cosmos.network/sdk' style={{ textDecoration: 'none' }}>
+                      <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://numia.xyz/' style={{ textDecoration: 'none' }}>
                         <img src={Numia} alt="Numia" className={styles.venture}/>
                       </a>
                     </div>
@@ -113,7 +113,7 @@ const Landing = () => {
                 <div className={styles.info}>
                 <div className={styles.smallerbox}>
                     <div className={styles.imagebox}>
-                    <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://v1.cosmos.network/sdk' style={{ textDecoration: 'none' }}>
+                    <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://join.builders/' style={{ textDecoration: 'none' }}>
                       <img src={BuildersProgam} alt="BuildersProgram" className={styles.venture}/>
                     </a>
                     </div>
