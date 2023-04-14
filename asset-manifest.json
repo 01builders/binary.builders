@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/binary.builders/static/css/main.2c4d222e.css",
-    "main.js": "/binary.builders/static/js/main.daa3e7b4.js",
+    "main.js": "/binary.builders/static/js/main.31c2001a.js",
     "static/js/787.7250eb2b.chunk.js": "/binary.builders/static/js/787.7250eb2b.chunk.js",
     "static/media/stef.png": "/binary.builders/static/media/stef.850370521a94ccd6904a.png",
     "static/media/julien.png": "/binary.builders/static/media/julien.8fc30b8062727492cfb3.png",
@@ -44,11 +44,11 @@
     "static/media/polkadot.svg": "/binary.builders/static/media/polkadot.bedebc9fd2c8b9325f990d90c8842a24.svg",
     "static/media/kusama.svg": "/binary.builders/static/media/kusama.0c1a61095f0b3f0a8dc38612874a46ad.svg",
     "main.2c4d222e.css.map": "/binary.builders/static/css/main.2c4d222e.css.map",
-    "main.daa3e7b4.js.map": "/binary.builders/static/js/main.daa3e7b4.js.map",
+    "main.31c2001a.js.map": "/binary.builders/static/js/main.31c2001a.js.map",
     "787.7250eb2b.chunk.js.map": "/binary.builders/static/js/787.7250eb2b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c4d222e.css",
-    "static/js/main.daa3e7b4.js"
+    "static/js/main.31c2001a.js"
   ]
 }
