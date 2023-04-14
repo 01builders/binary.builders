@@ -10,10 +10,10 @@ const Header = (props) => {
   return (
     <div className={styles.header}>
       <Typography className={styles.logo} component="a" href="/">
-        <BinaryLogo />
-        <Typography color="white" component="span">B1NARY BUILDERS</Typography>
+        <BinaryLogo className={styles['header-logo']}/>
+        <Typography className={styles['header-title']} color="white" component="span">B1NARY BUILDERS</Typography>
       </Typography>
-      <Typography className={styles.stake} component="div">
+      <Typography className={styles['display-mobile']} component="div">
         <a className={styles.inside} target='_blank' rel="noreferrer" href='mailto:contact@binary.builders' style={{ textDecoration: 'none' }}>
           <Typography color="white" component="span">
             REACH OUT
