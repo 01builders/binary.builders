@@ -98,8 +98,7 @@ const Landing = () => {
                 <div className={styles.info}>
                 <div className={styles.box}>
                     <Typography className={styles.description}>
-                      Numia Data aims to provide Cosmos chain data as a public good. Our mission is to index data from a variety of Cosmos SDK chains & providing an easy interface to users, making data accessible via SQL. 
-                    </Typography>
+                    Numia Data mission is to make Cosmos on-chain data accessible to anyone. We store data from a variety of Cosmos SDK chains & provide an easy interface to users, making data accessible via SQL, APIs and public Dashboards.                    </Typography>
                   </div>
                   <div className={styles.smallerbox}>
                     <div className={styles.imagebox}>
@@ -121,7 +120,7 @@ const Landing = () => {
                   </div>
                   <div className={styles.box}>
                     <Typography className={styles.description}>
-                    The Builders Program provides mentorship, structured support and guidance for teams who build chains in Cosmos, using at least one component of the Cosmos Stack: Tendermint, CosmosSDK, CosmWasm and IBC.                </Typography>
+                    The Builders Program provides mentorship, structured support and guidance for teams who build in the Interchain, using at least one component of the Cosmos Stack: Tendermint/CometBFT, CosmosSDK, CosmWasm and IBC.                </Typography>
                   </div>
                 </div>
               </div>
