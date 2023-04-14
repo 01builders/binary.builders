@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/binary.builders/static/css/main.436ba0b6.css",
-    "main.js": "/binary.builders/static/js/main.2835d37a.js",
+    "main.css": "/binary.builders/static/css/main.2c4d222e.css",
+    "main.js": "/binary.builders/static/js/main.38d6ada4.js",
     "static/js/787.7250eb2b.chunk.js": "/binary.builders/static/js/787.7250eb2b.chunk.js",
     "static/media/stef.png": "/binary.builders/static/media/stef.850370521a94ccd6904a.png",
     "static/media/julien.png": "/binary.builders/static/media/julien.8fc30b8062727492cfb3.png",
@@ -25,22 +25,30 @@
     "static/media/umee-logo.png": "/binary.builders/static/media/umee-logo.5c9b57f72016f78446dc.png",
     "static/media/from-zero.png": "/binary.builders/static/media/from-zero.b110411772b198f71ccd.png",
     "static/media/stake.png": "/binary.builders/static/media/stake.ab2d249b8d14ff2a004a.png",
+    "static/media/validator-title.png": "/binary.builders/static/media/validator-title.61b7f9f0c0c5fbb9aca4.png",
     "static/media/stride-logo.png": "/binary.builders/static/media/stride-logo.d2c5d02421f6f9dff103.png",
     "static/media/supported-networks.png": "/binary.builders/static/media/supported-networks.ddee321ce56bcf29d70a.png",
+    "static/media/ventures-title.png": "/binary.builders/static/media/ventures-title.2c73fa1ad16b4316dd58.png",
     "static/media/evmos-logo.png": "/binary.builders/static/media/evmos-logo.03c090cc51a6fa78d815.png",
     "static/media/binary.svg": "/binary.builders/static/media/binary.cab5693098cd88f189c26f0b27db767b.svg",
+    "static/media/protocol-polkadot.svg": "/binary.builders/static/media/protocol-polkadot.0e0e2cc602dc44ad6b254e7268266587.svg",
+    "static/media/protocol-cosmos.svg": "/binary.builders/static/media/protocol-cosmos.b96b1672997e6913d490bbb64196a192.svg",
     "static/media/cosmos.svg": "/binary.builders/static/media/cosmos.015a30843a918f0a4b872d4e512236d9.svg",
+    "static/media/polkadot-logo-2.svg": "/binary.builders/static/media/polkadot-logo-2.e3af5f5c8d83bf24876f6b95540245d3.svg",
+    "static/media/protocol-kusama.svg": "/binary.builders/static/media/protocol-kusama.38a22899a3c5cb4bf32b1480507d3d70.svg",
     "static/media/secure.svg": "/binary.builders/static/media/secure.9bbf8cf76dda79c6e0348561a72e3d79.svg",
     "static/media/simple.svg": "/binary.builders/static/media/simple.a51f4179fe1509a71161ad3bf3d1ef57.svg",
     "static/media/safe.svg": "/binary.builders/static/media/safe.8cc8d273cea04b5453f85932e0611c86.svg",
     "static/media/header-logo.svg": "/binary.builders/static/media/header-logo.7c18305349faef1f4255128fbd8ccec3.svg",
     "index.html": "/binary.builders/index.html",
-    "main.436ba0b6.css.map": "/binary.builders/static/css/main.436ba0b6.css.map",
-    "main.2835d37a.js.map": "/binary.builders/static/js/main.2835d37a.js.map",
+    "static/media/polkadot.svg": "/binary.builders/static/media/polkadot.bedebc9fd2c8b9325f990d90c8842a24.svg",
+    "static/media/kusama.svg": "/binary.builders/static/media/kusama.0c1a61095f0b3f0a8dc38612874a46ad.svg",
+    "main.2c4d222e.css.map": "/binary.builders/static/css/main.2c4d222e.css.map",
+    "main.38d6ada4.js.map": "/binary.builders/static/js/main.38d6ada4.js.map",
     "787.7250eb2b.chunk.js.map": "/binary.builders/static/js/787.7250eb2b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.436ba0b6.css",
-    "static/js/main.2835d37a.js"
+    "static/css/main.2c4d222e.css",
+    "static/js/main.38d6ada4.js"
   ]
 }
