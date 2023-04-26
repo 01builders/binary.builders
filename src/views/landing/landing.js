@@ -90,7 +90,8 @@ const Landing = () => {
                   </div>
                   <div className={styles.box}>
                     <Typography className={styles.description}>
-                    Binary Builders is the primary maintainer of the Cosmos SDK. The Cosmos SDK is the world's most used framework for building application-specific blockchains. </Typography>
+                    Binary Builders is the primary maintainer of the Cosmos SDK. The Cosmos SDK is the world's most used framework for building application-specific blockchains. 
+                    </Typography>
                   </div>
                 </div>
               </div>
@@ -98,7 +99,8 @@ const Landing = () => {
                 <div className={styles.info}>
                 <div className={styles.box}>
                     <Typography className={styles.description}>
-                    Numia Data mission is to make Cosmos on-chain data accessible to anyone. We store data from a variety of Cosmos SDK chains & provide an easy interface to users, making data accessible via SQL, APIs and public Dashboards.                    </Typography>
+                    Numia Data's mission is to make Cosmos on-chain data accessible to anyone. We store data from a variety of Cosmos SDK chains & provide an easy interface to users, making data accessible via SQL, APIs and public dashboards.
+                   </Typography>
                   </div>
                   <div className={styles.smallerbox}>
                     <div className={styles.imagebox}>
