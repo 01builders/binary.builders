@@ -28,6 +28,7 @@ import { ReactComponent as Safe } from '../../assets/stake/safe.svg';
 import { ReactComponent as Secure } from '../../assets/stake/secure.svg';
 
 import { ReactComponent as Cosmos } from '../../assets/networks/cosmos.svg';
+import Archway from '../../assets/archway-logo.png';
 import Osmosis from '../../assets/osmosis-logo.png';
 import Evmos from '../../assets/evmos-logo.png';
 import Chihuahua from '../../assets/huahua-logo.png';
@@ -246,12 +247,17 @@ const Landing = () => {
               </a>
             </div>
             <div className={styles['card-network']}>
-              <a className={styles.icon} target='_blank' rel="noreferrer" href=''>
+              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/quasar?modal=validator&chain=quasar-1&validator_address=quasarvaloper1e4vye322gkjx8n85jgcclnc7nvdvu82af6agkm'>
                 <img src={Quasar} alt="quasar" className={styles.venture} width= '80%'/>
               </a>
             </div>
             <div className={styles['card-network']}>
-              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://chihuahua.omniflix.co/stake'>
+              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://yieldmos.com/v/binary-holdings/'>
+                <img src={Archway} alt="archway" className={styles.venture} width= '80%'/>
+              </a>
+            </div> 
+            <div className={styles['card-network']}>
+              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://yieldmos.com/v/binary-holdings/'>
                 <img src={Chihuahua} alt="chihuahua" className={styles.venture} width= '80%'/>
               </a>
             </div> 
