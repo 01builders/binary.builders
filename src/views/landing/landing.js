@@ -276,7 +276,7 @@ const Landing = () => {
           <div className={styles.member}>
             <img src={bez} alt="ALEKSANDR BEZOBCHUK" className={styles.pfp} />
             <Typography className={styles.name}>ALEKSANDR BEZOBCHUK</Typography>
-            <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
+            <Typography className={styles.title}>Cosmos SDK</Typography>
           </div>
           <div className={styles.member}>
             <img src={facu} alt="FACUNDO MEDICA" className={styles.pfp} />
