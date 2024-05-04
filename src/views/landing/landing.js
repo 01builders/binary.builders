@@ -17,34 +17,28 @@ import julien from '../../assets/team/julien.png';
 import noam from '../../assets/team/noam.jpeg';
 import len from '../../assets/team/len.png';
 import rafa from '../../assets/team/rafa.png';
-import stef from '../../assets/team/stef.png';
+import alex from '../../assets/team/alex.png';
 import marc from '../../assets/team/marc.png';
 import sam from '../../assets/team/sam.jpeg';
 import frojdi from '../../assets/team/frojdi.jpeg';
-import bez from '../../assets/team/bez.jpeg';
+import anviksha from '../../assets/team/anviksha.png';
+import durgham from '../../assets/team/durgham.png';
 
 import { ReactComponent as Simple } from '../../assets/stake/simple.svg';
 import { ReactComponent as Safe } from '../../assets/stake/safe.svg';
 import { ReactComponent as Secure } from '../../assets/stake/secure.svg';
 
 import { ReactComponent as Cosmos } from '../../assets/networks/cosmos.svg';
-import Archway from '../../assets/archway-logo.png';
 import Osmosis from '../../assets/osmosis-logo.png';
 import Evmos from '../../assets/evmos-logo.png';
-import Chihuahua from '../../assets/huahua-logo.png';
+import Celestia from '../../assets/celestia-logo.png';
 import Stride from '../../assets/stride-logo.png';
 import Quasar from '../../assets/quasar-logo.png';
 import Noble from '../../assets/noble-logo.png';
-import Umee from '../../assets/umee-logo.png';
 import Numia from '../../assets/numia.png';
 import SDK from '../../assets/sdk-logo.png';
 import BuildersProgam from '../../assets/bp-logo.png';
-import { ReactComponent as Polkadot } from '../../assets/networks/polkadot.svg';
-import { ReactComponent as PolkadotProtocol } from '../../assets/networks/protocol-polkadot.svg';
-import { ReactComponent as PolkadotLogo } from '../../assets/networks/polkadot-logo-2.svg';
-import { ReactComponent as Kusama } from '../../assets/networks/kusama.svg';
-import { ReactComponent as KusamaProtocol } from '../../assets/networks/protocol-kusama.svg';
-import { ReactComponent as CosmosProtocol } from '../../assets/networks/protocol-cosmos.svg';
+
 import styles from './landing.module.scss';
 
 const Landing = () => {
@@ -140,7 +134,7 @@ const Landing = () => {
           <div className={styles['reach-container']}>
             <div className={styles.reach}>
               <Typography className={styles.value}>
-                $10M+
+                $80M+
               </Typography>
               <Typography className={styles.info}>
                 Total Assets Staked
@@ -151,7 +145,7 @@ const Landing = () => {
                 300K+
               </Typography>
               <Typography className={styles.info}>
-                Unique users
+                Unique delegators
               </Typography>
             </div>
             <div className={styles.reach}>
@@ -204,7 +198,7 @@ const Landing = () => {
                   Secure
                 </Typography>
                 <Typography className={styles.description}>
-                  Binary Holdings is managed by the engineers who built the Cosmos SDK & the Interchain.
+                  Binary Builders is managed by the engineers who built the Cosmos SDK & the Interchain.
                 </Typography>
               </div>
             </div>
@@ -230,8 +224,8 @@ const Landing = () => {
               </a>
             </div>
             <div className={styles['card-network']}>
-              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/umee?modal=validator&chain=umee-1&validator_address=umeevaloper1q5z5vdxtvqmf4eq37pm2xnytc69st382cadf0x'>
-                <img src={Umee} alt="umee" className={styles.venture} width= '80%'/>
+              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/celestia?modal=staking&chain=celestia&validator_address=celestiavaloper15kpw453rgqrranltr8pcy9muryf3jjd7esw38j&step_id=2'>
+                <img src={Celestia} alt="celestia" className={styles.venture} width= '80%'/>
               </a>
             </div>
           </div>
@@ -251,16 +245,8 @@ const Landing = () => {
                 <img src={Quasar} alt="quasar" className={styles.venture} width= '80%'/>
               </a>
             </div>
-            <div className={styles['card-network']}>
-              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://yieldmos.com/v/binary-holdings/'>
-                <img src={Archway} alt="archway" className={styles.venture} width= '80%'/>
-              </a>
-            </div> 
-            <div className={styles['card-network']}>
-              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://yieldmos.com/v/binary-holdings/'>
-                <img src={Chihuahua} alt="chihuahua" className={styles.venture} width= '80%'/>
-              </a>
-            </div> 
+
+       
           </div>
           <Typography className={styles.sub}>
             Click icons to delegate
@@ -274,15 +260,27 @@ const Landing = () => {
         </div>
         <div className={styles.members}>
           <div className={styles.member}>
-            <img src={bez} alt="ALEKSANDR BEZOBCHUK" className={styles.pfp} />
-            <Typography className={styles.name}>ALEKSANDR BEZOBCHUK</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
+            <img src={alex} alt="ALEX SANTOS" className={styles.pfp} />
+            <Typography className={styles.name}>ALEX SANTOS</Typography>
+            <Typography className={styles.title}>Builders Program</Typography>
+          </div>
+          <div className={styles.member}>
+            <img src={anviksha} alt="ANVIKSHA SINGH" className={styles.pfp} />
+            <Typography className={styles.name}>ANVIKSHA SINGH</Typography>
+            <Typography className={styles.title}>Marketing</Typography>
+          </div>
+          <div className={styles.member}>
+            <img src={durgham} alt="DURGHAM MUSHTAHA" className={styles.pfp} />
+            <Typography className={styles.name}>DURGHAM MUSHTAHA</Typography>
+            <Typography className={styles.title}>Builders Program</Typography>
           </div>
           <div className={styles.member}>
             <img src={facu} alt="FACUNDO MEDICA" className={styles.pfp} />
             <Typography className={styles.name}>FACUNDO MEDICA</Typography>
             <Typography className={styles.title}>Cosmos SDK</Typography>
           </div>
+        </div>
+        <div className={styles.members}>
           <div className={styles.member}>
             <img src={julien} alt="JULIEN ROBERT" className={styles.pfp} />
             <Typography className={styles.name}>JULIEN ROBERT</Typography>
@@ -293,8 +291,6 @@ const Landing = () => {
             <Typography className={styles.name}>LEN SEITTER</Typography>
             <Typography className={styles.title}>Builders Program</Typography>
           </div>
-        </div>
-        <div className={styles.members}>
           <div className={styles.member}>
             <img src={marc} alt="MARC HÖFFL" className={styles.pfp} />
             <Typography className={styles.name}>MARC HÖFFL</Typography>
@@ -305,6 +301,8 @@ const Landing = () => {
             <Typography className={styles.name}>MARKO BARICEVIC</Typography>
             <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
           </div>
+        </div>
+        <div className={styles.members}>
           <div className={styles.member}>
             <img src={noam} alt="NOAM COHEN" className={styles.pfp} />
             <Typography className={styles.name}>NOAM COHEN</Typography>
@@ -315,8 +313,6 @@ const Landing = () => {
             <Typography className={styles.name}>ONUR AKPOLAT</Typography>
             <Typography className={styles.title}>Founder</Typography>
           </div>
-        </div>
-        <div className={styles.members}>
           <div className={styles.member}>
             <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
             <Typography className={styles.name}>RAFAEL AVILES</Typography>
@@ -326,11 +322,6 @@ const Landing = () => {
             <img src={sam} alt="SAM RICOTTA" className={styles.pfp} />
             <Typography className={styles.name}>SAM RICOTTA</Typography>
             <Typography className={styles.title}>Cosmos SDK</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={stef} alt="STEF SPRINZ" className={styles.pfp} />
-            <Typography className={styles.name}>STEF SPRINZ</Typography>
-            <Typography className={styles.title}>Builders Program</Typography>
           </div>
         </div>
       </div>
