@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import BinaryBuilders from './binary-builders';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router} from "react-router-dom";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <BinaryBuilders />
+    <Router basename="/">
+      <BinaryBuilders />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
