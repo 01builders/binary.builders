@@ -14,9 +14,9 @@ const Header = (props) => {
         <Typography className={styles['header-title']} color="white" component="span">B1NARY BUILDERS</Typography>
       </Typography>
       <Typography className={styles['display-mobile']} component="div">
-        <a className={styles.inside} target='_blank' rel="noreferrer" href='mailto:contact@binary.builders' style={{ textDecoration: 'none' }}>
+        <a className={styles.inside} target='_self' rel="noreferrer" href='https://binary.builders/contact' style={{ textDecoration: 'none' }}>
           <Typography color="white" component="span">
-            REACH OUT
+            Contact Us
           </Typography>
         </a>
       </Typography>
