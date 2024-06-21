@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import BinaryBuilders from './binary-builders';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="/">
+    <HashRouter>
       <BinaryBuilders />
-    </Router>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
