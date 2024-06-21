@@ -1,7 +1,21 @@
 @import '../../css/utils';
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .display-mobile {
+    display: none;
+  }
+
+  .header-title-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .display-desktop {
+    display: none;
+  }
+
+  .header-title {
     display: none;
   }
 }
@@ -18,8 +32,23 @@
 
   @media (max-width: 600px) {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
   }
+
+  .header-contact {
+    text-decoration: none;
+  }
+
+  .header-icon {
+    height: 1em;
+    vertical-align: middle;
+  }
+
+  .header-title-mobile {
+    font-size: 1rem !important;
+    padding-right: 1em;
+  }
+
   
   .logo {
     display: flex;
@@ -36,7 +65,7 @@
       }
 
       .header-title {
-        font-size: 1.5em;
+        font-size: 1em;
       }
     }
 
