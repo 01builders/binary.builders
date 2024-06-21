@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Routes,} from "react-router-dom";
+import {HashRouter as Router, Route, Routes,} from "react-router-dom";
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
 
@@ -14,8 +14,8 @@ const BinaryBuilders = () => {
       <div className={styles.main}>
         <Header />
         <Routes>
-          <Route path='/contact' element={<ContactForm className={styles.form}/>}/>
           <Route path='*' element={<Landing/>}/>
+          <Route path='/contact' element={<ContactForm className={styles.form}/>}/>
         </Routes>
         <Footer />
       </div>
