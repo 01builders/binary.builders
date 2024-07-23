@@ -21,6 +21,7 @@ import alex from '../../assets/team/alex.png';
 import marc from '../../assets/team/marc.png';
 import sam from '../../assets/team/sam.jpeg';
 import frojdi from '../../assets/team/frojdi.jpeg';
+import anon from '../../assets/team/anon.png';
 import anviksha from '../../assets/team/anviksha.png';
 import durgham from '../../assets/team/durgham.png';
 
@@ -30,7 +31,7 @@ import { ReactComponent as Secure } from '../../assets/stake/secure.svg';
 
 import { ReactComponent as Cosmos } from '../../assets/networks/cosmos.svg';
 import Osmosis from '../../assets/osmosis-logo.png';
-import Evmos from '../../assets/evmos-logo.png';
+import Penumbra from '../../assets/penumbra-logo.png';
 import Celestia from '../../assets/celestia-logo.png';
 import Stride from '../../assets/stride-logo.png';
 import Quasar from '../../assets/quasar-logo.png';
@@ -219,8 +220,8 @@ const Landing = () => {
               </a>
             </div>
             <div className={styles['card-network']}>
-              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://wallet.keplr.app/chains/evmos?modal=validator&chain=evmos_9001-2&validator_address=evmosvaloper1vhuyfr9l7ytd0w9mtdx2033qrc0s6vjj8w37j6'>
-                <img src={Evmos} alt="evmos" className={styles.venture} width= '80%'/>
+              <a className={styles.icon} target='_blank' rel="noreferrer" href='https://penumbra.stakewith.binary.builders/app/#/staking'>
+                <img src={Penumbra} alt="penumbra" className={styles.venture} width= '80%'/>
               </a>
             </div>
             <div className={styles['card-network']}>
@@ -260,6 +261,11 @@ const Landing = () => {
         </div>
         <div className={styles.members}>
           <div className={styles.member}>
+            <img src={anon} alt="ALEXANDER PETERS" className={styles.pfp} />
+            <Typography className={styles.name}>ALEXANDER PETERS</Typography>
+            <Typography className={styles.title}>Cosmos SDK</Typography>
+          </div>
+          <div className={styles.member}>
             <img src={alex} alt="ALEX SANTOS" className={styles.pfp} />
             <Typography className={styles.name}>ALEX SANTOS</Typography>
             <Typography className={styles.title}>Builders Program</Typography>
@@ -282,6 +288,21 @@ const Landing = () => {
         </div>
         <div className={styles.members}>
           <div className={styles.member}>
+            <img src={frojdi} alt="FROJDI DYMYLJA" className={styles.pfp} />
+            <Typography className={styles.name}>FROJDI DYMYLJA</Typography>
+            <Typography className={styles.title}>Cosmos SDK</Typography>
+          </div>
+          <div className={styles.member}>
+            <img src={anon} alt="JOHN REYNOLDS" className={styles.pfp} />
+            <Typography className={styles.name}>JOHN REYNOLDS</Typography>
+            <Typography className={styles.title}>Cosmos SDK</Typography>
+          </div>
+          <div className={styles.member}>
+            <img src={anon} alt="JONATHAN GIMENO" className={styles.pfp} />
+            <Typography className={styles.name}>JONATHAN GIMENO</Typography>
+            <Typography className={styles.title}>Consulting</Typography>
+          </div>
+          <div className={styles.member}>
             <img src={julien} alt="JULIEN ROBERT" className={styles.pfp} />
             <Typography className={styles.name}>JULIEN ROBERT</Typography>
             <Typography className={styles.title}>Cosmos SDK</Typography>
@@ -291,6 +312,8 @@ const Landing = () => {
             <Typography className={styles.name}>LEN SEITTER</Typography>
             <Typography className={styles.title}>Builders Program</Typography>
           </div>
+        </div>
+        <div className={styles.members}>
           <div className={styles.member}>
             <img src={marc} alt="MARC HÖFFL" className={styles.pfp} />
             <Typography className={styles.name}>MARC HÖFFL</Typography>
@@ -301,8 +324,11 @@ const Landing = () => {
             <Typography className={styles.name}>MARKO BARICEVIC</Typography>
             <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
           </div>
-        </div>
-        <div className={styles.members}>
+          <div className={styles.member}>
+            <img src={anon} alt="MATTHEW KOCUBINSKI" className={styles.pfp} />
+            <Typography className={styles.name}>MATTHEW KOCUBINSKI</Typography>
+            <Typography className={styles.title}>Cosmos SDK</Typography>
+          </div>
           <div className={styles.member}>
             <img src={noam} alt="NOAM COHEN" className={styles.pfp} />
             <Typography className={styles.name}>NOAM COHEN</Typography>
@@ -313,6 +339,8 @@ const Landing = () => {
             <Typography className={styles.name}>ONUR AKPOLAT</Typography>
             <Typography className={styles.title}>Founder</Typography>
           </div>
+        </div>
+        <div className={styles.members}>
           <div className={styles.member}>
             <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
             <Typography className={styles.name}>RAFAEL AVILES</Typography>
@@ -322,6 +350,11 @@ const Landing = () => {
             <img src={sam} alt="SAM RICOTTA" className={styles.pfp} />
             <Typography className={styles.name}>SAM RICOTTA</Typography>
             <Typography className={styles.title}>Cosmos SDK</Typography>
+          </div>
+          <div className={styles.member}>
+            <img src={anon} alt="SEAN KING" className={styles.pfp} />
+            <Typography className={styles.name}>SEAN KING</Typography>
+            <Typography className={styles.title}>Consulting</Typography>
           </div>
         </div>
       </div>
