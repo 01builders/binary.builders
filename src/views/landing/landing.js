@@ -13,7 +13,7 @@ import venturesTitle from '../../assets/ventures-title.png';
 import onur from '../../assets/team/onur.jpg';
 import marko from '../../assets/team/marko.png';
 import facu from '../../assets/team/facu.jpeg';
-import julien from '../../assets/team/julien.png';
+import julien from '../../assets/team/julien.jpg';
 import noam from '../../assets/team/noam.jpeg';
 import len from '../../assets/team/len.png';
 import rafa from '../../assets/team/rafa.png';
