@@ -420,19 +420,6 @@ html {
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(123, 63, 228, 0.2),
                  0 0 0 1px rgba(123, 63, 228, 0.4);
-      animation: ctaPulse 2s infinite;
-
-      @keyframes ctaPulse {
-        0% {
-          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-        }
-        70% {
-          box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-        }
-        100% {
-          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-        }
-      }
 
       // Add intermediate breakpoint for CTA button
       @media (max-width: 1200px) {
@@ -459,8 +446,7 @@ html {
       &:hover {
         transform: translateY(-2px);
         border-color: var(--color-primary, #7B3FE4);
-        background: rgba(123, 63, 228, 0.15);
-        animation: none;
+        background: rgba(123, 63, 228, 0.55);
         box-shadow: 0 4px 20px rgba(123, 63, 228, 0.2),
                    0 0 0 1px rgba(123, 63, 228, 0.4);
 
