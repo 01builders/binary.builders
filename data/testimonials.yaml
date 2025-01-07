@@ -1,29 +1,23 @@
 - name: "Interchain"
-  role: "Core Development Partner"
   logo: "interchain"
   quote: "Binary Builders has been instrumental in advancing the Interchain ecosystem through their exceptional development work and innovative solutions."
 
 - name: "Celestia"
-  role: "Modular Blockchain Partner"
   logo: "celestia"
   quote: "Their expertise in modular blockchain development has significantly contributed to Celestia's growth and success in the ecosystem."
 
 - name: "Osmosis"
-  role: "DeFi Protocol Partner"
   logo: "osmosis"
   quote: "The technical prowess and dedication of Binary Builders have been crucial in enhancing Osmosis' DeFi capabilities and infrastructure."
 
 - name: "Berachain"
-  role: "Protocol Development Partner"
   logo: "berachain"
   quote: "Binary Builders' innovative approach to blockchain development has been invaluable to Berachain's ecosystem development and growth."
 
 - name: "Ethos"
-  role: "Infrastructure Partner"
   logo: "ethos"
   quote: "Working with Binary Builders has accelerated our development timeline and brought expert blockchain solutions to our platform."
 
 - name: "Nillion"
-  role: "Technology Partner"
   logo: "nillion"
   quote: "Binary Builders' deep understanding of cryptography and blockchain architecture has been essential to Nillion's development journey." 
