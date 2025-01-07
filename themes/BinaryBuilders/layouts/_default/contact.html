@@ -8,46 +8,38 @@
         {{ .Content }}
       </div>
 
-      <form class="contact-form" action="{{ .Site.Params.googleScriptUrl }}" method="POST">
-        <!-- Honeypot -->
-        <input type="text" name="_honey" style="display: none">
-        <!-- Disable Captcha -->
-        <input type="hidden" name="_captcha" value="false">
-        <!-- Success Page -->
-        <input type="hidden" name="_next" value="{{ .Site.BaseURL }}/thank-you">
-        <div class="form-row">
-          <div class="form-group">
-            <div class="form-field">
-              <input type="text" id="firstName" name="firstName" placeholder=" " required>
-              <label for="firstName">First Name<span class="required">*</span></label>
-              <div class="form-field-bar"></div>
-            </div>
-          </div>
+      <form class="contact-form">
+        <!-- Alert Messages -->
+        <div class="form-alert form-alert--success" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span>Message sent successfully!</span>
+        </div>
+        
+        <div class="form-alert form-alert--error" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <span>Something went wrong. Please try again.</span>
+        </div>
 
-          <div class="form-group">
-            <div class="form-field">
-              <input type="text" id="lastName" name="lastName" placeholder=" " required>
-              <label for="lastName">Last Name<span class="required">*</span></label>
-              <div class="form-field-bar"></div>
-            </div>
+        <div class="form-group">
+          <div class="form-field">
+            <input type="text" id="firstName" name="firstName" placeholder=" " required>
+            <label for="firstName">First Name<span class="required">*</span></label>
+            <div class="form-field-bar"></div>
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <div class="form-field">
-              <input type="email" id="companyEmail" name="companyEmail" placeholder=" " required>
-              <label for="companyEmail">Company Email<span class="required">*</span></label>
-              <div class="form-field-bar"></div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="form-field">
-              <input type="text" id="jobTitle" name="jobTitle" placeholder=" " required>
-              <label for="jobTitle">Job Title<span class="required">*</span></label>
-              <div class="form-field-bar"></div>
-            </div>
+        <div class="form-group">
+          <div class="form-field">
+            <input type="email" id="companyEmail" name="companyEmail" placeholder=" " required>
+            <label for="companyEmail">Company Email<span class="required">*</span></label>
+            <div class="form-field-bar"></div>
           </div>
         </div>
 
@@ -63,9 +55,19 @@
           </div>
         </div>
 
-        <button type="submit" class="submit-button">Submit</button>
+        <button type="submit" class="submit-button">
+          <span class="button-text">Submit</span>
+          <span class="button-loader" style="display: none;">
+            <svg class="spinner" viewBox="0 0 50 50">
+              <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+            </svg>
+          </span>
+        </button>
       </form>
     </div>
   </div>
 </section>
+
+{{ $notionForm := resources.Get "js/notion-form.js" | js.Build | minify | fingerprint }}
+<script src="{{ $notionForm.RelPermalink }}" defer></script>
 {{ end }} 

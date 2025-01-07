@@ -44,7 +44,9 @@ params:
   images: ["images/og-default.jpg"]
   contact:
     email: "contact@binary.builders"
-    formspreeID: "xyzzbvwr"  # Replace with your actual Formspree form ID from https://formspree.io
+    notion:
+      databaseId: "YOUR_NOTION_DATABASE_ID"
+      apiKey: "YOUR_NOTION_API_KEY"
   
   # Social Media
   social:

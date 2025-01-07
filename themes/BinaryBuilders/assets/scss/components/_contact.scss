@@ -115,14 +115,6 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   text-align: left;
   
-  // Add subtle hover effect
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  }
-
   .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -277,6 +269,71 @@
     &:active {
       transform: translateY(0);
     }
+
+    .button-loader {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      
+      .spinner {
+        animation: rotate 2s linear infinite;
+        width: 20px;
+        height: 20px;
+        
+        .path {
+          stroke: var(--color-white);
+          stroke-linecap: round;
+          animation: dash 1.5s ease-in-out infinite;
+        }
+      }
+    }
+  }
+}
+
+.form-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  
+  svg {
+    flex-shrink: 0;
+  }
+
+  &--success {
+    background: rgba(0, 200, 83, 0.1);
+    color: #00c853;
+    border: 1px solid rgba(0, 200, 83, 0.2);
+  }
+
+  &--error {
+    background: rgba(255, 23, 68, 0.1);
+    color: #ff1744;
+    border: 1px solid rgba(255, 23, 68, 0.2);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
   }
 }
 
