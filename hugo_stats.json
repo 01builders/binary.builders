@@ -295,7 +295,9 @@
       "taxonomy-terms",
       "team",
       "team-page",
+      "team__description",
       "team__grid",
+      "team__header",
       "team__member",
       "team__member-image",
       "team__member-info",
@@ -309,6 +311,7 @@
       "team__member-text",
       "team__social-icon",
       "team__social-link",
+      "team__title",
       "technical-resources",
       "term-card",
       "terms-grid",
@@ -327,6 +330,7 @@
       "testimonials__item",
       "testimonials__marquee",
       "testimonials__title",
+      "text-center",
       "timeline",
       "timeline-content",
       "timeline-item",
@@ -337,7 +341,8 @@
       "values-list",
       "values-nav",
       "values-section",
-      "view-all"
+      "view-all",
+      "who-we-are-section"
     ],
     "ids": [
       "1-agreement-to-terms",
