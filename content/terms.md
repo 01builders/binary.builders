@@ -6,7 +6,7 @@ layout: "legal"
 
 # Terms of Service
 
-Last updated: {{ now.Format "January 2, 2006" }}
+Last updated: January 16, 2024
 
 ## 1. Agreement to Terms
 

@@ -6,7 +6,7 @@ layout: "legal"
 
 # Privacy Policy
 
-Last updated: {{ now.Format "January 2, 2006" }}
+Last updated: January 16, 2024
 
 ## Introduction
 
