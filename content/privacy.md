@@ -6,52 +6,108 @@ layout: "legal"
 
 # Privacy Policy
 
-Last updated: January 16, 2024
+Last updated: January 5, 2025
 
-## Introduction
+## 1. Introduction
 
-Binary Builders AG ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website binary.builders.
+Binary Builders AG ("we," "our," or "us"), a company registered in Switzerland, is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website binary.builders and use our services.
 
-## Information We Collect
+## 2. Data Controller
 
-### Information You Provide
-- Contact information (name, email, company)
+<address>
+Binary Builders AG<br>
+Bergliweg 15<br>
+6300 Zug<br>
+Switzerland<br>
+Email: privacy@binary.builders
+</address>
+
+## 3. Information We Collect
+
+### 3.1 Information You Provide to Us
+- Contact information (name, email address, phone number, postal address)
+- Account credentials (username, password)
 - Communication preferences
 - Any other information you choose to provide
 
-### Information Automatically Collected
-- Log data (IP address, browser type, pages visited)
+### 3.2 Information Automatically Collected
+- IP address
+- Browser type
 - Device information
-- Cookies and similar technologies
+- Cookie data
+- Usage data
+- Log data
 
-## How We Use Your Information
+## 4. How We Use Your Information
 
-We use the information we collect to:
-- Provide and maintain our services
-- Respond to your inquiries and requests
-- Send you technical notices and updates
-- Improve our website and services
-- Comply with legal obligations
+We process your personal data for the following purposes:
+- To provide and maintain our services
+- To notify you about changes to our services
+- To provide customer support
+- To gather analysis or valuable information to improve our services
+- To detect, prevent, and address technical issues
+- To comply with legal obligations
 
-## Data Security
+## 5. Legal Basis for Processing
 
-We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.
+We process your personal data based on:
+- Your consent
+- Performance of a contract
+- Compliance with legal obligations
+- Our legitimate interests, provided they do not override your fundamental rights and freedoms
 
-## Your Rights
+## 6. Data Retention
 
-You have the right to:
+We retain personal data only for as long as necessary to fulfill the purposes for which it was collected and to comply with applicable laws. When we no longer need personal data, it will be securely deleted or anonymized.
+
+## 7. Data Sharing and Transfer
+
+### 7.1 Third-Party Service Providers
+We may share your information with trusted third-party service providers who assist us in operating our website, conducting our business, or serving our users.
+
+### 7.2 International Data Transfers
+When we transfer personal data outside Switzerland or the European Economic Area (EEA), we ensure adequate safeguards are in place in accordance with Swiss and EU data protection laws.
+
+## 8. Your Rights
+
+Under Swiss data protection law and GDPR, you have the right to:
 - Access your personal data
-- Correct inaccurate data
-- Request deletion of your data
-- Object to processing of your data
+- Rectify inaccurate personal data
+- Erase your personal data ("right to be forgotten")
+- Restrict processing of your personal data
 - Data portability
+- Object to processing
 - Withdraw consent
+- File a complaint with the Swiss Federal Data Protection and Information Commissioner (FDPIC)
 
-## Contact Us
+## 9. Cookies
 
-For any questions about this Privacy Policy, please contact us at:
+We use cookies and similar tracking technologies to track activity on our website and store certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.
 
-Binary Builders AG  
-Bergliweg 15  
-6300 Zug, Switzerland  
-Email: privacy@binary.builders 
+## 10. Data Security
+
+We implement appropriate technical and organizational measures to maintain the security of your personal data, including protection against unauthorized or unlawful processing and against accidental loss, destruction, or damage.
+
+## 11. Children's Privacy
+
+Our services are not intended for use by children under the age of 16. We do not knowingly collect personal data from children under 16.
+
+## 12. Changes to This Privacy Policy
+
+We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
+
+## 13. Contact Us
+
+For questions or concerns about this Privacy Policy or our privacy practices, please contact us at:
+
+<address>
+Binary Builders AG<br>
+Bergliweg 15<br>
+6300 Zug<br>
+Switzerland<br>
+Email: privacy@binary.builders
+</address>
+
+## 14. Governing Law
+
+This Privacy Policy is governed by Swiss law. Any disputes shall be subject to the exclusive jurisdiction of the courts of Zug, Switzerland. 
