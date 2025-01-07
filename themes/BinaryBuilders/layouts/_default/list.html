@@ -1,0 +1,36 @@
+{{ define "main" }}
+<main class="page-content blog-page">
+  <div class="page-header">
+    <div class="container">
+      <span class="page-category">INSIGHTS & UPDATES</span>
+      <h1 class="section-title">{{ .Title }}</h1>
+      <p class="section-description">{{ with .Description }}{{ . }}{{ else }}Monthly update on the latest developments, community contributions, and upcoming features in the Binary Builders ecosystem.{{ end }}</p>
+    </div>
+  </div>
+
+  <section class="blog-list">
+    <div class="container">
+      <div class="posts-grid">
+        {{ range .Pages }}
+        <a href="{{ .RelPermalink }}" class="post-card">
+          <article>
+            <header>
+              <h2>{{ .Title }}</h2>
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+            </header>
+            {{ with .Description }}
+            <div class="post-description">
+              <p>{{ . }}</p>
+            </div>
+            {{ end }}
+            <footer>
+              <span class="read-more">Read More</span>
+            </footer>
+          </article>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

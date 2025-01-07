@@ -1,0 +1,83 @@
+{{ $title := .Site.Title }}
+
+<section class="hero">
+  <div class="hero__circle hero__circle--1"></div>
+  <div class="hero__circle hero__circle--2 hidden"></div>
+  <div class="hero__number hero__number--1"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="hero__container">
+    <h1 class="hero__title">
+      <div class="hero__title-line">
+        <span class="hero__static-text hero__building">Building</span>
+        <div class="hero__dynamic-wrapper">
+          <div class="hero__dynamic-container" id="dynamicContainer"></div>
+        </div>
+      </div>
+    </h1>
+    <p class="hero__subtitle">
+      Binary Builders is pioneering innovation in crypto and beyond. Join us in shaping the future with expertise, passion, and collaboration.
+    </p>
+    <div class="hero__cta">
+      <a href="https://onur.chat" class="button button--primary" target="_blank" rel="noopener noreferrer">Talk to Us <span class="button__arrow">→</span></a>
+      <a href="#solutions" class="button button--secondary">What We Offer <span class="button__arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const texts = ['Networks', 'Protocols', 'Validators', 'Solutions'];
+  const container = document.getElementById('dynamicContainer');
+  let currentIndex = 0;
+  let isAnimating = false;
+
+  function createTextElement(text, isInitial = false) {
+    const element = document.createElement('div');
+    element.className = 'hero__dynamic-text';
+    element.textContent = text;
+    element.setAttribute('data-text', text);
+    if (!isInitial) {
+      element.style.transform = 'translateY(100%)';
+      element.style.opacity = '0';
+    }
+    return element;
+  }
+
+  function animate() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const currentElement = container.children[0];
+    const nextIndex = (currentIndex + 1) % texts.length;
+    const newElement = createTextElement(texts[nextIndex]);
+    
+    container.appendChild(newElement);
+
+    // Force a reflow
+    newElement.offsetHeight;
+
+    // Animate out current element
+    currentElement.style.animation = 'slideOutUp 0.5s ease-in-out forwards';
+    
+    // Animate in new element
+    newElement.style.animation = 'slideInUp 0.5s ease-in-out forwards';
+
+    setTimeout(() => {
+      container.removeChild(currentElement);
+      isAnimating = false;
+    }, 500);
+
+    currentIndex = nextIndex;
+  }
+
+  // Set initial text
+  container.appendChild(createTextElement(texts[0], true));
+  
+  // Start animation loop
+  setInterval(animate, 3000);
+});
+</script> 

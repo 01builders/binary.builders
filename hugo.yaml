@@ -1,0 +1,66 @@
+baseURL: "https://binary.builders"
+languageCode: en-us
+title: Binary Builders
+enableRobotsTXT: true
+enableGitInfo: true
+enableEmoji: true
+
+theme: BinaryBuilders
+
+build:
+  writeStats: true
+  noJSConfigInAssets: true
+
+imaging:
+  quality: 85
+  resampleFilter: Lanczos
+  anchor: Smart
+
+minify:
+  minifyOutput: true
+  tdewolff:
+    html:
+      keepWhitespace: false
+    css:
+      keepCSS2: false
+    js:
+      keepVarNames: false
+
+taxonomies:
+  category: categories
+  tag: tags
+
+markup:
+  highlight:
+    noClasses: false
+    lineNos: true
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  description: "Binary Builders - Building the Future of Blockchain Infrastructure"
+  author: "Özgür Celebi"
+  images: ["images/og-default.jpg"]
+  contact:
+    email: "contact@binary.builders"
+    notion:
+      databaseId: "YOUR_NOTION_DATABASE_ID"
+      apiKey: "YOUR_NOTION_API_KEY"
+  
+  # Social Media
+  social:
+    twitter: "binarybuilders"
+    github: "binarybuilders"
+    linkedin: "company/binary-builders"
+
+  # SEO
+  defaultKeywords: ["blockchain", "infrastructure", "binary builders", "web3"]
+  
+  # Analytics
+  googleAnalytics: ""  # Add your GA ID
+  
+  # Features
+  features:
+    search: true
+    newsletter: true

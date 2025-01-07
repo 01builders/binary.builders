@@ -1,0 +1,205 @@
+:root {
+  --testimonials-width: 100%;
+  --testimonials-elements-displayed: 3;
+  --testimonials-element-width: 400px;
+  --testimonials-gap: 32px;
+  --testimonials-animation-duration: 30s;
+
+  @media (max-width: 1200px) {
+    --testimonials-elements-displayed: 2;
+  }
+
+  @media (max-width: 768px) {
+    --testimonials-elements-displayed: 1;
+    --testimonials-element-width: 300px;
+    --testimonials-gap: 16px;
+  }
+}
+
+.testimonials {
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  background: var(--color-background);
+  overflow: hidden;
+
+  &__title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--color-text);
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 2.3rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  &__marquee {
+    width: var(--testimonials-width);
+    position: relative;
+    overflow: hidden;
+    padding: 5px 0;
+
+    &:before, &:after {
+      position: absolute;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+      pointer-events: none;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    &:before {
+      left: 0;
+      background: linear-gradient(90deg, var(--color-background), transparent);
+    }
+
+    &:after {
+      right: 0;
+      background: linear-gradient(270deg, var(--color-background), transparent);
+    }
+  }
+
+  &__content {
+    list-style: none;
+    display: flex;
+    gap: var(--testimonials-gap);
+    padding: 0 var(--testimonials-gap);
+    animation: testimonials-scroll var(--testimonials-animation-duration) linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__item {
+    flex: 0 0 var(--testimonials-element-width);
+    min-width: var(--testimonials-element-width);
+  }
+}
+
+.testimonial-card {
+  width: 100%;
+  background: var(--color-surface);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid var(--color-border-light);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color 0.3s ease;
+  
+  &:hover {
+    border-color: var(--color-primary);
+    
+    &:before {
+      opacity: 1;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out);
+    pointer-events: none;
+  }
+
+  pixel-hover {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out);
+  }
+
+  &:hover pixel-hover {
+    opacity: 1;
+  }
+
+  &__quote-icon,
+  &__quote,
+  &__author {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__quote-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--color-primary);
+    opacity: 0.8;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  &__quote {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-top: 2rem;
+    font-weight: 500;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--color-surface);
+    padding: 8px;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__name {
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  &__role {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+}
+
+@keyframes testimonials-scroll {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    transform: translateX(calc(-1 * var(--testimonials-element-width) * (var(--testimonials-elements)))); 
+  }
+} 

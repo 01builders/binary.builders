@@ -1,0 +1,107 @@
+{{ define "main" }}
+<main class="page-content about-page">
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="container">
+      <h1 class="section-title"><span class="gradient-text">{{ .Title }}</span></h1>
+      <p class="section-description">{{ .Description }}</p>
+    </div>
+  </div>
+
+  <!-- Mission Section -->
+  <section class="features about-mission">
+    <div class="features__cosmic-bg"></div>
+    <div class="container">
+      <div class="features__grid">
+        <div class="feature-card feature-card--mission">
+          <div class="feature-card__constellation"></div>
+          <div class="feature-card__content">
+            <div class="feature-card__icon">
+              <div class="feature-card__icon-orbit"></div>
+            </div>
+            <h3>Our Mission</h3>
+            <p>To advance blockchain technology through innovative development, reliable infrastructure, and collaborative ecosystem growth.</p>
+          </div>
+          <div class="feature-card__visual">
+            <div class="feature-card__particles"></div>
+          </div>
+        </div>
+
+        <div class="feature-card feature-card--vision">
+          <div class="feature-card__constellation"></div>
+          <div class="feature-card__content">
+            <div class="feature-card__icon">
+              <div class="feature-card__icon-pulse"></div>
+            </div>
+            <h3>Our Vision</h3>
+            <p>Creating a decentralized future where blockchain technology empowers and connects communities worldwide.</p>
+          </div>
+          <div class="feature-card__visual">
+            <div class="feature-card__particles"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="features about-values">
+    <div class="container">
+      <h2 class="features__title">
+        <span class="features__title-glow">Our Values</span>
+      </h2>
+      <div class="features__grid">
+        <div class="feature-card">
+          <div class="feature-card__constellation"></div>
+          <div class="feature-card__content">
+            <div class="feature-card__icon">
+              <div class="feature-card__icon-build"></div>
+            </div>
+            <h3>Innovation</h3>
+            <p>Pushing boundaries and exploring new possibilities in blockchain technology.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__constellation"></div>
+          <div class="feature-card__content">
+            <div class="feature-card__icon">
+              <div class="feature-card__icon-orbit"></div>
+            </div>
+            <h3>Reliability</h3>
+            <p>Building trust through consistent, high-quality infrastructure and services.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__constellation"></div>
+          <div class="feature-card__content">
+            <div class="feature-card__icon">
+              <div class="feature-card__icon-pulse"></div>
+            </div>
+            <h3>Collaboration</h3>
+            <p>Growing together with our partners and the wider blockchain community.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section Link -->
+  <section class="about-team-link">
+    <div class="container">
+      <div class="feature-card feature-card--team">
+        <div class="feature-card__constellation"></div>
+        <div class="feature-card__content">
+          <h3>Meet Our Team</h3>
+          <p>Get to know the passionate individuals building the future of blockchain technology.</p>
+          <a href="/team" class="feature-card__link">
+            <span>View Team</span>
+            <span class="feature-card__link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }} 

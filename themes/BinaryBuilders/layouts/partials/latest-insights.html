@@ -1,0 +1,44 @@
+{{ $publishedPages := where .Site.RegularPages "Params.draft" "!=" true }}
+{{ $highlightedPosts := where $publishedPages "Params.highlighted" true }}
+{{ $sortedHighlightedPosts := first 3 (sort $highlightedPosts "Date" "desc") }}
+
+<section class="latest-insights">
+  <div class="container">
+    <div class="section-header">
+      <h2><span class="gradient-text">Latest Insights</span></h2>
+      <p class="section-description">Stay updated with our technical blog posts, development updates, and ecosystem news</p>
+    </div>
+
+    <!-- Highlighted Posts -->
+    {{ if $highlightedPosts }}
+    <div class="highlighted-posts">
+      {{ range $sortedHighlightedPosts }}
+      <article class="highlighted-post">
+        <a href="{{ .RelPermalink }}" class="post-link">
+          {{ with .Params.image }}
+          <div class="post-image">
+            <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+          </div>
+          {{ end }}
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+              {{ with .Params.categories }}
+              <span class="post-category">{{- range $index, $category := . -}}{{- if gt $index 0 }}, {{ end -}}{{ $category }}{{- end -}}</span>
+              {{ end }}
+            </div>
+            <h3 class="post-title">{{ .Title }}</h3>
+            <p class="post-excerpt">{{ .Params.description | truncate 120 }}</p>
+            <span class="read-more">Read More →</span>
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="view-all">
+      <a href="/blog" class="btn btn-secondary">View All Posts</a>
+    </div>
+  </div>
+</section> 

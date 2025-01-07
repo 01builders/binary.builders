@@ -1,0 +1,26 @@
+{{ define "main" }}
+<article class="page">
+  <div class="container">
+    <header class="page-header">
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}
+        <div class="page-description">
+          {{ . | markdownify }}
+        </div>
+      {{ end }}
+    </header>
+
+    <div class="page-content">
+      {{ .Content }}
+    </div>
+
+    {{ if .Params.lastmod }}
+    <footer class="page-footer">
+      <p class="page-lastmod">
+        Last updated: {{ .Lastmod.Format "January 2, 2006" }}
+      </p>
+    </footer>
+    {{ end }}
+  </div>
+</article>
+{{ end }}

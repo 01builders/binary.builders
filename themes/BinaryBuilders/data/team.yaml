@@ -1,0 +1,39 @@
+team:
+  title: "Our Team"
+  description: "Meet the talented individuals behind our success"
+  members:
+    - name: "Jane Smith"
+      role: "Lead Developer"
+      image: "placeholder.jpg"
+      github: "janesmith"
+      linkedin: "jane-smith"
+      
+    - name: "John Doe"
+      role: "Product Manager"
+      image: "placeholder.jpg"
+      linkedin: "john-doe"
+      twitter: "johndoe"
+      
+    - name: "Sarah Johnson"
+      role: "UX Designer"
+      image: "placeholder.jpg"
+      github: "sarahj"
+      linkedin: "sarah-johnson"
+      
+    - name: "Mike Brown"
+      role: "Backend Engineer"
+      image: "placeholder.jpg"
+      github: "mikebrown"
+      twitter: "mikebrown_dev"
+      
+    - name: "Emily Chen"
+      role: "Frontend Developer"
+      image: "placeholder.jpg"
+      github: "emilychen"
+      linkedin: "emily-chen"
+      
+    - name: "David Wilson"
+      role: "DevOps Engineer"
+      image: "placeholder.jpg"
+      github: "davidw"
+      linkedin: "david-wilson" 

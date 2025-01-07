@@ -1,0 +1,15 @@
+{{- $color := .color | default "blue" -}}
+{{- $gap := .gap | default "5" -}}
+{{- $speed := .speed | default "35" -}}
+{{- $class := .class | default "" -}}
+
+<div class="hover-card {{ $class }}" data-hover-color="{{ $color }}">
+  <pixel-hover 
+    data-colors="{{ .colors | default (printf "%s-100,%s-300,%s-500" $color $color $color) }}"
+    data-gap="{{ $gap }}"
+    data-speed="{{ $speed }}">
+  </pixel-hover>
+  <div class="hover-card__content">
+    {{ .content }}
+  </div>
+</div> 
