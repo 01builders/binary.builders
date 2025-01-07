@@ -2,6 +2,7 @@
 import { initNavigation } from './components/navigation.js';
 import { initSearch } from './components/search.js';
 import { initNewsletter } from './components/newsletter.js';
+import './components/pixel-hover.js';
 
 // Site configuration from Hugo
 const siteConfig = {
