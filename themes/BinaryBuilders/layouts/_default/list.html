@@ -8,26 +8,30 @@
     </div>
   </div>
 
-  <section class="blog-list">
+  <section class="latest-insights latest-insights--no-shimmer">
     <div class="container">
-      <div class="posts-grid">
+      <div class="highlighted-posts">
         {{ range .Pages }}
-        <a href="{{ .RelPermalink }}" class="post-card">
-          <article>
-            <header>
-              <h2>{{ .Title }}</h2>
-              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
-            </header>
-            {{ with .Description }}
-            <div class="post-description">
-              <p>{{ . }}</p>
+        <article class="highlighted-post">
+          <a href="{{ .RelPermalink }}" class="post-link">
+            {{ with .Params.image }}
+            <div class="post-image">
+              <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
             </div>
             {{ end }}
-            <footer>
-              <span class="read-more">Read More</span>
-            </footer>
-          </article>
-        </a>
+            <div class="post-content">
+              <div class="post-meta">
+                <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                {{ with .Params.categories }}
+                <span class="post-category">{{- range $index, $category := . -}}{{- if gt $index 0 }}, {{ end -}}{{ $category }}{{- end -}}</span>
+                {{ end }}
+              </div>
+              <h3 class="post-title">{{ .Title }}</h3>
+              <p class="post-excerpt">{{ .Description | truncate 120 }}</p>
+              <span class="read-more">Read More →</span>
+            </div>
+          </a>
+        </article>
         {{ end }}
       </div>
     </div>

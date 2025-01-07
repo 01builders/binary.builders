@@ -21,6 +21,20 @@
     animation: shimmer 6s infinite linear;
   }
 
+  &--no-shimmer {
+    &::before {
+      display: none;
+    }
+
+    .highlighted-posts::before {
+      display: none;
+    }
+
+    .section-header::after {
+      display: none;
+    }
+  }
+
   @keyframes shimmer {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
