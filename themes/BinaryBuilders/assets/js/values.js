@@ -1,23 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
   const valueItems = document.querySelectorAll('.value-item');
   const valueContents = document.querySelectorAll('.value-content');
 
   valueItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const value = item.dataset.value;
-      
-      // Update active states for nav items
-      valueItems.forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
+    item.addEventListener('click', function() {
+      const value = this.getAttribute('data-value');
 
-      // Update active states for content
-      valueContents.forEach(content => {
-        if (content.dataset.value === value) {
-          content.classList.add('active');
-        } else {
-          content.classList.remove('active');
-        }
-      });
+      // Remove active class from all items and contents
+      valueItems.forEach(item => item.classList.remove('active'));
+      valueContents.forEach(content => content.classList.remove('active'));
+
+      // Add active class to clicked item and corresponding content
+      this.classList.add('active');
+      document.querySelector(`.value-content[data-value="${value}"]`).classList.add('active');
     });
   });
 }); 
