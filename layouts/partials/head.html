@@ -6,6 +6,6 @@
     <title>{{ $title }}</title>
     <!-- Lottie Player from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKrUYmJZaQiJTM/bwAibtqKnL5mWyOZdtTvKgBA8NPKnYtiXdpzCkg+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.Minify }}
+    {{ $style := resources.Get "scss/main.scss" | css.Sass | resources.Minify }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 </head> 

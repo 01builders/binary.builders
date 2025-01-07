@@ -38,7 +38,7 @@
 <link rel="preload" href="{{ (resources.Get "fonts/inter-var.woff2").RelPermalink }}" as="font" type="font/woff2" crossorigin>
 
 <!-- Styles -->
-{{ $style := resources.Get "scss/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+{{ $style := resources.Get "scss/main.scss" | css.Sass | resources.PostCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
 
 <!-- Enforce Dark Theme -->
