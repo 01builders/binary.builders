@@ -1,3 +1,45 @@
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes particle-drift-1 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-20px, 20px); }
+  50% { transform: translate(-10px, -10px); }
+  75% { transform: translate(20px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes particle-drift-2 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(20px, -20px); }
+  50% { transform: translate(-10px, -30px); }
+  75% { transform: translate(-20px, 10px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes particle-drift-3 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-15px, -25px); }
+  50% { transform: translate(25px, -15px); }
+  75% { transform: translate(15px, 25px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes constellation {
+  0% { opacity: 0.25; }
+  50% { opacity: 0.15; }
+  100% { opacity: 0.25; }
+}
+
 // Add keyframes for background animation
 @keyframes gradientAnimation {
   0% {
@@ -20,19 +62,35 @@
   }
 }
 
+// Add keyframes from hero section
+@keyframes float-circle-1 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-20px, 20px); }
+  50% { transform: translate(-10px, -10px); }
+  75% { transform: translate(20px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes float-circle-2 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(20px, -20px); }
+  50% { transform: translate(-10px, -30px); }
+  75% { transform: translate(-20px, 10px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.15; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+}
+
 .section--contact {
   min-height: calc(100vh - 80px);
   padding-top: 80px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(-45deg, 
-    rgba(0, 122, 255, 0.15),
-    rgba(123, 77, 255, 0.15),
-    rgba(0, 122, 255, 0.1),
-    rgba(123, 77, 255, 0.1)
-  );
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
+  background-color: #0A041D;
+  color: var(--color-text);
 
   &::before {
     content: '';
@@ -41,34 +99,127 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: floatGrid 20s linear infinite;
-    pointer-events: none;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+    opacity: 0.25;
+    animation: constellation 4s ease infinite;
+    z-index: 0;
   }
 
   &::after {
     content: '';
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: 
-      radial-gradient(
-        circle at 50% 50%,
-        transparent 0%,
-        var(--color-background) 100%
-      ),
-      linear-gradient(
-        to bottom,
-        transparent 0%,
-        transparent 70%,
-        var(--color-background) 100%
-      );
+    height: 150px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      var(--color-background) 95%
+    );
+    z-index: 2;
     pointer-events: none;
+  }
+
+  .contact-circle {
+    position: absolute;
+    pointer-events: none;
+    background: rgba(10, 4, 29, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    box-shadow: 
+      inset 0 0 50px rgba(255, 255, 255, 0.1),
+      0 0 30px rgba(88, 86, 214, 0.2);
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 107, 107, 0.7) 0%,
+        rgba(78, 205, 196, 0.7) 25%,
+        rgba(150, 201, 61, 0.7) 50%,
+        rgba(255, 107, 107, 0.7) 75%
+      );
+      background-size: 300% 300%;
+      mask: linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                   linear-gradient(#fff 0 0);
+      mask-composite: xor;
+      -webkit-mask-composite: xor;
+      padding: 2px;
+      animation: gradient-shift 10s linear infinite;
+    }
+
+    &--1 {
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      right: -50px;
+      animation: float-circle-1 20s ease-in-out infinite;
+    }
+
+    &--2 {
+      width: 250px;
+      height: 250px;
+      bottom: -80px;
+      left: -40px;
+      animation: float-circle-2 25s ease-in-out infinite;
+    }
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: currentColor;
+    pointer-events: none;
+    opacity: 0.15;
+    z-index: 1;
+
+    &:nth-child(1) {
+      width: 8px;
+      height: 8px;
+      top: 20%;
+      right: 25%;
+      animation: particle-drift-1 12s ease-in-out infinite, pulse 8s ease-in-out infinite;
+    }
+
+    &:nth-child(2) {
+      width: 12px;
+      height: 12px;
+      top: 50%;
+      right: 40%;
+      animation: particle-drift-2 15s ease-in-out infinite, pulse 10s ease-in-out infinite;
+    }
+
+    &:nth-child(3) {
+      width: 6px;
+      height: 6px;
+      top: 70%;
+      right: 30%;
+      animation: particle-drift-3 18s ease-in-out infinite, pulse 12s ease-in-out infinite;
+    }
+
+    &:nth-child(4) {
+      width: 10px;
+      height: 10px;
+      top: 30%;
+      left: 25%;
+      animation: particle-drift-2 20s ease-in-out infinite, pulse 9s ease-in-out infinite;
+    }
+
+    &:nth-child(5) {
+      width: 14px;
+      height: 14px;
+      bottom: 20%;
+      left: 35%;
+      animation: particle-drift-1 16s ease-in-out infinite, pulse 11s ease-in-out infinite;
+    }
   }
 }
 
