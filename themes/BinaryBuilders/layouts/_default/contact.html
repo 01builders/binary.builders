@@ -8,7 +8,13 @@
         {{ .Content }}
       </div>
 
-      <form class="contact-form" action="https://formspree.io/f/{{ .Site.Params.formspreeID }}" method="POST">
+      <form class="contact-form" action="{{ .Site.Params.googleScriptUrl }}" method="POST">
+        <!-- Honeypot -->
+        <input type="text" name="_honey" style="display: none">
+        <!-- Disable Captcha -->
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Success Page -->
+        <input type="hidden" name="_next" value="{{ .Site.BaseURL }}/thank-you">
         <div class="form-row">
           <div class="form-group">
             <div class="form-field">

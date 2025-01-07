@@ -1,0 +1,99 @@
+{{ define "main" }}
+<main class="page-content service-page">
+  <!-- Page Header -->
+  <div class="about-header">
+    <div class="container">
+      <h1 class="about-title"><span class="gradient-text">{{ .Title }}</span></h1>
+      <p class="about-description">{{ .Description }}</p>
+    </div>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="hero-image-wrapper">
+    <div class="container desktop-only">
+      <div class="about-hero-image">
+        {{ with .Params.hero_image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+        {{ end }}
+      </div>
+    </div>
+    <div class="mobile-only about-hero-image">
+      {{ with .Params.hero_image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" />
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Overview Section -->
+  <div class="container">
+    <div class="about-content">
+      {{ .Content }}
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="expertise-section">
+    <div class="container">
+      <h2>Key Features</h2>
+      <div class="expertise-grid">
+        {{ range .Params.features }}
+        <div class="expertise-card">
+          <div class="expertise-card__icon">{{ .icon }}</div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="values-section">
+    <div class="container">
+      <h2>Benefits</h2>
+      <div class="values-list">
+        <div class="values-nav">
+          {{ range $index, $benefit := .Params.benefits }}
+          <button class="value-item{{ if eq $index 0 }} active{{ end }}" data-value="{{ $index }}">
+            <div class="value-icon">{{ .icon }}</div>
+            <h3>{{ .title }}</h3>
+          </button>
+          {{ end }}
+        </div>
+        <div class="values-content">
+          {{ range $index, $benefit := .Params.benefits }}
+          <div class="value-content{{ if eq $index 0 }} active{{ end }}" data-value="{{ $index }}">
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="join-section">
+    <div class="container">
+      <h2>Get Started</h2>
+      <p class="join-intro">{{ .Params.cta_description }}</p>
+      <div class="join-buttons">
+        {{ with .Params.primary_cta }}
+        <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener">
+          {{ .text }} <span class="button__arrow">→</span>
+        </a>
+        {{ end }}
+        {{ with .Params.secondary_cta }}
+        <a href="{{ .url }}" class="button button--secondary">
+          {{ .text }} <span class="button__arrow">→</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Add values.js script for benefits section -->
+{{ $values := resources.Get "js/values.js" | js.Build }}
+<script src="{{ $values.RelPermalink }}"></script>
+{{ end }} 

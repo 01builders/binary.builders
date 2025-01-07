@@ -44,20 +44,27 @@
 - Use modern APIs (Fetch, Promises, async/await)
 
 ## Project Structure
-/assets
-  /scss        # Global styles, components, utilities
-  /js          # JavaScript modules and functions
-  /images      # Optimized images and SVGs
+/themes/BinaryBuilders    # Our custom Hugo theme
+  /assets
+    /scss      # Global styles, components, utilities
+    /js        # JavaScript modules and functions
+    /images    # Optimized images and SVGs
+  /layouts
+    /_default  # Base templates
+    /partials  # Reusable components
+  /archetypes  # Content templates
+  /i18n        # Internationalization files
+  /static      # Theme-specific static files
+  theme.toml   # Theme metadata
 
-/content
+/content       # Site content
   /posts       # Blog posts and articles
   /pages       # Static page content
 
-/layouts
-  /_default    # Base templates
-  /partials    # Reusable components
-  
-/static        # Direct-served files
+/static        # Site-wide static files
+/data         # Site-wide data files
+/i18n         # Site-wide translations
+/public       # Generated site
 
 ## Theme Configuration
 Colors:
