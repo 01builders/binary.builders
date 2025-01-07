@@ -1,0 +1,132 @@
+.metrics {
+  background: var(--color-background);
+  color: var(--color-white);
+  padding: 120px 24px 60px;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    justify-content: space-between;
+  }
+
+  &__title {
+    text-align: left;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--color-text);
+
+    @media (max-width: 768px) {
+      font-size: 2.3rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__stats {
+    flex: 0 0 500px;
+    text-align: right;
+  }
+
+  &__stat {
+    margin-bottom: 32px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(1) .metrics__value {
+      color: var(--color-coral);
+      background: var(--gradient-coral);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:nth-child(2) .metrics__value {
+      color: var(--color-lime);
+      background: var(--gradient-lime);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:nth-child(3) .metrics__value {
+      color: var(--color-turquoise);
+      background: var(--gradient-turquoise);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &:nth-child(4) .metrics__value {
+      color: var(--color-purple);
+      background: var(--gradient-purple);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__value {
+    font-size: 96px;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 8px;
+
+    @media (max-width: 768px) {
+      font-size: 64px;
+    }
+  }
+
+  &__label {
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    font-family: monospace;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__container {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    &__title {
+      flex: none;
+    }
+
+    &__stats {
+      flex: none;
+      text-align: left;
+    }
+  }
+}
+
+.metric-card {
+  &--turquoise {
+    background: var(--gradient-turquoise);
+  }
+  
+  &--coral {
+    background: var(--gradient-coral);
+  }
+  
+  &--lime {
+    background: var(--gradient-lime);
+  }
+  
+  &--purple {
+    background: var(--gradient-stats-purple);
+  }
+} 

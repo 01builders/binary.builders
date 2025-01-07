@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on Binary Builders</title><link>http://localhost:1313/</link><description>Recent content in Home on Binary Builders</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown Showcase: A Complete Style Guide</title><link>http://localhost:1313/blog/markdown-showcase/</link><pubDate>Sat, 16 Dec 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/markdown-showcase/</guid><description>&lt;h1 id="markdown-showcase-a-complete-style-guide">Markdown Showcase: A Complete Style Guide&lt;/h1>
+&lt;p>Welcome to our comprehensive markdown showcase! This guide demonstrates every possible markdown feature you might need in your content creation journey.&lt;/p>
+&lt;h2 id="text-formatting-essentials">Text Formatting Essentials&lt;/h2>
+&lt;p>Let&amp;rsquo;s start with the basics of text formatting:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bold text&lt;/strong> is created with double asterisks&lt;/li>
+&lt;li>&lt;em>Italic text&lt;/em> uses single asterisks&lt;/li>
+&lt;li>&lt;em>&lt;strong>Bold and italic&lt;/strong>&lt;/em> combines both&lt;/li>
+&lt;li>&lt;del>Strikethrough&lt;/del> uses double tildes&lt;/li>
+&lt;/ul>
+&lt;h2 id="headings-hierarchy">Headings Hierarchy&lt;/h2>
+&lt;h3 id="third-level-heading">Third-level Heading&lt;/h3>
+&lt;h4 id="fourth-level-heading">Fourth-level Heading&lt;/h4>
+&lt;h5 id="fifth-level-heading">Fifth-level Heading&lt;/h5>
+&lt;h6 id="sixth-level-heading">Sixth-level Heading&lt;/h6>
+&lt;h2 id="lists-and-nesting">Lists and Nesting&lt;/h2>
+&lt;h3 id="unordered-lists">Unordered Lists&lt;/h3>
+&lt;ul>
+&lt;li>First item&lt;/li>
+&lt;li>Second item
+&lt;ul>
+&lt;li>Nested item 1&lt;/li>
+&lt;li>Nested item 2
+&lt;ul>
+&lt;li>Deep nested item&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ul>
+&lt;h3 id="ordered-lists">Ordered Lists&lt;/h3>
+&lt;ol>
+&lt;li>First step&lt;/li>
+&lt;li>Second step
+&lt;ol>
+&lt;li>Sub-step one&lt;/li>
+&lt;li>Sub-step two&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Third step&lt;/li>
+&lt;/ol>
+&lt;h3 id="task-lists">Task Lists&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Write the blog post&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add formatting examples&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Review and publish&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Share on social media&lt;/li>
+&lt;/ul>
+&lt;h2 id="blockquotes-and-nesting">Blockquotes and Nesting&lt;/h2>
+&lt;blockquote>
+&lt;p>This is a standard blockquote&lt;/p></description></item><item><title>Binary Builders Ecosystem Update - December 2023</title><link>http://localhost:1313/blog/2023/ecosystem-update-december/</link><pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/2023/ecosystem-update-december/</guid><description>&lt;p>Stay up to date with the latest developments in the Binary Builders ecosystem. This month brings exciting updates and community contributions.&lt;/p>
+&lt;h2 id="new-features">New Features&lt;/h2>
+&lt;ul>
+&lt;li>Enhanced CI/CD pipelines&lt;/li>
+&lt;li>Improved documentation&lt;/li>
+&lt;li>New community plugins&lt;/li>
+&lt;/ul>
+&lt;h2 id="community-highlights">Community Highlights&lt;/h2>
+&lt;p>Thank you to all our contributors who helped improve Binary Builders this month.&lt;/p>
+&lt;h2 id="coming-soon">Coming Soon&lt;/h2>
+&lt;p>Here&amp;rsquo;s what to look forward to in the upcoming releases:&lt;/p>
+&lt;ol>
+&lt;li>Advanced monitoring tools&lt;/li>
+&lt;li>Extended API capabilities&lt;/li>
+&lt;li>New integration options&lt;/li>
+&lt;/ol>
+&lt;p>Join our community channels to stay connected and contribute to the ecosystem.&lt;/p></description></item><item><title>Advanced Deployment Strategies with Binary Builders</title><link>http://localhost:1313/blog/2023/advanced-deployment-strategies/</link><pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/2023/advanced-deployment-strategies/</guid><description>&lt;p>Effective deployment strategies are crucial for maintaining high availability and reliability. In this post, we&amp;rsquo;ll explore advanced deployment patterns supported by Binary Builders.&lt;/p>
+&lt;h2 id="deployment-patterns">Deployment Patterns&lt;/h2>
+&lt;h3 id="blue-green-deployments">Blue-Green Deployments&lt;/h3>
+&lt;p>Blue-green deployment is a technique that reduces downtime and risk by running two identical production environments called Blue and Green.&lt;/p>
+&lt;h3 id="canary-releases">Canary Releases&lt;/h3>
+&lt;p>Canary deployments involve rolling out changes to a small subset of users before deploying to the entire infrastructure.&lt;/p>
+&lt;h3 id="feature-flags">Feature Flags&lt;/h3>
+&lt;p>Learn how to use feature flags to safely deploy and test new features in production.&lt;/p></description></item><item><title>Getting Started with Binary Builders: A Developer's Guide</title><link>http://localhost:1313/blog/2023/getting-started-with-binary-builders/</link><pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/2023/getting-started-with-binary-builders/</guid><description>&lt;p>Binary Builders provides developers with powerful tools and frameworks to build better software faster. In this guide, we&amp;rsquo;ll walk through the essential features and best practices to help you get started.&lt;/p>
+&lt;h2 id="key-features">Key Features&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Automated Workflows&lt;/strong>: Streamline your development process&lt;/li>
+&lt;li>&lt;strong>Code Quality Tools&lt;/strong>: Maintain high standards&lt;/li>
+&lt;li>&lt;strong>Performance Optimization&lt;/strong>: Build faster applications&lt;/li>
+&lt;/ol>
+&lt;h2 id="getting-started">Getting Started&lt;/h2>
+&lt;p>To begin using Binary Builders, follow these simple steps:&lt;/p>
+&lt;ol>
+&lt;li>Install the core package&lt;/li>
+&lt;li>Configure your project&lt;/li>
+&lt;li>Start building&lt;/li>
+&lt;/ol>
+&lt;h2 id="best-practices">Best Practices&lt;/h2>
+&lt;p>Here are some recommended practices when working with Binary Builders:&lt;/p></description></item><item><title>Post 3</title><link>http://localhost:1313/posts/post-3/</link><pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate><guid>http://localhost:1313/posts/post-3/</guid><description>&lt;p>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.&lt;/p></description></item><item><title>Post 2</title><link>http://localhost:1313/posts/post-2/</link><pubDate>Wed, 15 Feb 2023 10:00:00 -0700</pubDate><guid>http://localhost:1313/posts/post-2/</guid><description>&lt;p>Anim eiusmod irure incididunt sint cupidatat. Incididunt irure irure irure nisi ipsum do ut quis fugiat consectetur proident cupidatat incididunt cillum. Dolore voluptate occaecat qui mollit laborum ullamco et. Ipsum laboris officia anim laboris culpa eiusmod ex magna ex cupidatat anim ipsum aute. Mollit aliquip occaecat qui sunt velit ut cupidatat reprehenderit enim sunt laborum. Velit veniam in officia nulla adipisicing ut duis officia.&lt;/p>
+&lt;p>Exercitation voluptate irure in irure tempor mollit Lorem nostrud ad officia. Velit id fugiat occaecat do tempor. Sit officia Lorem aliquip eu deserunt consectetur. Aute proident deserunt in nulla aliquip dolore ipsum Lorem ut cupidatat consectetur sit sint laborum. Esse cupidatat sit sint sunt tempor exercitation deserunt. Labore dolor duis laborum est do nisi ut veniam dolor et nostrud nostrud.&lt;/p></description></item><item><title>Post 1</title><link>http://localhost:1313/posts/post-1/</link><pubDate>Sun, 15 Jan 2023 09:00:00 -0700</pubDate><guid>http://localhost:1313/posts/post-1/</guid><description>&lt;p>Tempor proident minim aliquip reprehenderit dolor et ad anim Lorem duis sint eiusmod. Labore ut ea duis dolor. Incididunt consectetur proident qui occaecat incididunt do nisi Lorem. Tempor do laborum elit laboris excepteur eiusmod do. Eiusmod nisi excepteur ut amet pariatur adipisicing Lorem.&lt;/p>
+&lt;p>Occaecat nulla excepteur dolore excepteur duis eiusmod ullamco officia anim in voluptate ea occaecat officia. Cillum sint esse velit ea officia minim fugiat. Elit ea esse id aliquip pariatur cupidatat id duis minim incididunt ea ea. Anim ut duis sunt nisi. Culpa cillum sit voluptate voluptate eiusmod dolor. Enim nisi Lorem ipsum irure est excepteur voluptate eu in enim nisi. Nostrud ipsum Lorem anim sint labore consequat do.&lt;/p></description></item><item><title>About Binary Builders</title><link>http://localhost:1313/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/about/</guid><description>&lt;h2 id="who-we-are">Who We Are&lt;/h2>
+&lt;p>Binary Builders is a pioneering blockchain infrastructure company dedicated to advancing the decentralized technology landscape. Founded by a team of experienced developers and blockchain enthusiasts, we combine technical expertise with a passion for innovation to create robust solutions that power the future of Web3.&lt;/p>
+&lt;p>Our commitment to excellence and deep understanding of blockchain technology has established us as a trusted partner in the ecosystem. We work tirelessly to develop reliable infrastructure, create powerful developer tools, and provide expert guidance to projects building on blockchain technology.&lt;/p></description></item><item><title>Binary Builders Blockchain Summit</title><link>http://localhost:1313/events/blockchain-summit-2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/events/blockchain-summit-2025/</guid><description>&lt;p>The Binary Builders Blockchain Summit is our flagship conference bringing together the brightest minds in blockchain technology. Join us for keynote speeches, technical workshops, and networking opportunities with industry leaders and innovators shaping the future of decentralized systems.&lt;/p></description></item><item><title>Contact Us</title><link>http://localhost:1313/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/contact/</guid><description>&lt;p>Have a question or want to collaborate? We&amp;rsquo;ll get back to you within 24-48 hours.&lt;/p></description></item><item><title>Cosmos Ecosystem Hackathon</title><link>http://localhost:1313/events/cosmos-hackathon-2025/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/events/cosmos-hackathon-2025/</guid><description>&lt;p>Join the Binary Builders team for an intensive three-day hackathon focused on building the next generation of applications in the Cosmos ecosystem. Learn about the latest SDK features, Rollkit technology, and get hands-on mentorship from our experienced developers.&lt;/p></description></item><item><title>Cosmos SDK Developer Conference</title><link>http://localhost:1313/events/sdk-conference-2023/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/events/sdk-conference-2023/</guid><description>&lt;p>The Cosmos SDK Developer Conference brought together core developers and blockchain engineers to explore the latest advancements in the Cosmos SDK. The event featured technical workshops, protocol discussions, and presentations on upcoming features and improvements to the ecosystem.&lt;/p></description></item><item><title>Hover Card Test</title><link>http://localhost:1313/test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/test/</guid><description/></item><item><title>Our Team</title><link>http://localhost:1313/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/team/</guid><description/></item><item><title>Privacy Policy</title><link>http://localhost:1313/privacy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/privacy/</guid><description>&lt;h1 id="privacy-policy">Privacy Policy&lt;/h1>
+&lt;p>Last updated: {{ now.Format &amp;ldquo;January 2, 2006&amp;rdquo; }}&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Binary Builders AG (&amp;ldquo;we&amp;rdquo;, &amp;ldquo;our&amp;rdquo;, or &amp;ldquo;us&amp;rdquo;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website binary.builders.&lt;/p>
+&lt;h2 id="information-we-collect">Information We Collect&lt;/h2>
+&lt;h3 id="information-you-provide">Information You Provide&lt;/h3>
+&lt;ul>
+&lt;li>Contact information (name, email, company)&lt;/li>
+&lt;li>Communication preferences&lt;/li>
+&lt;li>Any other information you choose to provide&lt;/li>
+&lt;/ul>
+&lt;h3 id="information-automatically-collected">Information Automatically Collected&lt;/h3>
+&lt;ul>
+&lt;li>Log data (IP address, browser type, pages visited)&lt;/li>
+&lt;li>Device information&lt;/li>
+&lt;li>Cookies and similar technologies&lt;/li>
+&lt;/ul>
+&lt;h2 id="how-we-use-your-information">How We Use Your Information&lt;/h2>
+&lt;p>We use the information we collect to:&lt;/p></description></item><item><title>Resources</title><link>http://localhost:1313/resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/resources/</guid><description/></item><item><title>Terms of Service</title><link>http://localhost:1313/terms/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/terms/</guid><description>&lt;h1 id="terms-of-service">Terms of Service&lt;/h1>
+&lt;p>Last updated: {{ now.Format &amp;ldquo;January 2, 2006&amp;rdquo; }}&lt;/p>
+&lt;h2 id="1-agreement-to-terms">1. Agreement to Terms&lt;/h2>
+&lt;p>By accessing and using binary.builders (&amp;ldquo;the Website&amp;rdquo;), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using the Website.&lt;/p>
+&lt;h2 id="2-use-license">2. Use License&lt;/h2>
+&lt;p>Permission is granted to temporarily access the materials on Binary Builders AG&amp;rsquo;s website for personal, non-commercial transitory viewing only.&lt;/p></description></item><item><title>Validator Workshop Series</title><link>http://localhost:1313/events/validator-workshop-2023/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://localhost:1313/events/validator-workshop-2023/</guid><description>&lt;p>Our validator workshop series provided comprehensive training on running professional validator operations. Participants learned about infrastructure setup, security best practices, monitoring solutions, and effective stake management strategies. The recorded sessions are available for reference.&lt;/p></description></item></channel></rss>

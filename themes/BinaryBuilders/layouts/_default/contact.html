@@ -1,0 +1,65 @@
+{{ define "main" }}
+<section class="section section--contact">
+  <div class="contact-page">
+    <div class="contact-page__container">
+      <h1 class="contact-page__title">{{ .Title }}</h1>
+      
+      <div class="contact-content">
+        {{ .Content }}
+      </div>
+
+      <form class="contact-form" action="https://formspree.io/f/{{ .Site.Params.formspreeID }}" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <div class="form-field">
+              <input type="text" id="firstName" name="firstName" placeholder=" " required>
+              <label for="firstName">First Name<span class="required">*</span></label>
+              <div class="form-field-bar"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-field">
+              <input type="text" id="lastName" name="lastName" placeholder=" " required>
+              <label for="lastName">Last Name<span class="required">*</span></label>
+              <div class="form-field-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <div class="form-field">
+              <input type="email" id="companyEmail" name="companyEmail" placeholder=" " required>
+              <label for="companyEmail">Company Email<span class="required">*</span></label>
+              <div class="form-field-bar"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-field">
+              <input type="text" id="jobTitle" name="jobTitle" placeholder=" " required>
+              <label for="jobTitle">Job Title<span class="required">*</span></label>
+              <div class="form-field-bar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-field">
+            <textarea id="topics" name="topics" rows="5" placeholder=" " required></textarea>
+            <label for="topics">
+              <span class="desktop-text">What are the main topics you would like to discuss?</span>
+              <span class="mobile-text">Topics to discuss</span>
+              <span class="required">*</span>
+            </label>
+            <div class="form-field-bar"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+{{ end }} 

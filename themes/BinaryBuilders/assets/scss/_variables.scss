@@ -1,0 +1,108 @@
+// Color System
+:root {
+  // Layout
+  --header-height: 80px;
+  
+  // Base Colors
+  --color-black: #0A041D;
+  --color-white: #ffffff;
+  
+  // Brand Colors
+  --color-primary: #7B4DFF;
+  --color-primary-dark: #5435B4;
+  --color-secondary: #E464FF;
+  --color-accent: #E464FF;
+  
+  // Feature Colors
+  --color-turquoise: #4ECDC4;
+  --color-coral: #FF6B6B;
+  --color-lime: #96C93D;
+  --color-purple: #7A76FF;
+  
+  // Text Colors
+  --color-text: var(--color-white);
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --color-text-light: rgba(255, 255, 255, 0.8);
+  --color-text-lighter: rgba(255, 255, 255, 0.95);
+  --color-text-secondary: var(--color-text-muted);
+  --color-text-blog: rgba(255, 255, 255, 0.9);
+  
+  // Background Colors
+  --color-background: var(--color-black);
+  --color-background-hover: #150C33;
+  --color-background-alt: #1E1141;
+  --color-background-transparent: rgba(10, 4, 29, 0.85);
+  --color-background-transparent-dark: rgba(10, 4, 29, 0.95);
+  --color-code-bg: rgba(255, 255, 255, 0.1);
+  
+  // Surface Colors
+  --color-surface: rgba(255, 255, 255, 0.07);
+  --color-surface-1: rgba(255, 255, 255, 0.05);
+  
+  // Border Colors
+  --color-border: #2A1B54;
+  --color-border-light: rgba(255, 255, 255, 0.12);
+  --color-border-hover: rgba(255, 255, 255, 0.25);
+  --color-blockquote-border: var(--color-text-muted);
+  
+  // Gradient Colors
+  --gradient-purple: linear-gradient(135deg, #9D9BFF 0%, #5856D6 100%);
+  --gradient-turquoise: linear-gradient(135deg, #65E5DD 0%, #4ECDC4 100%);
+  --gradient-coral: linear-gradient(135deg, #FF8585 0%, #FF6B6B 100%);
+  --gradient-lime: linear-gradient(135deg, #B1E354 0%, #96C93D 100%);
+  --gradient-stats-purple: linear-gradient(135deg, #A98EFF 0%, #7B4DFF 100%);
+  --gradient-header: linear-gradient(90deg, #5856D6, #7A76FF, #9D9BFF);
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  --gradient-text: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
+
+  // Typography
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  
+  // Font Weights
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  // Line Heights
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-loose: 2;
+  
+  // Letter Spacing
+  --letter-spacing-tight: -0.015em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.05em;
+  
+  // Container Widths
+  --container-post: 680px;
+  --container-post-wide: 1200px;
+  --container-page: 1000px;
+  
+  // Animation
+  --ease-out: cubic-bezier(0.5, 1, 0.89, 1);
+  --transition-standard: all 0.3s ease;
+}
+
+// Ensure background color is applied to root elements
+:root {
+  background-color: var(--color-background);
+}
+
+html {
+  background-color: var(--color-background);
+}
+
+body {
+  background-color: var(--color-background);
+}
+
+// Dark theme overrides can be added here if needed
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     // Dark theme specific variables
+//   }
+// } 

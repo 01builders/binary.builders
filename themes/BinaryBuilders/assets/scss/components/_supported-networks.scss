@@ -1,0 +1,107 @@
+:root {
+    --marquee-width: 100%;
+    --marquee-height: 120px;
+    --marquee-elements-displayed: 6;
+    --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+    --marquee-animation-duration: calc(var(--marquee-elements) * 10s);
+
+    @media (max-width: 1200px) {
+        --marquee-elements-displayed: 4;
+    }
+
+    @media (max-width: 768px) {
+        --marquee-elements-displayed: 2;
+        --marquee-height: 100px;
+    }
+}
+
+.supported-networks {
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: var(--color-background);
+    overflow: hidden;
+    
+    &__title {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        color: var(--color-text);
+        font-weight: 500;
+        opacity: 0.7;
+    }
+
+    &__marquee {
+        width: var(--marquee-width);
+        height: var(--marquee-height);
+        overflow: hidden;
+        position: relative;
+
+        &:before, &:after {
+            position: absolute;
+            top: 0;
+            width: 10rem;
+            height: 100%;
+            content: "";
+            z-index: 1;
+            pointer-events: none;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &:before {
+            left: 0;
+            background: linear-gradient(to right, var(--color-background) 0%, transparent 100%);
+        }
+
+        &:after {
+            right: 0;
+            background: linear-gradient(to left, var(--color-background) 0%, transparent 100%);
+        }
+    }
+
+    &__content {
+        list-style: none;
+        height: 100%;
+        display: flex;
+        animation: scrolling var(--marquee-animation-duration) linear infinite;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        width: var(--marquee-element-width);
+        max-height: 100%;
+        padding: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    &__logo {
+        height: 2rem;
+        width: auto;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+        filter: brightness(0) invert(1);
+        
+        &:hover {
+            opacity: 1;
+        }
+        
+        @media (min-width: 768px) {
+            height: 2.5rem;
+        }
+    }
+}
+
+@keyframes scrolling {
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); 
+    }
+}

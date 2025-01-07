@@ -1,0 +1,24 @@
+{{ define "main" }}
+<main class="page-content taxonomy-page">
+  <div class="page-header">
+    <div class="container">
+      <span class="page-category">BLOG CATEGORIES</span>
+      <h1 class="section-title">Categories</h1>
+      <p class="section-description">Browse articles by category</p>
+    </div>
+  </div>
+
+  <section class="taxonomy-terms">
+    <div class="container">
+      <div class="terms-grid">
+        {{ range .Data.Terms.Alphabetical }}
+        <a href="{{ .Page.RelPermalink }}" class="term-card">
+          <h2>{{ .Page.Title }}</h2>
+          <span class="count">{{ .Count }} {{ if eq .Count 1 }}article{{ else }}articles{{ end }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }} 

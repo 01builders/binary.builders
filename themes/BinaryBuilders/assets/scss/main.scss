@@ -1,0 +1,82 @@
+// Import variables first
+@import "variables";
+
+// Critical styles
+:root {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  background-color: var(--color-background);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: var(--line-height-normal);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-post-wide);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.625rem; // 10px in rem units
+  }
+}
+
+// Base styles
+@import "base/reset";
+@import "base/typography";
+
+// Components
+@import "components/header";
+@import "components/hero";
+@import "components/supported-networks";
+@import "components/metrics";
+@import "components/features";
+@import "components/technical-resources";
+@import "components/testimonials";
+@import "components/latest-insights";
+@import "components/footer";
+@import "components/team";
+@import "components/contact";
+@import "components/blog";
+@import "components/post";
+@import "components/taxonomy-list";
+@import "components/hover-card";
+@import "components/events";
+@import "components/about";
+
+// Utilities
+@import "utilities/helpers";
+
+// Skip link
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #007AFF;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.2s ease;
+
+  &:focus {
+    top: 0;
+  }
+}

@@ -1,0 +1,44 @@
+// Common page styles
+.page-content {
+  padding-top: 8rem;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+// Team page specific styles
+.team-page {
+  .team {
+    padding: 2rem 0 6rem;
+    
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      max-width: var(--container-page);
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+    }
+  }
+}
+
+// Resources page specific styles
+.resources-page {
+  .technical-resources {
+    padding: 2rem 0 6rem;
+    
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      max-width: var(--container-page);
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+    }
+  }
+} 

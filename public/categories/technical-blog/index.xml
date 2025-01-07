@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Technical Blog on Binary Builders</title><link>http://localhost:1313/categories/technical-blog/</link><description>Recent content in Technical Blog on Binary Builders</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/technical-blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Markdown Showcase: A Complete Style Guide</title><link>http://localhost:1313/blog/markdown-showcase/</link><pubDate>Sat, 16 Dec 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/markdown-showcase/</guid><description>&lt;h1 id="markdown-showcase-a-complete-style-guide">Markdown Showcase: A Complete Style Guide&lt;/h1>
+&lt;p>Welcome to our comprehensive markdown showcase! This guide demonstrates every possible markdown feature you might need in your content creation journey.&lt;/p>
+&lt;h2 id="text-formatting-essentials">Text Formatting Essentials&lt;/h2>
+&lt;p>Let&amp;rsquo;s start with the basics of text formatting:&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Bold text&lt;/strong> is created with double asterisks&lt;/li>
+&lt;li>&lt;em>Italic text&lt;/em> uses single asterisks&lt;/li>
+&lt;li>&lt;em>&lt;strong>Bold and italic&lt;/strong>&lt;/em> combines both&lt;/li>
+&lt;li>&lt;del>Strikethrough&lt;/del> uses double tildes&lt;/li>
+&lt;/ul>
+&lt;h2 id="headings-hierarchy">Headings Hierarchy&lt;/h2>
+&lt;h3 id="third-level-heading">Third-level Heading&lt;/h3>
+&lt;h4 id="fourth-level-heading">Fourth-level Heading&lt;/h4>
+&lt;h5 id="fifth-level-heading">Fifth-level Heading&lt;/h5>
+&lt;h6 id="sixth-level-heading">Sixth-level Heading&lt;/h6>
+&lt;h2 id="lists-and-nesting">Lists and Nesting&lt;/h2>
+&lt;h3 id="unordered-lists">Unordered Lists&lt;/h3>
+&lt;ul>
+&lt;li>First item&lt;/li>
+&lt;li>Second item
+&lt;ul>
+&lt;li>Nested item 1&lt;/li>
+&lt;li>Nested item 2
+&lt;ul>
+&lt;li>Deep nested item&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Third item&lt;/li>
+&lt;/ul>
+&lt;h3 id="ordered-lists">Ordered Lists&lt;/h3>
+&lt;ol>
+&lt;li>First step&lt;/li>
+&lt;li>Second step
+&lt;ol>
+&lt;li>Sub-step one&lt;/li>
+&lt;li>Sub-step two&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>Third step&lt;/li>
+&lt;/ol>
+&lt;h3 id="task-lists">Task Lists&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Write the blog post&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Add formatting examples&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Review and publish&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Share on social media&lt;/li>
+&lt;/ul>
+&lt;h2 id="blockquotes-and-nesting">Blockquotes and Nesting&lt;/h2>
+&lt;blockquote>
+&lt;p>This is a standard blockquote&lt;/p></description></item><item><title>Getting Started with Binary Builders: A Developer's Guide</title><link>http://localhost:1313/blog/2023/getting-started-with-binary-builders/</link><pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/2023/getting-started-with-binary-builders/</guid><description>&lt;p>Binary Builders provides developers with powerful tools and frameworks to build better software faster. In this guide, we&amp;rsquo;ll walk through the essential features and best practices to help you get started.&lt;/p>
+&lt;h2 id="key-features">Key Features&lt;/h2>
+&lt;ol>
+&lt;li>&lt;strong>Automated Workflows&lt;/strong>: Streamline your development process&lt;/li>
+&lt;li>&lt;strong>Code Quality Tools&lt;/strong>: Maintain high standards&lt;/li>
+&lt;li>&lt;strong>Performance Optimization&lt;/strong>: Build faster applications&lt;/li>
+&lt;/ol>
+&lt;h2 id="getting-started">Getting Started&lt;/h2>
+&lt;p>To begin using Binary Builders, follow these simple steps:&lt;/p>
+&lt;ol>
+&lt;li>Install the core package&lt;/li>
+&lt;li>Configure your project&lt;/li>
+&lt;li>Start building&lt;/li>
+&lt;/ol>
+&lt;h2 id="best-practices">Best Practices&lt;/h2>
+&lt;p>Here are some recommended practices when working with Binary Builders:&lt;/p></description></item></channel></rss>

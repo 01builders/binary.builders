@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation on binary builders</title>
+    <link>//localhost:1313/tags/documentation/</link>
+    <description>Recent content in Documentation on binary builders</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/documentation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lorem Ipsum: Understanding Modern Development</title>
+      <link>//localhost:1313/blog/2024/lorem-ipsum-demo/</link>
+      <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/blog/2024/lorem-ipsum-demo/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&lt;/p&gt;&#xA;&lt;h3 id=&#34;key-concepts&#34;&gt;Key Concepts&lt;/h3&gt;&#xA;&lt;p&gt;Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Here are some key points:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Excepteur sint occaecat cupidatat&lt;/li&gt;&#xA;&lt;li&gt;Non proident sunt in culpa&lt;/li&gt;&#xA;&lt;li&gt;Qui officia deserunt mollit&lt;/li&gt;&#xA;&lt;li&gt;Anim id est laborum&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;technical-implementation&#34;&gt;Technical Implementation&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

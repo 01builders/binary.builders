@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on binary builders</title>
+    <link>//localhost:1313/company/blog/</link>
+    <description>Recent content in Blog on binary builders</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/company/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Binary Builders Ecosystem Update - December 2023</title>
+      <link>//localhost:1313/company/blog/2023/ecosystem-update-december/</link>
+      <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/company/blog/2023/ecosystem-update-december/</guid>
+      <description>&lt;p&gt;Stay up to date with the latest developments in the Binary Builders ecosystem. This month brings exciting updates and community contributions.&lt;/p&gt;&#xA;&lt;h2 id=&#34;new-features&#34;&gt;New Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Enhanced CI/CD pipelines&lt;/li&gt;&#xA;&lt;li&gt;Improved documentation&lt;/li&gt;&#xA;&lt;li&gt;New community plugins&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;community-highlights&#34;&gt;Community Highlights&lt;/h2&gt;&#xA;&lt;p&gt;Thank you to all our contributors who helped improve Binary Builders this month.&lt;/p&gt;&#xA;&lt;h2 id=&#34;coming-soon&#34;&gt;Coming Soon&lt;/h2&gt;&#xA;&lt;p&gt;Here&amp;rsquo;s what to look forward to in the upcoming releases:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Advanced monitoring tools&lt;/li&gt;&#xA;&lt;li&gt;Extended API capabilities&lt;/li&gt;&#xA;&lt;li&gt;New integration options&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Join our community channels to stay connected and contribute to the ecosystem.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Advanced Deployment Strategies with Binary Builders</title>
+      <link>//localhost:1313/company/blog/2023/advanced-deployment-strategies/</link>
+      <pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/company/blog/2023/advanced-deployment-strategies/</guid>
+      <description>&lt;p&gt;Effective deployment strategies are crucial for maintaining high availability and reliability. In this post, we&amp;rsquo;ll explore advanced deployment patterns supported by Binary Builders.&lt;/p&gt;&#xA;&lt;h2 id=&#34;deployment-patterns&#34;&gt;Deployment Patterns&lt;/h2&gt;&#xA;&lt;h3 id=&#34;blue-green-deployments&#34;&gt;Blue-Green Deployments&lt;/h3&gt;&#xA;&lt;p&gt;Blue-green deployment is a technique that reduces downtime and risk by running two identical production environments called Blue and Green.&lt;/p&gt;&#xA;&lt;h3 id=&#34;canary-releases&#34;&gt;Canary Releases&lt;/h3&gt;&#xA;&lt;p&gt;Canary deployments involve rolling out changes to a small subset of users before deploying to the entire infrastructure.&lt;/p&gt;&#xA;&lt;h3 id=&#34;feature-flags&#34;&gt;Feature Flags&lt;/h3&gt;&#xA;&lt;p&gt;Learn how to use feature flags to safely deploy and test new features in production.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

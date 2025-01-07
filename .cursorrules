@@ -1,0 +1,86 @@
+# Binary Builders Website Guidelines
+# A modern, static website built with Hugo
+
+## Core Principles
+- Create clean, semantic, and accessible HTML
+- Write maintainable, modular SCSS
+- Implement vanilla JavaScript with modern ES6+ features
+- Optimize for performance and SEO
+- Follow mobile-first responsive design
+- Ensure cross-browser compatibility
+
+## Code Standards
+
+### HTML
+- Use semantic HTML5 elements
+- Maintain 2-space indentation
+- Use double quotes for attributes
+- Order attributes: id, class, data-*
+- Ensure WCAG 2.1 AA compliance
+- Include proper meta tags and SEO elements
+
+### CSS/SCSS
+- Follow BEM naming convention
+- Use 2-space indentation
+- Organize properties in logical groups:
+  1. Positioning
+  2. Display & Layout
+  3. Box Model
+  4. Typography
+  5. Visual Styles
+  6. Animations
+- Use CSS custom properties for theme values
+- Minimize nesting (max 3 levels)
+- Write mobile-first media queries
+
+### JavaScript
+- Use ES6+ features
+- Follow camelCase naming for variables and functions
+- Use PascalCase for component names
+- Maintain 2-space indentation
+- Use single quotes for strings
+- Always use semicolons
+- Prefer const over let, avoid var
+- Use modern APIs (Fetch, Promises, async/await)
+
+## Project Structure
+/assets
+  /scss        # Global styles, components, utilities
+  /js          # JavaScript modules and functions
+  /images      # Optimized images and SVGs
+
+/content
+  /posts       # Blog posts and articles
+  /pages       # Static page content
+
+/layouts
+  /_default    # Base templates
+  /partials    # Reusable components
+  
+/static        # Direct-served files
+
+## Theme Configuration
+Colors:
+- Primary: #000000 (Black)
+- Secondary: #FFFFFF (White)
+- Accent: #007AFF (Blue)
+
+Typography:
+- Font Family: Inter, sans-serif
+- Scale: 1.250 (Major Third)
+- Base size: 16px
+
+## Build & Deployment
+- Environment: Production
+- Enable minification
+- Optimize assets (images, CSS, JS)
+- Target URL: https://binary.builders
+
+## Best Practices
+- Write semantic, accessible markup
+- Optimize images and assets
+- Use progressive enhancement
+- Implement proper error handling
+- Follow security best practices
+- Document complex functionality
+- Test across modern browsers 

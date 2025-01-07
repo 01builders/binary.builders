@@ -1,0 +1,72 @@
+{{ define "main" }}
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="container">
+    <header class="post-header">
+      {{ with .Params.image }}
+      <div class="post-image">
+        <img src="{{ . }}" alt="{{ $.Title }}" itemprop="image" />
+      </div>
+      {{ end }}
+      
+      <h1 itemprop="headline">{{ .Title }}</h1>
+      
+      <div class="post-meta">
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" itemprop="datePublished">
+          {{ .Date.Format "January 2, 2006" }}
+        </time>
+        {{ with .Params.author }}
+        <span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span itemprop="name">{{ . }}</span>
+        </span>
+        {{ end }}
+        {{ with .Params.categories }}
+        <div class="post-categories">
+          {{ range . }}
+          <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="category">{{ . }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+      {{ with .Description }}
+      <div class="post-description" itemprop="description">
+        {{ . | markdownify }}
+      </div>
+      {{ end }}
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+      {{ .Content }}
+    </div>
+
+    <footer class="post-footer">
+      {{ with .Params.tags }}
+      <div class="post-tags">
+        {{ range . }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ $date := .Date.Format "January 2, 2006" }}
+      {{ $lastmod := .Lastmod.Format "January 2, 2006" }}
+      {{ if ne $date $lastmod }}
+      <div class="post-lastmod">
+        <em>Last updated: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" itemprop="dateModified">
+          {{ $lastmod }}
+        </time></em>
+      </div>
+      {{ end }}
+
+      <nav class="post-navigation" role="navigation" aria-label="Post Navigation">
+        {{ with .NextInSection }}
+        <a class="prev" href="{{ .RelPermalink }}" rel="prev">← {{ .Title }}</a>
+        {{ end }}
+        {{ with .PrevInSection }}
+        <a class="next" href="{{ .RelPermalink }}" rel="next">{{ .Title }} →</a>
+        {{ end }}
+      </nav>
+    </footer>
+  </div>
+</article>
+{{ end }} 
