@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deployment on Binary Builders</title><link>http://localhost:1313/tags/deployment/</link><description>Recent content in Deployment on Binary Builders</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 16 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/deployment/index.xml" rel="self" type="application/rss+xml"/><item><title>Advanced Deployment Strategies with Binary Builders</title><link>http://localhost:1313/blog/2023/advanced-deployment-strategies/</link><pubDate>Thu, 14 Dec 2023 00:00:00 +0000</pubDate><guid>http://localhost:1313/blog/2023/advanced-deployment-strategies/</guid><description>&lt;p>Effective deployment strategies are crucial for maintaining high availability and reliability. In this post, we&amp;rsquo;ll explore advanced deployment patterns supported by Binary Builders.&lt;/p>
-&lt;h2 id="deployment-patterns">Deployment Patterns&lt;/h2>
-&lt;h3 id="blue-green-deployments">Blue-Green Deployments&lt;/h3>
-&lt;p>Blue-green deployment is a technique that reduces downtime and risk by running two identical production environments called Blue and Green.&lt;/p>
-&lt;h3 id="canary-releases">Canary Releases&lt;/h3>
-&lt;p>Canary deployments involve rolling out changes to a small subset of users before deploying to the entire infrastructure.&lt;/p>
-&lt;h3 id="feature-flags">Feature Flags&lt;/h3>
-&lt;p>Learn how to use feature flags to safely deploy and test new features in production.&lt;/p></description></item></channel></rss>
