@@ -16,7 +16,13 @@
         {{ .Content }}
       </div>
 
-      <form class="contact-form">
+      <form class="contact-form" action="https://formsubmit.co/10c3492a3afdd7e701bc19059cf29545" method="POST">
+        <!-- FormSubmit Configuration -->
+        <input type="hidden" name="_subject" value="New Contact Form Submission - Binary Builders">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://binary.builders/thank-you">
+
         <!-- Alert Messages -->
         <div class="form-alert form-alert--success" style="display: none;">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -76,6 +82,6 @@
   </div>
 </section>
 
-{{ $notionForm := resources.Get "js/notion-form.js" | js.Build | minify | fingerprint }}
-<script src="{{ $notionForm.RelPermalink }}" defer></script>
+{{ $formHandler := resources.Get "js/form-handler.js" | js.Build | minify | fingerprint }}
+<script src="{{ $formHandler.RelPermalink }}" defer></script>
 {{ end }} 
