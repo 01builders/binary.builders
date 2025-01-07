@@ -27,37 +27,31 @@
         </div>
         {{ end }}
       </div>
-
-      {{ with .Description }}
-      <div class="post-description" itemprop="description">
-        {{ . | markdownify }}
-      </div>
-      {{ end }}
     </header>
 
     <div class="post-content" itemprop="articleBody">
       {{ .Content }}
     </div>
 
+    {{ with .Params.tags }}
+    <div class="post-tags">
+      {{ range . }}
+      <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{ $date := .Date.Format "January 2, 2006" }}
+    {{ $lastmod := .Lastmod.Format "January 2, 2006" }}
+    {{ if ne $date $lastmod }}
+    <div class="post-lastmod">
+      <em>Last updated: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" itemprop="dateModified">
+        {{ $lastmod }}
+      </time></em>
+    </div>
+    {{ end }}
+
     <footer class="post-footer">
-      {{ with .Params.tags }}
-      <div class="post-tags">
-        {{ range . }}
-        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="tag">#{{ . }}</a>
-        {{ end }}
-      </div>
-      {{ end }}
-
-      {{ $date := .Date.Format "January 2, 2006" }}
-      {{ $lastmod := .Lastmod.Format "January 2, 2006" }}
-      {{ if ne $date $lastmod }}
-      <div class="post-lastmod">
-        <em>Last updated: <time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" itemprop="dateModified">
-          {{ $lastmod }}
-        </time></em>
-      </div>
-      {{ end }}
-
       <nav class="post-navigation" role="navigation" aria-label="Post Navigation">
         {{ with .NextInSection }}
         <a class="prev" href="{{ .RelPermalink }}" rel="prev">← {{ .Title }}</a>
