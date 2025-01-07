@@ -8,8 +8,14 @@ description: Thank you for contacting Binary Builders
 
 We've received your message and will get back to you within 24-48 hours.
 
-In the meantime, you might be interested in:
-- [Our Core Development Services](/services/core-development)
-- [Latest Insights](/insights)
-
-[← Back to Home](/) 
+<div class="thank-you__links">
+  <p>In the meantime, you might be interested in:</p>
+  <div class="thank-you__buttons">
+    <a href="/services/core-development" class="button button--primary">
+      Core Development Services
+    </a>
+    <a href="/blog" class="button button--secondary">
+      Blog
+    </a>
+  </div>
+</div> 
