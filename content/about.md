@@ -1,5 +1,5 @@
 ---
-title: "About Binary Builders"
+title: "About Us"
 description: "Building the future of blockchain technology through innovation, expertise, and collaboration"
 layout: "about"
 ---
