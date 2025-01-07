@@ -50,43 +50,43 @@ html {
       align-items: center;
       gap: 0.5rem;
       
-      .ph {
-        font-size: 1.75rem;
-        color: var(--color-white);
+      .logo-image {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        transition: color 0.3s ease;
       }
 
       &:hover {
         color: var(--color-text-muted);
         transition: color 0.3s ease;
-
-        .ph {
-          color: var(--color-text-muted);
-          transition: color 0.3s ease;
-        }
       }
 
       // Add intermediate breakpoint
       @media (max-width: 1200px) {
         font-size: 1.25rem;
         
-        .ph {
-          font-size: 1.5rem;
+        .logo-image {
+          width: 42px;
+          height: 42px;
         }
       }
 
       @media (max-width: 1024px) {
         font-size: 1.25rem;
         
-        .ph {
-          font-size: 1.5rem;
+        .logo-image {
+          width: 38px;
+          height: 38px;
         }
       }
 
       @media (max-width: 768px) {
         font-size: 1.125rem;
         
-        .ph {
-          font-size: 1.375rem;
+        .logo-image {
+          width: 32px;
+          height: 32px;
         }
       }
     }
