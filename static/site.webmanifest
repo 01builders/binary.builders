@@ -1,6 +1,8 @@
 {
   "name": "Binary Builders",
   "short_name": "Binary",
+  "description": "Binary Builders - Building the Future of Web3",
+  "start_url": "/",
   "icons": [
     {
       "src": "/images/favicons/android-chrome-192x192.png",
@@ -15,5 +17,7 @@
   ],
   "theme_color": "#000000",
   "background_color": "#000000",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/"
 } 
