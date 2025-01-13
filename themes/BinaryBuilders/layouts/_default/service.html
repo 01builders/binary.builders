@@ -32,9 +32,10 @@
   </div>
 
   <!-- Features Section -->
+  {{ if .Params.features }}
   <section class="expertise-section">
     <div class="container">
-      <h2>Key Features</h2>
+      <h2>{{ .Params.features_title | default "Key Features" }}</h2>
       <div class="expertise-grid">
         {{ range .Params.features }}
         <div class="expertise-card">
@@ -46,8 +47,10 @@
       </div>
     </div>
   </section>
+  {{ end }}
 
   <!-- Benefits Section -->
+  {{ if .Params.benefits }}
   <section class="values-section">
     <div class="container">
       <h2>Benefits</h2>
@@ -71,6 +74,37 @@
       </div>
     </div>
   </section>
+  {{ end }}
+
+  <!-- Supported Networks Section -->
+  {{ if .Params.show_supported_networks }}
+  {{ partial "supported-networks.html" . }}
+  {{ end }}
+
+  <!-- Testimonials Section -->
+  {{ if .Params.testimonials }}
+  <section class="testimonials-simple">
+    <div class="container">
+      <h2>What Our Partners Say</h2>
+      <div class="testimonials-simple__grid">
+        {{ range $index, $testimonial := .Params.testimonials }}
+        <div class="testimonial-card">
+          <pixel-hover 
+            data-colors="{{ index (slice "#7B4DFF,#5435B4,#E464FF" "#4ECDC4,#3DA89F,#65E5DD" "#FF6B6B,#E65555,#FF8585") (mod $index 3) }}"
+            data-gap="6"
+            data-speed="30">
+          </pixel-hover>
+          <div class="testimonial-card__quote">{{ .quote }}</div>
+          <div class="testimonial-card__author">
+            <img src="/images/partners/{{ .logo }}.png" alt="{{ .name }} Logo" class="testimonial-card__avatar">
+            <div class="testimonial-card__name">{{ .name }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
 
   <!-- Call to Action -->
   <section class="join-section">
@@ -94,6 +128,8 @@
 </main>
 
 <!-- Add values.js script for benefits section -->
+{{ if .Params.benefits }}
 {{ $values := resources.Get "js/values.js" | js.Build }}
 <script src="{{ $values.RelPermalink }}"></script>
+{{ end }}
 {{ end }} 

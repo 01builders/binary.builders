@@ -1,58 +1,32 @@
 ---
-title: "Core Development"
-description: "Leading development of Cosmos SDK and Rollkit to advance the future of decentralized applications"
+title: "Advancing the Future of Decentralization"
+description: ""
 layout: "service"
 hero_image: "/images/services/core-development-hero.jpg"
+show_supported_networks: false
+features_title: "Key Benefits"
 features:
   - title: "Cosmos SDK Development"
-    description: "Contributing significant improvements to core functionality, including performance optimizations and security enhancements."
+    description: "We drive advancements in the Cosmos SDK, the leading framework for building application-specific blockchains. With a focus on modularity and flexibility, our work ensures developers have the tools to innovate without limits."
     icon: "🛠️"
   - title: "Rollkit Innovation"
-    description: "Pioneering modular blockchain technology and efficient rollup solutions for next-generation scalability."
+    description: "Our contributions to Rollkit are transforming the rollup ecosystem. By enabling modular rollups, we’re advancing scalability and performance. for decentralized applications across diverse ecosystems."
     icon: "⚡"
-  - title: "Developer Tools"
-    description: "Creating comprehensive tooling and documentation to accelerate blockchain development."
-    icon: "🔧"
-benefits:
-  - title: "Performance"
-    icon: "⚡"
-    description: "Achieve unparalleled performance with our optimized blockchain infrastructure and scalable solutions."
-  - title: "Security"
-    icon: "🔒"
-    description: "Benefit from battle-tested security measures and continuous monitoring to protect your applications."
-  - title: "Flexibility"
-    icon: "🔄"
-    description: "Build custom blockchain solutions tailored to your specific needs with our modular architecture."
-  - title: "Support"
+  - title: "Cutting-Edge Collaboration"
+    description: "We collaborate with a global community of developers and organizations to ensure that the tools we build address real-world challenges and drive meaningful progress in blockchain development."
     icon: "🤝"
-    description: "Access expert technical support and guidance throughout your development journey."
 cta_description: "Ready to build the future of blockchain applications? Join our developer community and start building today."
 primary_cta:
-  url: "https://github.com/cosmos/cosmos-sdk"
-  text: "Start Building"
+  url: "https://x.com/cosmos_sdk/status/1828711743872459192"
+  text: "Case Studies"
 secondary_cta:
-  url: "/contact"
-  text: "Get Support"
+  url: "https://github.com/01builders"
+  text: "Explore our work and contribute"
 ---
 
-## Advancing Blockchain Infrastructure
+## Leading the development of Cosmos SDK and Rollkit to power the next generation of decentralized applications.
 
-Our core development team is at the forefront of blockchain innovation, focusing on two major areas: the Cosmos SDK and Rollkit. We're committed to building robust, scalable, and developer-friendly solutions that power the next generation of blockchain applications.
-
-### Cosmos SDK Development
-
-The Cosmos SDK is the world's most popular framework for building application-specific blockchains. Our team contributes significant improvements to its core functionality, including:
-
-- Performance optimizations
-- Security enhancements
-- New modules and features
-- Developer tooling and documentation
-
-### Rollkit Innovation
-
-Rollkit represents the future of blockchain scalability. Our work includes:
-
-- Developing modular blockchain technology
-- Creating efficient rollup solutions
-- Building developer tools and frameworks
-- Advancing cross-chain communication 
+At the forefront of Web3 innovation, we lead the development of
+foundational technologies like the Cosmos SDK and Rollkit. These tools
+empower developers to build scalable, secure, and interoperable
+decentralized applications, shaping the next era of blockchain technology.
