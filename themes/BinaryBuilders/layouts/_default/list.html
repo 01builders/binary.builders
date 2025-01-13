@@ -13,22 +13,22 @@
       <div class="highlighted-posts">
         {{ range .Pages }}
         <article class="highlighted-post">
-          <a href="{{ .RelPermalink }}" class="post-link">
+          <a href="{{ .RelPermalink }}" class="insight-link">
             {{ with .Params.image }}
-            <div class="post-image">
+            <div class="insight-image">
               <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
             </div>
             {{ end }}
-            <div class="post-content">
-              <div class="post-meta">
-                <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span class="insight-date">{{ .Date.Format "Jan 2, 2006" }}</span>
                 {{ with .Params.categories }}
-                <span class="post-category">{{- range $index, $category := . -}}{{- if gt $index 0 }}, {{ end -}}{{ $category }}{{- end -}}</span>
+                <span class="insight-category">{{- range $index, $category := . -}}{{- if gt $index 0 }}, {{ end -}}{{ $category }}{{- end -}}</span>
                 {{ end }}
               </div>
-              <h3 class="post-title">{{ .Title }}</h3>
-              <p class="post-excerpt">{{ .Description | truncate 120 }}</p>
-              <span class="read-more">Read More →</span>
+              <h3 class="insight-title">{{ .Title }}</h3>
+              <p class="insight-excerpt">{{ .Description | truncate 120 }}</p>
+              <span class="insight-read-more">Read More →</span>
             </div>
           </a>
         </article>

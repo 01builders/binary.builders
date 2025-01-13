@@ -147,7 +147,7 @@
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.1);
     
-    .post-image {
+    .insight-image {
       aspect-ratio: 16/9;
       overflow: hidden;
       position: relative;
@@ -180,12 +180,12 @@
       transform: translateY(-8px) scale(1.02);
       border-color: rgba(255, 255, 255, 0.2);
 
-      .post-image img {
+      .insight-image img {
         transform: scale(1.1) rotate(2deg);
       }
     }
 
-    .post-link {
+    .insight-link {
       text-decoration: none;
       color: inherit;
       display: flex;
@@ -194,7 +194,7 @@
       cursor: pointer;
     }
 
-    .post-content {
+    .insight-content {
       position: relative;
       z-index: 3;
       padding: 1.5rem;
@@ -202,7 +202,7 @@
       display: flex;
       flex-direction: column;
 
-      .post-meta {
+      .insight-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -211,18 +211,18 @@
         margin-bottom: 1rem;
 
         @media (max-width: 768px) {
-          .post-category {
+          .insight-category {
             display: none;
           }
         }
 
-        .post-category {
+        .insight-category {
           color: var(--color-primary);
           font-weight: 500;
         }
       }
 
-      .post-title {
+      .insight-title {
         font-size: 1.25rem;
         font-weight: 600;
         margin-bottom: 1rem;
@@ -230,7 +230,7 @@
         color: var(--color-white);
       }
 
-      .post-excerpt {
+      .insight-excerpt {
         color: rgba(255, 255, 255, 0.8);
         margin-bottom: 1.5rem;
         line-height: 1.6;
@@ -241,7 +241,7 @@
         }
       }
 
-      .read-more {
+      .insight-read-more {
         color: var(--color-primary);
         text-decoration: none;
         font-weight: 500;
