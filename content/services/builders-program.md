@@ -2,7 +2,7 @@
 title: "Empowering Blockchain Builders"
 description: ""
 layout: "service"
-hero_image: "/images/services/builders-hero.jpg"
+hero_image: "/images/services/buildersprogram.png"
 show_supported_networks: false
 features_title: "Key Benefits"
 testimonials:

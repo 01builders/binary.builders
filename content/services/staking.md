@@ -2,7 +2,7 @@
 title: "Staking Services"
 description: ""
 layout: "service"
-hero_image: "/images/services/staking-hero.jpg"
+hero_image: "/images/services/staking.png"
 show_supported_networks: true
 features_title: "Why stake with us?"
 features:

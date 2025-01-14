@@ -2,7 +2,7 @@
 title: "Advancing the Future of Decentralization"
 description: ""
 layout: "service"
-hero_image: "/images/services/core-development-hero.jpg"
+hero_image: "/images/services/technicaldevelopment.png"
 show_supported_networks: false
 features_title: "Key Benefits"
 features:

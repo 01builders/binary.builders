@@ -2,7 +2,7 @@
 title: "Shaping the Future of Web3"
 description: ""
 layout: "service"
-hero_image: "/images/services/ventures-hero.jpg"
+hero_image: "/images/services/binaryventures.png"
 show_supported_networks: false
 features_title: "Key Benefits"
 features:
