@@ -192,25 +192,26 @@
       max-width: 800px;
       margin: 0 auto;
       position: relative;
+      padding: 2rem 0;
 
       &::before {
         content: '';
         position: absolute;
-        left: 40px;
+        left: 24px;
         top: 0;
         width: 2px;
         height: 100%;
         background: var(--color-border-light);
 
         @media (max-width: 768px) {
-          left: 30px;
+          left: 25px;
         }
       }
     }
 
     .step-card {
       display: grid;
-      grid-template-columns: 80px 1fr;
+      grid-template-columns: 60px 1fr;
       gap: 2rem;
       margin-bottom: 3rem;
       opacity: 0;
@@ -218,7 +219,7 @@
       transition: all 0.6s ease;
 
       @media (max-width: 768px) {
-        grid-template-columns: 60px 1fr;
+        grid-template-columns: 50px 1fr;
         gap: 1rem;
       }
 
@@ -228,24 +229,30 @@
       }
 
       &__number {
-        width: 80px;
-        height: 80px;
-        background: var(--color-surface);
-        border: 2px solid var(--color-primary);
+        width: 60px;
+        height: 60px;
+        background: #5856D6;
+        border: none;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2rem;
+        font-size: 1.25rem;
         font-weight: var(--font-weight-bold);
-        color: var(--color-primary);
+        color: white;
+        font-family: 'Fira Code', monospace;
         position: relative;
         z-index: 1;
+        margin: 0;
+
+        &::before {
+          content: '0';
+        }
 
         @media (max-width: 768px) {
-          width: 60px;
-          height: 60px;
-          font-size: 1.5rem;
+          width: 50px;
+          height: 50px;
+          font-size: 1.125rem;
         }
       }
 
@@ -254,24 +261,22 @@
         background: var(--color-surface);
         border-radius: 16px;
         border: 1px solid var(--color-border-light);
-      }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-      &__icon {
-        font-size: 2rem;
-        color: var(--color-primary);
-        margin-bottom: 1rem;
-      }
+        h3 {
+          font-size: 1.5rem;
+          color: var(--color-white);
+          margin-bottom: 1rem;
+          margin-top: 1rem;
+        }
 
-      h3 {
-        font-size: 1.5rem;
-        color: var(--color-white);
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1rem;
-        color: var(--color-text-light);
-        line-height: 1.6;
+        p {
+          font-size: 1rem;
+          color: var(--color-text-light);
+          line-height: 1.6;
+        }
       }
     }
   }
