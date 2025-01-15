@@ -1,0 +1,141 @@
+.service-page--ventures {
+  .ventures-hero {
+    padding: 4rem 0;
+    text-align: center;
+
+    &__title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      background: linear-gradient(to right, #7B4DFF, #E464FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &__content {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.125rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+      }
+    }
+
+    &__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+        max-width: 1000px;
+        border-radius: 1rem;
+      }
+    }
+  }
+
+  .ventures-benefits {
+    padding: 4rem 0;
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    &__grid {
+      display: grid;
+      gap: 2rem;
+      text-align: left;
+    }
+
+    .benefit-card {
+      background: rgba(123, 77, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      &__icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .ventures-cta {
+    padding: 4rem 0;
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+
+      .button {
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 500;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-2px);
+        }
+
+        &--primary {
+          background: #7B4DFF;
+          color: white;
+        }
+
+        &--secondary {
+          background: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: white;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ventures-benefits__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .ventures-benefits__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+} 

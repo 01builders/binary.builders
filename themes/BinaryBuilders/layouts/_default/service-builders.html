@@ -1,0 +1,123 @@
+{{ define "main" }}
+<main class="page-content service-page service-page--builders">
+  <!-- Animated Header -->
+  <header class="builders-header">
+    <div class="container">
+      <div class="builders-header__content">
+        <h1 class="builders-header__title">
+          <span class="gradient-text">{{ .Title }}</span>
+        </h1>
+        <p class="builders-header__description">{{ .Description }}</p>
+      </div>
+      <div class="builders-header__image">
+        {{ with .Params.hero_image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+        {{ end }}
+      </div>
+    </div>
+  </header>
+
+  <!-- Overview with Masonry Grid -->
+  <section class="builders-overview">
+    <div class="container">
+      <div class="builders-overview__content">
+        {{ .Content }}
+      </div>
+      <div class="builders-overview__grid">
+        <div class="grid-item grid-item--large">
+          <div class="info-card">
+            <h3>Expert Mentorship</h3>
+            <p>Get guidance from industry veterans who have built successful blockchain projects.</p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="info-card info-card--accent">
+            <h3>Technical Support</h3>
+            <p>Access our team of experienced developers for technical guidance and code reviews.</p>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="info-card info-card--dark">
+            <h3>Network Access</h3>
+            <p>Connect with our extensive network of partners, investors, and fellow builders.</p>
+          </div>
+        </div>
+        <div class="grid-item grid-item--wide">
+          <div class="info-card">
+            <h3>Resources & Tools</h3>
+            <p>Get access to premium development tools, infrastructure, and educational resources.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features with Interactive Cards -->
+  {{ if .Params.features }}
+  <section class="builders-features">
+    <div class="container">
+      <h2>{{ .Params.features_title | default "Key Features" }}</h2>
+      <div class="builders-features__grid">
+        {{ range .Params.features }}
+        <div class="feature-card">
+          <div class="feature-card__front">
+            <div class="feature-card__icon">{{ .icon }}</div>
+            <h3>{{ .title }}</h3>
+          </div>
+          <div class="feature-card__back">
+            <p>{{ .description }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Benefits with Timeline -->
+  {{ if .Params.benefits }}
+  <section class="builders-benefits">
+    <div class="container">
+      <h2>Program Benefits</h2>
+      <div class="benefits-timeline">
+        {{ range $index, $benefit := .Params.benefits }}
+        <div class="timeline-item">
+          <div class="timeline-marker">{{ add $index 1 }}</div>
+          <div class="timeline-content">
+            <div class="timeline-icon">{{ .icon }}</div>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Call to Action -->
+  <section class="builders-cta">
+    <div class="container">
+      <div class="builders-cta__grid">
+        <div class="builders-cta__content">
+          <h2>Join the Program</h2>
+          <p>{{ .Params.cta_description }}</p>
+          <div class="builders-cta__buttons">
+            {{ with .Params.primary_cta }}
+            <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener">
+              {{ .text }} <span class="button__arrow">→</span>
+            </a>
+            {{ end }}
+            {{ with .Params.secondary_cta }}
+            <a href="{{ .url }}" class="button button--secondary">
+              {{ .text }} <span class="button__arrow">→</span>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+        <div class="builders-cta__pattern"></div>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }} 
