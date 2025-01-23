@@ -1,5 +1,5 @@
-.service-page--builders {
-  .builders-header {
+.service-page--consulting {
+  .consulting-header {
     padding: 8rem 0 4rem;
     background: var(--color-background);
     position: relative;
@@ -74,7 +74,7 @@
     }
   }
 
-  .builders-overview {
+  .consulting-overview {
     padding: 4rem 0;
 
     &__content {
@@ -170,7 +170,7 @@
   }
 
   @media (max-width: 768px) {
-    .builders-overview__grid {
+    .consulting-overview__grid {
       grid-template-columns: 1fr;
 
       .grid-item--wide {
@@ -179,7 +179,7 @@
     }
   }
 
-  .builders-features {
+  .consulting-features {
     padding: 8rem 0;
     background: var(--color-background);
 
@@ -230,7 +230,7 @@
     }
   }
 
-  .builders-benefits {
+  .consulting-benefits {
     padding: 8rem 0;
     background: var(--color-background-light);
 
@@ -249,72 +249,16 @@
         content: '';
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
+        top: 0;
+        bottom: 0;
         width: 2px;
-        height: 100%;
-        background: var(--color-border-light);
-      }
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 4rem;
-      position: relative;
-
-      &:nth-child(even) {
-        .timeline-content {
-          grid-column: 1;
-          text-align: right;
-        }
-      }
-
-      .timeline-marker {
-        position: absolute;
-        left: 50%;
+        background: var(--color-border);
         transform: translateX(-50%);
-        width: 40px;
-        height: 40px;
-        background: var(--color-primary);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--color-white);
-        font-weight: var(--font-weight-bold);
-        z-index: 1;
-      }
-
-      .timeline-content {
-        grid-column: 2;
-        padding: 2rem;
-        background: var(--color-surface);
-        border-radius: 16px;
-        border: 1px solid var(--color-border-light);
-
-        .timeline-icon {
-          font-size: 2rem;
-          color: var(--color-primary);
-          margin-bottom: 1rem;
-        }
-
-        h3 {
-          font-size: 1.5rem;
-          color: var(--color-white);
-          margin-bottom: 1rem;
-        }
-
-        p {
-          font-size: 1rem;
-          color: var(--color-text-light);
-          line-height: 1.6;
-        }
       }
     }
   }
 
-  .builders-cta {
+  .consulting-cta {
     padding: 8rem 0;
     background: var(--color-background);
 
@@ -331,7 +275,7 @@
 
     &__content {
       h2 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin-bottom: 1.5rem;
       }
 
@@ -339,21 +283,20 @@
         font-size: 1.25rem;
         color: var(--color-text-light);
         margin-bottom: 2rem;
-        line-height: 1.6;
       }
-    }
-
-    &__pattern {
-      height: 400px;
-      background-image: radial-gradient(var(--color-primary) 2px, transparent 2px);
-      background-size: 30px 30px;
-      opacity: 0.1;
-      border-radius: 24px;
     }
 
     &__buttons {
       display: flex;
       gap: 1rem;
+    }
+
+    &__pattern {
+      position: relative;
+      height: 400px;
+      background: var(--gradient-primary);
+      opacity: 0.1;
+      border-radius: 24px;
     }
   }
 } 

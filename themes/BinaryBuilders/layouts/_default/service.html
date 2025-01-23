@@ -1,8 +1,8 @@
 {{ define "main" }}
   {{ if eq .File.BaseFileName "ventures" }}
     {{ partial "services/ventures.html" . }}
-  {{ else if eq .File.BaseFileName "builders-program" }}
-    {{ partial "services/builders.html" . }}
+  {{ else if eq .File.BaseFileName "consulting" }}
+    {{ partial "services/consulting.html" . }}
   {{ else if eq .File.BaseFileName "staking" }}
     {{ partial "services/staking.html" . }}
   {{ else if eq .File.BaseFileName "technical-development" }}
