@@ -1,6 +1,6 @@
 .service-page--staking {
   .staking-hero {
-    padding: 8rem 0 4rem;
+    padding: 6rem 0;
     background: var(--color-background);
     position: relative;
     overflow: hidden;
@@ -20,89 +20,87 @@
     .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 1.5rem;
       align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
 
       @media (max-width: 1024px) {
         grid-template-columns: 1fr;
+        gap: 1rem;
       }
     }
 
     &__content {
       position: relative;
       z-index: 1;
-    }
+      padding-right: 1rem;
 
-    &__title {
-      font-size: 4rem;
-      font-weight: var(--font-weight-bold);
-      line-height: 1.1;
-      margin-bottom: 2rem;
-
-      @media (max-width: 768px) {
-        font-size: 3rem;
+      @media (max-width: 1024px) {
+        text-align: center;
+        padding-right: 0;
       }
     }
 
+    &__title {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: var(--font-weight-bold);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #7B4DFF 0%, #E464FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
     &__description {
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
       color: var(--color-text-light);
-      max-width: 500px;
       line-height: 1.6;
+      max-width: 500px;
     }
 
     &__visual {
       position: relative;
-      height: 500px;
+      z-index: 1;
       display: flex;
-      align-items: center;
       justify-content: center;
-    }
+      align-items: center;
+      
+      .staking-hero__image {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 1rem;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(-10px);
+        transition: transform 0.3s ease;
+      }
 
-    &__nodes {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-
-      .node {
+      .staking-hero__nodes {
         position: absolute;
-        width: 12px;
-        height: 12px;
-        background: var(--color-primary);
-        border-radius: 50%;
-        opacity: 0;
-        animation: nodeFloat 3s ease-in-out infinite;
+        inset: -10px;
+        pointer-events: none;
 
-        &:nth-child(1) { top: 20%; left: 20%; }
-        &:nth-child(2) { top: 60%; left: 30%; }
-        &:nth-child(3) { top: 30%; left: 70%; }
-        &:nth-child(4) { top: 70%; left: 60%; }
-        &:nth-child(5) { top: 40%; left: 50%; }
-
-        &::after {
-          content: '';
+        .node {
           position: absolute;
-          inset: -4px;
-          border: 2px solid var(--color-primary);
+          width: 6px;
+          height: 6px;
+          background: var(--color-primary);
           border-radius: 50%;
-          opacity: 0.5;
-          animation: nodePulse 2s ease-out infinite;
+          opacity: 0;
+          animation: nodeFloat 3s ease-in-out infinite;
+
+          &:nth-child(1) { top: 20%; left: 10%; }
+          &:nth-child(2) { top: 60%; right: 15%; }
+          &:nth-child(3) { bottom: 30%; left: 20%; }
+          &:nth-child(4) { top: 40%; right: 25%; }
+          &:nth-child(5) { bottom: 20%; right: 30%; }
         }
       }
-    }
-
-    &__image {
-      position: relative;
-      z-index: 1;
-      width: 80%;
-      height: auto;
-      border-radius: 24px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     }
   }
 
   .staking-overview {
-    padding: 8rem 0;
+    padding: 6rem 0;
     background: var(--color-background-light);
 
     &__content {
@@ -179,7 +177,7 @@
   }
 
   .staking-features {
-    padding: 8rem 0;
+    padding: 6rem 0;
     background: var(--color-background);
 
     h2 {
@@ -282,7 +280,7 @@
   }
 
   .staking-benefits {
-    padding: 8rem 0;
+    padding: 6rem 0;
     background: var(--color-background-light);
 
     h2 {
@@ -352,7 +350,7 @@
   }
 
   .staking-cta {
-    padding: 8rem 0;
+    padding: 6rem 0;
     background: var(--color-background);
     position: relative;
     overflow: hidden;

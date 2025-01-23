@@ -1,5 +1,5 @@
 ---
-title: "Staking Services"
+title: "Staking Service"
 description: ""
 layout: "service"
 hero_image: "/images/services/staking.png"
