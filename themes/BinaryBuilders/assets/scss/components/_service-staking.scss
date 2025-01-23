@@ -47,9 +47,7 @@
       font-weight: var(--font-weight-bold);
       line-height: 1.1;
       margin-bottom: 1rem;
-      background: linear-gradient(135deg, #7B4DFF 0%, #E464FF 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--color-white);
     }
 
     &__description {

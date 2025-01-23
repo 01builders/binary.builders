@@ -44,6 +44,31 @@
   </section>
   {{ end }}
 
+  <!-- Testimonials -->
+  {{ if .Params.testimonials }}
+  <section class="testimonials-simple">
+    <div class="container">
+      <h2 class="features__title">
+        <span class="features__title-glow">What Our Clients Say</span>
+      </h2>
+      <div class="testimonials-simple__grid">
+        {{ range .Params.testimonials }}
+        <div class="testimonial-card">
+          <pixel-hover></pixel-hover>
+          <blockquote class="testimonial-card__quote">{{ .quote }}</blockquote>
+          <div class="testimonial-card__author">
+            {{ if .logo }}
+            <img class="testimonial-card__avatar" src="/images/logos/{{ .logo }}.png" alt="{{ .name }}'s company logo" loading="lazy">
+            {{ end }}
+            <span class="testimonial-card__name">{{ .name }}</span>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
   <!-- Get in Touch -->
   <section class="get-in-touch">
     <div class="container">

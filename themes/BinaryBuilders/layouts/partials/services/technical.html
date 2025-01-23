@@ -20,38 +20,6 @@
     </div>
   </section>
 
-  <!-- Overview with Code Snippets -->
-  <section class="technical-overview">
-    <div class="container">
-      <div class="technical-overview__content">
-        {{ .Content }}
-      </div>
-      <div class="technical-overview__code">
-        <div class="code-window">
-          <div class="code-window__header">
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-            <span class="window-dot"></span>
-          </div>
-          <div class="code-window__content">
-            <pre><code>// Smart Contract Development
-contract BinaryToken {
-    string public name = "Binary";
-    string public symbol = "BNY";
-    uint8 public decimals = 18;
-    
-    event Transfer(address indexed from, address indexed to, uint256 value);
-    
-    constructor() {
-        // Initialize contract
-    }
-}</code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Features with Interactive Diagrams -->
   {{ if .Params.features }}
   <section class="technical-features">
@@ -77,103 +45,18 @@ contract BinaryToken {
   </section>
   {{ end }}
 
-  <!-- Benefits with Tech Stack -->
-  {{ if .Params.benefits }}
-  <section class="technical-benefits">
+  <!-- Get in Touch -->
+  <section class="get-in-touch">
     <div class="container">
-      <h2>Our Expertise</h2>
-      <div class="technical-benefits__grid">
-        {{ range .Params.benefits }}
-        <div class="tech-card">
-          <div class="tech-card__icon">{{ .icon }}</div>
-          <div class="tech-card__content">
-            <h3>{{ .title }}</h3>
-            <p>{{ .description }}</p>
-          </div>
-          <div class="tech-card__stack">
-            <div class="stack-item">Solidity</div>
-            <div class="stack-item">Rust</div>
-            <div class="stack-item">Go</div>
-          </div>
-        </div>
-        {{ end }}
+      <h2 class="features__title">
+        <span class="features__title-glow">Get in Touch</span>
+      </h2>
+      <div class="banner-image artistic-banner">
+        <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
       </div>
-    </div>
-  </section>
-  {{ end }}
-
-  <!-- Process Timeline -->
-  <section class="technical-process">
-    <div class="container">
-      <h2>Development Process</h2>
-      <div class="process-timeline" style="position: relative;">
-        <div class="process-step" style="display: flex; align-items: center; gap: 2rem; margin-bottom: 4rem;">
-          <div class="process-step__number" style="background: #7B4DFF; color: white; border: 2px solid white; flex-shrink: 0;">01</div>
-          <div class="process-step__content" style="flex-grow: 1; background: rgba(123, 77, 255, 0.1); padding: 1.5rem; border-radius: 0.5rem;">
-            <h3>Requirements Analysis</h3>
-            <p>Detailed analysis of project requirements and technical specifications.</p>
-          </div>
-        </div>
-        <div class="process-step" style="display: flex; align-items: center; gap: 2rem; margin-bottom: 4rem;">
-          <div class="process-step__number" style="background: #7B4DFF; color: white; border: 2px solid white; flex-shrink: 0;">02</div>
-          <div class="process-step__content" style="flex-grow: 1; background: rgba(123, 77, 255, 0.1); padding: 1.5rem; border-radius: 0.5rem;">
-            <h3>Architecture Design</h3>
-            <p>Creating robust and scalable system architecture.</p>
-          </div>
-        </div>
-        <div class="process-step" style="display: flex; align-items: center; gap: 2rem; margin-bottom: 4rem;">
-          <div class="process-step__number" style="background: #7B4DFF; color: white; border: 2px solid white; flex-shrink: 0;">03</div>
-          <div class="process-step__content" style="flex-grow: 1; background: rgba(123, 77, 255, 0.1); padding: 1.5rem; border-radius: 0.5rem;">
-            <h3>Development</h3>
-            <p>Implementing solutions with clean, efficient code.</p>
-          </div>
-        </div>
-        <div class="process-step" style="display: flex; align-items: center; gap: 2rem;">
-          <div class="process-step__number" style="background: #7B4DFF; color: white; border: 2px solid white; flex-shrink: 0;">04</div>
-          <div class="process-step__content" style="flex-grow: 1; background: rgba(123, 77, 255, 0.1); padding: 1.5rem; border-radius: 0.5rem;">
-            <h3>Testing & Audit</h3>
-            <p>Comprehensive testing and security audits.</p>
-          </div>
-        </div>
-        <div style="position: absolute; top: 0; bottom: 0; left: 2.5rem; width: 2px; background: rgba(123, 77, 255, 0.2); z-index: -1;"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action with Terminal -->
-  <section class="technical-cta">
-    <div class="container">
-      <div class="technical-cta__content">
-        <h2>Start Building</h2>
-        <p>{{ .Params.cta_description }}</p>
-        <div class="technical-cta__buttons">
-          {{ with .Params.primary_cta }}
-          <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener">
-            {{ .text }} <span class="button__arrow">→</span>
-          </a>
-          {{ end }}
-          {{ with .Params.secondary_cta }}
-          <a href="{{ .url }}" class="button button--secondary">
-            {{ .text }} <span class="button__arrow">→</span>
-          </a>
-          {{ end }}
-        </div>
-      </div>
-      <div class="technical-cta__terminal">
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <span class="terminal-dot"></span>
-            <span class="terminal-dot"></span>
-            <span class="terminal-dot"></span>
-          </div>
-          <div class="terminal-content">
-            <div class="terminal-line">$ git clone binary.builders/awesome-project</div>
-            <div class="terminal-line">$ cd awesome-project</div>
-            <div class="terminal-line">$ npm install</div>
-            <div class="terminal-line">$ npm start</div>
-            <div class="terminal-line terminal-line--active">Ready to build something amazing...</div>
-          </div>
-        </div>
+      <p class="section-description text-center">Ready to build the future of blockchain technology? Let's collaborate on advancing decentralized solutions.</p>
+      <div class="cta-button text-center">
+        <a href="/contact" class="site-header__cta-button">Contact Us</a>
       </div>
     </div>
   </section>
@@ -182,12 +65,6 @@ contract BinaryToken {
 <!-- Add terminal animation script -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // Terminal typing animation
-  const terminalLines = document.querySelectorAll('.terminal-line');
-  terminalLines.forEach((line, index) => {
-    line.style.animationDelay = `${index * 0.5}s`;
-  });
-
   // Code animation
   const codeAnimation = document.querySelector('.code-animation');
   if (codeAnimation) {
