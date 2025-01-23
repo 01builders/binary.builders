@@ -1,7 +1,7 @@
 ---
 title: "We are Binary Builders"
-date: 2023-07-23
-lastmod: 2023-07-23
+date: 2024-12-23
+lastmod: 2024-12-23
 layout: "post"
 categories: ["Ecosystem"]
 tags: ["Introduction", "Updates"]
