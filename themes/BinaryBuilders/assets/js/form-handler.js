@@ -3,20 +3,14 @@ function validateForm(event) {
   const submitButton = form.querySelector('button[type="submit"]');
   const buttonText = submitButton.querySelector('.button-text');
   const buttonLoader = submitButton.querySelector('.button-loader');
+  const errorAlert = form.querySelector('.form-alert--error');
   
   // Disable button and show loading state
   submitButton.disabled = true;
   buttonText.style.display = 'none';
   buttonLoader.style.display = 'block';
   
-  // Re-enable button after a short delay (FormSubmit will handle the redirect)
-  setTimeout(() => {
-    submitButton.disabled = false;
-    buttonText.style.display = 'block';
-    buttonLoader.style.display = 'none';
-  }, 2000);
-  
-  // Form will submit naturally to FormSubmit
+  // Let FormSubmit handle the submission and redirect
   return true;
 }
 
