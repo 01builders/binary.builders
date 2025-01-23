@@ -1,7 +1,7 @@
 ---
 title: "A New Direction"
-date: 2025-01-15
-lastmod: 2025-01-15
+date: 2025-01-03
+lastmod: 2025-01-03
 layout: "post"
 categories: ["Ecosystem"]
 tags: ["Updates", "Announcement"]

@@ -5,7 +5,7 @@ lastmod: 2025-01-15
 layout: "post"
 categories: ["Company"]
 tags: ["Design", "Updates"]
-highlighted: true
+highlighted: false
 draft: false
 image: "/images/blog/2025/a-new-fresh-look.png"
 description: "Binary Builders unveils a fresh new look that reflects our vision for the future of blockchain technology."
