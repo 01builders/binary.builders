@@ -75,11 +75,11 @@
   }
 
   .consulting-overview {
-    padding: 4rem 0;
+    padding: 8rem 0 6rem;
 
     &__content {
       max-width: 800px;
-      margin: 0 auto 4rem;
+      margin: 0 auto;
       text-align: center;
 
       h2 {
@@ -180,7 +180,7 @@
   }
 
   .consulting-features {
-    padding: 8rem 0;
+    padding: 2rem 0 4rem;
     background: var(--color-background);
 
     h2 {

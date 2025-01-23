@@ -44,48 +44,18 @@
   </section>
   {{ end }}
 
-  <!-- Benefits with Timeline -->
-  {{ if .Params.benefits }}
-  <section class="consulting-benefits">
+  <!-- Get in Touch -->
+  <section class="get-in-touch">
     <div class="container">
-      <h2>Consulting Benefits</h2>
-      <div class="benefits-timeline">
-        {{ range $index, $benefit := .Params.benefits }}
-        <div class="timeline-item">
-          <div class="timeline-marker">{{ add $index 1 }}</div>
-          <div class="timeline-content">
-            <div class="timeline-icon">{{ .icon }}</div>
-            <h3>{{ .title }}</h3>
-            <p>{{ .description }}</p>
-          </div>
-        </div>
-        {{ end }}
+      <h2 class="features__title">
+        <span class="features__title-glow">Get in Touch</span>
+      </h2>
+      <div class="banner-image artistic-banner">
+        <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
       </div>
-    </div>
-  </section>
-  {{ end }}
-
-  <!-- Call to Action -->
-  <section class="consulting-cta">
-    <div class="container">
-      <div class="consulting-cta__grid">
-        <div class="consulting-cta__content">
-          <h2>Get Started</h2>
-          <p>{{ .Params.cta_description }}</p>
-          <div class="consulting-cta__buttons">
-            {{ with .Params.primary_cta }}
-            <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener">
-              {{ .text }} <span class="button__arrow">→</span>
-            </a>
-            {{ end }}
-            {{ with .Params.secondary_cta }}
-            <a href="{{ .url }}" class="button button--secondary">
-              {{ .text }} <span class="button__arrow">→</span>
-            </a>
-            {{ end }}
-          </div>
-        </div>
-        <div class="consulting-cta__pattern"></div>
+      <p class="section-description text-center">Ready to elevate your blockchain project? Let's discuss how our consulting services can help.</p>
+      <div class="cta-button text-center">
+        <a href="/contact" class="site-header__cta-button">Contact Us</a>
       </div>
     </div>
   </section>
