@@ -11,7 +11,7 @@ features:
 information you need to join effortlessly and start earning rewards."
     icon: "📈"
   - title: "Safe"
-    description: "Your funds are in trusted hands. As Binary Holdings’ largest customer,
+    description: "Your funds are in trusted hands. As Binary Holdings' largest customer,
 we apply the same rigorous standards to your assets as we do to our
 own."
     icon: "🔒"  
@@ -33,13 +33,10 @@ unparalleled security and reliability."
 #   - title: "Support"
 #     icon: "🤝"
 #     description: "Access 24/7 technical support and participate in network governance with our expert guidance."
-cta_description: "Ready to stake with confidence? Join Numia's professional validator services and unlock the power of blockchain data."
+cta_description: "Ready to start earning rewards on Cosmos Hub? Stake your ATOM tokens with our professional validator service and contribute to network security."
 primary_cta:
-  url: "https://numia.xyz"
-  text: "Start Staking"
-secondary_cta:
-  url: "/contact"
-  text: "Learn More"
+  url: "https://wallet.keplr.app/chains/cosmos-hub?modal=staking&chain=cosmoshub-4&validator_address=cosmosvaloper1e4vye322gkjx8n85jgcclnc7nvdvu82axnr5ll&step_id=3&action_id=stake"
+  text: "Stake with Keplr"
 ---
 
 ## Earn rewards while securing our supported Proof of Stake networks

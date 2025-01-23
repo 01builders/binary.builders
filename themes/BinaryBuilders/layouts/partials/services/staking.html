@@ -121,26 +121,18 @@
   {{ end }}
 
   <!-- Call to Action with Network Animation -->
-  <section class="staking-cta">
-    <div class="container">
-      <div class="staking-cta__content">
+  <section class="staking-cta" style="padding: 4rem 0;">
+    <div class="container" style="display: flex; justify-content: center; align-items: center; min-height: 200px;">
+      <div class="staking-cta__content" style="text-align: center; max-width: 600px;">
         <h2>Start Staking</h2>
         <p>{{ .Params.cta_description }}</p>
-        <div class="staking-cta__buttons">
+        <div class="staking-cta__buttons" style="display: flex; justify-content: center; gap: 1rem;">
           {{ with .Params.primary_cta }}
-          <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener">
-            {{ .text }} <span class="button__arrow">→</span>
-          </a>
-          {{ end }}
-          {{ with .Params.secondary_cta }}
-          <a href="{{ .url }}" class="button button--secondary">
+          <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener" style="padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; transition: transform 0.3s ease; background: #7B4DFF; color: white; border: none; text-decoration: none; &:hover { transform: translateY(-2px); }">
             {{ .text }} <span class="button__arrow">→</span>
           </a>
           {{ end }}
         </div>
-      </div>
-      <div class="staking-cta__network">
-        <div class="network-animation"></div>
       </div>
     </div>
   </section>
