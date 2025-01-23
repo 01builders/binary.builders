@@ -6,7 +6,7 @@ layout: "post"
 categories: ["Technical Blog"]
 tags: ["Markdown", "Style Guide"]
 highlighted: false
-draft: false
+draft: true
 image: "/images/blog/2023/getting-started/cover.jpeg"
 description: "Explore the full range of markdown formatting capabilities with this comprehensive guide, featuring everything from basic text styling to complex code blocks."
 ---

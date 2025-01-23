@@ -7,7 +7,7 @@ categories: ["Ecosystem"]
 tags: ["Introduction", "Updates"]
 highlighted: true
 draft: false
-image: "/images/blog/ecosystem-update/cover.svg"
+image: "/images/blog/2025/binary-builders.jpg"
 description: "Binary Builders, led by Onur Akpolat and Marko since 2022, is a technology company that focuses on building, growing, and operating blockchains."
 author: "Onur Akpolat"
 ---
