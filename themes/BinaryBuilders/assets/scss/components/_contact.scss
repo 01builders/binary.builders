@@ -103,7 +103,7 @@
     background-size: 20px 20px;
     opacity: 0.25;
     animation: constellation 4s ease infinite;
-    z-index: 0;
+    z-index: 1;
   }
 
   &::after {
@@ -227,11 +227,15 @@
   width: 100%;
   padding: 4rem 0;
   text-align: center;
+  position: relative;
+  z-index: 10;
 
   &__container {
     max-width: 680px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    position: relative;
+    z-index: 10;
   }
 
   &__title {
@@ -240,6 +244,8 @@
     margin-bottom: 0.75rem;
     color: var(--color-white);
     line-height: 1.2;
+    position: relative;
+    z-index: 10;
   }
 }
 
@@ -248,6 +254,8 @@
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--color-text-light);
+  position: relative;
+  z-index: 10;
 
   p {
     margin-bottom: 0.5rem;

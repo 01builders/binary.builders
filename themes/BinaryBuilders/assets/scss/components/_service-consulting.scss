@@ -42,7 +42,8 @@
       margin-bottom: 2rem;
 
       @media (max-width: 768px) {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
       }
     }
 
@@ -77,6 +78,10 @@
   .consulting-overview {
     padding: 8rem 0 6rem;
 
+    @media (max-width: 768px) {
+      padding: 4rem 0 3rem;
+    }
+
     &__content {
       max-width: 800px;
       margin: 0 auto;
@@ -88,6 +93,11 @@
         background: var(--gradient-text);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
       }
 
       p {
@@ -187,6 +197,11 @@
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 4rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+      }
     }
 
     &__grid {
@@ -220,6 +235,11 @@
         font-size: 1.5rem;
         color: var(--color-white);
         margin-bottom: 1rem;
+
+        @media (max-width: 768px) {
+          font-size: 1.25rem;
+          margin-bottom: 0.75rem;
+        }
       }
 
       p {
@@ -238,6 +258,11 @@
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 4rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+      }
     }
 
     .benefits-timeline {
