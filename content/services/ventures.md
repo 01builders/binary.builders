@@ -14,11 +14,11 @@ venture is equipped for long-term success."
   - title: "Guiding Visionaries to Success"
     description: "Our team works closely with founders, offering hands-on mentorship
 to navigate the challenges of building in the blockchain space. From
-strategy to execution, we’re here to help you succeed."
+strategy to execution, we're here to help you succeed."
     icon: "💎"
   - title: "Making the Right Connections"
     description: "Leverage our extensive network of industry leaders, collaborators, and
-technical experts to accelerate your project’s growth. From
+technical experts to accelerate your project's growth. From
 partnerships to community building, we connect you with the
 resources you need."
     icon: "🤝"
@@ -39,9 +39,6 @@ cta_description: "Ready to take your blockchain project to the next level? Partn
 primary_cta:
   url: "#CALNEDLY"
   text: "Partner With Us"
-secondary_cta:
-  url: "/contact"
-  text: "Get in Touch"
 ---
 
 ## Investing in Visionary Entrepreneurs Building the New Internet
