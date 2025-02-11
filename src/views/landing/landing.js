@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Typography from '../../components/typography';
 
@@ -14,16 +15,12 @@ import onur from '../../assets/team/onur.jpg';
 import marko from '../../assets/team/marko.png';
 import facu from '../../assets/team/facu.jpeg';
 import julien from '../../assets/team/julien.jpg';
-import noam from '../../assets/team/noam.jpeg';
 import len from '../../assets/team/len.png';
 import rafa from '../../assets/team/rafa.png';
 import alex from '../../assets/team/alex.png';
 import marc from '../../assets/team/marc.png';
-import sam from '../../assets/team/sam.jpeg';
 import frojdi from '../../assets/team/frojdi.jpeg';
 import anon from '../../assets/team/anon.png';
-import anviksha from '../../assets/team/anviksha.png';
-import durgham from '../../assets/team/durgham.png';
 
 import { ReactComponent as Simple } from '../../assets/stake/simple.svg';
 import { ReactComponent as Safe } from '../../assets/stake/safe.svg';
@@ -60,15 +57,15 @@ const Landing = () => {
         </div>
         <div className={styles['display-mobile']}>
           <div className={styles.portfolios}>
-            <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://v1.cosmos.network/sdk' style={{ textDecoration: 'none' }}>
+            {/* <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://v1.cosmos.network/sdk' style={{ textDecoration: 'none' }}>
               <img src={SDK} alt="SDK" className={styles.venture}/>
-            </a>
+            </a> */}
             <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://numia.xyz/' style={{ textDecoration: 'none' }}>
               <img src={Numia} alt="Numia" className={styles.venture}/>
             </a>
-            <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://join.builders/' style={{ textDecoration: 'none' }}>
+            {/* <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://join.builders/' style={{ textDecoration: 'none' }}>
               <img src={BuildersProgam} alt="BuildersProgram" className={styles.venture}/>
-            </a>
+            </a> */}
           </div>
         </div>
 
@@ -77,18 +74,18 @@ const Landing = () => {
             <div className={styles['display-desktop']}>
               <div className={styles.networkRight}>
                 <div className={styles.info}>
-                  <div className={styles.smallerbox}>
+                  {/* <div className={styles.smallerbox}>
                     <div className={styles.imagebox}>
                     <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://v1.cosmos.network/sdk' style={{ textDecoration: 'none' }}>
                       <img src={SDK} alt="SDK" className={styles.venture}/>
                     </a>
                     </div>
-                  </div>
-                  <div className={styles.box}>
+                  </div> */}
+                  {/* <div className={styles.box}> */}
                     <Typography className={styles.description}>
-                    Binary Builders is the primary maintainer of the Cosmos SDK. The Cosmos SDK is the world's most used framework for building application-specific blockchains. 
+                    Binary Builders is an engineering organization focused on developing the future of the App Chains. We have been building out the Cosmos SDK since 2020 and have a strong track record of building successful projects.
                     </Typography>
-                  </div>
+                  {/* </div> */}
                 </div>
               </div>
               <div className={styles.networkLeft}>
@@ -109,17 +106,12 @@ const Landing = () => {
               </div>
               <div className={styles.networkRight}>
                 <div className={styles.info}>
-                <div className={styles.smallerbox}>
-                    <div className={styles.imagebox}>
-                    <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://join.builders/' style={{ textDecoration: 'none' }}>
-                      <img src={BuildersProgam} alt="BuildersProgram" className={styles.venture}/>
-                    </a>
-                    </div>
-                  </div>
-                  <div className={styles.box}>
                     <Typography className={styles.description}>
-                    The Builders Program provides mentorship, structured support and guidance for teams who build in the Interchain, using at least one component of the Cosmos Stack: Tendermint/CometBFT, CosmosSDK, CosmWasm and IBC.                </Typography>
-                  </div>
+                    Binary Builders offers a range of services to help teams build successful projects. We help teams build their product, their community, a go-to-market strategy, help build marketing strategies and more. If you would like to find out more, {' '}
+                    <Link to="/contact" style={{ color: 'inherit', textDecoration: 'underline' }}>
+                      reach out here
+                    </Link>
+                    </Typography>
                 </div>
               </div>
             </div>
@@ -263,54 +255,39 @@ const Landing = () => {
           <div className={styles.member}>
             <img src={anon} alt="ALEXANDER PETERS" className={styles.pfp} />
             <Typography className={styles.name}>ALEXANDER PETERS</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
+            <Typography className={styles.title}>Engineer</Typography>
           </div>
           <div className={styles.member}>
             <img src={alex} alt="ALEX SANTOS" className={styles.pfp} />
             <Typography className={styles.name}>ALEX SANTOS</Typography>
-            <Typography className={styles.title}>Builders Program</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={anviksha} alt="ANVIKSHA SINGH" className={styles.pfp} />
-            <Typography className={styles.name}>ANVIKSHA SINGH</Typography>
-            <Typography className={styles.title}>Marketing</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={durgham} alt="DURGHAM MUSHTAHA" className={styles.pfp} />
-            <Typography className={styles.name}>DURGHAM MUSHTAHA</Typography>
-            <Typography className={styles.title}>Builders Program</Typography>
+            <Typography className={styles.title}>Business Development</Typography>
           </div>
           <div className={styles.member}>
             <img src={facu} alt="FACUNDO MEDICA" className={styles.pfp} />
             <Typography className={styles.name}>FACUNDO MEDICA</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
+            <Typography className={styles.title}>Engineer</Typography>
           </div>
         </div>
         <div className={styles.members}>
           <div className={styles.member}>
             <img src={frojdi} alt="FROJDI DYMYLJA" className={styles.pfp} />
             <Typography className={styles.name}>FROJDI DYMYLJA</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={anon} alt="JOHN REYNOLDS" className={styles.pfp} />
-            <Typography className={styles.name}>JOHN REYNOLDS</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
+            <Typography className={styles.title}>Engineer</Typography>
           </div>
           <div className={styles.member}>
             <img src={anon} alt="JONATHAN GIMENO" className={styles.pfp} />
             <Typography className={styles.name}>JONATHAN GIMENO</Typography>
-            <Typography className={styles.title}>Consulting</Typography>
+            <Typography className={styles.title}>Engineer</Typography>
           </div>
           <div className={styles.member}>
             <img src={julien} alt="JULIEN ROBERT" className={styles.pfp} />
             <Typography className={styles.name}>JULIEN ROBERT</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
+            <Typography className={styles.title}>Engineer</Typography>
           </div>
           <div className={styles.member}>
             <img src={len} alt="LEN SEITTER" className={styles.pfp} />
             <Typography className={styles.name}>LEN SEITTER</Typography>
-            <Typography className={styles.title}>Builders Program</Typography>
+            <Typography className={styles.title}>Business Development</Typography>
           </div>
         </div>
         <div className={styles.members}>
@@ -322,17 +299,7 @@ const Landing = () => {
           <div className={styles.member}>
             <img src={marko} alt="MARKO BARICEVIC" className={styles.pfp} />
             <Typography className={styles.name}>MARKO BARICEVIC</Typography>
-            <Typography className={styles.title}>Founder / Cosmos SDK</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={anon} alt="MATTHEW KOCUBINSKI" className={styles.pfp} />
-            <Typography className={styles.name}>MATTHEW KOCUBINSKI</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={noam} alt="NOAM COHEN" className={styles.pfp} />
-            <Typography className={styles.name}>NOAM COHEN</Typography>
-            <Typography className={styles.title}>Builders Program</Typography>
+            <Typography className={styles.title}>Founder</Typography>
           </div>
           <div className={styles.member}>
             <img src={onur} alt="ONUR AKPOLAT" className={styles.pfp} />
@@ -345,16 +312,6 @@ const Landing = () => {
             <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
             <Typography className={styles.name}>RAFAEL AVILES</Typography>
             <Typography className={styles.title}>Numia</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={sam} alt="SAM RICOTTA" className={styles.pfp} />
-            <Typography className={styles.name}>SAM RICOTTA</Typography>
-            <Typography className={styles.title}>Cosmos SDK</Typography>
-          </div>
-          <div className={styles.member}>
-            <img src={anon} alt="SEAN KING" className={styles.pfp} />
-            <Typography className={styles.name}>SEAN KING</Typography>
-            <Typography className={styles.title}>Consulting</Typography>
           </div>
         </div>
       </div>
