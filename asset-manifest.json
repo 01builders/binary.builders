@@ -1,14 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.22857ee7.css",
-    "main.js": "/static/js/main.2560e342.js",
+    "main.js": "/static/js/main.df59c90c.js",
     "static/js/787.7250eb2b.chunk.js": "/static/js/787.7250eb2b.chunk.js",
-    "static/media/marc.png": "/static/media/marc.94b15d93bae36415c528.png",
-    "static/media/alex.png": "/static/media/alex.adca3e154f32a431c080.png",
-    "static/media/facu.jpeg": "/static/media/facu.19844acd525d429ac94d.jpeg",
+    "static/media/marc.png": "/static/media/marc.01b1415a0d5bd576251a.png",
     "static/media/julien.jpg": "/static/media/julien.b640dce30eb26fe5f1b1.jpg",
+    "static/media/alex.png": "/static/media/alex.c0d1540994e5a5156dd3.png",
+    "static/media/max.jpg": "/static/media/max.2f15c56208a0583f36bf.jpg",
     "static/media/len.png": "/static/media/len.352d1eea44aa18c4a477.png",
     "static/media/onur.jpg": "/static/media/onur.f835b172864a5f647360.jpg",
+    "static/media/facu.jpeg": "/static/media/facu.5f3f0bd998a05674c083.jpeg",
     "static/media/marko.png": "/static/media/marko.f696acd554b681287c68.png",
     "static/media/penumbra-logo.png": "/static/media/penumbra-logo.b254311d79bfdd1f2294.png",
     "static/media/osmosis-logo.png": "/static/media/osmosis-logo.d610f92fca17be609fcd.png",
@@ -20,7 +21,6 @@
     "static/media/quasar-logo.png": "/static/media/quasar-logo.6479d432da54ca6f445f.png",
     "static/media/from-zero.png": "/static/media/from-zero.b110411772b198f71ccd.png",
     "static/media/celestia-logo.png": "/static/media/celestia-logo.696f7600674a9227979c.png",
-    "static/media/stake.png": "/static/media/stake.ab2d249b8d14ff2a004a.png",
     "static/media/validator-title.png": "/static/media/validator-title.61b7f9f0c0c5fbb9aca4.png",
     "static/media/supported-networks.png": "/static/media/supported-networks.ddee321ce56bcf29d70a.png",
     "static/media/ventures-title.png": "/static/media/ventures-title.2c73fa1ad16b4316dd58.png",
@@ -33,11 +33,11 @@
     "static/media/header-logo.svg": "/static/media/header-logo.7c18305349faef1f4255128fbd8ccec3.svg",
     "index.html": "/index.html",
     "main.22857ee7.css.map": "/static/css/main.22857ee7.css.map",
-    "main.2560e342.js.map": "/static/js/main.2560e342.js.map",
+    "main.df59c90c.js.map": "/static/js/main.df59c90c.js.map",
     "787.7250eb2b.chunk.js.map": "/static/js/787.7250eb2b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.22857ee7.css",
-    "static/js/main.2560e342.js"
+    "static/js/main.df59c90c.js"
   ]
 }
