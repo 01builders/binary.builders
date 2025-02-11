@@ -5,7 +5,6 @@ import Typography from '../../components/typography';
 
 import fromZero from '../../assets/from-zero.png';
 import { ReactComponent as Binary } from '../../assets/binary.svg';
-import stakeTitle from '../../assets/stake.png';
 import supportedTitle from '../../assets/supported-networks.png';
 import teamTitle from '../../assets/team-title.png';
 import validatorTitle from '../../assets/validator-title.png';
@@ -13,6 +12,7 @@ import venturesTitle from '../../assets/ventures-title.png';
 
 import onur from '../../assets/team/onur.jpg';
 import marko from '../../assets/team/marko.png';
+import max from '../../assets/team/max.jpg';
 import facu from '../../assets/team/facu.jpeg';
 import julien from '../../assets/team/julien.jpg';
 import len from '../../assets/team/len.png';
@@ -257,13 +257,13 @@ const Landing = () => {
             <Typography className={styles.name}>FACUNDO MEDICA</Typography>
             <Typography className={styles.title}>Engineer</Typography>
           </div>
-        </div>
-        <div className={styles.members}>
           <div className={styles.member}>
             <img src={frojdi} alt="FROJDI DYMYLJA" className={styles.pfp} />
             <Typography className={styles.name}>FROJDI DYMYLJA</Typography>
             <Typography className={styles.title}>Engineer</Typography>
           </div>
+        </div>
+        <div className={styles.members}>
           <div className={styles.member}>
             <img src={anon} alt="JONATHAN GIMENO" className={styles.pfp} />
             <Typography className={styles.name}>JONATHAN GIMENO</Typography>
@@ -279,25 +279,28 @@ const Landing = () => {
             <Typography className={styles.name}>LEN SEITTER</Typography>
             <Typography className={styles.title}>Business Development</Typography>
           </div>
-        </div>
-        <div className={styles.members}>
           <div className={styles.member}>
             <img src={marc} alt="MARC HÖFFL" className={styles.pfp} />
             <Typography className={styles.name}>MARC HÖFFL</Typography>
             <Typography className={styles.title}>Numia</Typography>
           </div>
+        </div>
+        <div className={styles.members}>
           <div className={styles.member}>
             <img src={marko} alt="MARKO BARICEVIC" className={styles.pfp} />
             <Typography className={styles.name}>MARKO BARICEVIC</Typography>
             <Typography className={styles.title}>Founder</Typography>
           </div>
           <div className={styles.member}>
+            <img src={max} alt="MAXIMILIAN WINDHAGEN" className={styles.pfp} />
+            <Typography className={styles.name}>MAXIMILIAN WINDHAGEN</Typography>
+            <Typography className={styles.title}>Business Development</Typography>
+          </div>
+          <div className={styles.member}>
             <img src={onur} alt="ONUR AKPOLAT" className={styles.pfp} />
             <Typography className={styles.name}>ONUR AKPOLAT</Typography>
             <Typography className={styles.title}>Founder</Typography>
           </div>
-        </div>
-        <div className={styles.members}>
           <div className={styles.member}>
             <img src={rafa} alt="RAFAEL AVILES" className={styles.pfp} />
             <Typography className={styles.name}>RAFAEL AVILES</Typography>
