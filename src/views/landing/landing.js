@@ -34,8 +34,6 @@ import Stride from '../../assets/stride-logo.png';
 import Quasar from '../../assets/quasar-logo.png';
 import Noble from '../../assets/noble-logo.png';
 import Numia from '../../assets/numia.png';
-import SDK from '../../assets/sdk-logo.png';
-import BuildersProgam from '../../assets/bp-logo.png';
 
 import styles from './landing.module.scss';
 
@@ -74,18 +72,10 @@ const Landing = () => {
             <div className={styles['display-desktop']}>
               <div className={styles.networkRight}>
                 <div className={styles.info}>
-                  {/* <div className={styles.smallerbox}>
-                    <div className={styles.imagebox}>
-                    <a className={styles.portfolio} target='_blank' rel="noreferrer" href='https://v1.cosmos.network/sdk' style={{ textDecoration: 'none' }}>
-                      <img src={SDK} alt="SDK" className={styles.venture}/>
-                    </a>
-                    </div>
-                  </div> */}
-                  {/* <div className={styles.box}> */}
+
                     <Typography className={styles.description}>
-                    Binary Builders is an engineering organization focused on developing the future of the App Chains. We have been building out the Cosmos SDK since 2020 and have a strong track record of building successful projects.
+                    Binary Builders is an engineering and product organization focused on developing the future of the App Chains. We have been building out the Cosmos SDK since 2020 and have a strong track record of building successful projects.
                     </Typography>
-                  {/* </div> */}
                 </div>
               </div>
               <div className={styles.networkLeft}>
