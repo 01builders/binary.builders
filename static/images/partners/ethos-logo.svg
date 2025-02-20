@@ -1,5 +1,1 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M100 20L180 60V140L100 180L20 140V60L100 20Z" fill="currentColor" fill-opacity="0.1"/>
-  <path d="M100 60L140 80V120L100 140L60 120V80L100 60Z" fill="currentColor"/>
-  <circle cx="100" cy="100" r="20" fill="currentColor"/>
-</svg> 
+<svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.11 6.402a25.713 25.713 0 0 1 1.596 6.098H32v6.4H15.773a25.724 25.724 0 0 1-1.687 6.7H0V32h10.378H0V0h10.425l.002.002H0v6.4h14.11Zm1.826 9.568c0 .99-.055 1.968-.163 2.93H0v-6.4h15.706c.152 1.135.23 2.293.23 3.47Z" fill="currentColor"></path><path d="M32 6.402H14.11a25.86 25.86 0 0 0-3.683-6.4H32v6.4ZM32 32H10.378a25.864 25.864 0 0 0 3.708-6.4H32V32Z" fill="currentColor"></path></svg>

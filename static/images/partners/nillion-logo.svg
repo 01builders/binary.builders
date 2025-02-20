@@ -1,5 +1,18 @@
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M20 100C20 55.8172 55.8172 20 100 20V100H180C180 144.183 144.183 180 100 180C55.8172 180 20 144.183 20 100Z" fill="currentColor"/>
-  <path d="M100 60C77.9086 60 60 77.9086 60 100H100V60Z" fill="currentColor" fill-opacity="0.3"/>
-  <path d="M140 100C140 77.9086 122.091 60 100 60V100H140Z" fill="currentColor" fill-opacity="0.3"/>
-</svg> 
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="364.000000pt" height="364.000000pt" viewBox="0 0 364.000000 364.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,364.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M1585 3625 c-487 -69 -895 -301 -1197 -680 -175 -220 -307 -514 -360
+-803 -31 -167 -31 -467 0 -634 53 -290 185 -584 360 -803 281 -352 665 -583
+1108 -667 171 -32 467 -32 638 0 443 84 827 315 1108 667 175 219 307 513 360
+803 31 167 31 467 0 634 -137 748 -718 1330 -1463 1468 -150 28 -414 35 -554
+15z m1083 -1797 l2 -848 -22 -5 c-13 -3 -135 -4 -273 -3 l-250 3 -3 583 -2
+582 -310 0 -310 0 -2 -582 -3 -583 -265 0 -265 0 -3 853 -2 852 852 -2 853 -3
+3 -847z"/>
+</g>
+</svg>
