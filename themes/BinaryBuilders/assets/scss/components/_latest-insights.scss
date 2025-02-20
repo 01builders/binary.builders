@@ -141,7 +141,7 @@
   .highlighted-post {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
@@ -283,7 +283,7 @@
       background: rgba(255, 255, 255, 0.05);
       color: var(--color-white);
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 0;
       font-weight: 500;
       font-size: 0.875rem;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

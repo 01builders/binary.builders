@@ -120,19 +120,18 @@
   </section>
   {{ end }}
 
-  <!-- Call to Action with Network Animation -->
-  <section class="staking-cta" style="padding: 4rem 0;">
-    <div class="container" style="display: flex; justify-content: center; align-items: center; min-height: 200px;">
-      <div class="staking-cta__content" style="text-align: center; max-width: 600px;">
-        <h2>Start Staking</h2>
-        <p>{{ .Params.cta_description }}</p>
-        <div class="staking-cta__buttons" style="display: flex; justify-content: center; gap: 1rem;">
-          {{ with .Params.primary_cta }}
-          <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener" style="padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 500; transition: transform 0.3s ease; background: #7B4DFF; color: white; border: none; text-decoration: none; &:hover { transform: translateY(-2px); }">
-            {{ .text }} <span class="button__arrow">→</span>
-          </a>
-          {{ end }}
-        </div>
+  <!-- Get in Touch -->
+  <section class="get-in-touch">
+    <div class="container">
+      <h2 class="features__title">
+        <span class="features__title-glow">Get in Touch</span>
+      </h2>
+      <div class="banner-image artistic-banner">
+        <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
+      </div>
+      <p class="section-description text-center">Ready to build the future of blockchain technology? Let's collaborate on advancing decentralized solutions.</p>
+      <div class="cta-button text-center">
+        <a href="/contact" class="site-header__cta-button">Contact Us</a>
       </div>
     </div>
   </section>

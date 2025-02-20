@@ -175,7 +175,7 @@
         .timeline-content {
           background: var(--color-surface);
           padding: 2.5rem;
-          border-radius: 16px;
+          border-radius: 0;
           border: 1px solid var(--color-border-light);
           text-align: left;
           transition: var(--transition-standard);
@@ -262,7 +262,7 @@
           padding: 1rem;
           background: transparent;
           border: none;
-          border-radius: 12px;
+          border-radius: 0;
           cursor: pointer;
           transition: all 0.3s ease;
           width: 100%;
@@ -375,7 +375,7 @@
       .expertise-card {
         background: var(--color-surface);
         padding: 2.5rem;
-        border-radius: 16px;
+        border-radius: 0;
         border: 1px solid var(--color-border-light);
         transition: var(--transition-standard);
         height: 100%;
@@ -443,7 +443,7 @@
 
       .button {
         padding: 1rem 2rem;
-        border-radius: 12px;
+        border-radius: 0;
         font-size: 1rem;
         font-weight: var(--font-weight-semibold);
         transition: var(--transition-standard);
