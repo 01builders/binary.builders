@@ -153,7 +153,7 @@
     &__code {
       .code-window {
         background: var(--color-surface-dark);
-        border-radius: 12px;
+        border-radius: 0;
         overflow: hidden;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
@@ -234,7 +234,7 @@
     .feature-box {
       background: var(--color-surface);
       padding: 2rem;
-      border-radius: 16px;
+      border-radius: 0;
       border: 1px solid var(--color-border-light);
       position: relative;
       overflow: hidden;
@@ -321,7 +321,7 @@
     .tech-card {
       background: var(--color-surface);
       padding: 2rem;
-      border-radius: 16px;
+      border-radius: 0;
       border: 1px solid var(--color-border-light);
 
       &__icon {
@@ -355,7 +355,7 @@
           background: var(--color-surface-dark);
           color: var(--color-primary);
           padding: 0.5rem 1rem;
-          border-radius: 20px;
+          border-radius: 0;
           font-size: 0.875rem;
           font-family: 'Fira Code', monospace;
         }
@@ -410,7 +410,7 @@
         height: 80px;
         background: var(--color-surface);
         border: 2px solid var(--color-primary);
-        border-radius: 50%;
+        border-radius: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -431,7 +431,7 @@
       &__content {
         padding: 2rem;
         background: var(--color-surface);
-        border-radius: 16px;
+        border-radius: 0;
         border: 1px solid var(--color-border-light);
 
         h3 {
