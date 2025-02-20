@@ -3,13 +3,13 @@ title: "A New Direction"
 date: 2025-01-03
 lastmod: 2025-01-03
 layout: "post"
-categories: ["Ecosystem"]
-tags: ["Updates", "Announcement"]
+categories: ["Ecosystem", "Celestia"]
+tags: ["Updates", "Announcement", "Rollups"]
 highlighted: true
 draft: false
 image: "/images/blog/2025/a-new-direction.jpg"
 description: "After working in the epicenter of the Cosmos ecosystem for 6 years, we are taking a new direction with Binary Builders."
-author: "Marko"
+author: "Marko Baricevic"
 ---
 
 After working in the epicenter of the Cosmos ecosystem for 6 years, I have decided not to continue down the path the ICF is taking. After being at the center of it all for so long I wanted a change of scenery and pace. Cosmos has slowed down and innovation, while still present, is not in the areas I see the future of blockchain going.

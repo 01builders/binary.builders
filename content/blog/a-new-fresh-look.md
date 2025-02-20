@@ -1,18 +1,17 @@
 ---
-title: "A New Fresh Look"
-date: 2025-01-15
-lastmod: 2025-01-15
+title: "A new fresh look"
+date: 2025-02-20
+lastmod: 2025-02-20
 layout: "post"
-categories: ["Company"]
-tags: ["Design", "Updates"]
+categories: ["Company", "Website"]
+tags: ["Design", "Updates", "Website"]
 highlighted: true
 draft: false
 image: "/images/blog/2025/a-new-fresh-look.png"
 description: "Binary Builders unveils a fresh new look that reflects our vision for the future of blockchain technology."
-author: "Binary Builders"
+author: "Onur Akpolat"
 ---
-
-Today marks an exciting milestone for Binary Builders as we unveil our fresh new look. This redesign isn't just about aesthetics; it's a reflection of our evolution and vision for the future of blockchain technology.
+Today marks an exciting milestone for Binary Builders as we unveil our new Website. This redesign isn't just about aesthetics; it's a reflection of our evolution and vision for the future of blockchain technology.
 
 Our new identity embodies the core principles that drive us:
 

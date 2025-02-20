@@ -6,7 +6,7 @@ layout: "legal"
 
 # Privacy Policy
 
-Last updated: January 5, 2025
+Last updated: March 1, 2025
 
 ## 1. Introduction
 
