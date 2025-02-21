@@ -6,7 +6,7 @@ layout: "legal"
 
 # Terms of Service
 
-Last Updated: January 5, 2025
+Last Updated: March 1, 2025
 
 ## 1. Introduction
 
