@@ -1,23 +1,22 @@
 {{ $title := .Title }}
 <main class="page-content service-page service-page--staking">
-  <!-- Animated Hero Section -->
+  <!-- Full-width Hero Section -->
   <section class="staking-hero">
+    <div class="staking-hero__bg">
+      <div class="nodes-animation"></div>
+    </div>
+    
+    <!-- Full-width hero image -->
+    <div class="staking-hero__image-full">
+      {{ with .Params.hero_image }}
+      <img src="{{ . }}" alt="{{ $title }}" />
+      {{ end }}
+    </div>
+    
     <div class="container">
       <div class="staking-hero__content">
-        <h1 class="staking-hero__title">
-          <span class="gradient-text">{{ .Title }}</span>
-        </h1>
+        <h1 class="staking-hero__title">{{ .Title }}</h1>
         <p class="staking-hero__description">{{ .Description }}</p>
-      </div>
-      <div class="staking-hero__visual">
-        <div class="staking-hero__nodes">
-          {{ range seq 5 }}
-          <div class="node"></div>
-          {{ end }}
-        </div>
-        {{ with .Params.hero_image }}
-        <img src="{{ . }}" alt="{{ $title }}" class="staking-hero__image" />
-        {{ end }}
       </div>
     </div>
   </section>
@@ -30,15 +29,30 @@
       </div>
       <div class="staking-overview__stats">
         <div class="stat-box">
-          <div class="stat-box__value">$500M+</div>
+          <pixel-hover 
+            data-colors="#7B4DFF,#5435B4,#E464FF"
+            data-gap="6"
+            data-speed="30">
+          </pixel-hover>
+          <div class="stat-box__value">$100M+</div>
           <div class="stat-box__label">Total Value Staked</div>
         </div>
         <div class="stat-box">
+          <pixel-hover 
+            data-colors="#4ECDC4,#3DA89F,#65E5DD"
+            data-gap="6"
+            data-speed="30">
+          </pixel-hover>
           <div class="stat-box__value">99.9%</div>
           <div class="stat-box__label">Uptime</div>
         </div>
         <div class="stat-box">
-          <div class="stat-box__value">15+</div>
+          <pixel-hover 
+            data-colors="#FF6B6B,#E65555,#FF8585"
+            data-gap="6"
+            data-speed="30">
+          </pixel-hover>
+          <div class="stat-box__value">6+</div>
           <div class="stat-box__label">Networks Supported</div>
         </div>
       </div>
@@ -162,4 +176,26 @@ document.addEventListener('DOMContentLoaded', function() {
   }, observerOptions);
 
   stepCards.forEach(card => observer.observe(card));
-});</script> 
+});
+</script>
+
+<!-- Add nodes animation script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Nodes animation
+  const nodesAnimation = document.querySelector('.nodes-animation');
+  if (nodesAnimation) {
+    // Create nodes
+    const nodeCount = 50;
+    for (let i = 0; i < nodeCount; i++) {
+      const node = document.createElement('div');
+      node.className = 'node';
+      node.style.left = `${Math.random() * 100}%`;
+      node.style.top = `${Math.random() * 100}%`;
+      node.style.animationDelay = `${Math.random() * 5}s`;
+      node.style.animationDuration = `${5 + Math.random() * 10}s`;
+      nodesAnimation.appendChild(node);
+    }
+  }
+});
+</script> 

@@ -1,6 +1,6 @@
 ---
 title: "Staking Service"
-description: ""
+description: "Earn rewards while securing our supported Proof of Stake networks with industry-leading validator infrastructure"
 layout: "service"
 hero_image: "/images/services/staking.png"
 show_supported_networks: true
@@ -38,10 +38,3 @@ primary_cta:
   url: "https://wallet.keplr.app/chains/cosmos-hub?modal=staking&chain=cosmoshub-4&validator_address=cosmosvaloper1e4vye322gkjx8n85jgcclnc7nvdvu82axnr5ll&step_id=3&action_id=stake"
   text: "Stake with Keplr"
 ---
-
-## Earn rewards while securing our supported Proof of Stake networks
-
-With $80M+ in total assets staked, 300K+ unique delegators, and a proven
-100% uptime track record, our services empower you to earn crypto-
-native interest rates while actively contributing to the security and
-sustainability of Proof of Stake networks.
