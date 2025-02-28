@@ -25,11 +25,10 @@
   {{ if .Params.features }}
   <section class="technical-features">
     <div class="container">
-      <h2>{{ .Params.features_title | default "Key Features" }}</h2>
       <div class="technical-features__grid">
         {{ range .Params.features }}
         <div class="feature-box">
-          <div class="feature-box__icon">{{ .icon }}</div>
+          <div class="feature-box__icon">{{ .icon | safeHTML }}</div>
           <div class="feature-box__content">
             <h3>{{ .title }}</h3>
             <p>{{ .description }}</p>
@@ -45,6 +44,46 @@
     </div>
   </section>
   {{ end }}
+  
+  <!-- Expertise Section -->
+  {{ if .Params.expertise_content }}
+  <section class="technical-expertise">
+    <div class="container">
+      <div class="technical-expertise__content">
+        <h2>What We Do Best</h2>
+        <p class="expertise-description">Cutting-edge blockchain development from core protocols to production-ready applications.</p>
+        
+        <div class="expertise-list">
+          <div class="expertise-item">
+            <h3>Protocol Development</h3>
+            <p>Building and maintaining the core technologies that power the interchain ecosystem. Our team leads development of Cosmos SDK and CometBFT, with deep expertise in consensus mechanisms, state machines, and network protocols that form the foundation of modern blockchains.</p>
+          </div>
+          
+          <div class="expertise-divider"></div>
+          
+          <div class="expertise-item">
+            <h3>Blockchain Building</h3>
+            <p>Custom blockchain solutions tailored to your specific use case and requirements. We leverage Rollkit for modular rollups on Celestia and design application-specific blockchains that balance security, scalability, and decentralization to meet your project's unique needs.</p>
+          </div>
+          
+          <div class="expertise-divider"></div>
+          
+          <div class="expertise-item">
+            <h3>Smart Contracts</h3>
+            <p>Secure, efficient smart contracts across CosmWasm, EVM, and Solana ecosystems. Our engineers develop and audit contract systems with a focus on security, gas optimization, and seamless integration with IBC for cross-chain communication and existing blockchain infrastructure.</p>
+          </div>
+          
+          <div class="expertise-divider"></div>
+          
+          <div class="expertise-item">
+            <h3>Infrastructure</h3>
+            <p>Reliable validator services and infrastructure management for blockchain networks. We provide robust node operation for Cosmos SDK chains, CometBFT consensus engines, monitoring solutions, and DevOps expertise to ensure your blockchain infrastructure remains secure and performant.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
 
   <!-- Get in Touch -->
   <section class="get-in-touch">
@@ -55,7 +94,7 @@
       <div class="banner-image artistic-banner">
         <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
       </div>
-      <p class="section-description text-center">Ready to build the future of blockchain technology? Let's collaborate on advancing decentralized solutions.</p>
+      <p class="section-description text-center">{{ .Params.cta_description }}</p>
       <div class="cta-button text-center">
         <a href="/contact" class="site-header__cta-button">Contact Us</a>
       </div>
