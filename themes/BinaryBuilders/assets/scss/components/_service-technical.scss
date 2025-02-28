@@ -1,17 +1,12 @@
 .service-page--technical {
   .technical-hero {
-    min-height: 60vh;
     background: var(--color-background);
     position: relative;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 0;
-
-    @media (max-width: 768px) {
-      min-height: auto;
-      padding: 6rem 0 3rem;
-    }
 
     &__bg {
       position: absolute;
@@ -19,6 +14,7 @@
       opacity: 0.05;
       font-family: monospace;
       overflow: hidden;
+      z-index: 0;
 
       .code-animation {
         white-space: pre;
@@ -27,31 +23,57 @@
         color: var(--color-primary);
       }
     }
+    
+    &__image-full {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      height: 600px;
+      overflow: hidden;
+      z-index: 1;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, var(--color-background));
+        opacity: 0.9;
+      }
+      
+      @media (max-width: 768px) {
+        height: 400px;
+      }
+    }
 
     .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       position: relative;
-      z-index: 1;
-      max-width: 100%;
-      padding: 0;
+      z-index: 2;
+      padding: 4rem 2rem 2rem;
+      width: 100%;
+      max-width: 1200px;
 
-      @media (max-width: 1024px) {
-        grid-template-columns: 1fr;
-        text-align: center;
+      @media (max-width: 768px) {
+        padding: 3rem 1.5rem 1.5rem;
       }
     }
 
     &__content {
-      padding: 1rem 0;
-
-      @media (max-width: 1024px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+      text-align: center;
+      max-width: 800px;
     }
 
     &__title {
@@ -70,33 +92,9 @@
     &__description {
       font-size: 1.25rem;
       color: var(--color-text-light);
-      max-width: 500px;
       line-height: 1.6;
-
-      @media (max-width: 1024px) {
-        margin: 0 auto;
-      }
-    }
-
-    &__image {
-      position: relative;
-      width: 100%;
-      
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-        box-shadow: none;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, var(--color-primary) 0%, transparent 100%);
-        opacity: 0.2;
-        border-radius: 0;
-      }
+      max-width: 700px;
+      margin: 0 auto;
     }
   }
 

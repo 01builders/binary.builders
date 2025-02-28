@@ -1,21 +1,22 @@
 {{ $title := .Title }}
 <main class="page-content service-page service-page--technical">
-  <!-- Dynamic Hero Section -->
+  <!-- Full-width Hero Section -->
   <section class="technical-hero">
     <div class="technical-hero__bg">
       <div class="code-animation"></div>
     </div>
+    
+    <!-- Full-width hero image -->
+    <div class="technical-hero__image-full">
+      {{ with .Params.hero_image }}
+      <img src="{{ . }}" alt="{{ $title }}" />
+      {{ end }}
+    </div>
+    
     <div class="container">
       <div class="technical-hero__content">
-        <h1 class="technical-hero__title">
-          <span class="gradient-text">{{ .Title }}</span>
-        </h1>
+        <h1 class="technical-hero__title">{{ .Title }}</h1>
         <p class="technical-hero__description">{{ .Description }}</p>
-      </div>
-      <div class="technical-hero__image">
-        {{ with .Params.hero_image }}
-        <img src="{{ . }}" alt="{{ $title }}" />
-        {{ end }}
       </div>
     </div>
   </section>
