@@ -1,8 +1,8 @@
 ---
-title: "Shaping the Future of Web3"
-description: ""
+title: "Next Generation Builders"
+description: "Binary supports forward-thinking mission aligned builders."
 layout: "service"
-hero_image: "/images/services/binaryventures.png"
+hero_image: "/images/services/venture.png"
 show_supported_networks: false
 features_title: "Key Benefits"
 features:
@@ -41,9 +41,9 @@ primary_cta:
   text: "Partner With Us"
 ---
 
-## Investing in Visionary Entrepreneurs Building the New Internet
+## Binary supports forward-thinking and mission-aligned builders
 
 Binary Ventures supports forward-thinking entrepreneurs by providing
 tailored resources, mentorship, and a vast network to help them redefine
-industries and drive the evolution of Web3. Together, we turn ambitious
+industries and drive the evolution of technology. Together, we turn ambitious
 ideas into transformative realities.

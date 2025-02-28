@@ -2,40 +2,60 @@
 <main class="service-page service-page--ventures">
   <!-- Hero Section -->
   <section class="ventures-hero">
+    <div class="ventures-hero__bg">
+      <div class="ventures-animation"></div>
+    </div>
+    
+    <!-- Full-width hero image -->
+    <div class="ventures-hero__image-full">
+      {{ with .Params.hero_image }}
+      <img src="{{ . }}" alt="{{ $title }}" />
+      {{ end }}
+    </div>
+    
     <div class="container">
-      <h1 class="ventures-hero__title">Shaping the Future of Web3</h1>
-      
       <div class="ventures-hero__content">
-        <h2>Investing in Visionary Entrepreneurs Building the New Internet</h2>
-        <p>Binary Ventures supports forward-thinking entrepreneurs by providing tailored resources, mentorship, and a vast network to help them redefine industries and drive the evolution of Web3. Together, we turn ambitious ideas into transformative realities.</p>
-      </div>
-
-      <div class="ventures-hero__image">
-        <img src="{{ .Params.hero_image }}" alt="Web3 Visualization" />
+        <h1 class="ventures-hero__title">{{ .Title }}</h1>
+        <p class="ventures-hero__description">Binary supports forward-thinking and mission aligned builders.</p>
       </div>
     </div>
   </section>
 
-  <!-- Key Benefits -->
-  <section class="ventures-benefits">
+  <!-- Portfolio Section -->
+  <section class="portfolio-section">
     <div class="container">
-      <h2>Key Benefits</h2>
-      <div class="ventures-benefits__grid">
-        <div class="benefit-card">
-          <div class="benefit-card__icon">🚀</div>
-          <h3>Fueling Ambition with Capital</h3>
-          <p>We invest in trailblazing projects with the potential to disrupt industries. Our capital, combined with our expertise, ensures your venture is equipped for long-term success.</p>
+      <h2 class="portfolio-section__title">Supporting</h2>
+      <div class="portfolio-section__grid">
+        <a href="https://www.42agents.com/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/fortytwo.svg" alt="42 Agents Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://stride.zone" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/logos/stride-text.svg" alt="Stride Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://www.ethos.network/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/ethos.svg" alt="Ethos Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://www.levana.finance/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/levana.svg" alt="Levana Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://www.keplr.app/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/keplr.svg" alt="Keplr Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://timewave.computer/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/timewave.svg" alt="Timewave Logo" class="portfolio-section__logo">
+        </a>
+        <div class="portfolio-section__item">
+          <img src="/images/portfolio/convexity.svg" alt="Convexity Logo" class="portfolio-section__logo">
         </div>
-        <div class="benefit-card">
-          <div class="benefit-card__icon">💎</div>
-          <h3>Guiding Visionaries to Success</h3>
-          <p>Our team works closely with founders, offering hands-on mentorship to navigate the challenges of building in the blockchain space. From strategy to execution, we're here to help you succeed.</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-card__icon">👥</div>
-          <h3>Making the Right Connections</h3>
-          <p>Leverage our extensive network of industry leaders, collaborators, and technical experts to accelerate your project's growth. From partnerships to community building, we connect you with the resources you need.</p>
-        </div>
+        <a href="https://noble.xyz" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/noble.svg" alt="Noble Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://www.saline.network/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <span class="portfolio-section__logo-text">Saline</span>
+        </a>
+        <a href="https://www.squidrouter.com/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/squid.svg" alt="Squid Logo" class="portfolio-section__logo">
+        </a>
       </div>
     </div>
   </section>
