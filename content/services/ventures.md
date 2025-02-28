@@ -2,7 +2,7 @@
 title: "Next Generation Builders"
 description: "Binary supports forward-thinking mission aligned builders."
 layout: "service"
-hero_image: "/images/services/venture.png"
+hero_image: "/images/services/ventures.png"
 show_supported_networks: false
 features_title: "Key Benefits"
 features:
