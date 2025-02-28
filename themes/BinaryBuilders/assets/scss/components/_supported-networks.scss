@@ -1,24 +1,9 @@
-:root {
-    --marquee-width: 100%;
-    --marquee-height: 120px;
-    --marquee-elements-displayed: 6;
-    --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
-    --marquee-animation-duration: calc(var(--marquee-elements) * 10s);
-
-    @media (max-width: 1200px) {
-        --marquee-elements-displayed: 4;
-    }
-
-    @media (max-width: 768px) {
-        --marquee-elements-displayed: 2;
-        --marquee-height: 100px;
-    }
-}
+/* Removed root variables as they're no longer needed for the grid layout */
 
 .supported-networks {
     position: relative;
     width: 100%;
-    padding: 2rem 0;
+    padding: 4rem 0;
     background-color: var(--color-background);
     overflow: hidden;
     
@@ -31,77 +16,84 @@
         opacity: 0.7;
     }
 
-    &__marquee {
-        width: var(--marquee-width);
-        height: var(--marquee-height);
-        overflow: hidden;
-        position: relative;
-
-        &:before, &:after {
-            position: absolute;
-            top: 0;
-            width: 10rem;
-            height: 100%;
-            content: "";
-            z-index: 1;
-            pointer-events: none;
-
-            @media (max-width: 768px) {
-                display: none;
-            }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
         }
-
-        &:before {
-            left: 0;
-            background: linear-gradient(to right, var(--color-background) 0%, transparent 100%);
+        
+        @media (min-width: 992px) {
+            grid-template-columns: repeat(3, 1fr);
         }
-
-        &:after {
-            right: 0;
-            background: linear-gradient(to left, var(--color-background) 0%, transparent 100%);
+        
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
-    }
-
-    &__content {
-        list-style: none;
-        height: 100%;
-        display: flex;
-        animation: scrolling var(--marquee-animation-duration) linear infinite;
     }
 
     &__item {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-shrink: 0;
-        width: var(--marquee-element-width);
-        max-height: 100%;
-        padding: 1rem;
-        transition: transform 0.3s ease;
+        padding: 2rem;
+        height: 120px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: var(--color-background);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        &:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary, #7B3FE4);
+            background: rgba(123, 63, 228, 0.55);
+            box-shadow: 0 4px 20px rgba(123, 63, 228, 0.2),
+                       0 0 0 1px rgba(123, 63, 228, 0.4);
+            
+            &::before {
+                transform: translateX(100%);
+            }
+            
+            .supported-networks__logo {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
     }
 
     &__logo {
-        height: 2rem;
+        height: 2.5rem;
         width: auto;
-        opacity: 0.7;
-        transition: opacity 0.3s ease;
+        opacity: 0.8;
+        transition: all 0.3s ease;
         filter: brightness(0) invert(1);
         
-        &:hover {
-            opacity: 1;
-        }
-        
         @media (min-width: 768px) {
-            height: 2.5rem;
+            height: 3rem;
         }
-    }
-}
-
-@keyframes scrolling {
-    0% { 
-        transform: translateX(0); 
-    }
-    100% { 
-        transform: translateX(calc(-1 * var(--marquee-element-width) * var(--marquee-elements))); 
     }
 }
