@@ -1,5 +1,5 @@
 ---
-title: Get in Touch
+title: Contact Us
 layout: contact
 description: Get in touch with Binary Builders
 ---

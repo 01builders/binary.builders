@@ -85,7 +85,8 @@
 }
 
 .section--contact {
-  padding-top: 0;
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
   position: relative;
   overflow: hidden;
   background-color: #0A041D;
@@ -223,51 +224,51 @@
 }
 
 .contact-page {
+  width: 100%;
+  padding: 4rem 0;
+  text-align: center;
   position: relative;
-  z-index: 3;
-  padding: 2rem 0;
-  
+  z-index: 10;
+
   &__container {
-    max-width: 800px;
+    max-width: 680px;
     margin: 0 auto;
-    padding: 2.5rem;
-    background: rgba(10, 4, 29, 0.8);
-    backdrop-filter: blur(10px);
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    
-    @media (max-width: 768px) {
-      padding: 1.5rem;
-    }
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 10;
   }
-  
+
   &__title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
     color: var(--color-white);
-    
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
+    line-height: 1.2;
+    position: relative;
+    z-index: 10;
   }
 }
 
 .contact-content {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
   color: var(--color-text-light);
+  position: relative;
+  z-index: 10;
+
+  p {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .contact-form {
   position: relative;
   z-index: 1;
-  background: rgba(10, 4, 29, 0.8);
+  background: var(--color-surface);
   padding: 1.75rem;
-  border: none;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-light);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -325,13 +326,13 @@
     input,
     textarea {
       width: 100%;
-      padding: 0.85rem;
-      background: rgba(10, 4, 29, 0.5);
+      padding: 0.75rem;
+      background: var(--color-surface);
       border: 1px solid var(--color-border-light);
-      border-radius: 0;
+      border-radius: 6px;
       color: var(--color-text);
       font-family: inherit;
-      font-size: 0.95rem;
+      font-size: 0.875rem;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
       
       &::placeholder {
@@ -342,7 +343,6 @@
         outline: none;
         border-color: var(--color-primary);
         box-shadow: 0 0 0 2px rgba(123, 77, 255, 0.15);
-        border-radius: 0;
 
         + label {
           color: var(--color-primary);
@@ -409,52 +409,22 @@
   .submit-button {
     display: block;
     position: relative;
-    margin: 2rem auto 0;
-    padding: 0.75rem 1.5rem;
-    background: rgba(123, 63, 228, 0.15);
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    background: var(--color-primary);
     color: var(--color-white);
-    border: 1px solid var(--color-primary, #7B3FE4);
-    border-radius: 0;
-    font-size: 0.95rem;
-    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    min-width: 160px;
-    min-height: 48px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(123, 63, 228, 0.2),
-               0 0 0 1px rgba(123, 63, 228, 0.4);
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-      );
-      transform: translateX(-100%);
-      transition: transform 0.6s ease;
-    }
-
-    &::after {
-      display: none !important;
-    }
+    transition: all 0.2s ease;
+    min-width: 140px;
+    min-height: 44px;
 
     &:hover {
-      background: rgba(123, 63, 228, 0.55);
-      transform: translateY(-2px);
-      border-color: var(--color-primary, #7B3FE4);
-      box-shadow: 0 4px 20px rgba(123, 63, 228, 0.2),
-                 0 0 0 1px rgba(123, 63, 228, 0.4);
-
-      &::before {
-        transform: translateX(100%);
-      }
+      background: var(--color-primary-dark);
+      transform: translateY(-1px);
     }
 
     &:active {
@@ -473,7 +443,6 @@
       top: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
-      text-align: center;
     }
 
     .button-loader {
@@ -500,7 +469,7 @@
   gap: 0.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 0;
+  border-radius: 8px;
   font-size: 0.875rem;
   
   svg {
@@ -553,21 +522,5 @@
 
   .contact-form {
     padding: 1.25rem;
-  }
-}
-
-// Add styling for the banner image
-.banner-image.full-width {
-  width: 100%;
-  margin-bottom: 3rem;
-  position: relative;
-  z-index: 2;
-  
-  img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    display: block;
-    object-fit: cover;
   }
 } 
