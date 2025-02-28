@@ -145,8 +145,8 @@
   }
 
   .staking-overview {
-    padding: 6rem 0;
-    background: var(--color-background-light);
+    padding: 3rem 0;
+    background-color: var(--color-background);
 
     @media (max-width: 768px) {
       padding: 4rem 0;
@@ -154,7 +154,7 @@
 
     &__content {
       max-width: 800px;
-      margin: 0 auto 4rem;
+      margin: 0 auto 2rem;
       text-align: center;
 
       h2 {
@@ -179,22 +179,21 @@
 
     &__stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-
-      @media (max-width: 768px) {
-        grid-template-columns: 1fr;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .stat-box {
         position: relative;
         overflow: hidden;
         background-color: var(--color-bg-secondary);
-        padding: 2rem;
+        padding: 2.5rem;
         width: 100%;
-        height: 180px;
+        height: 200px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -203,15 +202,15 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         &__value {
-          font-size: 2.5rem;
+          font-size: 3rem;
           font-weight: 700;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.75rem;
           color: var(--color-white);
           z-index: 1;
         }
 
         &__label {
-          font-size: 1rem;
+          font-size: 1.2rem;
           color: var(--color-text-muted);
           z-index: 1;
         }
@@ -225,9 +224,14 @@
           z-index: 0;
           opacity: 0;
           transition: opacity 0.3s ease;
+          --pixel-color: var(--color-primary);
+          --pixel-speed: 1;
         }
 
         &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          
           pixel-hover {
             opacity: 1;
           }
@@ -237,117 +241,118 @@
   }
 
   .staking-features {
-    padding: 6rem 0;
-    background: var(--color-background);
-
-    @media (max-width: 768px) {
-      padding: 4rem 0;
-    }
-
+    padding: 4rem 0;
+    background-color: var(--color-background);
+    
     h2 {
-      font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 4rem;
-
-      @media (max-width: 768px) {
-        font-size: 2rem;
-        margin-bottom: 2.5rem;
-      }
+      margin-bottom: 3rem;
+      font-size: 2.25rem;
+      font-weight: 600;
     }
-
+    
     &__steps {
-      max-width: 800px;
-      margin: 0 auto;
       position: relative;
+      max-width: 900px;
+      margin: 0 auto;
       padding: 2rem 0;
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: 24px;
-        top: 0;
-        width: 2px;
-        height: 100%;
-        background: var(--color-border-light);
-
-        @media (max-width: 768px) {
-          left: 25px;
-        }
+    }
+    
+    .timeline-line {
+      position: absolute;
+      left: 30px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--color-border);
+      opacity: 0.7;
+      z-index: 0;
+      
+      @media (max-width: 768px) {
+        left: 25px;
       }
     }
-
+    
     .step-card {
       display: grid;
       grid-template-columns: 60px 1fr;
-      gap: 2rem;
-      margin-bottom: 3rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+      position: relative;
+      align-items: center;
+      
       @media (max-width: 768px) {
         grid-template-columns: 50px 1fr;
         gap: 1rem;
       }
-
-      &.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
+      
       &__number {
         width: 60px;
         height: 60px;
-        background: #5856D6;
-        border: none;
-        border-radius: 50%;
+        background-color: var(--color-background);
+        border: 1px solid var(--color-border);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.25rem;
-        font-weight: var(--font-weight-bold);
-        color: white;
-        font-family: 'Fira Code', monospace;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--color-white);
+        font-family: 'Courier New', monospace;
         position: relative;
-        z-index: 1;
-        margin: 0;
-
-        &::before {
-          content: '0';
-        }
-
-        @media (max-width: 768px) {
-          width: 50px;
-          height: 50px;
-          font-size: 1.125rem;
-        }
+        z-index: 2;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       }
-
+      
       &__content {
-        padding: 2rem;
-        background: var(--color-surface);
-        border-radius: 16px;
-        border: 1px solid var(--color-border-light);
+        position: relative;
+        overflow: hidden;
+        background-color: var(--color-bg-secondary);
+        padding: 2.5rem;
+        padding-left: 3rem;
+        border: 1px solid var(--color-border);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        min-height: 200px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-
+        
         h3 {
-          font-size: 1.5rem;
-          color: var(--color-white);
+          font-size: 1.75rem;
+          font-weight: 600;
           margin-bottom: 1rem;
-          margin-top: 1rem;
-
-          @media (max-width: 768px) {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-          }
+          color: var(--color-white);
+          z-index: 1;
+          position: relative;
         }
-
+        
         p {
-          font-size: 1rem;
-          color: var(--color-text-light);
+          font-size: 1.1rem;
+          color: var(--color-text-muted);
           line-height: 1.6;
+          z-index: 1;
+          position: relative;
+        }
+        
+        pixel-hover {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          --pixel-color: var(--color-primary);
+          --pixel-speed: 1;
+        }
+        
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          
+          pixel-hover {
+            opacity: 1;
+          }
         }
       }
     }

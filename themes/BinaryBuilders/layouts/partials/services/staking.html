@@ -34,7 +34,7 @@
             data-gap="6"
             data-speed="30">
           </pixel-hover>
-          <div class="stat-box__value">$100M+</div>
+          <div class="stat-box__value">$80M+</div>
           <div class="stat-box__label">Total Value Staked</div>
         </div>
         <div class="stat-box">
@@ -64,20 +64,36 @@
   <section class="staking-features">
     <div class="container">
       <h2>{{ .Params.features_title | default "Key Features" }}</h2>
-      <div class="staking-features__steps" style="position: relative; padding: 2rem 0;">
+      <div class="staking-features__steps">
         {{ range $index, $feature := .Params.features }}
-        <div class="step-card" style="display: flex; align-items: center; gap: 2rem; margin-bottom: 4rem; position: relative;">
-          <div class="step-card__number" style="background: #7B4DFF; color: white; border: 2px solid white; flex-shrink: 0; width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center; border-radius: 50%;">{{ add $index 1 }}</div>
-          <div class="step-card__content" style="flex-grow: 1; background: rgba(123, 77, 255, 0.1); padding: 1.5rem; border-radius: 0.5rem;">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem;">
-              <div class="step-card__icon">{{ .icon }}</div>
-              <h3>{{ .title }}</h3>
-            </div>
+        <div class="step-card">
+          <div class="step-card__number">0{{ add $index 1 }}</div>
+          <div class="step-card__content">
+            {{ if eq $index 0 }}
+            <pixel-hover 
+              data-colors="#7B4DFF,#5435B4,#E464FF"
+              data-gap="6"
+              data-speed="30">
+            </pixel-hover>
+            {{ else if eq $index 1 }}
+            <pixel-hover 
+              data-colors="#4ECDC4,#3DA89F,#65E5DD"
+              data-gap="6"
+              data-speed="30">
+            </pixel-hover>
+            {{ else }}
+            <pixel-hover 
+              data-colors="#FF6B6B,#E65555,#FF8585"
+              data-gap="6"
+              data-speed="30">
+            </pixel-hover>
+            {{ end }}
+            <h3>{{ .title }}</h3>
             <p>{{ .description }}</p>
           </div>
         </div>
         {{ end }}
-        <div style="position: absolute; top: 0; bottom: 0; left: 2.5rem; width: 2px; background: rgba(123, 77, 255, 0.2); z-index: -1;"></div>
+        <div class="timeline-line"></div>
       </div>
     </div>
   </section>
