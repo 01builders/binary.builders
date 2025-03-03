@@ -377,6 +377,12 @@ html {
     height: 19.2px !important;
   }
 
+  #x-animation-header,
+  #x-animation-header-mobile {
+    width: 39.2px !important; // 20% smaller
+    height: 39.2px !important;
+  }
+
   #github-animation-header,
   #github-animation-header-mobile {
     width: 24px !important; // Default size
