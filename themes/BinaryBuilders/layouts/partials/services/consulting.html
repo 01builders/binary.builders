@@ -1,6 +1,6 @@
 {{ $title := .Title }}
-<main class="service-page service-page--consulting">
-  <!-- Hero Section -->
+<main class="page-content service-page service-page--consulting">
+  <!-- Full-width Hero Section -->
   <section class="consulting-hero">
     <div class="consulting-hero__bg">
       <div class="consulting-animation"></div>
@@ -15,13 +15,15 @@
     
     <div class="container">
       <div class="consulting-hero__content">
-        <h1 class="consulting-hero__title">{{ .Title }}</h1>
+        <h1 class="consulting-hero__title">
+          <span class="gradient-text">{{ .Title }}</span>
+        </h1>
         <p class="consulting-hero__description">{{ .Description }}</p>
       </div>
     </div>
   </section>
 
-  <!-- Features with Square Boxes -->
+  <!-- Features with Interactive Diagrams -->
   {{ if .Params.features }}
   <section class="consulting-features">
     <div class="container">
@@ -29,9 +31,7 @@
       <div class="consulting-features__grid">
         {{ range .Params.features }}
         <div class="feature-box">
-          {{ if .icon }}
-          <div class="feature-box__icon">{{ .icon }}</div>
-          {{ end }}
+          <div class="feature-box__icon">{{ .icon | safeHTML }}</div>
           <div class="feature-box__content">
             <h3>{{ .title }}</h3>
             <p>{{ .description }}</p>
@@ -63,4 +63,29 @@
       </div>
     </div>
   </section>
-</main> 
+</main>
+
+<!-- Add consulting animation script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Consulting animation
+  const consultingAnimation = document.querySelector('.consulting-animation');
+  if (consultingAnimation) {
+    const characters = '💼📊📈💰🔍📝';
+    const width = 40;
+    const height = 20;
+    
+    function generateMatrix() {
+      let matrix = '';
+      for (let i = 0; i < height; i++) {
+        for (let j = 0; j < width; j++) {
+          matrix += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        matrix += '\n';
+      }
+      consultingAnimation.textContent = matrix;
+    }
+
+    setInterval(generateMatrix, 500);
+  }
+});</script> 
