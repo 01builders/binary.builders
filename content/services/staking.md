@@ -1,24 +1,19 @@
 ---
 title: "Staking Service"
-description: "Earn rewards while securing our supported Proof of Stake networks with industry-leading validator infrastructure"
+description: "Earn rewards while securing our supported Proof of Stake networks with industry-leading validator infrastructure. As a Swiss-based company, we prioritize privacy and security in all our validation services."
 layout: "service"
 hero_image: "/images/services/staking.png"
 show_supported_networks: true
 features_title: "Why stake with us?"
 features:
   - title: "Simple"
-    description: "Staking has never been more straightforward. This page has all the
-information you need to join effortlessly and start earning rewards."
+    description: "We believe in making complex systems accessible. Our streamlined staking process eliminates technical barriers, allowing you to participate effortlessly and focus on what matters—earning rewards."
     icon: "📈"
   - title: "Safe"
-    description: "Your funds are in trusted hands. As Binary Holdings' largest customer,
-we apply the same rigorous standards to your assets as we do to our
-own."
+    description: "Your assets deserve the highest level of protection. Our robust infrastructure and multi-layered security protocols ensure your staked funds remain safe while generating returns."
     icon: "🔒"  
   - title: "Secure"
-    description: "Our operations are managed by the engineers who built the Cosmos
-SDK and the Interchain. With expertise at the core, we ensure
-unparalleled security and reliability."
+    description: "As a Swiss company, we comply with the highest standards of security and regulatory compliance. Your data and assets are protected according to Switzerland's world-renowned privacy and security frameworks."
     icon: "👨‍💻"
 # benefits:
 #   - title: "Reliability"
