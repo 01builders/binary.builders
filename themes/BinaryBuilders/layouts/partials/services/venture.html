@@ -1,22 +1,22 @@
 {{ $title := .Title }}
-<main class="service-page service-page--ventures">
+<main class="service-page service-page--venture">
   <!-- Hero Section -->
-  <section class="ventures-hero">
-    <div class="ventures-hero__bg">
-      <div class="ventures-animation"></div>
+  <section class="venture-hero">
+    <div class="venture-hero__bg">
+      <div class="venture-animation"></div>
     </div>
     
     <!-- Full-width hero image -->
-    <div class="ventures-hero__image-full">
+    <div class="venture-hero__image-full">
       {{ with .Params.hero_image }}
       <img src="{{ . }}" alt="{{ $title }}" />
       {{ end }}
     </div>
     
     <div class="container">
-      <div class="ventures-hero__content">
-        <h1 class="ventures-hero__title">{{ .Title }}</h1>
-        <p class="ventures-hero__description">Binary supports forward-thinking and mission aligned builders. While our checks aren't big, we select teams to invest in based on our capacity to assist and grow them—not only to have a return on investment but to add meaningful value. We are constantly looking for other builders to find synergies and create collaborative opportunities within our ecosystem.</p>
+      <div class="venture-hero__content">
+        <h1 class="venture-hero__title">{{ .Title }}</h1>
+        <p class="venture-hero__description">Binary supports forward-thinking and mission aligned builders. While our checks aren't big, we select teams to invest in based on our capacity to assist and grow them—not only to have a return on investment but to add meaningful value. We are constantly looking for other builders to find synergies and create collaborative opportunities within our ecosystem.</p>
       </div>
     </div>
   </section>
@@ -69,7 +69,7 @@
       <div class="banner-image artistic-banner">
         <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
       </div>
-      <p class="section-description text-center">Ready to build the future of blockchain technology? Let's collaborate on advancing decentralized solutions.</p>
+      <p class="section-description text-center">{{ .Params.cta_description }}</p>
       <div class="cta-button text-center">
         <a href="/contact" class="site-header__cta-button">Contact Us</a>
       </div>

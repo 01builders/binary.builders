@@ -556,4 +556,33 @@
       font-size: 1.125rem;
     }
   }
+}
+
+.success-message {
+  text-align: center;
+  padding: 3rem 0;
+  max-width: 600px;
+  margin: 0 auto;
+
+  svg {
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: 3rem;
+    opacity: 0.9;
+
+    @media (max-width: 768px) {
+      font-size: 1.15rem;
+      padding: 0 1rem;
+    }
+  }
+
+  .cta-button {
+    margin-top: 2rem;
+  }
 } 

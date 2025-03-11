@@ -35,7 +35,7 @@ resources you need."
 #   - title: "Strategy"
 #     icon: "🎯"
 #     description: "Develop and execute winning strategies with guidance from our experienced team of blockchain entrepreneurs."
-cta_description: "Ready to take your blockchain project to the next level? Partner with Binary Ventures and access the resources you need to succeed."
+cta_description: "Ready to take your blockchain project to the next level? Partner with Binary Venture and access the resources you need to succeed."
 primary_cta:
   url: "#CALNEDLY"
   text: "Partner With Us"
@@ -43,7 +43,7 @@ primary_cta:
 
 ## Binary supports forward-thinking and mission-aligned builders
 
-Binary Ventures supports forward-thinking entrepreneurs by providing
+Binary Venture supports forward-thinking entrepreneurs by providing
 tailored resources, mentorship, and a vast network to help them redefine
 industries and drive the evolution of technology. Together, we turn ambitious
-ideas into transformative realities.
+ideas into transformative realities. 
