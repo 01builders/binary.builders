@@ -1,6 +1,6 @@
 ---
-title: "Next Generation Builders"
-description: "Binary supports forward-thinking mission aligned builders."
+title: "Venture"
+description: "We invest in teams where we can add meaningful value beyond capital."
 layout: "service"
 hero_image: "/images/services/ventures.png"
 show_supported_networks: false
@@ -35,15 +35,12 @@ resources you need."
 #   - title: "Strategy"
 #     icon: "🎯"
 #     description: "Develop and execute winning strategies with guidance from our experienced team of blockchain entrepreneurs."
-cta_description: "Ready to take your blockchain project to the next level? Partner with Binary Venture and access the resources you need to succeed."
+cta_description: "Have a blockchain project? We'd like to hear about it and see how we can help."
 primary_cta:
   url: "#CALNEDLY"
   text: "Partner With Us"
 ---
 
-## Binary supports forward-thinking and mission-aligned builders
+## Supporting builders where we can add value
 
-Binary Venture supports forward-thinking entrepreneurs by providing
-tailored resources, mentorship, and a vast network to help them redefine
-industries and drive the evolution of technology. Together, we turn ambitious
-ideas into transformative realities. 
+We select teams based on our ability to help them grow, not just for financial returns. We look for opportunities to create synergies within our ecosystem. 

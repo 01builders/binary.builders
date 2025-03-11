@@ -12,9 +12,9 @@ features:
   - title: "Safe"
     description: "Your assets deserve the highest level of protection. Our robust infrastructure and multi-layered security protocols ensure your staked funds remain safe while generating returns."
     icon: "🔒"  
-  - title: "Secure"
-    description: "As a Swiss company, we comply with the highest standards of security and regulatory compliance. Your data and assets are protected according to Switzerland's world-renowned privacy and security frameworks."
-    icon: "👨‍💻"
+  - title: "Transparent"
+    description: "We provide clear information about our operations, performance metrics, and commission rates. Stay informed with regular updates and insights about the networks you're supporting through our validator service."
+    icon: "👁️"
 # benefits:
 #   - title: "Reliability"
 #     icon: "⚡"
@@ -28,7 +28,7 @@ features:
 #   - title: "Support"
 #     icon: "🤝"
 #     description: "Access 24/7 technical support and participate in network governance with our expert guidance."
-cta_description: "Ready to start earning rewards on Cosmos Hub? Stake your ATOM tokens with our professional validator service and contribute to network security."
+cta_description: "Want to earn rewards while supporting the Cosmos ecosystem? Stake your ATOM with us and help secure the network."
 primary_cta:
   url: "https://wallet.keplr.app/chains/cosmos-hub?modal=staking&chain=cosmoshub-4&validator_address=cosmosvaloper1e4vye322gkjx8n85jgcclnc7nvdvu82axnr5ll&step_id=3&action_id=stake"
   text: "Stake with Keplr"

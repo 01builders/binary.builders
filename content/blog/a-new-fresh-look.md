@@ -1,35 +1,24 @@
 ---
 title: "A new fresh look"
-date: 2025-02-20
-lastmod: 2025-02-20
+date: 2025-03-11
+lastmod: 2025-03-11
 layout: "post"
 categories: ["Company", "Website"]
 tags: ["Design", "Updates", "Website"]
 highlighted: true
 draft: false
 image: "/images/blog/2025/a-new-fresh-look.png"
-description: "Binary Builders unveils a fresh new look that reflects our vision for the future of blockchain technology."
+description: "We've given our website a fresh new look - simple, clean, and straight to the point."
 author: "Onur Akpolat"
 ---
-Today marks an exciting milestone for Binary Builders as we unveil our new Website. This redesign isn't just about aesthetics; it's a reflection of our evolution and vision for the future of blockchain technology.
+We just launched our redesigned website, and wanted to share a quick update about it.
 
-Our new identity embodies the core principles that drive us:
+We felt it was time to refresh our online presence. Our new site strips away the unnecessary and focuses on what really matters - showing you who we are and what we do in the blockchain space.
 
-- **Simplicity**: Clean, modern design that puts content and functionality first
-- **Innovation**: Forward-thinking elements that represent our commitment to pushing boundaries
-- **Reliability**: Strong, consistent visual language that reflects our dependable infrastructure
-- **Accessibility**: Clear typography and thoughtful contrast for better readability
+We went back to basics with a clean, straightforward approach that makes it easier to find information about our services, team, and projects. 
 
-The refreshed design maintains our signature black and white palette while introducing subtle accents that highlight our key focus areas: building, growing, and operating blockchain infrastructure.
+The site is now more intuitive to navigate with clear, jargon-free content. We believe in keeping things simple and direct.
 
-This update goes hand in hand with our recent announcement about our new direction. As we move closer to Celestia and explore new horizons in blockchain technology, our visual identity needed to evolve to better represent where we're headed.
+This refresh is simply about making things better for you - our visitors, partners, and community. No grand claims about revolutionizing the industry, just a clean, functional site that does its job well.
 
-We've streamlined our website to make it easier for you to:
-- Learn about our services and expertise
-- Access our technical resources and documentation
-- Connect with our team
-- Stay updated on our latest projects and announcements
-
-We're excited about this new chapter and look forward to continuing our journey with you, building the future of blockchain technology together.
-
-Stay connected with us on [X](https://x.com/binary_builders) for the latest updates and announcements. 
+Check it out and let us know what you think. And if you want to stay updated with what we're building, follow us on [X](https://x.com/binary_builders). 

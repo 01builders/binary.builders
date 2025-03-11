@@ -12,9 +12,15 @@ build:
   noJSConfigInAssets: true
 
 imaging:
-  quality: 85
+  quality: 82
   resampleFilter: Lanczos
   anchor: Smart
+  exif:
+    disableDate: true
+    disableLatLong: true
+  format: "webp"
+  bgColor: "#ffffff"
+  hint: photo
 
 minify:
   minifyOutput: true
