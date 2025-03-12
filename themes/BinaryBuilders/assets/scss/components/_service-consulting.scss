@@ -1,0 +1,399 @@
+.service-page--consulting {
+  .consulting-hero {
+    background: var(--color-background);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+
+    &__bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      font-family: monospace;
+      overflow: hidden;
+      z-index: 0;
+
+      .consulting-animation {
+        white-space: pre;
+        font-size: 14px;
+        line-height: 1.2;
+        color: var(--color-primary);
+      }
+    }
+    
+    &__image-full {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      height: 600px;
+      overflow: hidden;
+      z-index: 1;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(to bottom, transparent, var(--color-background));
+        opacity: 0.9;
+      }
+      
+      @media (max-width: 768px) {
+        height: 400px;
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      padding: 4rem 2rem 2rem;
+      width: 100%;
+      max-width: 1200px;
+
+      @media (max-width: 768px) {
+        padding: 3rem 1.5rem 1.5rem;
+      }
+    }
+
+    &__content {
+      text-align: center;
+      max-width: 800px;
+    }
+
+    &__title {
+      font-size: 3.5rem;
+      font-weight: var(--font-weight-bold);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1.25rem;
+      }
+    }
+
+    &__description {
+      font-size: 1.75rem;
+      color: var(--color-text-light);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
+      
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .consulting-overview {
+    padding: 8rem 0 6rem;
+
+    @media (max-width: 768px) {
+      padding: 4rem 0 3rem;
+    }
+
+    &__content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        background: var(--gradient-text);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+      }
+
+      p {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: var(--color-text-light);
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+
+      .grid-item {
+        &--large {
+          grid-row: span 2;
+        }
+
+        &--wide {
+          grid-column: span 2;
+        }
+      }
+
+      .info-card {
+        height: 100%;
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        &:hover {
+          transform: translateY(-5px);
+        }
+
+        &__icon {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          color: white;
+        }
+
+        p {
+          color: rgba(255, 255, 255, 0.8);
+          line-height: 1.6;
+        }
+
+        &--dark {
+          background: rgba(88, 86, 214, 0.1);
+          border: 1px solid rgba(88, 86, 214, 0.2);
+          h3 { color: #5856D6; }
+        }
+
+        &--purple {
+          background: rgba(78, 205, 196, 0.1);
+          border: 1px solid rgba(78, 205, 196, 0.2);
+          h3 { color: #4ECDC4; }
+        }
+
+        &--blue {
+          background: rgba(255, 107, 107, 0.1);
+          border: 1px solid rgba(255, 107, 107, 0.2);
+          h3 { color: #FF6B6B; }
+        }
+
+        &--gradient {
+          background: rgba(150, 201, 61, 0.1);
+          border: 1px solid rgba(150, 201, 61, 0.2);
+          h3 { color: #96C93D; }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .consulting-overview__grid {
+      grid-template-columns: 1fr;
+
+      .grid-item--wide {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  .consulting-features {
+    padding: 8rem 0;
+    background: var(--color-background);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(3deg, var(--color-background-light) 0%, var(--color-background-light) 50%, transparent 50.1%);
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+      text-align: center;
+      margin-bottom: 4rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.75rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .feature-box {
+      background: var(--color-background);
+      padding: 2.5rem;
+      border-radius: 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+        border-color: var(--color-primary);
+        background: rgba(123, 63, 228, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      &__icon {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        
+        img {
+          max-height: 50px;
+          max-width: 180px;
+          object-fit: contain;
+        }
+      }
+
+      &__content {
+        position: relative;
+        z-index: 1;
+
+        h3 {
+          font-size: 1.75rem;
+          color: var(--color-white);
+          margin-bottom: 1rem;
+
+          @media (max-width: 768px) {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+          }
+        }
+
+        p {
+          font-size: 1.1rem;
+          color: var(--color-text-light);
+          line-height: 1.6;
+        }
+      }
+
+      &__diagram {
+        position: absolute;
+        top: 50%;
+        right: -30%;
+        width: 60%;
+        height: 60%;
+        transform: translateY(-50%);
+        opacity: 0.05;
+        z-index: 0;
+      }
+    }
+  }
+
+  .consulting-benefits {
+    padding: 8rem 0;
+    background: var(--color-background-light);
+
+    h2 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 4rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    .benefits-timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--color-border);
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .consulting-cta {
+    padding: 8rem 0;
+    background: var(--color-background);
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+
+      @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__content {
+      h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        color: var(--color-text-light);
+        margin-bottom: 2rem;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    &__pattern {
+      position: relative;
+      height: 400px;
+      background: var(--gradient-primary);
+      opacity: 0.1;
+      border-radius: 24px;
+    }
+  }
+} 

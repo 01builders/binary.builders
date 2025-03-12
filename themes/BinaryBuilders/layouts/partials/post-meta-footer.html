@@ -1,0 +1,18 @@
+<div class="post-meta post-meta--footer">
+  {{ with .Params.author }}
+    <span class="author">
+      <span class="author-prefix">Author: </span>{{ . }}
+    </span>
+  {{ end }}
+  
+  {{ with .Params.tags }}
+    <span class="separator">·</span>
+    <span class="tags">
+      <span class="tags-prefix">Tags: </span>&nbsp;
+      {{- range $index, $tag := . -}}
+        {{- if $index }},&nbsp;{{ end -}}
+        <a href="{{ "tags/" | absURL }}{{ $tag | urlize }}">{{ $tag }}</a>
+      {{- end -}}
+    </span>
+  {{ end }}
+</div>

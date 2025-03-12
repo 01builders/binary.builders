@@ -1,0 +1,64 @@
+team:
+  title: "Our Team"
+  description: "Meet the passionate individuals building the future of blockchain technology"
+  members:
+    - name: "Marko Baricevic"
+      role: "Founder / Cosmos SDK"
+      position: 1
+      image: "marko.baricevic.png"
+      github: "markobaricevic"
+      twitter: "markobaricevic"
+      
+    - name: "Onur Akpolat"
+      role: "Founder"
+      position: 2
+      image: "onur.akpolat.jpg"
+      github: "onurakpolat"
+      twitter: "onurakpolat"
+      
+    - name: "Alex Santos"
+      role: "Builders Program"
+      position: 3
+      image: "alex.santos.png"
+      github: "alexsantos"
+      linkedin: "alex-santos"
+      
+    - name: "Facundo Medica"
+      role: "Cosmos SDK"
+      position: 4
+      image: "facu.medica.jpeg"
+      github: "facundomedica"
+      twitter: "facundomedica"
+      
+    - name: "Frojdi Dymylja"
+      role: "Cosmos SDK"
+      position: 5
+      image: "frojdi.dymylja.jpeg"
+      github: "frojdi"
+      linkedin: "frojdi-dymylja"
+      
+    - name: "Jonathan Gimeno"
+      role: "Consulting"
+      position: 6
+      image: "placeholder.jpg"
+      linkedin: "jonathan-gimeno"
+      
+    - name: "Julien Robert"
+      role: "Cosmos SDK"
+      position: 7
+      image: "julien.robert.jpg"
+      github: "julienrobert"
+      twitter: "julienrobert"
+      
+    - name: "Len Seitter"
+      role: "Builders Program"
+      position: 8
+      image: "len.seitter.png"
+      github: "lenseitter"
+      linkedin: "len-seitter"
+      
+    - name: "Matthew Kocubinski"
+      role: "Cosmos SDK"
+      position: 9
+      image: "placeholder.jpg"
+      github: "mkocubinski" 

@@ -1,0 +1,173 @@
+.taxonomy-list {
+  position: relative;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background-color: #0A041D;
+  color: var(--color-text);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+    animation: constellation 4s ease infinite;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero__circle,
+  .hero__number,
+  .particle {
+    // These styles are already defined in _hero.scss
+  }
+
+  .taxonomy-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .post-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 320px;
+    display: flex;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: var(--color-primary);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      header {
+        margin-bottom: 1rem;
+
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        time {
+          font-size: 0.9rem;
+          opacity: 0.7;
+        }
+      }
+
+      .post-description {
+        flex: 1;
+        
+        p {
+          opacity: 0.8;
+          line-height: 1.6;
+        }
+      }
+
+      footer {
+        margin-top: auto;
+        
+        .read-more {
+          font-weight: 500;
+          color: var(--color-primary);
+          transition: color 0.2s ease;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      height: auto;
+      min-height: 280px;
+      padding: 1.25rem;
+
+      article {
+        header {
+          h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.375rem;
+          }
+
+          time {
+            font-size: 0.8rem;
+          }
+        }
+
+        .post-description p {
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .taxonomy-list {
+    padding: 4rem 1rem;
+
+    .taxonomy-header {
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@keyframes constellation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+} 

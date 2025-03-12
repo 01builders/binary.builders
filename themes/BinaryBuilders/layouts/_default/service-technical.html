@@ -1,0 +1,213 @@
+{{ define "main" }}
+<main class="page-content service-page service-page--technical">
+  <!-- Dynamic Hero Section -->
+  <section class="technical-hero">
+    <div class="technical-hero__bg">
+      <div class="code-animation"></div>
+    </div>
+    <div class="container">
+      <div class="technical-hero__content">
+        <h1 class="technical-hero__title">
+          <span class="gradient-text">{{ .Title }}</span>
+        </h1>
+        <p class="technical-hero__description">{{ .Description }}</p>
+      </div>
+      <div class="technical-hero__image">
+        {{ with .Params.hero_image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" />
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview with Code Snippets -->
+  <section class="technical-overview">
+    <div class="container">
+      <div class="technical-overview__content">
+        {{ .Content }}
+      </div>
+      <div class="technical-overview__code">
+        <div class="code-window">
+          <div class="code-window__header">
+            <span class="window-dot"></span>
+            <span class="window-dot"></span>
+            <span class="window-dot"></span>
+          </div>
+          <div class="code-window__content">
+            <pre><code>// Smart Contract Development
+contract BinaryToken {
+    string public name = "Binary";
+    string public symbol = "BNY";
+    uint8 public decimals = 18;
+    
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    
+    constructor() {
+        // Initialize contract
+    }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features with Interactive Diagrams -->
+  {{ if .Params.features }}
+  <section class="technical-features">
+    <div class="container">
+      <h2>{{ .Params.features_title | default "Key Features" }}</h2>
+      <div class="technical-features__grid">
+        {{ range .Params.features }}
+        <div class="feature-box">
+          <div class="feature-box__icon">{{ .icon }}</div>
+          <div class="feature-box__content">
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+          <div class="feature-box__diagram">
+            <svg viewBox="0 0 200 200" class="diagram-svg">
+              <circle cx="100" cy="100" r="80" class="diagram-circle" />
+              <path d="M40,100 L160,100 M100,40 L100,160" class="diagram-lines" />
+            </svg>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Benefits with Tech Stack -->
+  {{ if .Params.benefits }}
+  <section class="technical-benefits">
+    <div class="container">
+      <h2>Our Expertise</h2>
+      <div class="technical-benefits__grid">
+        {{ range .Params.benefits }}
+        <div class="tech-card">
+          <div class="tech-card__icon">{{ .icon }}</div>
+          <div class="tech-card__content">
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+          <div class="tech-card__stack">
+            <div class="stack-item">Solidity</div>
+            <div class="stack-item">Rust</div>
+            <div class="stack-item">Go</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Process Timeline -->
+  <section class="technical-process">
+    <div class="container">
+      <h2>Development Process</h2>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="process-step__number">01</div>
+          <div class="process-step__content">
+            <h3>Requirements Analysis</h3>
+            <p>Detailed analysis of project requirements and technical specifications.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">02</div>
+          <div class="process-step__content">
+            <h3>Architecture Design</h3>
+            <p>Creating robust and scalable system architecture.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">03</div>
+          <div class="process-step__content">
+            <h3>Development</h3>
+            <p>Implementing solutions with clean, efficient code.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-step__number">04</div>
+          <div class="process-step__content">
+            <h3>Testing & Audit</h3>
+            <p>Comprehensive testing and security audits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action with Terminal -->
+  <section class="technical-cta">
+    <div class="container">
+      <div class="technical-cta__content">
+        <h2>Start Building</h2>
+        <p>{{ .Params.cta_description }}</p>
+        <div class="technical-cta__buttons">
+          {{ with .Params.primary_cta }}
+          <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener">
+            {{ .text }} <span class="button__arrow">→</span>
+          </a>
+          {{ end }}
+          {{ with .Params.secondary_cta }}
+          <a href="{{ .url }}" class="button button--secondary">
+            {{ .text }} <span class="button__arrow">→</span>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      <div class="technical-cta__terminal">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+          </div>
+          <div class="terminal-content">
+            <div class="terminal-line">$ git clone binary.builders/awesome-project</div>
+            <div class="terminal-line">$ cd awesome-project</div>
+            <div class="terminal-line">$ npm install</div>
+            <div class="terminal-line">$ npm start</div>
+            <div class="terminal-line terminal-line--active">Ready to build something amazing...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Add terminal animation script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Terminal typing animation
+  const terminalLines = document.querySelectorAll('.terminal-line');
+  terminalLines.forEach((line, index) => {
+    line.style.animationDelay = `${index * 0.5}s`;
+  });
+
+  // Code animation
+  const codeAnimation = document.querySelector('.code-animation');
+  if (codeAnimation) {
+    const characters = '01';
+    const width = 40;
+    const height = 20;
+    
+    function generateMatrix() {
+      let matrix = '';
+      for (let i = 0; i < height; i++) {
+        for (let j = 0; j < width; j++) {
+          matrix += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        matrix += '\n';
+      }
+      codeAnimation.textContent = matrix;
+    }
+
+    setInterval(generateMatrix, 100);
+  }
+});
+</script>
+{{ end }} 

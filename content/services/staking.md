@@ -1,0 +1,35 @@
+---
+title: "Staking Service"
+description: "Earn rewards while securing our supported Proof of Stake networks with industry-leading validator infrastructure. As a Swiss-based company, we prioritize privacy and security in all our validation services."
+layout: "service"
+hero_image: "/images/services/staking.png"
+show_supported_networks: true
+features_title: "Why stake with us?"
+features:
+  - title: "Simple"
+    description: "We believe in making complex systems accessible. Our streamlined staking process eliminates technical barriers, allowing you to participate effortlessly and focus on what matters—earning rewards."
+    icon: "📈"
+  - title: "Safe"
+    description: "Your assets deserve the highest level of protection. Our robust infrastructure and multi-layered security protocols ensure your staked funds remain safe while generating returns."
+    icon: "🔒"  
+  - title: "Transparent"
+    description: "We provide clear information about our operations, performance metrics, and commission rates. Stay informed with regular updates and insights about the networks you're supporting through our validator service."
+    icon: "👁️"
+# benefits:
+#   - title: "Reliability"
+#     icon: "⚡"
+#     description: "Experience industry-leading uptime with our enterprise-grade infrastructure and automated failover systems."
+#   - title: "Security"
+#     icon: "🔒"
+#     description: "Rest assured with our comprehensive security measures, including multi-signature validation and secure key management."
+#   - title: "Analytics"
+#     icon: "📈"
+#     description: "Make informed decisions with our advanced data analytics and real-time network insights."
+#   - title: "Support"
+#     icon: "🤝"
+#     description: "Access 24/7 technical support and participate in network governance with our expert guidance."
+cta_description: "Want to earn rewards while supporting the Cosmos ecosystem? Stake your ATOM with us and help secure the network."
+primary_cta:
+  url: "https://wallet.keplr.app/chains/cosmos-hub?modal=staking&chain=cosmoshub-4&validator_address=cosmosvaloper1e4vye322gkjx8n85jgcclnc7nvdvu82axnr5ll&step_id=3&action_id=stake"
+  text: "Stake with Keplr"
+---

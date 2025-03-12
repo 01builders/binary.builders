@@ -1,0 +1,30 @@
+{{ define "main" }}
+<section class="contact-page">
+  <!-- Full-width banner image outside the container -->
+  <div class="banner-image artistic-banner">
+    <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
+  </div>
+  
+  <div class="contact-page__container">
+    <h1 class="contact-page__title">Message Sent!</h1>
+    
+    <div class="success-message">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 0C10.752 0 0 10.752 0 24C0 37.248 10.752 48 24 48C37.248 48 48 37.248 48 24C48 10.752 37.248 0 24 0ZM19.2 36L7.2 24L10.584 20.616L19.2 29.208L37.416 10.992L40.8 14.4L19.2 36Z" fill="currentColor"/>
+      </svg>
+      <p class="success-message__text">Thank you for reaching out! We've received your message and will get back to you soon.</p>
+      <div class="cta-button text-center">
+        <a href="/" class="site-header__cta-button">Back to Home</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Background Animation Elements -->
+  <div class="contact-circle"></div>
+  <div class="particles-container">
+    {{ range $i, $e := (seq 1 15) }}
+    <div class="particle particle-{{ $i }}"></div>
+    {{ end }}
+  </div>
+</section>
+{{ end }} 

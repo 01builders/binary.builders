@@ -1,0 +1,13 @@
+{{ define "main" }}
+<main class="page-content team-page">
+  <div class="page-header">
+    <div class="container">
+      <span class="page-category">OUR PEOPLE</span>
+      <h1 class="section-title">{{ .Title }}</h1>
+      <p class="section-description">{{ .Description }}</p>
+    </div>
+  </div>
+  
+  {{ partial "team-section.html" . }}
+</main>
+{{ end }} 

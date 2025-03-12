@@ -1,23 +1,53 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
+# System files
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.AppleDouble
+.LSOverride
 
+# Hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+hugo.exe
+hugo.darwin
+hugo.linux
+.hugo_build.lock
+
+# Node
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local files
+TODO.md
+NOTES.md
+
+# Build and temp files
+*.bak
+*.tmp
+
+# OS and editor specific files
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# Git specific files
+*.orig
+
+# Theme files
+themes/AdrianFreeTheme

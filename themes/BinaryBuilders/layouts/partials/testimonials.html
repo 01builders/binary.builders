@@ -1,0 +1,76 @@
+{{ $colors := slice 
+    "#7B4DFF,#5435B4,#E464FF"  
+    "#4ECDC4,#3DA89F,#65E5DD"  
+    "#FF6B6B,#E65555,#FF8585"  
+    "#7A76FF,#5856D6,#9D9BFF" 
+}}
+<div class="testimonials">
+    <h2 class="testimonials__title">Testimonials</h2>
+    <div class="testimonials__marquee">
+        <ul class="testimonials__content" id="testimonials-content">
+            {{ range $index, $testimonial := .Site.Data.testimonials }}
+            <li class="testimonials__item">
+                <div class="testimonial-card">
+                    <pixel-hover 
+                        data-colors="{{ index $colors (mod $index 4) }}"
+                        data-gap="6"
+                        data-speed="30">
+                    </pixel-hover>
+                    <div class="testimonial-card__quote-icon">❝</div>
+                    <div class="testimonial-card__quote">{{ $testimonial.quote }}</div>
+                    <div class="testimonial-card__author">
+                        <img src="/images/partners/{{ $testimonial.logo }}-logo.svg" alt="{{ $testimonial.name }} Logo" class="testimonial-card__avatar">
+                        <div class="testimonial-card__info">
+                            <div class="testimonial-card__name">{{ $testimonial.name }}</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const root = document.documentElement;
+    const marqueeContent = document.getElementById('testimonials-content');
+    const items = Array.from(marqueeContent.children);
+    const totalItems = items.length;
+
+    // Set CSS variable for total elements
+    root.style.setProperty('--testimonials-elements', totalItems);
+
+    // Clone items and append them
+    items.forEach((item, index) => {
+        const clone = item.cloneNode(true);
+        
+        // Remove existing pixel-hover and create a new one
+        const oldPixelHover = clone.querySelector('pixel-hover');
+        if (oldPixelHover) {
+            const colors = oldPixelHover.getAttribute('data-colors');
+            const gap = oldPixelHover.getAttribute('data-gap');
+            const speed = oldPixelHover.getAttribute('data-speed');
+            
+            const newPixelHover = document.createElement('pixel-hover');
+            newPixelHover.setAttribute('data-colors', colors);
+            newPixelHover.setAttribute('data-gap', gap);
+            newPixelHover.setAttribute('data-speed', speed);
+            
+            oldPixelHover.replaceWith(newPixelHover);
+        }
+        
+        marqueeContent.appendChild(clone);
+    });
+
+    // Function to restart animation
+    function restartAnimation() {
+        marqueeContent.style.animation = 'none';
+        marqueeContent.offsetHeight; // Trigger reflow
+        marqueeContent.style.animation = null;
+    }
+
+    // Restart animation when it ends
+    marqueeContent.addEventListener('animationend', restartAnimation);
+});
+</script> 

@@ -1,0 +1,4 @@
+{{ $date := .Date.Format "January 2, 2006" }}
+<div class="post-meta post-meta--header">
+    <time>{{ $date }}</time><span class="separator">·</span>{{ $readingTime := div (countwords .Content) 200.0 }}<span class="reading-time">{{ math.Ceil $readingTime }} min read</span>{{ with .Params.categories }}<span class="separator">·</span><span class="categories">{{- range $index, $category := . -}}{{- if gt $index 0 }}, {{ end -}}<a href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a>{{- end -}}</span>{{ end }}
+</div> 

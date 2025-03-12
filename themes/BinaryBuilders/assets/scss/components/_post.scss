@@ -1,0 +1,195 @@
+#main-content {
+    padding-top: 4rem !important;
+    padding-bottom: 2rem !important;
+    min-height: 100vh;
+    background-color: var(--color-background);
+
+    .post {
+        .container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        &-header {
+            text-align: left;
+            margin-bottom: 2rem;
+
+            h1 {
+                font-size: 2rem;
+                line-height: 1.25;
+                margin-bottom: 1rem;
+                font-weight: 700;
+                letter-spacing: -0.016em;
+            }
+        }
+
+        &-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            justify-content: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        &-content {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--color-text);
+            letter-spacing: -0.003em;
+            padding-top: 2rem;
+
+            > * {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            p, h2, h3, ul, ol, blockquote {
+                max-width: 740px;
+            }
+
+            h2l {
+                padding-top: 1rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+                margin: 4.3rem 0 1.25rem;
+                font-weight: 700;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+                margin: 2rem 0 1rem;
+                font-weight: 600;
+            }
+
+            ul {
+                list-style-type: disc;
+                margin: 2rem 0;
+                padding-left: 2rem;
+                
+                li {
+                    margin-bottom: 1rem;
+                    padding-left: 0.5rem;
+                    display: list-item;
+                    
+                    &::marker {
+                        color: var(--color-text);
+                    }
+                }
+            }
+            
+            ol {
+                list-style-type: decimal;
+                margin: 2rem 0;
+                padding-left: 2rem;
+                
+                li {
+                    margin-bottom: 1rem;
+                    padding-left: 0.5rem;
+                    display: list-item;
+                    
+                    &::marker {
+                        color: var(--color-text);
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            blockquote {
+                margin: 2rem 0;
+                padding-left: 2rem;
+                border-left: 3px solid var(--color-text);
+            }
+        }
+
+        &-image {
+            max-width: 740px;
+            margin: 0 auto 2rem;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 0;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        &-tags {
+            margin: 4rem 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            .tag {
+                display: inline-flex;
+                align-items: center;
+                padding: 0.25rem 0.75rem;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 0;
+                color: var(--color-text-secondary);
+                text-decoration: none;
+                font-size: 0.85rem;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                    color: var(--color-text);
+                }
+            }
+        }
+
+        &-lastmod {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 4rem;
+            text-align: left;
+            font-style: italic;
+        }
+
+        &-footer {
+            max-width: 740px;
+            margin: 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border-light);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #main-content {
+        padding-top: 3rem !important;
+        padding-bottom: 2rem !important;
+
+        .post {
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            &-header h1 {
+                font-size: 1.75rem;
+            }
+
+            &-content {
+                font-size: 1.1rem;
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+
+                h3 {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
+} 

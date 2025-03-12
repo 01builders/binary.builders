@@ -1,0 +1,106 @@
+{{ define "main" }}
+<main class="page-content service-page service-page--ventures">
+  <!-- Split Hero Section -->
+  <section class="ventures-hero">
+    <div class="ventures-hero__content">
+      <h1 class="ventures-hero__title"><span class="gradient-text">{{ .Title }}</span></h1>
+      <p class="ventures-hero__description">{{ .Description }}</p>
+    </div>
+    <div class="ventures-hero__image">
+      {{ with .Params.hero_image }}
+      <img src="{{ . }}" alt="{{ $.Title }}" />
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Overview Section with Split Layout -->
+  <section class="ventures-overview">
+    <div class="container">
+      <div class="ventures-overview__grid">
+        <div class="ventures-overview__content">
+          {{ .Content }}
+        </div>
+        <div class="ventures-overview__stats">
+          <div class="stat-card">
+            <div class="stat-card__number">50+</div>
+            <div class="stat-card__label">Projects Funded</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">$100M+</div>
+            <div class="stat-card__label">Assets Under Management</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">90%</div>
+            <div class="stat-card__label">Success Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section with Horizontal Scroll -->
+  {{ if .Params.features }}
+  <section class="ventures-features">
+    <div class="container">
+      <h2>{{ .Params.features_title | default "Key Features" }}</h2>
+      <div class="ventures-features__slider">
+        {{ range .Params.features }}
+        <div class="feature-card">
+          <div class="feature-card__icon">{{ .icon }}</div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Benefits Section with Animated Cards -->
+  {{ if .Params.benefits }}
+  <section class="ventures-benefits">
+    <div class="container">
+      <h2>Benefits</h2>
+      <div class="ventures-benefits__grid">
+        {{ range $index, $benefit := .Params.benefits }}
+        <div class="benefit-card" data-aos="fade-up" data-aos-delay="{{ mul $index 100 }}">
+          <div class="benefit-card__icon">{{ .icon }}</div>
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Call to Action -->
+  <section class="ventures-cta">
+    <div class="container">
+      <div class="ventures-cta__content">
+        <h2>Get Started</h2>
+        <p>{{ .Params.cta_description }}</p>
+        <div class="ventures-cta__buttons">
+          {{ with .Params.primary_cta }}
+          <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener">
+            {{ .text }} <span class="button__arrow">→</span>
+          </a>
+          {{ end }}
+          {{ with .Params.secondary_cta }}
+          <a href="{{ .url }}" class="button button--secondary">
+            {{ .text }} <span class="button__arrow">→</span>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{ if .Params.benefits }}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+{{ end }}
+{{ end }} 

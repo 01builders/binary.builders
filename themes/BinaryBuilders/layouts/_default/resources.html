@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main class="page-content resources-page">
+  <div class="page-header">
+    <div class="container">
+      <h1 class="section-title"><span class="gradient-text">{{ .Title }}</span></h1>
+      <p class="section-description">{{ .Description }}</p>
+    </div>
+  </div>
+
+  {{ partial "technical-resources.html" . }}
+</main>
+{{ end }} 

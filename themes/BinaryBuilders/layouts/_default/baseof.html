@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="dark"
+      data-search="{{ .Site.Params.features.search }}"
+      data-newsletter="{{ .Site.Params.features.newsletter }}">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header role="banner">
+    {{ partial "header.html" . }}
+  </header>
+
+  <main id="main-content" role="main" tabindex="-1">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer role="contentinfo">
+    {{ partial "footer.html" . }}
+  </footer>
+
+  <!-- Scripts -->
+  {{ $js := resources.Get "js/main.js" | js.Build | resources.Minify | resources.Fingerprint }}
+  <script type="module" src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+  
+  {{ block "scripts" . }}{{ end }}
+</body>
+</html>

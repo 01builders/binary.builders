@@ -1,0 +1,86 @@
+{{ $title := .Title }}
+<main class="service-page service-page--venture">
+  <!-- Hero Section -->
+  <section class="venture-hero">
+    <div class="venture-hero__bg">
+      <div class="venture-animation"></div>
+    </div>
+    
+    <!-- Full-width hero image -->
+    <div class="venture-hero__image-full">
+      {{ with .Params.hero_image }}
+      <img src="{{ . }}" alt="{{ $title }}" />
+      {{ end }}
+    </div>
+    
+    <div class="container">
+      <div class="venture-hero__content">
+        <h1 class="venture-hero__title">{{ .Title }}</h1>
+        <p class="venture-hero__description">We invest in teams where we can add meaningful value beyond capital. Our focus is on creating synergies within our ecosystem and fostering collaborative opportunities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio-section">
+    <div class="container">
+      <h2 class="portfolio-section__title">Supporting</h2>
+      <div class="portfolio-section__grid">
+        <a href="https://www.42agents.com/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/fortytwo.svg" alt="42 Agents Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://stride.zone" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/logos/stride-text.svg" alt="Stride Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://www.ethos.network/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/ethos.svg" alt="Ethos Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://www.levana.finance/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/levana.svg" alt="Levana Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://www.keplr.app/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/keplr.svg" alt="Keplr Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://timewave.computer/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/timewave.svg" alt="Timewave Logo" class="portfolio-section__logo">
+        </a>
+        <div class="portfolio-section__item">
+          <img src="/images/portfolio/convexity.svg" alt="Convexity Logo" class="portfolio-section__logo">
+        </div>
+        <a href="https://noble.xyz" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/noble.svg" alt="Noble Logo" class="portfolio-section__logo">
+        </a>
+        <a href="https://www.saline.network/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <span class="portfolio-section__logo-text">Saline</span>
+        </a>
+        <a href="https://www.squidrouter.com/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+          <img src="/images/portfolio/squid.svg" alt="Squid Logo" class="portfolio-section__logo">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get in Touch -->
+  <section class="get-in-touch">
+    <div class="container">
+      <h2 class="features__title">
+        <span class="features__title-glow">Get in Touch</span>
+      </h2>
+      <div class="banner-image artistic-banner">
+        <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
+      </div>
+      <p class="section-description text-center">{{ .Params.cta_description }}</p>
+      <div class="cta-button text-center">
+        <a href="/contact" class="site-header__cta-button">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{ if .Params.benefits }}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+{{ end }} 

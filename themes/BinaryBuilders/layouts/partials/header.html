@@ -1,0 +1,296 @@
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+<header class="site-header">
+  <div class="site-header__container">
+    <div class="site-header__wrapper">
+      <div class="site-header__logo">
+        <a href="{{ .Site.BaseURL }}">
+          <h2 class="binary-title">
+            <img src="/images/logos/binary-icon.svg" alt="Binary Builders Logo" class="logo-image">
+            BINARY BUILDERS
+          </h2>
+        </a>
+      </div>
+      
+      <button class="site-header__mobile-toggle" aria-label="Toggle Menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <nav class="site-header__nav">
+        <ul class="site-header__nav-list">
+          <li class="site-header__nav-item dropdown">
+            <a href="#" class="site-header__nav-button dropdown-trigger">
+              Solutions
+            </a>
+            <div class="dropdown-content">
+              <div class="dropdown-left">
+                <div class="dropdown-items">
+                  <a href="/services/technical-development" class="dropdown-item">
+                    <span class="item-icon">
+                      <i class="ph ph-codesandbox-logo"></i>
+                    </span>
+                    <span class="item-text">Development</span>
+                  </a>
+                  <a href="/services/staking" class="dropdown-item">
+                    <span class="item-icon">
+                      <i class="ph ph-database"></i>
+                    </span>
+                    <span class="item-text">Staking</span>
+                  </a>
+                  <a href="/services/venture" class="dropdown-item">
+                    <span class="item-icon">
+                      <i class="ph ph-chart-line-up"></i>
+                    </span>
+                    <span class="item-text">Venture</span>
+                  </a>
+                  <a href="/services/consulting" class="dropdown-item">
+                    <span class="item-icon">
+                      <i class="ph ph-handshake"></i>
+                    </span>
+                    <span class="item-text">Consulting</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="site-header__nav-item">
+            <a href="/blog" class="site-header__nav-button">
+              Blog
+            </a>
+          </li>
+          <li class="site-header__nav-item">
+            <a href="/about" class="site-header__nav-button">
+              Company
+            </a>
+          </li>
+        </ul>
+
+        <div class="site-header__mobile-actions">
+          <div class="site-header__social">
+            <a href="https://x.com/binary_builders" class="site-header__social-link" data-animation="x" target="_blank" rel="noopener">
+              <div id="x-animation-header-mobile" class="lottie-container"></div>
+            </a>
+            <a href="https://github.com/01builders" class="site-header__social-link" data-animation="github" target="_blank" rel="noopener">
+              <div id="github-animation-header-mobile" class="lottie-container"></div>
+            </a>
+            <!-- <a href="https://t.me/binarybuilders" class="site-header__social-link" data-animation="telegram-mobile" target="_blank" rel="noopener">
+              <div id="telegram-animation-header-mobile" class="lottie-container"></div>
+            </a> NOTE: DISABLED FOR NOW-->
+          </div>
+          <div class="site-header__cta">
+            <a href="/contact" class="site-header__cta-button">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="site-header__actions site-header__actions--desktop">
+        <div class="site-header__social">
+          <a href="https://x.com/binary_builders" class="site-header__social-link" data-animation="x" target="_blank" rel="noopener">
+            <div id="x-animation-header" class="lottie-container"></div>
+          </a>
+          <a href="https://github.com/01builders" class="site-header__social-link" data-animation="github" target="_blank" rel="noopener">
+            <div id="github-animation-header" class="lottie-container"></div>
+          </a>
+          <!-- <a href="https://t.me/binarybuilders" class="site-header__social-link" data-animation="telegram" target="_blank" rel="noopener">
+            <div id="telegram-animation-header" class="lottie-container"></div>
+          </a> NOTE: DISABLED FOR NOW-->
+        </div>
+        <div class="site-header__cta">
+          <a href="/contact" class="site-header__cta-button">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+// Initialize animations with common settings
+function initLottieAnimation(id, platform) {
+  return lottie.loadAnimation({
+    container: document.getElementById(id),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: `/animations/${platform}-lottie.json`
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const animations = {};
+  
+  // Initialize desktop animations
+  ['x', 'github', 'telegram'].forEach(platform => {
+    animations[platform] = initLottieAnimation(`${platform}-animation-header`, platform);
+  });
+
+  // Initialize mobile animations
+  ['x', 'github', 'telegram'].forEach(platform => {
+    animations[`${platform}-mobile`] = initLottieAnimation(`${platform}-animation-header-mobile`, platform);
+  });
+
+  // Add hover event listeners
+  document.querySelectorAll('.site-header__social-link').forEach(link => {
+    const animName = link.dataset.animation;
+    const anim = animations[animName];
+
+    link.addEventListener('mouseenter', () => {
+      if (anim) {
+        anim.goToAndPlay(0, true);
+      }
+    });
+
+    link.addEventListener('mouseleave', () => {
+      if (anim) {
+        anim.pause();
+        anim.goToAndStop(0, true);
+      }
+    });
+  });
+
+  // Mobile menu toggle
+  const mobileToggle = document.querySelector('.site-header__mobile-toggle');
+  const nav = document.querySelector('.site-header__nav');
+  const dropdownButtons = document.querySelectorAll('.site-header__nav-button.dropdown-trigger');
+  const itemsWithSubmenu = document.querySelectorAll('.dropdown-item.has-submenu');
+  const dropdownRightPanels = document.querySelectorAll('.dropdown-right');
+  
+  // Initially hide all right panels
+  dropdownRightPanels.forEach(panel => {
+    panel.style.display = 'none';
+  });
+  
+  mobileToggle?.addEventListener('click', function() {
+    this.classList.toggle('is-active');
+    nav?.classList.toggle('is-active');
+    document.body.classList.toggle('menu-open');
+  });
+
+  // Handle dropdown toggles on mobile
+  const isMobile = () => window.innerWidth <= 1024;
+
+  dropdownButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      if (!isMobile()) return;
+      
+      e.preventDefault();
+      const dropdownContent = this.closest('.dropdown')?.querySelector('.dropdown-content');
+      
+      // Close other dropdowns
+      dropdownButtons.forEach(otherButton => {
+        if (otherButton !== this) {
+          otherButton.classList.remove('is-active');
+          const otherContent = otherButton.closest('.dropdown')?.querySelector('.dropdown-content');
+          otherContent?.classList.remove('is-active');
+        }
+      });
+
+      // Toggle current dropdown
+      this.classList.toggle('is-active');
+      dropdownContent?.classList.toggle('is-active');
+    });
+  });
+
+  // Handle mobile submenu toggles
+  itemsWithSubmenu.forEach(item => {
+    item.addEventListener('click', function(e) {
+      if (!isMobile()) return;
+      
+      e.preventDefault();
+      const submenuId = this.getAttribute('data-submenu');
+      const targetSubmenu = document.getElementById(submenuId);
+      
+      // Close other submenus
+      document.querySelectorAll('.submenu').forEach(submenu => {
+        if (submenu.id !== submenuId) {
+          submenu.classList.remove('is-active');
+          submenu.style.display = 'none';
+          const parentItem = document.querySelector(`[data-submenu="${submenu.id}"]`);
+          parentItem?.classList.remove('is-active');
+        }
+      });
+      
+      // Toggle current submenu
+      if (targetSubmenu) {
+        const dropdownItems = this.closest('.dropdown-items');
+        const currentIndex = Array.from(dropdownItems.children).indexOf(this);
+        
+        // Insert submenu after the current item
+        if (this.nextElementSibling !== targetSubmenu) {
+          this.after(targetSubmenu);
+        }
+        
+        targetSubmenu.classList.toggle('is-active');
+        targetSubmenu.style.display = targetSubmenu.classList.contains('is-active') ? 'block' : 'none';
+        this.classList.toggle('is-active');
+      }
+    });
+  });
+
+  // Handle desktop submenu behavior
+  itemsWithSubmenu.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      if (isMobile()) return;
+      
+      const dropdownContent = this.closest('.dropdown-content');
+      const rightPanel = dropdownContent.querySelector('.dropdown-right');
+      const leftPanel = dropdownContent.querySelector('.dropdown-left');
+      
+      // Show the right panel
+      rightPanel.style.display = 'block';
+      // Update left panel class
+      leftPanel.classList.add('has-right-panel');
+      
+      // Hide all submenus first
+      document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.style.display = 'none';
+      });
+      
+      // Show the corresponding submenu
+      const submenuId = this.getAttribute('data-submenu');
+      const targetSubmenu = document.getElementById(submenuId);
+      if (targetSubmenu) {
+        targetSubmenu.style.display = 'block';
+      }
+    });
+  });
+
+  // Handle mouseover events for items without submenus
+  const itemsWithoutSubmenu = document.querySelectorAll('.dropdown-item:not(.has-submenu)');
+  itemsWithoutSubmenu.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      if (isMobile()) return;
+      
+      const dropdownContent = this.closest('.dropdown-content');
+      const rightPanel = dropdownContent.querySelector('.dropdown-right');
+      const leftPanel = dropdownContent.querySelector('.dropdown-left');
+      
+      // Hide the right panel
+      rightPanel.style.display = 'none';
+      // Reset left panel class
+      leftPanel.classList.remove('has-right-panel');
+    });
+  });
+
+  // Handle dropdown container mouseleave
+  document.querySelectorAll('.dropdown-content').forEach(dropdown => {
+    dropdown.addEventListener('mouseleave', function() {
+      if (isMobile()) return;
+      
+      // Hide all submenus
+      document.querySelectorAll('.submenu').forEach(submenu => {
+        submenu.style.display = 'none';
+      });
+      
+      // Hide the right panel
+      const rightPanel = this.querySelector('.dropdown-right');
+      const leftPanel = this.querySelector('.dropdown-left');
+      rightPanel.style.display = 'none';
+      // Reset left panel class
+      leftPanel.classList.remove('has-right-panel');
+    });
+  });
+});
+</script>

@@ -1,0 +1,11 @@
+{{ define "main" }}
+  {{ if eq .File.BaseFileName "venture" }}
+    {{ partial "services/venture.html" . }}
+  {{ else if eq .File.BaseFileName "consulting" }}
+    {{ partial "services/consulting.html" . }}
+  {{ else if eq .File.BaseFileName "staking" }}
+    {{ partial "services/staking.html" . }}
+  {{ else if eq .File.BaseFileName "technical-development" }}
+    {{ partial "services/technical.html" . }}
+  {{ end }}
+{{ end }} 

@@ -1,0 +1,210 @@
+{{ define "main" }}
+<!-- Include Lottie script and handler -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+<div class="test-page">
+  <div class="test-grid">
+    <!-- Blue hover card -->
+    {{ partial "components/hover-card" (dict 
+      "content" (printf "<div class='card-demo'><h3>Blue Card</h3><p>Hover me!</p></div>")
+      "color" "blue"
+      "gap" "5"
+      "speed" "35"
+    ) }}
+
+    <!-- Green hover card with custom settings -->
+    {{ partial "components/hover-card" (dict 
+      "content" (printf "<div class='card-demo'><h3>Green Card</h3><p>Different speed and gap</p></div>")
+      "color" "green"
+      "gap" "8"
+      "speed" "45"
+    ) }}
+
+    <!-- Purple hover card -->
+    {{ partial "components/hover-card" (dict 
+      "content" (printf "<div class='card-demo'><h3>Purple Card</h3><p>Custom colors</p></div>")
+      "color" "purple"
+      "colors" "#f3e8ff,#d8b4fe,#a855f7"
+    ) }}
+
+    <!-- Yellow hover card -->
+    {{ partial "components/hover-card" (dict 
+      "content" (printf "<div class='card-demo'><h3>Yellow Card</h3><p>Dense pixels</p></div>")
+      "color" "yellow"
+      "gap" "3"
+      "speed" "20"
+    ) }}
+  </div>
+
+  <!-- Lottie Animations Section -->
+  <div class="lottie-section">
+    <h2>Social Media Animations</h2>
+    <div class="lottie-grid">
+      <!-- GitHub Animation -->
+      <a href="https://github.com/01builders" class="lottie-card" data-animation="github" target="_blank" rel="noopener">
+        <div id="github-animation" class="lottie-container"></div>
+        <span>GitHub</span>
+      </a>
+      
+      <!-- Twitter Animation -->
+      <a href="https://x.com/binary_builders" class="lottie-card" data-animation="twitter" target="_blank" rel="noopener">
+        <div id="twitter-animation" class="lottie-container"></div>
+        <span>Twitter</span>
+      </a>
+
+      <!-- Telegram Animation -->
+      <a href="https://t.me/binarybuilders" class="lottie-card" data-animation="telegram" target="_blank" rel="noopener">
+        <div id="telegram-animation" class="lottie-container"></div>
+        <span>Telegram</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+.test-page {
+  min-height: 100vh;
+  background: #1a1b26;
+  padding: 2rem;
+}
+
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hover-card {
+  aspect-ratio: 4/3;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.card-demo {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-text, #ffffff);
+}
+
+.card-demo h3 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-demo p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.875rem;
+}
+
+/* Lottie Section Styles */
+.lottie-section {
+  max-width: 1200px;
+  margin: 4rem auto 0;
+}
+
+.lottie-section h2 {
+  color: var(--color-text, #ffffff);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.lottie-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.lottie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-text, #ffffff);
+  transition: transform 0.2s ease;
+}
+
+.lottie-container {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.lottie-card:hover {
+  transform: translateY(-2px);
+}
+
+.lottie-card:hover .lottie-container {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lottie-card span {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const animations = {};
+  
+  // Initialize animations
+  animations.github = lottie.loadAnimation({
+    container: document.getElementById('github-animation'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: '/animations/github-lottie.json'
+  });
+
+  animations.twitter = lottie.loadAnimation({
+    container: document.getElementById('twitter-animation'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: '/animations/twitter-lottie.json'
+  });
+
+  animations.telegram = lottie.loadAnimation({
+    container: document.getElementById('telegram-animation'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: false,
+    path: '/animations/telegram-lottie.json'
+  });
+
+  // Add hover event listeners to all animation cards
+  document.querySelectorAll('.lottie-card').forEach(card => {
+    const animName = card.dataset.animation;
+    const anim = animations[animName];
+
+    card.addEventListener('mouseenter', () => {
+      if (anim) {
+        anim.goToAndPlay(0, true);
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      if (anim) {
+        anim.pause();
+        anim.goToAndStop(0, true);
+      }
+    });
+  });
+});
+</script>
+{{ end }} 

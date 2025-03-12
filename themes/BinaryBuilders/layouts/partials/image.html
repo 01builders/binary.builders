@@ -1,0 +1,28 @@
+{{- $image := .src -}}
+{{- $alt := .alt -}}
+{{- $class := .class -}}
+{{- $loading := .loading | default "lazy" -}}
+
+{{- $processedImage := resources.Get $image -}}
+{{- if $processedImage -}}
+  {{- $imageConfig := dict "quality" 82 "format" "webp" -}}
+  {{- if gt $processedImage.Width 1200 -}}
+    {{- $processedImage = $processedImage.Resize "1200x webp" -}}
+  {{- else -}}
+    {{- $processedImage = $processedImage.Process "webp" -}}
+  {{- end -}}
+  <picture>
+    <source srcset="{{ $processedImage.RelPermalink }}" type="image/webp">
+    <img src="{{ $processedImage.RelPermalink }}" 
+         alt="{{ $alt }}" 
+         {{ with $class }}class="{{ . }}"{{ end }}
+         loading="{{ $loading }}"
+         width="{{ $processedImage.Width }}"
+         height="{{ $processedImage.Height }}">
+  </picture>
+{{- else -}}
+  <img src="{{ $image }}" 
+       alt="{{ $alt }}" 
+       {{ with $class }}class="{{ . }}"{{ end }}
+       loading="{{ $loading }}">
+{{- end -}} 

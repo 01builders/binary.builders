@@ -1,0 +1,173 @@
+{{ define "main" }}
+<main class="page-content service-page service-page--staking">
+  <!-- Animated Hero Section -->
+  <section class="staking-hero">
+    <div class="container">
+      <div class="staking-hero__content">
+        <h1 class="staking-hero__title">
+          <span class="gradient-text">{{ .Title }}</span>
+        </h1>
+        <p class="staking-hero__description">{{ .Description }}</p>
+      </div>
+      <div class="staking-hero__visual">
+        <div class="staking-hero__nodes">
+          {{ range seq 5 }}
+          <div class="node"></div>
+          {{ end }}
+        </div>
+        {{ with .Params.hero_image }}
+        <img src="{{ . }}" alt="{{ $.Title }}" class="staking-hero__image" />
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview with Live Stats -->
+  <section class="staking-overview">
+    <div class="container">
+      <div class="staking-overview__content">
+        {{ .Content }}
+      </div>
+      <div class="staking-overview__stats">
+        <div class="stat-box">
+          <div class="stat-box__value">$500M+</div>
+          <div class="stat-box__label">Total Value Staked</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box__value">99.9%</div>
+          <div class="stat-box__label">Uptime</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box__value">15+</div>
+          <div class="stat-box__label">Networks Supported</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features with Interactive Steps -->
+  {{ if .Params.features }}
+  <section class="staking-features">
+    <div class="container">
+      <h2>{{ .Params.features_title | default "Key Features" }}</h2>
+      <div class="staking-features__steps">
+        {{ range $index, $feature := .Params.features }}
+        <div class="step-card" data-step="{{ add $index 1 }}">
+          <div class="step-card__number">{{ add $index 1 }}</div>
+          <div class="step-card__content">
+            <div class="step-card__icon">{{ .icon }}</div>
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Benefits with Animated Metrics -->
+  {{ if .Params.benefits }}
+  <section class="staking-benefits">
+    <div class="container">
+      <h2>Benefits</h2>
+      <div class="staking-benefits__grid">
+        {{ range .Params.benefits }}
+        <div class="benefit-box">
+          <div class="benefit-box__icon">{{ .icon }}</div>
+          <div class="benefit-box__content">
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+          <div class="benefit-box__glow"></div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Supported Networks -->
+  {{ if .Params.show_supported_networks }}
+  {{ partial "supported-networks.html" . }}
+  {{ end }}
+
+  <!-- Testimonials -->
+  {{ if .Params.testimonials }}
+  <section class="testimonials-simple">
+    <div class="container">
+      <h2>What Our Partners Say</h2>
+      <div class="testimonials-simple__grid">
+        {{ range $index, $testimonial := .Params.testimonials }}
+        <div class="testimonial-card">
+          <pixel-hover 
+            data-colors="{{ index (slice "#7B4DFF,#5435B4,#E464FF" "#4ECDC4,#3DA89F,#65E5DD" "#FF6B6B,#E65555,#FF8585") (mod $index 3) }}"
+            data-gap="6"
+            data-speed="30">
+          </pixel-hover>
+          <div class="testimonial-card__quote">{{ .quote }}</div>
+          <div class="testimonial-card__author">
+            <img src="/images/partners/{{ .logo }}.png" alt="{{ .name }} Logo" class="testimonial-card__avatar">
+            <div class="testimonial-card__name">{{ .name }}</div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Call to Action with Network Animation -->
+  <section class="staking-cta">
+    <div class="container">
+      <div class="staking-cta__content">
+        <h2>Start Staking</h2>
+        <p>{{ .Params.cta_description }}</p>
+        <div class="staking-cta__buttons">
+          {{ with .Params.primary_cta }}
+          <a href="{{ .url }}" class="button button--primary" target="_blank" rel="noopener">
+            {{ .text }} <span class="button__arrow">→</span>
+          </a>
+          {{ end }}
+          {{ with .Params.secondary_cta }}
+          <a href="{{ .url }}" class="button button--secondary">
+            {{ .text }} <span class="button__arrow">→</span>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+      <div class="staking-cta__network">
+        <div class="network-animation"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Add staking animation script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize node animations
+  const nodes = document.querySelectorAll('.node');
+  nodes.forEach((node, index) => {
+    node.style.animationDelay = `${index * 0.2}s`;
+  });
+
+  // Initialize step cards
+  const stepCards = document.querySelectorAll('.step-card');
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, observerOptions);
+
+  stepCards.forEach(card => observer.observe(card));
+});
+</script>
+{{ end }} 

@@ -1,0 +1,40 @@
+{{ define "main" }}
+<main class="page-content taxonomy-page">
+  <div class="page-header">
+    <div class="container">
+      <span class="page-category">BLOG CATEGORIES</span>
+      <h1 class="section-title">{{ .Title }}</h1>
+      <p class="section-description">Articles in category {{ .Title }}</p>
+    </div>
+  </div>
+
+  <section class="latest-insights latest-insights--no-shimmer">
+    <div class="container">
+      <div class="highlighted-posts">
+        {{ range .Pages }}
+        <article class="highlighted-post">
+          <a href="{{ .RelPermalink }}" class="insight-link">
+            {{ with .Params.image }}
+            <div class="insight-image">
+              <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            </div>
+            {{ end }}
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span class="insight-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                {{ with .Params.categories }}
+                <span class="insight-category">{{- range $index, $category := . -}}{{- if gt $index 0 }}, {{ end -}}{{ $category }}{{- end -}}</span>
+                {{ end }}
+              </div>
+              <h3 class="insight-title">{{ .Title }}</h3>
+              <p class="insight-excerpt">{{ .Description | truncate 120 }}</p>
+              <span class="insight-read-more">Read More →</span>
+            </div>
+          </a>
+        </article>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }} 

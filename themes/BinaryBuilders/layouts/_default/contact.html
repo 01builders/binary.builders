@@ -1,0 +1,82 @@
+{{ define "main" }}
+<section class="contact-page">
+  <!-- Full-width banner image outside the container -->
+  <div class="banner-image artistic-banner">
+    <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
+  </div>
+  
+  <div class="contact-page__container">
+    <h1 class="contact-page__title">Get in Touch</h1>
+    
+    <p class="contact-page__description">
+      Have a project in mind or want to learn more about our services? Fill out the form below and we'll get back to you.
+    </p>
+    
+    <form class="contact-form" action="https://formcarry.com/s/UEY1xhC_2t_" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
+      <!-- Success Alert -->
+      <div class="form-alert form-alert--success" style="display: none;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM8 15L3 10L4.41 8.59L8 12.17L15.59 4.58L17 6L8 15Z" fill="currentColor"/>
+        </svg>
+        <span>Your message has been sent successfully!</span>
+      </div>
+      
+      <!-- Error Alert -->
+      <div class="form-alert form-alert--error" style="display: none;">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0ZM11 15H9V13H11V15ZM11 11H9V5H11V11Z" fill="currentColor"/>
+        </svg>
+        <span>There was an error sending your message. Please try again.</span>
+      </div>
+      
+      <div class="form-field">
+        <input type="text" id="name" name="fullName" placeholder=" " required>
+        <label for="name">Full Name <span class="required">*</span></label>
+        <span class="form-field-bar"></span>
+      </div>
+      
+      <div class="form-field">
+        <input type="email" id="email" name="emailAddress" placeholder=" " required>
+        <label for="email">Email Address <span class="required">*</span></label>
+        <span class="form-field-bar"></span>
+      </div>
+      
+      <div class="form-field">
+        <input type="text" id="company" name="companyName" placeholder=" ">
+        <label for="company">Company Name</label>
+        <span class="form-field-bar"></span>
+      </div>
+      
+      <div class="form-field">
+        <textarea id="topics" name="message" placeholder=" " required></textarea>
+        <label for="topics">
+          <span class="desktop-text">What would you like to discuss?</span>
+          <span class="mobile-text">Message</span>
+          <span class="required">*</span>
+        </label>
+        <span class="form-field-bar"></span>
+      </div>
+      
+      <button type="submit" class="submit-button">
+        <span class="button-text">Submit</span>
+        <div class="button-loader" style="display: none;">
+          <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+          </svg>
+        </div>
+      </button>
+    </form>
+  </div>
+  
+  <!-- Background Animation Elements -->
+  <div class="contact-circle"></div>
+  <div class="particles-container">
+    {{ range $i, $e := (seq 1 15) }}
+    <div class="particle particle-{{ $i }}"></div>
+    {{ end }}
+  </div>
+</section>
+
+{{ $formHandler := resources.Get "js/form-handler.js" | resources.Minify }}
+<script src="{{ $formHandler.RelPermalink }}"></script>
+{{ end }} 

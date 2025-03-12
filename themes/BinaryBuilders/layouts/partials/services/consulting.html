@@ -1,0 +1,91 @@
+{{ $title := .Title }}
+<main class="page-content service-page service-page--consulting">
+  <!-- Full-width Hero Section -->
+  <section class="consulting-hero">
+    <div class="consulting-hero__bg">
+      <div class="consulting-animation"></div>
+    </div>
+    
+    <!-- Full-width hero image -->
+    <div class="consulting-hero__image-full">
+      {{ with .Params.hero_image }}
+      <img src="{{ . }}" alt="{{ $title }}" />
+      {{ end }}
+    </div>
+    
+    <div class="container">
+      <div class="consulting-hero__content">
+        <h1 class="consulting-hero__title">
+          <span class="gradient-text">{{ .Title }}</span>
+        </h1>
+        <p class="consulting-hero__description">{{ .Description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features with Interactive Diagrams -->
+  {{ if .Params.features }}
+  <section class="consulting-features">
+    <div class="container">
+      <h2>{{ .Params.features_title | default "Areas" }}</h2>
+      <div class="consulting-features__grid">
+        {{ range .Params.features }}
+        <div class="feature-box">
+          <div class="feature-box__icon">{{ .icon | safeHTML }}</div>
+          <div class="feature-box__content">
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+          <div class="feature-box__diagram">
+            <svg viewBox="0 0 200 200" class="diagram-svg">
+              <circle cx="100" cy="100" r="80" class="diagram-circle" fill="#7B4DFF" />
+            </svg>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Get in Touch -->
+  <section class="get-in-touch">
+    <div class="container">
+      <h2 class="features__title">
+        <span class="features__title-glow">Get in Touch</span>
+      </h2>
+      <div class="banner-image artistic-banner">
+        <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
+      </div>
+      <p class="section-description text-center">Ready to build the future of crypto technology? Let's join forces for structured support, mentorship, and access to our extensive network of industry partners.</p>
+      <div class="cta-button text-center">
+        <a href="/contact" class="site-header__cta-button">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Add consulting animation script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Consulting animation
+  const consultingAnimation = document.querySelector('.consulting-animation');
+  if (consultingAnimation) {
+    const characters = '💼📊📈💰🔍📝';
+    const width = 40;
+    const height = 20;
+    
+    function generateMatrix() {
+      let matrix = '';
+      for (let i = 0; i < height; i++) {
+        for (let j = 0; j < width; j++) {
+          matrix += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        matrix += '\n';
+      }
+      consultingAnimation.textContent = matrix;
+    }
+
+    setInterval(generateMatrix, 500);
+  }
+});</script> 
