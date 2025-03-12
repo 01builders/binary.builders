@@ -7,37 +7,22 @@
     <style>
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        color: #fff;
-        background-color: #000;
         margin: 0;
-        padding: 20px;
-        line-height: 1.6;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
       }
-      .container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 40px 20px;
+      .login-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
       }
       h1 {
         color: #007AFF;
         margin-bottom: 30px;
-      }
-      .loading {
-        text-align: center;
-        margin-top: 50px;
-        display: none;
-      }
-      .spinner {
-        display: inline-block;
-        width: 50px;
-        height: 50px;
-        border: 3px solid rgba(255,255,255,.3);
-        border-radius: 50%;
-        border-top-color: #007AFF;
-        animation: spin 1s ease-in-out infinite;
-      }
-      @keyframes spin {
-        to { transform: rotate(360deg); }
       }
       .login-button {
         display: inline-block;
@@ -55,145 +40,29 @@
       .login-button:hover {
         background-color: #0056b3;
       }
-      #nc-root {
-        height: 100vh;
-      }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="login-page">
       <h1>Binary Builders CMS</h1>
-      <div id="cms-container">
-        <div class="loading">
-          <div class="spinner"></div>
-          <p>Loading CMS...</p>
-        </div>
-        <div style="text-align: center; margin-top: 30px;">
-          <a href="https://github.com/login/oauth/authorize?client_id=Ov23lioBF3NGbnOvjFWb&scope=repo&redirect_uri=https://binary.builders/admin/" class="login-button">Login with GitHub</a>
-        </div>
-      </div>
+      <p>Please log in with your GitHub account to access the content management system.</p>
+      <a href="https://github.com/login/oauth/authorize?client_id=Ov23lioBF3NGbnOvjFWb&scope=repo&redirect_uri=https://binary.builders/admin/" class="login-button">Login with GitHub</a>
     </div>
 
     <!-- Include Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    
-    <!-- Configure CMS -->
     <script>
-      // Configure the CMS
-      window.CMS_MANUAL_INIT = true;
+      // Check if we have a code parameter in the URL (GitHub OAuth callback)
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code');
       
-      // Initialize when the DOM is loaded
-      document.addEventListener('DOMContentLoaded', function() {
-        // Check if we have a code parameter in the URL (GitHub OAuth callback)
-        const urlParams = new URLSearchParams(window.location.search);
-        const code = urlParams.get('code');
+      if (code) {
+        // If we have a code, replace the login page with the CMS
+        document.body.innerHTML = '<div id="nc-root"></div>';
         
-        if (code) {
-          // Show loading spinner when we have a code (user is being authenticated)
-          document.querySelector('.loading').style.display = 'block';
-          document.querySelector('.login-button').style.display = 'none';
-          
-          // Initialize CMS with a clean DOM
-          const root = document.createElement('div');
-          root.id = 'nc-root';
-          document.body.appendChild(root);
-          
-          // Initialize CMS
-          window.CMS.init({
-            config: {
-              backend: {
-                name: 'github',
-                repo: '01builders/binary.builders',
-                branch: 'main',
-                auth_type: 'implicit',
-                app_id: 'Ov23lioBF3NGbnOvjFWb'
-              },
-              media_folder: 'static/images/uploads',
-              public_folder: '/images/uploads',
-              publish_mode: 'editorial_workflow',
-              collections: [
-                {
-                  name: 'blog',
-                  label: 'Blog',
-                  folder: 'content/blog',
-                  create: true,
-                  slug: '{{slug}}',
-                  fields: [
-                    { label: 'Title', name: 'title', widget: 'string' },
-                    { label: 'Publish Date', name: 'date', widget: 'datetime' },
-                    { label: 'Last Modified', name: 'lastmod', widget: 'datetime' },
-                    { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' },
-                    { label: 'Categories', name: 'categories', widget: 'list' },
-                    { label: 'Tags', name: 'tags', widget: 'list' },
-                    { label: 'Highlighted', name: 'highlighted', widget: 'boolean', default: false },
-                    { label: 'Draft', name: 'draft', widget: 'boolean', default: false },
-                    { label: 'Featured Image', name: 'image', widget: 'image', required: false },
-                    { label: 'Description', name: 'description', widget: 'text' },
-                    { label: 'Author', name: 'author', widget: 'string' },
-                    { label: 'Body', name: 'body', widget: 'markdown' }
-                  ]
-                },
-                {
-                  name: 'static_pages',
-                  label: 'Pages',
-                  files: [
-                    {
-                      label: 'About Page',
-                      name: 'about',
-                      file: 'content/about.md',
-                      fields: [
-                        { label: 'Title', name: 'title', widget: 'string' },
-                        { label: 'Publish Date', name: 'date', widget: 'datetime' },
-                        { label: 'Description', name: 'description', widget: 'text' },
-                        { label: 'Body', name: 'body', widget: 'markdown' }
-                      ]
-                    },
-                    {
-                      label: 'Contact Page',
-                      name: 'contact',
-                      file: 'content/contact.md',
-                      fields: [
-                        { label: 'Title', name: 'title', widget: 'string' },
-                        { label: 'Publish Date', name: 'date', widget: 'datetime' },
-                        { label: 'Description', name: 'description', widget: 'text' },
-                        { label: 'Body', name: 'body', widget: 'markdown' }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  name: 'services',
-                  label: 'Services',
-                  folder: 'content/services',
-                  create: true,
-                  slug: '{{slug}}',
-                  fields: [
-                    { label: 'Title', name: 'title', widget: 'string' },
-                    { label: 'Description', name: 'description', widget: 'text' },
-                    { label: 'Layout', name: 'layout', widget: 'hidden', default: 'service' },
-                    { label: 'Hero Image', name: 'hero_image', widget: 'image' },
-                    { label: 'Show Supported Networks', name: 'show_supported_networks', widget: 'boolean', default: false },
-                    { label: 'Features Title', name: 'features_title', widget: 'string', default: 'Core Capabilities' },
-                    { 
-                      label: 'Features',
-                      name: 'features',
-                      widget: 'list',
-                      fields: [
-                        { label: 'Title', name: 'title', widget: 'string' },
-                        { label: 'Description', name: 'description', widget: 'text' }
-                      ]
-                    },
-                    { label: 'Expertise Title', name: 'expertise_title', widget: 'string', default: 'Our Expertise' },
-                    { label: 'Expertise Description', name: 'expertise_description', widget: 'text' },
-                    { label: 'Expertise Content', name: 'expertise_content', widget: 'markdown' },
-                    { label: 'Body', name: 'body', widget: 'markdown' }
-                  ]
-                }
-              ]
-            }
-          });
-        }
-      });
+        // Initialize CMS
+        window.CMS.init();
+      }
     </script>
   </body>
 </html>

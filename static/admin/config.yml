@@ -19,7 +19,7 @@ publish_mode: editorial_workflow
 
 # Collections define the structure for content
 collections:
-  - name: "blog"
+  - name: "config_blog"
     label: "Blog"
     folder: "content/blog"
     create: true
@@ -38,7 +38,7 @@ collections:
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   
-  - name: "pages"
+  - name: "config_pages"
     label: "Pages"
     files:
       - label: "About Page"
@@ -74,7 +74,7 @@ collections:
           - {label: "Description", name: "description", widget: "text"}
           - {label: "Body", name: "body", widget: "markdown"}
   
-  - name: "services"
+  - name: "config_services"
     label: "Services"
     folder: "content/services"
     create: true
