@@ -5,14 +5,14 @@
     <div class="technical-hero__bg">
       <div class="code-animation"></div>
     </div>
-    
+
     <!-- Full-width hero image -->
     <div class="technical-hero__image-full">
       {{ with .Params.hero_image }}
       <img src="{{ . }}" alt="{{ $title }}" />
       {{ end }}
     </div>
-    
+
     <div class="container">
       <div class="technical-hero__content">
         <h1 class="technical-hero__title">{{ .Title }}</h1>
@@ -44,40 +44,52 @@
     </div>
   </section>
   {{ end }}
-  
+
   <!-- Expertise Section -->
   {{ if .Params.expertise_content }}
   <section class="technical-expertise">
     <div class="container">
       <div class="technical-expertise__content">
         <h2>What We Do Best</h2>
-        <p class="expertise-description">Cutting-edge blockchain development from core protocols to production-ready applications.</p>
-        
+        <p class="expertise-description">Cutting-edge blockchain development from core protocols to production-ready
+          applications.</p>
+
         <div class="expertise-list">
           <div class="expertise-item">
             <h3>Protocol Development</h3>
-            <p>Building and maintaining the core technologies that power the interchain ecosystem. Our team leads development of Cosmos SDK and CometBFT, with practical expertise in building the core components of modern blockchains.</p>
+            <!-- <p>Building and maintaining the core technologies that power the interchain ecosystem. Our team leads development of Cosmos SDK and CometBFT, with practical expertise in building the core components of modern blockchains.</p> -->
+            <p>Our experience in building protocols across various ecosystems allows us to make informed decisions about
+              the best technologies to use for your project.</p>
           </div>
-          
+
           <div class="expertise-divider"></div>
-          
+
           <div class="expertise-item">
-            <h3>Blockchain Building</h3>
-            <p>Custom blockchain solutions tailored to your specific use case and requirements. We leverage Rollkit for modular rollups on Celestia and design application-specific blockchains that balance security, scalability, and decentralization to meet your project's unique needs.</p>
+            <h3>Building</h3>
+            <p>Custom solutions tailored to your specific use case and requirements.
+              We have a vast understanding of various technologies (Rust, Go, JS, Solidity, Move, Solana, etc..) and
+              blockchain development
+              (Rollups, L1s, smart contracts) allowing us to make informed decisions based off a products requirements.
+            </p>
           </div>
-          
+
           <div class="expertise-divider"></div>
-          
+
           <div class="expertise-item">
             <h3>Smart Contracts</h3>
-            <p>Secure, efficient smart contracts across CosmWasm, EVM, and Solana ecosystems. Our engineers develop and audit contract systems with a focus on security, gas optimization, and seamless integration with IBC for cross-chain communication and existing blockchain infrastructure.</p>
+            <p>Secure, efficient smart contracts across CosmWasm, EVM, and Solana ecosystems. Our engineers develop and
+              audit contract systems with a focus on security, gas optimization, and seamless integration with bridges
+              for
+              cross-chain communication and existing blockchain infrastructure.</p>
           </div>
-          
+
           <div class="expertise-divider"></div>
-          
+
           <div class="expertise-item">
             <h3>Infrastructure</h3>
-            <p>Reliable validator services and infrastructure management for blockchain networks. We provide robust node operation for Cosmos SDK chains, CometBFT consensus engines, monitoring solutions, and DevOps expertise to ensure your blockchain infrastructure remains secure and performant.</p>
+            <p>Reliable validator services and infrastructure management for blockchain networks. We provide robust node
+              operation for chains, monitoring solutions, and DevOps expertise to
+              ensure your infrastructure remains secure and performant.</p>
           </div>
         </div>
       </div>
@@ -92,7 +104,8 @@
         <span class="features__title-glow">Get in Touch</span>
       </h2>
       <div class="banner-image artistic-banner">
-        <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
+        <img src="/images/banners/get-in-touch-banner.png"
+          alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
       </div>
       <p class="section-description text-center">{{ .Params.cta_description }}</p>
       <div class="cta-button text-center">
@@ -104,25 +117,25 @@
 
 <!-- Add terminal animation script -->
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Code animation
-  const codeAnimation = document.querySelector('.code-animation');
-  if (codeAnimation) {
-    const characters = '01';
-    const width = 40;
-    const height = 20;
-    
-    function generateMatrix() {
-      let matrix = '';
-      for (let i = 0; i < height; i++) {
-        for (let j = 0; j < width; j++) {
-          matrix += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
-        matrix += '\n';
-      }
-      codeAnimation.textContent = matrix;
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    // Code animation
+    const codeAnimation = document.querySelector('.code-animation');
+    if (codeAnimation) {
+      const characters = '01';
+      const width = 40;
+      const height = 20;
 
-    setInterval(generateMatrix, 100);
-  }
-});</script> 
+      function generateMatrix() {
+        let matrix = '';
+        for (let i = 0; i < height; i++) {
+          for (let j = 0; j < width; j++) {
+            matrix += characters.charAt(Math.floor(Math.random() * characters.length));
+          }
+          matrix += '\n';
+        }
+        codeAnimation.textContent = matrix;
+      }
+
+      setInterval(generateMatrix, 100);
+    }
+  });</script>
