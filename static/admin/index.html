@@ -93,6 +93,11 @@
           document.querySelector('.loading').style.display = 'block';
           document.querySelector('.login-button').style.display = 'none';
           
+          // Initialize CMS with a clean DOM
+          const root = document.createElement('div');
+          root.id = 'nc-root';
+          document.body.appendChild(root);
+          
           // Initialize CMS
           window.CMS.init({
             config: {
@@ -129,7 +134,7 @@
                   ]
                 },
                 {
-                  name: 'pages',
+                  name: 'static_pages',
                   label: 'Pages',
                   files: [
                     {
