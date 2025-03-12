@@ -5,8 +5,6 @@ A modern, static website built with Hugo for Binary Builders - Building the Futu
 ## Prerequisites
 
 - [Hugo Extended](https://gohugo.io/installation/) (v0.110.0 or later)
-- [Node.js](https://nodejs.org/) (v16 or later)
-- [npm](https://www.npmjs.com/) (v8 or later)
 - [Git](https://git-scm.com/)
 
 ## Getting Started
@@ -20,11 +18,7 @@ cd binary.builders
 
 ### Install Dependencies
 
-If the project uses npm for asset processing:
-
-```bash
-npm install
-```
+Installation instructions for hugo can be found [here](https://gohugo.io/installation)
 
 ## Development
 
