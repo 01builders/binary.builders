@@ -61,29 +61,10 @@
       
       <p>To access the CMS, click the button below:</p>
       
-      <a href="#" class="button" id="cms-button">Launch CMS</a>
-      
-      <script>
-        // This script will add the GitHub OAuth client ID to the CMS URL if provided
-        document.addEventListener('DOMContentLoaded', function() {
-          const cmsButton = document.getElementById('cms-button');
-          
-          // Check if there's a client_id in the URL
-          const urlParams = new URLSearchParams(window.location.search);
-          const clientId = urlParams.get('client_id');
-          
-          if (clientId) {
-            cmsButton.href = `#/oauth/callback?provider=github&scope=repo&client_id=${clientId}`;
-          } else {
-            cmsButton.href = '#';
-          }
-          
-          // Load the CMS script
-          const script = document.createElement('script');
-          script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
-          document.body.appendChild(script);
-        });
-      </script>
+      <a href="#/oauth/callback?provider=github&scope=repo&client_id=Ov23lioBF3NGbnOvjFWb" class="button" id="cms-button">Launch CMS</a>
     </div>
+    
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html> 

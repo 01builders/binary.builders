@@ -2,9 +2,8 @@ backend:
   name: github
   repo: 01builders/binary.builders
   branch: main
-  # For GitHub Pages, we use GitHub OAuth directly
-  # You'll need to register an OAuth application in GitHub
-  # and add the client ID as a parameter in the admin URL
+  auth_type: implicit # Use implicit OAuth flow
+  app_id: Ov23lioBF3NGbnOvjFWb # Your GitHub OAuth Client ID
 
 # These lines should match your site structure
 media_folder: static/images/uploads
