@@ -1,0 +1,94 @@
+backend:
+  name: github
+  repo: 01builders/binary.builders
+  branch: main
+  # For GitHub Pages, we use GitHub OAuth directly
+  # You'll need to register an OAuth application in GitHub
+  # and add the client ID as a parameter in the admin URL
+
+# These lines should match your site structure
+media_folder: static/images/uploads
+public_folder: /images/uploads
+
+# Editorial workflow: save status as draft, in review, or ready
+publish_mode: editorial_workflow
+
+# Collections define the structure for content
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Last Modified", name: "lastmod", widget: "datetime"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Categories", name: "categories", widget: "list"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Highlighted", name: "highlighted", widget: "boolean", default: false}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Publish Date", name: "date", widget: "datetime"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Contact Page"
+        name: "contact"
+        file: "content/contact.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Publish Date", name: "date", widget: "datetime"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Privacy Policy"
+        name: "privacy"
+        file: "content/privacy.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Publish Date", name: "date", widget: "datetime"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Terms of Service"
+        name: "terms"
+        file: "content/terms.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Publish Date", name: "date", widget: "datetime"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Body", name: "body", widget: "markdown"}
+  
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "service"}
+      - {label: "Hero Image", name: "hero_image", widget: "image"}
+      - {label: "Show Supported Networks", name: "show_supported_networks", widget: "boolean", default: false}
+      - {label: "Features Title", name: "features_title", widget: "string", default: "Core Capabilities"}
+      - label: "Features"
+        name: "features"
+        widget: "list"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+      - {label: "Expertise Title", name: "expertise_title", widget: "string", default: "Our Expertise"}
+      - {label: "Expertise Description", name: "expertise_description", widget: "text"}
+      - {label: "Expertise Content", name: "expertise_content", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"} 
