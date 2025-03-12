@@ -25,6 +25,7 @@
       .loading {
         text-align: center;
         margin-top: 50px;
+        display: none;
       }
       .spinner {
         display: inline-block;
@@ -68,7 +69,7 @@
           <p>Loading CMS...</p>
         </div>
         <div style="text-align: center; margin-top: 30px;">
-          <button id="login-button" class="login-button">Login with GitHub</button>
+          <a href="https://github.com/login/oauth/authorize?client_id=Ov23lioBF3NGbnOvjFWb&scope=repo&redirect_uri=https://binary.builders/admin/" class="login-button">Login with GitHub</a>
         </div>
       </div>
     </div>
@@ -83,25 +84,24 @@
       
       // Initialize when the DOM is loaded
       document.addEventListener('DOMContentLoaded', function() {
-        // Get the login button
-        const loginButton = document.getElementById('login-button');
+        // Check if we have a code parameter in the URL (GitHub OAuth callback)
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
         
-        // Add click event to login button
-        loginButton.addEventListener('click', function() {
-          // Show loading spinner
+        if (code) {
+          // Show loading spinner when we have a code (user is being authenticated)
           document.querySelector('.loading').style.display = 'block';
+          document.querySelector('.login-button').style.display = 'none';
           
           // Initialize CMS
-          window.decapCMS.init({
+          window.CMS.init({
             config: {
               backend: {
                 name: 'github',
                 repo: '01builders/binary.builders',
                 branch: 'main',
                 auth_type: 'implicit',
-                auth_endpoint: 'https://github.com/login/oauth/authorize',
-                app_id: 'Ov23lioBF3NGbnOvjFWb',
-                base_url: 'https://api.github.com'
+                app_id: 'Ov23lioBF3NGbnOvjFWb'
               },
               media_folder: 'static/images/uploads',
               public_folder: '/images/uploads',
@@ -187,7 +187,7 @@
               ]
             }
           });
-        });
+        }
       });
     </script>
   </body>
