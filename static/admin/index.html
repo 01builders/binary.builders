@@ -4,9 +4,86 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binary Builders CMS</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        color: #fff;
+        background-color: #000;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      h1 {
+        color: #007AFF;
+        margin-bottom: 30px;
+      }
+      a {
+        color: #007AFF;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .button {
+        display: inline-block;
+        background-color: #007AFF;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      .button:hover {
+        background-color: #0056b3;
+        text-decoration: none;
+      }
+      .note {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 4px;
+        margin: 20px 0;
+      }
+    </style>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <div class="container">
+      <h1>Binary Builders Content Management System</h1>
+      <p>Welcome to the Binary Builders CMS. This interface allows authorized users to manage content on the Binary Builders website.</p>
+      
+      <div class="note">
+        <p><strong>Note:</strong> You need to have write access to the <a href="https://github.com/01builders/binary.builders" target="_blank">01builders/binary.builders</a> GitHub repository to use this CMS.</p>
+      </div>
+      
+      <p>To access the CMS, click the button below:</p>
+      
+      <a href="#" class="button" id="cms-button">Launch CMS</a>
+      
+      <script>
+        // This script will add the GitHub OAuth client ID to the CMS URL if provided
+        document.addEventListener('DOMContentLoaded', function() {
+          const cmsButton = document.getElementById('cms-button');
+          
+          // Check if there's a client_id in the URL
+          const urlParams = new URLSearchParams(window.location.search);
+          const clientId = urlParams.get('client_id');
+          
+          if (clientId) {
+            cmsButton.href = `#/oauth/callback?provider=github&scope=repo&client_id=${clientId}`;
+          } else {
+            cmsButton.href = '#';
+          }
+          
+          // Load the CMS script
+          const script = document.createElement('script');
+          script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
+          document.body.appendChild(script);
+        });
+      </script>
+    </div>
   </body>
 </html> 

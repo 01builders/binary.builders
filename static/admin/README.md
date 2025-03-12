@@ -4,7 +4,7 @@ This directory contains the Decap CMS configuration for the Binary Builders webs
 
 ## Setup Instructions
 
-To use Decap CMS with GitHub Pages, you need to set up GitHub OAuth:
+To use Decap CMS with GitHub Pages, follow these steps to set up GitHub OAuth:
 
 1. **Register a new OAuth application in GitHub**:
    - Go to GitHub > Settings > Developer settings > OAuth Apps > New OAuth App
@@ -14,14 +14,28 @@ To use Decap CMS with GitHub Pages, you need to set up GitHub OAuth:
    - Click "Register application"
    - Note the Client ID and generate a Client Secret
 
-2. **Access the CMS**:
-   - The CMS will be available at `https://binary.builders/admin/`
-   - You'll need to append your Client ID as a parameter: `https://binary.builders/admin/#/oauth/callback?provider=github&scope=repo&client_id=YOUR_GITHUB_CLIENT_ID`
-   - Replace `YOUR_GITHUB_CLIENT_ID` with the actual Client ID from step 1
+2. **Create a proxy server for GitHub OAuth**:
+   Since GitHub Pages doesn't support server-side code, you'll need a small proxy server to handle OAuth authentication. You can use:
+   - [Netlify Functions](https://www.netlify.com/products/functions/) (easiest)
+   - [Cloudflare Workers](https://workers.cloudflare.com/)
+   - A small server on a service like Heroku, Vercel, or DigitalOcean
 
-3. **Authentication**:
-   - When accessing the CMS, you'll be prompted to authenticate with GitHub
+3. **Access the CMS**:
+   - The CMS will be available at `https://binary.builders/admin/`
    - Only users with write access to the repository will be able to make changes
+
+## Alternative: Direct GitHub Authentication
+
+If you don't want to set up a proxy server, you can use direct GitHub authentication:
+
+1. Add your GitHub OAuth Client ID to the admin URL:
+   ```
+   https://binary.builders/admin/#/oauth/callback?provider=github&scope=repo&client_id=YOUR_GITHUB_CLIENT_ID
+   ```
+
+2. When users authenticate, they'll be redirected to GitHub's OAuth flow.
+
+3. Note: This method requires users to authorize the application each time they log in.
 
 ## How It Works
 
