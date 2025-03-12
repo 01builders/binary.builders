@@ -1,9 +1,14 @@
+# This file is for reference only. The actual configuration is loaded in index.html
+# to avoid any caching issues with GitHub Pages.
+
 backend:
   name: github
   repo: 01builders/binary.builders
   branch: main
-  auth_type: implicit # Use implicit OAuth flow
-  app_id: Ov23lioBF3NGbnOvjFWb # Your GitHub OAuth Client ID
+  auth_type: implicit
+  auth_endpoint: https://github.com/login/oauth/authorize
+  app_id: Ov23lioBF3NGbnOvjFWb
+  base_url: https://api.github.com
 
 # These lines should match your site structure
 media_folder: static/images/uploads

@@ -22,49 +22,82 @@
         color: #007AFF;
         margin-bottom: 30px;
       }
-      a {
-        color: #007AFF;
-        text-decoration: none;
+      .loading {
+        text-align: center;
+        margin-top: 50px;
       }
-      a:hover {
-        text-decoration: underline;
-      }
-      .button {
+      .spinner {
         display: inline-block;
-        background-color: #007AFF;
-        color: white;
-        padding: 10px 20px;
-        border-radius: 4px;
-        margin-top: 20px;
-        font-weight: bold;
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255,255,255,.3);
+        border-radius: 50%;
+        border-top-color: #007AFF;
+        animation: spin 1s ease-in-out infinite;
       }
-      .button:hover {
-        background-color: #0056b3;
-        text-decoration: none;
-      }
-      .note {
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 15px;
-        border-radius: 4px;
-        margin: 20px 0;
+      @keyframes spin {
+        to { transform: rotate(360deg); }
       }
     </style>
+    <!-- Include Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Configure CMS -->
+    <script>
+      // Configure the CMS
+      window.CMS_MANUAL_INIT = true;
+      
+      // Initialize when the DOM is loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        CMS.init({
+          config: {
+            backend: {
+              name: 'github',
+              repo: '01builders/binary.builders',
+              branch: 'main',
+              auth_type: 'implicit',
+              auth_endpoint: 'https://github.com/login/oauth/authorize',
+              app_id: 'Ov23lioBF3NGbnOvjFWb',
+              base_url: 'https://api.github.com'
+            },
+            media_folder: 'static/images/uploads',
+            public_folder: '/images/uploads',
+            publish_mode: 'editorial_workflow',
+            collections: [
+              {
+                name: 'blog',
+                label: 'Blog',
+                folder: 'content/blog',
+                create: true,
+                slug: '{{slug}}',
+                fields: [
+                  { label: 'Title', name: 'title', widget: 'string' },
+                  { label: 'Publish Date', name: 'date', widget: 'datetime' },
+                  { label: 'Last Modified', name: 'lastmod', widget: 'datetime' },
+                  { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' },
+                  { label: 'Categories', name: 'categories', widget: 'list' },
+                  { label: 'Tags', name: 'tags', widget: 'list' },
+                  { label: 'Highlighted', name: 'highlighted', widget: 'boolean', default: false },
+                  { label: 'Draft', name: 'draft', widget: 'boolean', default: false },
+                  { label: 'Featured Image', name: 'image', widget: 'image', required: false },
+                  { label: 'Description', name: 'description', widget: 'text' },
+                  { label: 'Author', name: 'author', widget: 'string' },
+                  { label: 'Body', name: 'body', widget: 'markdown' }
+                ]
+              },
+              // Other collections would be defined here
+            ]
+          }
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="container">
-      <h1>Binary Builders Content Management System</h1>
-      <p>Welcome to the Binary Builders CMS. This interface allows authorized users to manage content on the Binary Builders website.</p>
-      
-      <div class="note">
-        <p><strong>Note:</strong> You need to have write access to the <a href="https://github.com/01builders/binary.builders" target="_blank">01builders/binary.builders</a> GitHub repository to use this CMS.</p>
+      <h1>Binary Builders CMS</h1>
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading CMS...</p>
       </div>
-      
-      <p>To access the CMS, click the button below:</p>
-      
-      <a href="#/oauth/callback?provider=github&scope=repo&client_id=Ov23lioBF3NGbnOvjFWb" class="button" id="cms-button">Launch CMS</a>
     </div>
-    
-    <!-- Include the script that builds the page and powers Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html> 
