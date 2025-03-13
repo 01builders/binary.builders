@@ -1,4 +1,5 @@
 {{ $title := .Site.Title }}
+{{ $dynamicTexts := .Params.hero.dynamic_texts | default (slice "Networks" "Protocols" "Validators" "Solutions") }}
 
 <section class="hero">
   <div class="hero__circle hero__circle--1"></div>
@@ -14,24 +15,31 @@
       <div class="hero__title-line">
         <span class="hero__static-text hero__building">Building</span>
         <div class="hero__dynamic-wrapper">
-          <div class="hero__dynamic-container" id="dynamicContainer"></div>
+          <div class="hero__dynamic-container" id="dynamicContainer" 
+               data-texts="{{ range $index, $text := $dynamicTexts }}{{ if $index }},{{ end }}{{ $text }}{{ end }}"></div>
         </div>
       </div>
     </h1>
     <p class="hero__subtitle">
-      Binary Builders is pioneering innovation in crypto and beyond. Join us in shaping the future with expertise, passion, and collaboration.
+      {{ .Params.hero.subtitle }}
     </p>
     <div class="hero__cta">
-      <a href="https://onur.chat" class="button button--primary" target="_blank" rel="noopener noreferrer">Talk to Us <span class="button__arrow">→</span></a>
-      <a href="#solutions" class="button button--secondary">What We Offer <span class="button__arrow">→</span></a>
+      {{ with .Params.hero.primary_cta }}
+      <a href="{{ .url }}" class="button button--primary" {{ if not (hasPrefix .url "/") }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ .text }} <span class="button__arrow">→</span></a>
+      {{ end }}
+      {{ with .Params.hero.secondary_cta }}
+      <a href="{{ .url }}" class="button button--secondary">{{ .text }} <span class="button__arrow">→</span></a>
+      {{ end }}
     </div>
   </div>
 </section>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const texts = ['Networks', 'Protocols', 'Validators', 'Solutions'];
   const container = document.getElementById('dynamicContainer');
+  const textsAttr = container.getAttribute('data-texts');
+  const texts = textsAttr ? textsAttr.split(',') : ['Networks', 'Protocols', 'Validators', 'Solutions'];
+  
   let currentIndex = 0;
   let isAnimating = false;
 

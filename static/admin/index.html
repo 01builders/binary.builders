@@ -12,60 +12,67 @@
         background-color: #000;
         color: #fff;
       }
-      .login-page {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        text-align: center;
-      }
-      h1 {
-        color: #007AFF;
-        margin-bottom: 30px;
-      }
-      .login-button {
-        display: inline-block;
-        background-color: #007AFF;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 20px;
-        cursor: pointer;
-        border: none;
-        font-size: 16px;
-      }
-      .login-button:hover {
-        background-color: #0056b3;
-      }
       #nc-root {
         height: 100vh;
       }
     </style>
-  </head>
-  <body>
-    <div class="login-page">
-      <h1>Binary Builders CMS</h1>
-      <p>Please log in with your GitHub account to access the content management system.</p>
-      <a href="https://github.com/login/oauth/authorize?client_id=Ov23lioBF3NGbnOvjFWb&scope=repo&redirect_uri=https://binary.builders/admin/" class="login-button">Login with GitHub</a>
-    </div>
-
     <!-- Include Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  </head>
+  <body>
+    <div id="nc-root"></div>
     <script>
-      // Check if we have a code parameter in the URL (GitHub OAuth callback)
-      const urlParams = new URLSearchParams(window.location.search);
-      const code = urlParams.get('code');
-      
-      if (code) {
-        // If we have a code, replace the login page with the CMS
-        document.body.innerHTML = '<div id="nc-root"></div>';
-        
-        // Initialize CMS
-        window.CMS.init();
-      }
+      // Configure CMS
+      window.CMS.init({
+        config: {
+          backend: {
+            name: "github",
+            repo: "01builders/binary.builders",
+            branch: "main",
+            auth_type: "implicit",
+            auth_endpoint: "https://github.com/login/oauth/authorize",
+            app_id: "Ov23lioBF3NGbnOvjFWb",
+            redirect_uri: "https://binary.builders/admin/callback.html",
+            base_url: "https://binary.builders",
+            commit_messages: {
+              create: "Create {{collection}} \"{{slug}}\"",
+              update: "Update {{collection}} \"{{slug}}\"",
+              delete: "Delete {{collection}} \"{{slug}}\"",
+              uploadMedia: "Upload \"{{path}}\"",
+              deleteMedia: "Delete \"{{path}}\""
+            }
+          },
+          media_folder: "static/images/uploads",
+          public_folder: "/images/uploads",
+          publish_mode: "editorial_workflow",
+          site_url: "https://binary.builders",
+          display_url: "https://binary.builders",
+          collections: [
+            {
+              name: "config_blog",
+              label: "Blog",
+              folder: "content/blog",
+              create: true,
+              slug: "{{slug}}",
+              fields: [
+                {label: "Title", name: "title", widget: "string"},
+                {label: "Publish Date", name: "date", widget: "datetime"},
+                {label: "Last Modified", name: "lastmod", widget: "datetime"},
+                {label: "Layout", name: "layout", widget: "hidden", default: "post"},
+                {label: "Categories", name: "categories", widget: "list"},
+                {label: "Tags", name: "tags", widget: "list"},
+                {label: "Highlighted", name: "highlighted", widget: "boolean", default: false},
+                {label: "Draft", name: "draft", widget: "boolean", default: false},
+                {label: "Featured Image", name: "image", widget: "image", required: false},
+                {label: "Description", name: "description", widget: "text"},
+                {label: "Author", name: "author", widget: "string"},
+                {label: "Body", name: "body", widget: "markdown"}
+              ]
+            },
+            // Include other collections from config.yml
+          ]
+        }
+      });
     </script>
   </body>
 </html>

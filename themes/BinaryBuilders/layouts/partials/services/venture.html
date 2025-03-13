@@ -16,7 +16,7 @@
     <div class="container">
       <div class="venture-hero__content">
         <h1 class="venture-hero__title">{{ .Title }}</h1>
-        <p class="venture-hero__description">We invest in teams where we can add meaningful value beyond capital. Our focus is on creating synergies within our ecosystem and fostering collaborative opportunities.</p>
+        <p class="venture-hero__description">{{ .Description }}</p>
       </div>
     </div>
   </section>
@@ -26,39 +26,58 @@
     <div class="container">
       <h2 class="portfolio-section__title">Supporting</h2>
       <div class="portfolio-section__grid">
-        <a href="https://www.42agents.com/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-          <img src="/images/portfolio/fortytwo.svg" alt="42 Agents Logo" class="portfolio-section__logo">
-        </a>
-        <a href="https://stride.zone" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-          <img src="/images/logos/stride-text.svg" alt="Stride Logo" class="portfolio-section__logo">
-        </a>
-        <a href="https://www.ethos.network/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-          <img src="/images/portfolio/ethos.svg" alt="Ethos Logo" class="portfolio-section__logo">
-        </a>
-        <a href="https://www.levana.finance/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-          <img src="/images/portfolio/levana.svg" alt="Levana Logo" class="portfolio-section__logo">
-        </a>
-        <a href="https://www.keplr.app/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-          <img src="/images/portfolio/keplr.svg" alt="Keplr Logo" class="portfolio-section__logo">
-        </a>
-        <a href="https://timewave.computer/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-          <img src="/images/portfolio/timewave.svg" alt="Timewave Logo" class="portfolio-section__logo">
-        </a>
-        <div class="portfolio-section__item">
-          <img src="/images/portfolio/convexity.svg" alt="Convexity Logo" class="portfolio-section__logo">
-        </div>
-        <a href="https://noble.xyz" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-          <img src="/images/portfolio/noble.svg" alt="Noble Logo" class="portfolio-section__logo">
-        </a>
-        <a href="https://www.saline.network/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-          <span class="portfolio-section__logo-text">Saline</span>
-        </a>
-        <a href="https://www.squidrouter.com/" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-          <img src="/images/portfolio/squid.svg" alt="Squid Logo" class="portfolio-section__logo">
-        </a>
+        {{ range .Params.portfolio }}
+          {{ if .url }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+              {{ if .logo }}
+                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
+              {{ else if .logo_text }}
+                <span class="portfolio-section__logo-text">{{ .logo_text }}</span>
+              {{ end }}
+            </a>
+          {{ else }}
+            <div class="portfolio-section__item">
+              {{ if .logo }}
+                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
+              {{ else if .logo_text }}
+                <span class="portfolio-section__logo-text">{{ .logo_text }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
       </div>
     </div>
   </section>
+
+  <!-- Incubation Section -->
+  {{ if .Params.incubation }}
+  <section class="portfolio-section">
+    <div class="container">
+      <h2 class="portfolio-section__title">Incubation</h2>
+      <div class="portfolio-section__grid">
+        {{ range .Params.incubation }}
+          {{ if .url }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="portfolio-section__item {{ if eq .name "Numia" }}portfolio-section__item--numia{{ end }}">
+              {{ if .logo }}
+                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
+              {{ else if .logo_text }}
+                <span class="portfolio-section__logo-text {{ if eq .name "Numia" }}numia-text{{ end }}">{{ .logo_text }}</span>
+              {{ end }}
+            </a>
+          {{ else }}
+            <div class="portfolio-section__item {{ if eq .name "Numia" }}portfolio-section__item--numia{{ end }}">
+              {{ if .logo }}
+                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
+              {{ else if .logo_text }}
+                <span class="portfolio-section__logo-text {{ if eq .name "Numia" }}numia-text{{ end }}">{{ .logo_text }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
 
   <!-- Get in Touch -->
   <section class="get-in-touch">
@@ -71,11 +90,33 @@
       </div>
       <p class="section-description text-center">{{ .Params.cta_description }}</p>
       <div class="cta-button text-center">
-        <a href="/contact" class="site-header__cta-button">Contact Us</a>
+        {{ with .Params.primary_cta }}
+          <a href="{{ .url }}" class="site-header__cta-button" {{ if not (hasPrefix .url "/") }}target="_blank" rel="noopener"{{ end }}>{{ .text }}</a>
+        {{ else }}
+          <a href="/contact" class="site-header__cta-button">Contact Us</a>
+        {{ end }}
       </div>
     </div>
   </section>
 </main>
+
+<style>
+  /* Custom style for NUMIA text */
+  .numia-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+  }
+  
+  .portfolio-section__item--numia {
+    background-color: #7B4DFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
 
 {{ if .Params.benefits }}
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />

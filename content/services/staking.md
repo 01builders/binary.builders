@@ -28,8 +28,18 @@ features:
 #   - title: "Support"
 #     icon: "🤝"
 #     description: "Access 24/7 technical support and participate in network governance with our expert guidance."
-cta_description: "Want to earn rewards while supporting the Cosmos ecosystem? Stake your ATOM with us and help secure the network."
+stats:
+  - value: "$100M+"
+    label: "Total Value Staked"
+    colors: "#7B4DFF,#5435B4,#E464FF"
+  - value: "99.9%"
+    label: "Uptime"
+    colors: "#4ECDC4,#3DA89F,#65E5DD"
+  - value: "10+"
+    label: "Networks Supported"
+    colors: "#FF6B6B,#E65555,#FF8585"
+cta_description: "Want to earn rewards by staking with a secure and reliable validator?"
 primary_cta:
-  url: "https://wallet.keplr.app/chains/cosmos-hub?modal=staking&chain=cosmoshub-4&validator_address=cosmosvaloper1e4vye322gkjx8n85jgcclnc7nvdvu82axnr5ll&step_id=3&action_id=stake"
-  text: "Stake with Keplr"
+  url: "/contact"
+  text: "Contact Us"
 ---

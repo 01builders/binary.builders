@@ -1,7 +1,7 @@
 <section class="get-in-touch">
   <div class="container">
     <h2 class="features__title">
-      <span class="features__title-glow">Get in Touch</span>
+      <span class="features__title-glow">{{ .Params.cta.title | default "Get in Touch" }}</span>
     </h2>
     <div class="banner-image">
       {{ partial "image.html" (dict 
@@ -11,9 +11,13 @@
         "loading" "lazy"
       ) }}
     </div>
-    <p class="section-description text-center">Ready to build something amazing? Let's discuss your project and explore how we can help.</p>
+    <p class="section-description text-center">{{ .Params.cta.description | default "Ready to build something amazing? Let's discuss your project and explore how we can help." }}</p>
     <div class="cta-button text-center">
+      {{ if .Params.cta.button }}
+      <a href="{{ .Params.cta.button.url }}" class="site-header__cta-button">{{ .Params.cta.button.text }}</a>
+      {{ else }}
       <a href="/contact" class="site-header__cta-button">Contact Us</a>
+      {{ end }}
     </div>
   </div>
 </section> 

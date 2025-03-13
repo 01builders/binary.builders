@@ -15,29 +15,31 @@ features:
   - title: "Security & Auditing"
     description: "Security is at the core of everything we do. We implement rigorous security practices and conduct thorough audits to ensure the integrity of blockchain systems."
 expertise_title: "Our Expertise"
-expertise_description: "End-to-end blockchain development from core infrastructure to production-ready applications."
+expertise_description: "Cutting-edge blockchain development from core protocols to production-ready applications."
 expertise_content: |
   ## What We Do Best
 
   ### Protocol Development
-  Designing and implementing secure, scalable protocols that power the next generation of decentralized systems.
+  Our experience in building protocols across various ecosystems allows us to make informed decisions about the best technologies to use for your project.
 
-  ### Blockchain Architecture
-  Custom blockchain solutions engineered for performance, security, and scalability, tailored to specific use cases and requirements.
+  ### Building
+  Custom solutions tailored to your specific use case and requirements. We have a vast understanding of various technologies (Rust, Go, JS, Solidity, Move, Solana, etc..) and blockchain development (Rollups, L1s, smart contracts) allowing us to make informed decisions based off a products requirements.
 
   ### Smart Contracts
-  Secure, efficient smart contract development across multiple virtual machines and environments.
+  Secure, efficient smart contracts across CosmWasm, EVM, and Solana ecosystems. Our engineers develop and audit contract systems with a focus on security, gas optimization, and seamless integration with bridges for cross-chain communication and existing blockchain infrastructure.
 
   ### Infrastructure
-  Robust infrastructure design and implementation for decentralized networks.
+  Reliable validator services and infrastructure management for blockchain networks. We provide robust node operation for chains, monitoring solutions, and DevOps expertise to ensure your infrastructure remains secure and performant.
 
-  ### Cosmos Ecosystem Experience
-  With our deep expertise in the Cosmos ecosystem, including contributions to core technologies like the Cosmos SDK and IBC, we understand how to build interoperable blockchain systems. While we're expanding beyond Cosmos, this experience informs our approach to creating modular, secure, and scalable solutions across all blockchain ecosystems.
+  ### Cosmos
+  Through our experience in maintaining and being the core maintainer of the Cosmos SDK, our extensive work on IBC and deep understanding of CometBFT and Cosmwasm, we are able to provide a wide range of services to the Cosmos ecosystem.
+
+  Binary Builders is home to some of the top contributors to [Cosmos SDK](https://github.com/cosmos/cosmos-sdk/graphs/contributors) and [IBC](https://github.com/cosmos/ibc-go/graphs/contributors).
 
 cta_description: "Ready to build innovative blockchain solutions? Let's collaborate on your next project."
 primary_cta:
   url: "/contact"
-  text: "Start Building"
+  text: "Contact Us"
 secondary_cta:
   url: "https://github.com/01builders"
   text: "Explore our work"

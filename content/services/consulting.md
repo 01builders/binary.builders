@@ -37,10 +37,10 @@ benefits:
   - title: "Custom Solutions"
     icon: "🔧"
     description: "Get tailored solutions that address your specific business challenges and strategic objectives."
-cta_description: "Ready to elevate your crypto project? Let's discuss how our consulting services can help."
+cta_description: "Ready to build the future of crypto technology? Let's join forces for structured support, mentorship, and access to our extensive network of industry partners."
 primary_cta:
   url: "/contact"
-  text: "Get Started"
+  text: "Contact Us"
 secondary_cta:
   url: "/about"
   text: "Learn More"
