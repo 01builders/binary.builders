@@ -1,5 +1,0 @@
-# Redirect for OAuth callback
-/admin/oauth/callback/* /admin/callback.html 200!
-
-# Fallback for admin routes
-/admin/* /admin/index.html 200 
