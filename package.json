@@ -1,0 +1,28 @@
+{
+  "name": "binary.builders",
+  "version": "1.0.0",
+  "description": "A modern, static website built with Hugo for Binary Builders - Building the Future of Blockchain Infrastructure.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hugo server -D",
+    "build": "hugo --minify",
+    "cms:dev": "npx netlify-cms-proxy-server",
+    "dev": "npm run cms:dev & hugo server -D"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/01builders/binary.builders.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/01builders/binary.builders/issues"
+  },
+  "homepage": "https://github.com/01builders/binary.builders#readme",
+  "devDependencies": {
+    "decap-cms-app": "^3.6.2",
+    "netlify-cms-proxy-server": "^1.3.24"
+  }
+}

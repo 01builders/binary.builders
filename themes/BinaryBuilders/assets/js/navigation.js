@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show first submenu by default if exists
     if (items.length > 0 && submenus.length > 0) {
       const firstSubmenu = submenus[0];
-      firstSubmenu.style.display = 'block';
+      if (firstSubmenu) {
+        firstSubmenu.style.display = 'block';
+      }
     }
     
     // Handle submenu switching on hover
@@ -20,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Hide all submenus
         submenus.forEach(submenu => {
-          submenu.style.display = 'none';
+          if (submenu) {
+            submenu.style.display = 'none';
+          }
         });
         
         // Show the targeted submenu
@@ -41,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const trigger = dropdown.querySelector('.dropdown-trigger');
         const content = dropdown.querySelector('.dropdown-content');
         
+        if (!trigger || !content) return; // Skip if elements don't exist
+        
         trigger.addEventListener('click', (e) => {
           e.preventDefault();
           
@@ -50,8 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
           dropdowns.forEach(d => {
             if (d !== dropdown) {
               const c = d.querySelector('.dropdown-content');
-              c.style.opacity = '0';
-              c.style.visibility = 'hidden';
+              if (c) {
+                c.style.opacity = '0';
+                c.style.visibility = 'hidden';
+              }
             }
           });
           

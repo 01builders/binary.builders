@@ -7,20 +7,13 @@ show_supported_networks: false
 features_title: "Key Benefits"
 features:
   - title: "Fueling Ambition with Capital"
-    description: "We invest in trailblazing projects with the potential to disrupt
-industries. Our capital, combined with our expertise, ensures your
-venture is equipped for long-term success."
+    description: "We invest in trailblazing projects with the potential to disrupt industries. Our capital, combined with our expertise, ensures your venture is equipped for long-term success."
     icon: "🚀"
   - title: "Guiding Visionaries to Success"
-    description: "Our team works closely with founders, offering hands-on mentorship
-to navigate the challenges of building in the blockchain space. From
-strategy to execution, we're here to help you succeed."
+    description: "Our team works closely with founders, offering hands-on mentorship to navigate the challenges of building in the blockchain space. From strategy to execution, we're here to help you succeed."
     icon: "💎"
   - title: "Making the Right Connections"
-    description: "Leverage our extensive network of industry leaders, collaborators, and
-technical experts to accelerate your project's growth. From
-partnerships to community building, we connect you with the
-resources you need."
+    description: "Leverage our extensive network of industry leaders, collaborators, and technical experts to accelerate your project's growth. From partnerships to community building, we connect you with the resources you need."
     icon: "🤝"
 # benefits:
 #   - title: "Expertise"

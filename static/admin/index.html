@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups" />
     <title>Binary Builders CMS</title>
     <style>
       body {
@@ -12,79 +14,183 @@
         background-color: #000;
         color: #fff;
       }
-      #nc-root {
+      .loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100vh;
+        font-size: 18px;
+      }
+      .manual-login {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        text-align: center;
+        z-index: 9999;
+      }
+      .manual-login.show {
+        display: block;
+      }
+      .manual-login a {
+        color: #fff;
+        text-decoration: underline;
+        font-weight: bold;
       }
     </style>
   </head>
   <body>
-    <!-- Note: CMS mount point -->
-    <div id="nc-root"></div>
-    
-    <!-- Include the script with defer to ensure DOM is loaded before execution -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js" defer></script>
-    
-    <!-- Initialize CMS after ensuring the script is loaded -->
+    <!-- Manual login notification -->
+    <div id="manualLogin" class="manual-login">
+      Using test backend mode. No authentication required in local development.
+    </div>
+
+    <!-- For loading status -->
+    <div id="loading" class="loading">Loading CMS...</div>
+
+    <!-- Script to override Netlify identity widget -->
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Make sure CMS is loaded before trying to initialize
-        const waitForCMS = setInterval(function() {
-          if (window.CMS) {
-            clearInterval(waitForCMS);
-            
-            // Configure CMS
-            window.CMS.init({
-              config: {
-                backend: {
-                  name: "github",
-                  repo: "01builders/binary.builders",
-                  branch: "main",
-                  auth_type: "implicit",
-                  auth_endpoint: "https://github.com/login/oauth/authorize",
-                  app_id: "Ov23lioBF3NGbnOvjFWb",
-                  redirect_uri: "https://binary.builders/admin/callback.html",
-                  base_url: "https://binary.builders",
-                  commit_messages: {
-                    create: "Create {{collection}} \"{{slug}}\"",
-                    update: "Update {{collection}} \"{{slug}}\"",
-                    delete: "Delete {{collection}} \"{{slug}}\"",
-                    uploadMedia: "Upload \"{{path}}\"",
-                    deleteMedia: "Delete \"{{path}}\""
-                  }
-                },
-                media_folder: "static/images/uploads",
-                public_folder: "/images/uploads",
-                publish_mode: "editorial_workflow",
-                site_url: "https://binary.builders",
-                display_url: "https://binary.builders",
-                collections: [
+      // Override the Netlify identity widget to prevent it from loading
+      window.netlifyIdentity = {
+        on: function() {},
+        init: function() {}
+      };
+    </script>
+    
+    <!-- Load Sveltia CMS -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    
+    <script>
+      // Wait for the window load event
+      window.addEventListener('load', function() {
+        // Check if we're in a development environment
+        const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        
+        // Show local mode notice if in development
+        if (isLocalhost) {
+          document.getElementById('manualLogin').classList.add('show');
+        }
+        
+        // Configure backend based on environment
+        const backend = isLocalhost
+          ? { name: 'test-repo' } // Use test-repo in development for immediate testing
+          : { 
+              name: 'github',
+              repo: '01builders/binary.builders',
+              branch: 'main',
+              base_url: 'https://github.com', // For OAuth authorization
+              auth_endpoint: 'login/oauth/authorize', // No leading slash for proper parameter handling
+              api_root: 'https://api.github.com', // For API calls
+              app_id: 'Ov23lioBF3NGbnOvjFWb', // Sveltia CMS expects app_id not client_id
+              auth_type: 'pkce', // Use PKCE flow as implicit is not supported
+            };
+        
+        // Initialize Sveltia CMS with the configuration
+        window.CMS.init({
+          config: {
+            local_backend: isLocalhost,
+            backend: backend,
+            media_folder: 'static/images/uploads',
+            public_folder: '/images/uploads',
+            load_config_file: false,
+            collections: [
+              {
+                name: "blog",
+                label: "Blog",
+                folder: "content/blog",
+                create: true,
+                fields: [
+                  {label: "Title", name: "title", widget: "string"},
+                  {label: "Publish Date", name: "date", widget: "datetime"},
+                  {label: "Last Modified", name: "lastmod", widget: "datetime"},
+                  {label: "Layout", name: "layout", widget: "hidden", default: "post"},
+                  {label: "Categories", name: "categories", widget: "list"},
+                  {label: "Tags", name: "tags", widget: "list"},
+                  {label: "Highlighted", name: "highlighted", widget: "boolean", default: false},
+                  {label: "Draft", name: "draft", widget: "boolean", default: false},
+                  {label: "Featured Image", name: "image", widget: "image", required: false},
+                  {label: "Description", name: "description", widget: "text"},
+                  {label: "Author", name: "author", widget: "string"},
+                  {label: "Body", name: "body", widget: "markdown"}
+                ]
+              },
+              {
+                name: "pages",
+                label: "Pages",
+                files: [
                   {
-                    name: "config_blog",
-                    label: "Blog",
-                    folder: "content/blog",
-                    create: true,
-                    slug: "{{slug}}",
+                    label: "About Page",
+                    name: "about",
+                    file: "content/about.md",
                     fields: [
                       {label: "Title", name: "title", widget: "string"},
                       {label: "Publish Date", name: "date", widget: "datetime"},
-                      {label: "Last Modified", name: "lastmod", widget: "datetime"},
-                      {label: "Layout", name: "layout", widget: "hidden", default: "post"},
-                      {label: "Categories", name: "categories", widget: "list"},
-                      {label: "Tags", name: "tags", widget: "list"},
-                      {label: "Highlighted", name: "highlighted", widget: "boolean", default: false},
-                      {label: "Draft", name: "draft", widget: "boolean", default: false},
-                      {label: "Featured Image", name: "image", widget: "image", required: false},
                       {label: "Description", name: "description", widget: "text"},
-                      {label: "Author", name: "author", widget: "string"},
                       {label: "Body", name: "body", widget: "markdown"}
                     ]
                   },
-                  // Include other collections from config.yml
+                  {
+                    label: "Contact Page",
+                    name: "contact",
+                    file: "content/contact.md",
+                    fields: [
+                      {label: "Title", name: "title", widget: "string"},
+                      {label: "Publish Date", name: "date", widget: "datetime"},
+                      {label: "Description", name: "description", widget: "text"},
+                      {label: "Body", name: "body", widget: "markdown"}
+                    ]
+                  },
+                  {
+                    label: "Privacy Policy",
+                    name: "privacy",
+                    file: "content/privacy.md",
+                    fields: [
+                      {label: "Title", name: "title", widget: "string"},
+                      {label: "Publish Date", name: "date", widget: "datetime"},
+                      {label: "Description", name: "description", widget: "text"},
+                      {label: "Body", name: "body", widget: "markdown"}
+                    ]
+                  },
+                  {
+                    label: "Terms of Service",
+                    name: "terms",
+                    file: "content/terms.md",
+                    fields: [
+                      {label: "Title", name: "title", widget: "string"},
+                      {label: "Publish Date", name: "date", widget: "datetime"},
+                      {label: "Description", name: "description", widget: "text"},
+                      {label: "Body", name: "body", widget: "markdown"}
+                    ]
+                  }
+                ]
+              },
+              {
+                name: "services",
+                label: "Services",
+                folder: "content/services",
+                create: true,
+                fields: [
+                  {label: "Title", name: "title", widget: "string"},
+                  {label: "Description", name: "description", widget: "text"},
+                  {label: "Layout", name: "layout", widget: "hidden", default: "service"},
+                  {label: "Hero Image", name: "hero_image", widget: "image"},
+                  {label: "Features Title", name: "features_title", widget: "string", default: "Core Capabilities"},
+                  {label: "Features", name: "features", widget: "list", fields: [
+                    {label: "Title", name: "title", widget: "string"},
+                    {label: "Description", name: "description", widget: "text"}
+                  ]},
+                  {label: "Expertise Title", name: "expertise_title", widget: "string", default: "Our Expertise"},
+                  {label: "Expertise Description", name: "expertise_description", widget: "text"},
+                  {label: "Expertise Content", name: "expertise_content", widget: "markdown"},
+                  {label: "Body", name: "body", widget: "markdown"}
                 ]
               }
-            });
+            ]
           }
-        }, 100);
+        });
       });
     </script>
   </body>

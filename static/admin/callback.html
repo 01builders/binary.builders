@@ -3,23 +3,104 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Authorizing...</title>
-    <script>
-      // Redirect to admin after GitHub login
-      const hash = window.location.hash.substring(1);
-      const params = new URLSearchParams(hash);
-      const token = params.get('access_token');
-      
-      if (token) {
-        localStorage.setItem('github-token', token);
-        window.location.href = '/admin/';
-      } else {
-        console.error('No access token found in the callback');
-        window.location.href = '/admin/';
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups" />
+    <title>Binary Builders CMS - Authentication</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        flex-direction: column;
       }
+      h1 {
+        margin-bottom: 20px;
+      }
+    </style>
+    <script>
+      // Complete the authentication process
+      (function() {
+        console.log('Callback processing started');
+        
+        // Log URL for debugging
+        console.log('Current URL:', window.location.href);
+        
+        // Check for query parameters (code flow - used in PKCE)
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        const state = urlParams.get('state');
+        const error = urlParams.get('error');
+        
+        console.log('Auth params:', { code: !!code, state: !!state, error });
+        
+        if (code) {
+          // Handle PKCE flow with code
+          document.body.innerHTML = `
+            <h1>Authentication Successful</h1>
+            <p>Completing login process, please wait...</p>
+          `;
+          
+          // Store data for PKCE
+          localStorage.setItem('pkce:code', code);
+          if (state) {
+            localStorage.setItem('pkce:state', state);
+          }
+          
+          console.log('Authentication code received, attempting to notify opener');
+          
+          // Signal to the opener that authentication is complete
+          if (window.opener) {
+            try {
+              window.opener.postMessage(
+                { 
+                  type: 'authorization',
+                  payload: { code, state }
+                },
+                window.location.origin
+              );
+              console.log('Posted message to opener');
+              setTimeout(() => window.close(), 1500);
+            } catch (err) {
+              console.error('Error posting message:', err);
+              window.location.href = '/admin/?auth_code=' + code;
+            }
+          } else {
+            // Redirect to admin page if this is not a popup
+            console.log('No opener found, redirecting');
+            window.location.href = '/admin/?auth_code=' + code;
+          }
+        } else if (error) {
+          // Handle authentication error
+          console.error('Auth error:', error);
+          document.body.innerHTML = `
+            <h1>Authentication Error</h1>
+            <p>There was an error during authentication: ${error}</p>
+            <button onclick="window.opener ? window.close() : window.location.href='/admin/'">
+              ${window.opener ? 'Close' : 'Return to CMS'}
+            </button>
+          `;
+        } else {
+          // No auth information found
+          console.warn('No auth params found');
+          document.body.innerHTML = `
+            <h1>Authentication Required</h1>
+            <p>No authentication information found.</p>
+            <button onclick="window.opener ? window.close() : window.location.href='/admin/'">
+              ${window.opener ? 'Close' : 'Return to CMS'}
+            </button>
+          `;
+        }
+      })();
     </script>
   </head>
   <body>
-    <h1>Authorizing, please wait...</h1>
+    <h1>Authenticating...</h1>
+    <p>Please wait while we complete the authentication process.</p>
   </body>
 </html> 

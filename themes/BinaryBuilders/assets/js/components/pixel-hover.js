@@ -125,16 +125,18 @@ class PixelHover extends HTMLElement {
     this.resizeObserver = new ResizeObserver(() => this.init());
     this.resizeObserver.observe(this);
 
-    this.parentElement.addEventListener("mouseenter", () => this.handleAnimation("appear"));
-    this.parentElement.addEventListener("mouseleave", () => this.handleAnimation("disappear"));
-    this.parentElement.addEventListener("focusin", (e) => {
-      if (e.currentTarget.contains(e.relatedTarget)) return;
-      this.handleAnimation("appear");
-    });
-    this.parentElement.addEventListener("focusout", (e) => {
-      if (e.currentTarget.contains(e.relatedTarget)) return;
-      this.handleAnimation("disappear");
-    });
+    if (this.parentElement) {
+      this.parentElement.addEventListener("mouseenter", () => this.handleAnimation("appear"));
+      this.parentElement.addEventListener("mouseleave", () => this.handleAnimation("disappear"));
+      this.parentElement.addEventListener("focusin", (e) => {
+        if (e.currentTarget.contains(e.relatedTarget)) return;
+        this.handleAnimation("appear");
+      });
+      this.parentElement.addEventListener("focusout", (e) => {
+        if (e.currentTarget.contains(e.relatedTarget)) return;
+        this.handleAnimation("disappear");
+      });
+    }
   }
 
   disconnectedCallback() {

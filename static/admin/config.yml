@@ -5,15 +5,20 @@ backend:
   name: github
   repo: 01builders/binary.builders
   branch: main
-  auth_type: implicit
-  auth_endpoint: https://github.com/login/oauth/authorize
-  app_id: Ov23lioBF3NGbnOvjFWb
+  base_url: https://github.com
+  auth_endpoint: login/oauth/authorize
+  api_root: https://api.github.com
+  auth_type: pkce # Use PKCE flow as implicit is not supported
+  app_id: Ov23lioBF3NGbnOvjFWb # Sveltia CMS expects app_id not client_id
   commit_messages:
     create: Create {{collection}} "{{slug}}"
     update: Update {{collection}} "{{slug}}"
     delete: Delete {{collection}} "{{slug}}"
     uploadMedia: Upload "{{path}}"
     deleteMedia: Delete "{{path}}"
+
+# Enable local backend for development
+local_backend: true
 
 # These lines should match your site structure
 media_folder: static/images/uploads
