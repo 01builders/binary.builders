@@ -16,62 +16,75 @@
         height: 100vh;
       }
     </style>
-    <!-- Include Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
+    <!-- Note: CMS mount point -->
     <div id="nc-root"></div>
+    
+    <!-- Include the script with defer to ensure DOM is loaded before execution -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js" defer></script>
+    
+    <!-- Initialize CMS after ensuring the script is loaded -->
     <script>
-      // Configure CMS
-      window.CMS.init({
-        config: {
-          backend: {
-            name: "github",
-            repo: "01builders/binary.builders",
-            branch: "main",
-            auth_type: "implicit",
-            auth_endpoint: "https://github.com/login/oauth/authorize",
-            app_id: "Ov23lioBF3NGbnOvjFWb",
-            redirect_uri: "https://binary.builders/admin/callback.html",
-            base_url: "https://binary.builders",
-            commit_messages: {
-              create: "Create {{collection}} \"{{slug}}\"",
-              update: "Update {{collection}} \"{{slug}}\"",
-              delete: "Delete {{collection}} \"{{slug}}\"",
-              uploadMedia: "Upload \"{{path}}\"",
-              deleteMedia: "Delete \"{{path}}\""
-            }
-          },
-          media_folder: "static/images/uploads",
-          public_folder: "/images/uploads",
-          publish_mode: "editorial_workflow",
-          site_url: "https://binary.builders",
-          display_url: "https://binary.builders",
-          collections: [
-            {
-              name: "config_blog",
-              label: "Blog",
-              folder: "content/blog",
-              create: true,
-              slug: "{{slug}}",
-              fields: [
-                {label: "Title", name: "title", widget: "string"},
-                {label: "Publish Date", name: "date", widget: "datetime"},
-                {label: "Last Modified", name: "lastmod", widget: "datetime"},
-                {label: "Layout", name: "layout", widget: "hidden", default: "post"},
-                {label: "Categories", name: "categories", widget: "list"},
-                {label: "Tags", name: "tags", widget: "list"},
-                {label: "Highlighted", name: "highlighted", widget: "boolean", default: false},
-                {label: "Draft", name: "draft", widget: "boolean", default: false},
-                {label: "Featured Image", name: "image", widget: "image", required: false},
-                {label: "Description", name: "description", widget: "text"},
-                {label: "Author", name: "author", widget: "string"},
-                {label: "Body", name: "body", widget: "markdown"}
-              ]
-            },
-            // Include other collections from config.yml
-          ]
-        }
+      document.addEventListener('DOMContentLoaded', function() {
+        // Make sure CMS is loaded before trying to initialize
+        const waitForCMS = setInterval(function() {
+          if (window.CMS) {
+            clearInterval(waitForCMS);
+            
+            // Configure CMS
+            window.CMS.init({
+              config: {
+                backend: {
+                  name: "github",
+                  repo: "01builders/binary.builders",
+                  branch: "main",
+                  auth_type: "implicit",
+                  auth_endpoint: "https://github.com/login/oauth/authorize",
+                  app_id: "Ov23lioBF3NGbnOvjFWb",
+                  redirect_uri: "https://binary.builders/admin/callback.html",
+                  base_url: "https://binary.builders",
+                  commit_messages: {
+                    create: "Create {{collection}} \"{{slug}}\"",
+                    update: "Update {{collection}} \"{{slug}}\"",
+                    delete: "Delete {{collection}} \"{{slug}}\"",
+                    uploadMedia: "Upload \"{{path}}\"",
+                    deleteMedia: "Delete \"{{path}}\""
+                  }
+                },
+                media_folder: "static/images/uploads",
+                public_folder: "/images/uploads",
+                publish_mode: "editorial_workflow",
+                site_url: "https://binary.builders",
+                display_url: "https://binary.builders",
+                collections: [
+                  {
+                    name: "config_blog",
+                    label: "Blog",
+                    folder: "content/blog",
+                    create: true,
+                    slug: "{{slug}}",
+                    fields: [
+                      {label: "Title", name: "title", widget: "string"},
+                      {label: "Publish Date", name: "date", widget: "datetime"},
+                      {label: "Last Modified", name: "lastmod", widget: "datetime"},
+                      {label: "Layout", name: "layout", widget: "hidden", default: "post"},
+                      {label: "Categories", name: "categories", widget: "list"},
+                      {label: "Tags", name: "tags", widget: "list"},
+                      {label: "Highlighted", name: "highlighted", widget: "boolean", default: false},
+                      {label: "Draft", name: "draft", widget: "boolean", default: false},
+                      {label: "Featured Image", name: "image", widget: "image", required: false},
+                      {label: "Description", name: "description", widget: "text"},
+                      {label: "Author", name: "author", widget: "string"},
+                      {label: "Body", name: "body", widget: "markdown"}
+                    ]
+                  },
+                  // Include other collections from config.yml
+                ]
+              }
+            });
+          }
+        }, 100);
       });
     </script>
   </body>
