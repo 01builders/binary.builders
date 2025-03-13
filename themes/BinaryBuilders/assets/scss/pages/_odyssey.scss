@@ -1,0 +1,190 @@
+// Odyssey Page Styles
+.odyssey-page {
+  .odyssey-hero-video {
+    margin: 2rem 0 4rem;
+    
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; // 16:9 aspect ratio
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+  .odyssey-content {
+    margin-bottom: 4rem;
+    
+    &__wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      
+      h1, h2, h3 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      
+      ul, ol {
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+        
+        li {
+          margin-bottom: 0.5rem;
+        }
+      }
+      
+      strong {
+        font-weight: 600;
+      }
+    }
+  }
+  
+  .odyssey-projects {
+    margin: 4rem 0;
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      
+      .project-logo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 1.5rem;
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      
+      h3 {
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+      
+      p {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #666;
+      }
+      
+      .project-status {
+        display: block;
+        text-align: center;
+        padding: 0.5rem 1rem;
+        background-color: #f0f0f0;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #444;
+      }
+    }
+  }
+  
+  .odyssey-media {
+    margin: 4rem 0;
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .media-card {
+      display: block;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      
+      .media-icon {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #007AFF;
+      }
+      
+      h3 {
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+      
+      p {
+        text-align: center;
+        color: #666;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .odyssey-page {
+    .odyssey-hero-video {
+      margin: 1rem 0 2rem;
+    }
+    
+    .odyssey-projects, 
+    .odyssey-media {
+      margin: 2rem 0;
+      padding: 2rem 0;
+      
+      .projects-grid,
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+} 

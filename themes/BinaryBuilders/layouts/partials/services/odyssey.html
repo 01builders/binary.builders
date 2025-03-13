@@ -1,0 +1,127 @@
+{{ $title := .Title }}
+<main class="service-page service-page--odyssey">
+  <!-- Hero Section -->
+  <section class="odyssey-hero">
+    <div class="odyssey-hero__bg">
+      <div class="odyssey-animation"></div>
+    </div>
+    
+    <!-- Full-width hero image -->
+    <div class="odyssey-hero__image-full">
+      {{ with .Params.hero_image }}
+      <img src="{{ . }}" alt="{{ $title }}" />
+      {{ end }}
+    </div>
+    
+    <div class="container">
+      <div class="odyssey-hero__content">
+        <h1 class="odyssey-hero__title">{{ .Title }}</h1>
+        <p class="odyssey-hero__description">{{ .Description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio-section">
+    <div class="container">
+      <h2 class="portfolio-section__title">Current Projects</h2>
+      <div class="portfolio-section__grid">
+        {{ range .Params.portfolio }}
+          {{ if .url }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
+              {{ if .logo }}
+                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
+              {{ else if .logo_text }}
+                <span class="portfolio-section__logo-text">{{ .logo_text }}</span>
+              {{ end }}
+            </a>
+          {{ else }}
+            <div class="portfolio-section__item">
+              {{ if .logo }}
+                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
+              {{ else if .logo_text }}
+                <span class="portfolio-section__logo-text">{{ .logo_text }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Incubation Section -->
+  {{ if .Params.incubation }}
+  <section class="portfolio-section">
+    <div class="container">
+      <h2 class="portfolio-section__title">Media & Community</h2>
+      <div class="portfolio-section__grid">
+        {{ range .Params.incubation }}
+          {{ if .url }}
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="portfolio-section__item {{ if eq .name "Levered to the T*ts" }}portfolio-section__item--lttt{{ end }}">
+              {{ if .logo }}
+                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
+              {{ else if .logo_text }}
+                <span class="portfolio-section__logo-text {{ if eq .name "Levered to the T*ts" }}lttt-text{{ end }}">{{ .logo_text }}</span>
+              {{ end }}
+            </a>
+          {{ else }}
+            <div class="portfolio-section__item {{ if eq .name "Levered to the T*ts" }}portfolio-section__item--lttt{{ end }}">
+              {{ if .logo }}
+                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
+              {{ else if .logo_text }}
+                <span class="portfolio-section__logo-text {{ if eq .name "Levered to the T*ts" }}lttt-text{{ end }}">{{ .logo_text }}</span>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Get in Touch -->
+  <section class="get-in-touch">
+    <div class="container">
+      <h2 class="features__title">
+        <span class="features__title-glow">Join The Odyssey</span>
+      </h2>
+      <div class="banner-image artistic-banner">
+        <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
+      </div>
+      <p class="section-description text-center">{{ .Params.cta_description }}</p>
+      <div class="cta-button text-center">
+        {{ with .Params.primary_cta }}
+          <a href="{{ .url }}" class="site-header__cta-button" {{ if not (hasPrefix .url "/") }}target="_blank" rel="noopener"{{ end }}>{{ .text }}</a>
+        {{ else }}
+          <a href="/contact" class="site-header__cta-button">Contact Us</a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  /* Custom style for LTTT text */
+  .lttt-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+  }
+  
+  .portfolio-section__item--lttt {
+    background-color: #007AFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
+
+{{ if .Params.benefits }}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+{{ end }} 
