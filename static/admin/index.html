@@ -81,11 +81,22 @@
               name: 'github',
               repo: '01builders/binary.builders',
               branch: 'main',
-              base_url: 'https://github.com', // For OAuth authorization
-              auth_endpoint: 'login/oauth/authorize', // No leading slash for proper parameter handling
-              api_root: 'https://api.github.com', // For API calls
-              app_id: 'Ov23lioBF3NGbnOvjFWb', // Sveltia CMS expects app_id not client_id
-              auth_type: 'pkce', // Use PKCE flow as implicit is not supported
+              site_domain: 'binary.builders',
+              base_url: 'https://github.com',
+              auth_endpoint: 'login/oauth/authorize',
+              token_endpoint: 'login/oauth/access_token',
+              api_root: 'https://api.github.com',
+              app_id: 'Ov23li3KLpTEmp9FjuAK',
+              auth_type: 'code',
+              auth_scope: 'repo,user',
+              commit_messages: {
+                create: "Create {{collection}} \"{{slug}}\"",
+                update: "Update {{collection}} \"{{slug}}\"",
+                delete: "Delete {{collection}} \"{{slug}}\"",
+                uploadMedia: "Upload \"{{path}}\"",
+                deleteMedia: "Delete \"{{path}}\""
+              },
+              pkce: true
             };
         
         // Initialize Sveltia CMS with the configuration
@@ -95,6 +106,7 @@
             backend: backend,
             media_folder: 'static/images/uploads',
             public_folder: '/images/uploads',
+            publish_mode: 'editorial_workflow',
             load_config_file: false,
             collections: [
               {
@@ -102,6 +114,7 @@
                 label: "Blog",
                 folder: "content/blog",
                 create: true,
+                slug: "{{slug}}",
                 fields: [
                   {label: "Title", name: "title", widget: "string"},
                   {label: "Publish Date", name: "date", widget: "datetime"},
@@ -172,11 +185,13 @@
                 label: "Services",
                 folder: "content/services",
                 create: true,
+                slug: "{{slug}}",
                 fields: [
                   {label: "Title", name: "title", widget: "string"},
                   {label: "Description", name: "description", widget: "text"},
                   {label: "Layout", name: "layout", widget: "hidden", default: "service"},
                   {label: "Hero Image", name: "hero_image", widget: "image"},
+                  {label: "Show Supported Networks", name: "show_supported_networks", widget: "boolean", default: false},
                   {label: "Features Title", name: "features_title", widget: "string", default: "Core Capabilities"},
                   {label: "Features", name: "features", widget: "list", fields: [
                     {label: "Title", name: "title", widget: "string"},

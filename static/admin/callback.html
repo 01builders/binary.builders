@@ -23,6 +23,8 @@
         margin-bottom: 20px;
       }
     </style>
+    <!-- Load Sveltia CMS -->
+    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
     <script>
       // Complete the authentication process
       (function() {
@@ -31,36 +33,45 @@
         // Log URL for debugging
         console.log('Current URL:', window.location.href);
         
-        // Check for query parameters (code flow - used in PKCE)
+        // Check for hash fragment (implicit flow)
+        const hash = window.location.hash.substring(1);
+        const hashParams = new URLSearchParams(hash);
+        const token = hashParams.get('access_token');
+        
+        // Check for query parameters (code flow)
         const urlParams = new URLSearchParams(window.location.search);
         const code = urlParams.get('code');
-        const state = urlParams.get('state');
         const error = urlParams.get('error');
         
-        console.log('Auth params:', { code: !!code, state: !!state, error });
+        console.log('Auth params:', { 
+          token: !!token, 
+          code: !!code, 
+          error 
+        });
         
-        if (code) {
-          // Handle PKCE flow with code
+        if (token) {
+          // Handle implicit flow
           document.body.innerHTML = `
             <h1>Authentication Successful</h1>
             <p>Completing login process, please wait...</p>
           `;
           
-          // Store data for PKCE
-          localStorage.setItem('pkce:code', code);
-          if (state) {
-            localStorage.setItem('pkce:state', state);
-          }
+          // Store token for CMS
+          localStorage.setItem('netlify-cms-user', JSON.stringify({
+            token: {
+              access_token: token
+            }
+          }));
           
-          console.log('Authentication code received, attempting to notify opener');
+          console.log('Token received, attempting to notify opener');
           
           // Signal to the opener that authentication is complete
           if (window.opener) {
             try {
               window.opener.postMessage(
                 { 
-                  type: 'authorization',
-                  payload: { code, state }
+                  type: 'netlify-cms:authentication',
+                  payload: { token }
                 },
                 window.location.origin
               );
@@ -68,12 +79,51 @@
               setTimeout(() => window.close(), 1500);
             } catch (err) {
               console.error('Error posting message:', err);
-              window.location.href = '/admin/?auth_code=' + code;
+              window.location.href = '/admin/';
             }
           } else {
             // Redirect to admin page if this is not a popup
             console.log('No opener found, redirecting');
-            window.location.href = '/admin/?auth_code=' + code;
+            window.location.href = '/admin/';
+          }
+        } else if (code) {
+          // Handle authorization code flow with PKCE
+          document.body.innerHTML = `
+            <h1>Authorization Code Received</h1>
+            <p>Processing authentication...</p>
+          `;
+          
+          console.log('Code received, initializing CMS for PKCE exchange');
+          
+          // Let Sveltia CMS handle the PKCE code exchange
+          window.CMS.init({
+            config: {
+              backend: {
+                name: 'github',
+                repo: '01builders/binary.builders',
+                app_id: 'Ov23li3KLpTEmp9FjuAK',
+                auth_type: 'code',
+                pkce: true
+              }
+            }
+          });
+          
+          if (window.opener) {
+            try {
+              window.opener.postMessage(
+                { 
+                  type: 'netlify-cms:authentication',
+                  payload: { code }
+                },
+                window.location.origin
+              );
+              setTimeout(() => window.close(), 1500);
+            } catch (err) {
+              console.error('Error posting message:', err);
+              window.location.href = '/admin/';
+            }
+          } else {
+            window.location.href = '/admin/';
           }
         } else if (error) {
           // Handle authentication error

@@ -5,17 +5,21 @@ backend:
   name: github
   repo: 01builders/binary.builders
   branch: main
+  site_domain: binary.builders
   base_url: https://github.com
   auth_endpoint: login/oauth/authorize
+  token_endpoint: login/oauth/access_token
   api_root: https://api.github.com
-  auth_type: pkce # Use PKCE flow as implicit is not supported
-  app_id: Ov23lioBF3NGbnOvjFWb # Sveltia CMS expects app_id not client_id
+  app_id: Ov23li3KLpTEmp9FjuAK
+  auth_type: code
+  auth_scope: repo,user
   commit_messages:
     create: Create {{collection}} "{{slug}}"
     update: Update {{collection}} "{{slug}}"
     delete: Delete {{collection}} "{{slug}}"
     uploadMedia: Upload "{{path}}"
     deleteMedia: Delete "{{path}}"
+  pkce: true
 
 # Enable local backend for development
 local_backend: true
@@ -29,7 +33,7 @@ publish_mode: editorial_workflow
 
 # Collections define the structure for content
 collections:
-  - name: "config_blog"
+  - name: "blog"
     label: "Blog"
     folder: "content/blog"
     create: true
@@ -48,7 +52,7 @@ collections:
       - {label: "Author", name: "author", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   
-  - name: "config_pages"
+  - name: "pages"
     label: "Pages"
     files:
       - label: "About Page"
@@ -84,7 +88,7 @@ collections:
           - {label: "Description", name: "description", widget: "text"}
           - {label: "Body", name: "body", widget: "markdown"}
   
-  - name: "config_services"
+  - name: "services"
     label: "Services"
     folder: "content/services"
     create: true
@@ -105,4 +109,8 @@ collections:
       - {label: "Expertise Title", name: "expertise_title", widget: "string", default: "Our Expertise"}
       - {label: "Expertise Description", name: "expertise_description", widget: "text"}
       - {label: "Expertise Content", name: "expertise_content", widget: "markdown"}
-      - {label: "Body", name: "body", widget: "markdown"} 
+      - {label: "Body", name: "body", widget: "markdown"}
+
+oauth:
+  client_id: Ov23li3KLpTEmp9FjuAK
+  redirect_uri: https://binary.builders/admin/oauth/callback 
