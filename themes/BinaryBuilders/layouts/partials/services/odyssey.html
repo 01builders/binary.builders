@@ -1,9 +1,9 @@
 {{ $title := .Title }}
-<main class="service-page service-page--odyssey">
-  <!-- Hero Section -->
+<main class="page-content service-page service-page--odyssey">
+  <!-- Full-width Hero Section -->
   <section class="odyssey-hero">
     <div class="odyssey-hero__bg">
-      <div class="odyssey-animation"></div>
+      <div class="nodes-animation"></div>
     </div>
     
     <!-- Full-width hero image -->
@@ -21,69 +21,62 @@
     </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section class="portfolio-section">
+  <!-- Overview with Live Stats -->
+  <section class="odyssey-overview">
     <div class="container">
-      <h2 class="portfolio-section__title">Current Projects</h2>
-      <div class="portfolio-section__grid">
-        {{ range .Params.portfolio }}
-          {{ if .url }}
-            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="portfolio-section__item">
-              {{ if .logo }}
-                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
-              {{ else if .logo_text }}
-                <span class="portfolio-section__logo-text">{{ .logo_text }}</span>
-              {{ end }}
-            </a>
-          {{ else }}
-            <div class="portfolio-section__item">
-              {{ if .logo }}
-                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
-              {{ else if .logo_text }}
-                <span class="portfolio-section__logo-text">{{ .logo_text }}</span>
-              {{ end }}
-            </div>
-          {{ end }}
+      <div class="odyssey-overview__content">
+        {{ .Content }}
+      </div>
+      <div class="odyssey-overview__stats">
+        {{ range .Params.stats }}
+        <div class="stat-box">
+          <pixel-hover 
+            data-colors="{{ .colors }}"
+            data-gap="6"
+            data-speed="30">
+          </pixel-hover>
+          <div class="stat-box__value">{{ .value }}</div>
+          <div class="stat-box__label">{{ .label }}</div>
+        </div>
         {{ end }}
       </div>
     </div>
   </section>
 
-  <!-- Incubation Section -->
-  {{ if .Params.incubation }}
-  <section class="portfolio-section">
+  <!-- Resources Section -->
+  {{ if .Params.resources }}
+  <section class="odyssey-resources">
     <div class="container">
-      <h2 class="portfolio-section__title">Media & Community</h2>
-      <div class="portfolio-section__grid">
-        {{ range .Params.incubation }}
-          {{ if .url }}
-            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="portfolio-section__item {{ if eq .name "Levered to the T*ts" }}portfolio-section__item--lttt{{ end }}">
-              {{ if .logo }}
-                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
-              {{ else if .logo_text }}
-                <span class="portfolio-section__logo-text {{ if eq .name "Levered to the T*ts" }}lttt-text{{ end }}">{{ .logo_text }}</span>
-              {{ end }}
-            </a>
-          {{ else }}
-            <div class="portfolio-section__item {{ if eq .name "Levered to the T*ts" }}portfolio-section__item--lttt{{ end }}">
-              {{ if .logo }}
-                <img src="{{ .logo }}" alt="{{ .name }} Logo" class="portfolio-section__logo">
-              {{ else if .logo_text }}
-                <span class="portfolio-section__logo-text {{ if eq .name "Levered to the T*ts" }}lttt-text{{ end }}">{{ .logo_text }}</span>
-              {{ end }}
-            </div>
-          {{ end }}
+      <h2>Resources</h2>
+      <div class="resources-grid">
+        {{ range .Params.resources }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="resource-card">
+          <pixel-hover 
+            data-colors="#7B4DFF,#5435B4,#E464FF"
+            data-gap="6"
+            data-speed="30">
+          </pixel-hover>
+          <div class="resource-icon">
+            <i class="ph ph-{{ .icon }}"></i>
+          </div>
+          <div class="resource-name">{{ .name }}</div>
+        </a>
         {{ end }}
       </div>
     </div>
   </section>
   {{ end }}
 
+  <!-- Supported Networks -->
+  {{ if .Params.show_supported_networks }}
+  {{ partial "supported-networks.html" . }}
+  {{ end }}
+
   <!-- Get in Touch -->
   <section class="get-in-touch">
     <div class="container">
       <h2 class="features__title">
-        <span class="features__title-glow">Join The Odyssey</span>
+        <span class="features__title-glow">Get in Touch</span>
       </h2>
       <div class="banner-image artistic-banner">
         <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
@@ -100,23 +93,26 @@
   </section>
 </main>
 
-<style>
-  /* Custom style for LTTT text */
-  .lttt-text {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 19px;
-    letter-spacing: 0.05em;
-    color: #FFFFFF;
+<!-- Add nodes animation script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Nodes animation
+  const nodesAnimation = document.querySelector('.nodes-animation');
+  if (nodesAnimation) {
+    // Create nodes
+    const nodeCount = 50;
+    for (let i = 0; i < nodeCount; i++) {
+      const node = document.createElement('div');
+      node.className = 'node';
+      node.style.left = `${Math.random() * 100}%`;
+      node.style.top = `${Math.random() * 100}%`;
+      node.style.animationDelay = `${Math.random() * 5}s`;
+      node.style.animationDuration = `${5 + Math.random() * 10}s`;
+      nodesAnimation.appendChild(node);
+    }
   }
-  
-  .portfolio-section__item--lttt {
-    background-color: #007AFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-</style>
+});
+</script>
 
 {{ if .Params.benefits }}
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
