@@ -1,6 +1,7 @@
 ---
-title: "Odyssey - Charting a New Course in Tech Innovation"
+title: "Odyssey - A New Course in Building apps"
 date: 2025-04-07
+highlighted: true
 draft: false
 description: "Introducing Odyssey - our new initiative focused on rapid product development and innovation in the tech space."
 categories: ["announcements", "odyssey"]
@@ -64,11 +65,11 @@ If a product does not get our expected traction, we will move on and adapt to ch
 
 This approach requires constant market awareness and the ability to make difficult decisions quickly. We maintain a portfolio mindset, recognizing that not every project will succeed, but each provides valuable lessons that inform our future efforts.
 
-3. **AI-First**
+3. **AI-Enabled**
 
 We strongly believe in the technical advancements enabled by cutting-edge AI models and their utilization in business and building processes. Our team actively explores and integrates AI tools across our development pipeline, from research and ideation to implementation and testing.
 
-4. **Document the process.** 
+4. **Build in public.** 
 
 Contemporary products need to quickly adapt to changing trends and demands. There is no better way to stay on top of developments than by proactively interacting with community members and publicly sharing our building process. 
 
@@ -76,9 +77,9 @@ We believe in transparency and open communication. By documenting our journey, w
 
 ## Become Part of the Journey
 
-- Follow us on [X](https://twitter.com/binarybuilders)
-- Listen to our [podcast](https://podcast.binary.builders)
-- Join our [Telegram](https://t.me/binarybuilders)
-- Pitch your idea at [ideas@binary.builders](mailto:ideas@binary.builders)
+- Follow Binary on [X](https://twitter.com/binary_builders)
+- Follow Odyssey on [X](https://x.com/OdysseyBIS)
+- Listen to us on [Spotify](https://open.spotify.com/show/4SKLuK9iE3wVITs50xAGPu)
+- Join our Community on [Telegram](https://t.me/OdysseyBiS)
 
 *Always keep building* 

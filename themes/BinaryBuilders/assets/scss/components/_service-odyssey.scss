@@ -188,7 +188,7 @@
         &__value {
           font-size: 3rem;
           font-weight: 700;
-          margin-bottom: 0.75rem;
+          margin-bottom: 0.25rem;
           color: var(--color-white);
           z-index: 1;
         }
@@ -197,6 +197,7 @@
           font-size: 1.2rem;
           color: var(--color-text-muted);
           z-index: 1;
+          margin-top: 1.25rem;
         }
 
         pixel-hover {
@@ -212,12 +213,47 @@
           --pixel-speed: 1;
         }
 
+        &__overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: 2;
+        }
+
+        .coming-soon {
+          text-align: center;
+          padding: 0.5rem;
+          margin: 2rem 0 0.5rem;
+          
+          span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-white);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
         &:hover {
           transform: translateY(-3px);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-          
+
           pixel-hover {
             opacity: 1;
+          }
+
+          &[data-status="coming_soon"] {
+            .stat-box__overlay {
+              opacity: 1;
+            }
           }
         }
       }
@@ -597,6 +633,87 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  
+  // Odyssey-specific styling for insights section
+  .latest-insights {
+    padding: 3rem 0;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.25rem;
+      color: var(--color-white);
+    }
+    
+    .section-description {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--color-text-light);
+    }
+    
+    .highlighted-posts {
+      &::before {
+        background: #E464FF;
+      }
+      
+      &.odyssey-posts {
+        @media (min-width: 1024px) {
+          &:has(article:nth-child(3)) {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1200px;
+          }
+          
+          &:has(article:nth-child(2)):not(:has(article:nth-child(3))) {
+            grid-template-columns: repeat(2, minmax(400px, 1fr));
+            max-width: 900px;
+          }
+          
+          &:not(:has(article:nth-child(2))) {
+            grid-template-columns: minmax(400px, 800px);
+            justify-content: center;
+          }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1023px) {
+          grid-template-columns: minmax(400px, 1fr);
+          max-width: 800px;
+        }
+        
+        @media (max-width: 767px) {
+          grid-template-columns: minmax(300px, 1fr);
+          max-width: 500px;
+        }
+      }
+    }
+    
+    .highlighted-post {
+      &:hover {
+        border-color: rgba(123, 77, 255, 0.3);
+      }
+      
+      .insight-meta {
+        .insight-category {
+          color: #9F7DFF;
+        }
+      }
+      
+      .insight-read-more {
+        color: #9F7DFF;
+      }
+    }
+    
+    .view-all {
+      &::before {
+        background: #7B4DFF;
+      }
+      
+      .btn-secondary {
+        &:hover {
+          border-color: #7B4DFF;
+        }
+      }
+    }
   }
 }
 

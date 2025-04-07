@@ -29,7 +29,7 @@
       </div>
       <div class="odyssey-overview__stats">
         {{ range .Params.stats }}
-        <div class="stat-box">
+        <div class="stat-box" {{ if .status }}data-status="{{ .status }}"{{ end }}>
           <pixel-hover 
             data-colors="{{ .colors }}"
             data-gap="6"
@@ -37,6 +37,13 @@
           </pixel-hover>
           <div class="stat-box__value">{{ .value }}</div>
           <div class="stat-box__label">{{ .label }}</div>
+          {{ if eq .status "coming_soon" }}
+          <div class="stat-box__overlay">
+            <div class="coming-soon">
+              <span>Coming Soon</span>
+            </div>
+          </div>
+          {{ end }}
         </div>
         {{ end }}
       </div>
@@ -71,6 +78,52 @@
   {{ if .Params.show_supported_networks }}
   {{ partial "supported-networks.html" . }}
   {{ end }}
+  
+  <!-- Learn More Section -->
+  <section class="latest-insights">
+    <div class="container">
+      <h2>Learn More</h2>
+
+      {{ $publishedPages := where .Site.RegularPages "Params.draft" "!=" true }}
+      {{ $odysseyPosts := where $publishedPages "Params.categories" "intersect" (slice "odyssey") }}
+      {{ $sortedOdysseyPosts := first 3 (sort $odysseyPosts "Date" "desc") }}
+
+      <!-- Odyssey Posts -->
+      {{ if $odysseyPosts }}
+      <div class="highlighted-posts odyssey-posts">
+        {{ range $sortedOdysseyPosts }}
+        <article class="highlighted-post">
+          <a href="{{ .RelPermalink }}" class="insight-link">
+            {{ with .Params.image }}
+            <div class="insight-image">
+              <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            </div>
+            {{ else }}
+            {{ with .Params.thumbnail }}
+            <div class="insight-image">
+              <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            </div>
+            {{ end }}
+            {{ end }}
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span class="insight-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                {{ with .Params.categories }}
+                <span class="insight-category">{{- range $index, $category := . -}}{{- if gt $index 0 }}, {{ end -}}{{ $category }}{{- end -}}</span>
+                {{ end }}
+              </div>
+              <h3 class="insight-title">{{ .Title }}</h3>
+              <p class="insight-excerpt">{{ .Params.description | truncate 120 }}</p>
+              <span class="insight-read-more">Read More →</span>
+            </div>
+          </a>
+        </article>
+        {{ end }}
+      </div>
+      {{ end }}
+
+    </div>
+  </section>
 
   <!-- Get in Touch -->
   <section class="get-in-touch">
