@@ -1,0 +1,45 @@
+---
+title: "Odyssey"
+description: "An exploration of innovative projects leveraging AI and emerging technologies to create opportunities and build apps for the future"
+layout: "odyssey"
+hero_image: "/images/services/odyssey.png"
+show_supported_networks: false
+stats:
+  - value: "Swypt"
+    label: "Long & short tokens with ease"
+    colors: "#7B4DFF,#5435B4,#E464FF"
+    status: "coming_soon"
+  - value: "Terminals"
+    label: "Telegram market making"
+    colors: "#4ECDC4,#3DA89F,#65E5DD"
+    status: "coming_soon"
+  - value: "Nemesis"
+    label: "Liquid fund management"
+    colors: "#FF6B6B,#E65555,#FF8585"
+    status: "coming_soon"
+resources:
+  - name: "Odyssey X"
+    icon: "x-logo"
+    url: "https://x.com/OdysseyBiS"
+  - name: "Telegram"
+    icon: "telegram-logo"
+    url: "https://t.me/OdysseyBiS"
+  - name: "Spotify"
+    icon: "spotify-logo"
+    url: "https://open.spotify.com/show/4SKLuK9iE3wVITs50xAGPu"
+  - name: "YouTube"
+    icon: "youtube-logo"
+    url: "https://www.youtube.com/@OdysseyBiS"
+  - name: "Instagram"
+    icon: "instagram-logo"
+    url: "https://instagram.com/OdysseyBiS"
+  - name: "TikTok"
+    icon: "tiktok-logo"
+    url: "https://tiktok.com/OdysseyBiS"
+cta_description: "Interested in Odyssey or want to follow our journey? Get in touch with us today."
+primary_cta:
+  url: "/contact"
+  text: "Contact Us"
+---
+
+## Projects 

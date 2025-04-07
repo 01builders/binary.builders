@@ -1,0 +1,176 @@
+{{ $title := .Title }}
+<main class="page-content service-page service-page--odyssey">
+  <!-- Full-width Hero Section -->
+  <section class="odyssey-hero">
+    <div class="odyssey-hero__bg">
+      <div class="nodes-animation"></div>
+    </div>
+    
+    <!-- Full-width hero image -->
+    <div class="odyssey-hero__image-full">
+      {{ with .Params.hero_image }}
+      <img src="{{ . }}" alt="{{ $title }}" />
+      {{ end }}
+    </div>
+    
+    <div class="container">
+      <div class="odyssey-hero__content">
+        <h1 class="odyssey-hero__title">{{ .Title }}</h1>
+        <p class="odyssey-hero__description">{{ .Description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview with Live Stats -->
+  <section class="odyssey-overview">
+    <div class="container">
+      <div class="odyssey-overview__content">
+        {{ .Content }}
+      </div>
+      <div class="odyssey-overview__stats">
+        {{ range .Params.stats }}
+        <div class="stat-box" {{ if .status }}data-status="{{ .status }}"{{ end }}>
+          <pixel-hover 
+            data-colors="{{ .colors }}"
+            data-gap="6"
+            data-speed="30">
+          </pixel-hover>
+          <div class="stat-box__value">{{ .value }}</div>
+          <div class="stat-box__label">{{ .label }}</div>
+          {{ if eq .status "coming_soon" }}
+          <div class="stat-box__overlay">
+            <div class="coming-soon">
+              <span>Coming Soon</span>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  {{ if .Params.resources }}
+  <section class="odyssey-resources">
+    <div class="container">
+      <h2>Resources</h2>
+      <div class="resources-grid">
+        {{ range .Params.resources }}
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="resource-card">
+          <pixel-hover 
+            data-colors="#7B4DFF,#5435B4,#E464FF"
+            data-gap="6"
+            data-speed="30">
+          </pixel-hover>
+          <div class="resource-icon">
+            <i class="ph ph-{{ .icon }}"></i>
+          </div>
+          <div class="resource-name">{{ .name }}</div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- Supported Networks -->
+  {{ if .Params.show_supported_networks }}
+  {{ partial "supported-networks.html" . }}
+  {{ end }}
+  
+  <!-- Learn More Section -->
+  <section class="latest-insights">
+    <div class="container">
+      <h2>Learn More</h2>
+
+      {{ $publishedPages := where .Site.RegularPages "Params.draft" "!=" true }}
+      {{ $odysseyPosts := where $publishedPages "Params.categories" "intersect" (slice "odyssey") }}
+      {{ $sortedOdysseyPosts := first 3 (sort $odysseyPosts "Date" "desc") }}
+
+      <!-- Odyssey Posts -->
+      {{ if $odysseyPosts }}
+      <div class="highlighted-posts odyssey-posts">
+        {{ range $sortedOdysseyPosts }}
+        <article class="highlighted-post">
+          <a href="{{ .RelPermalink }}" class="insight-link">
+            {{ with .Params.image }}
+            <div class="insight-image">
+              <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            </div>
+            {{ else }}
+            {{ with .Params.thumbnail }}
+            <div class="insight-image">
+              <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            </div>
+            {{ end }}
+            {{ end }}
+            <div class="insight-content">
+              <div class="insight-meta">
+                <span class="insight-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+                {{ with .Params.categories }}
+                <span class="insight-category">{{- range $index, $category := . -}}{{- if gt $index 0 }}, {{ end -}}{{ $category }}{{- end -}}</span>
+                {{ end }}
+              </div>
+              <h3 class="insight-title">{{ .Title }}</h3>
+              <p class="insight-excerpt">{{ .Params.description | truncate 120 }}</p>
+              <span class="insight-read-more">Read More →</span>
+            </div>
+          </a>
+        </article>
+        {{ end }}
+      </div>
+      {{ end }}
+
+    </div>
+  </section>
+
+  <!-- Get in Touch -->
+  <section class="get-in-touch">
+    <div class="container">
+      <h2 class="features__title">
+        <span class="features__title-glow">Get in Touch</span>
+      </h2>
+      <div class="banner-image artistic-banner">
+        <img src="/images/banners/get-in-touch-banner.png" alt="Digital tree with flowing data streams and mountain landscape" loading="lazy">
+      </div>
+      <p class="section-description text-center">{{ .Params.cta_description }}</p>
+      <div class="cta-button text-center">
+        {{ with .Params.primary_cta }}
+          <a href="{{ .url }}" class="site-header__cta-button" {{ if not (hasPrefix .url "/") }}target="_blank" rel="noopener"{{ end }}>{{ .text }}</a>
+        {{ else }}
+          <a href="/contact" class="site-header__cta-button">Contact Us</a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Add nodes animation script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Nodes animation
+  const nodesAnimation = document.querySelector('.nodes-animation');
+  if (nodesAnimation) {
+    // Create nodes
+    const nodeCount = 50;
+    for (let i = 0; i < nodeCount; i++) {
+      const node = document.createElement('div');
+      node.className = 'node';
+      node.style.left = `${Math.random() * 100}%`;
+      node.style.top = `${Math.random() * 100}%`;
+      node.style.animationDelay = `${Math.random() * 5}s`;
+      node.style.animationDuration = `${5 + Math.random() * 10}s`;
+      nodesAnimation.appendChild(node);
+    }
+  }
+});
+</script>
+
+{{ if .Params.benefits }}
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+{{ end }} 
