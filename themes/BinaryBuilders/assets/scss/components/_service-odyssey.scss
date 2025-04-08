@@ -558,10 +558,14 @@
 
     .resources-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       margin-top: 2rem;
       margin-bottom: 3rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     .resource-card {
@@ -713,6 +717,26 @@
           border-color: #7B4DFF;
         }
       }
+    }
+  }
+
+  .odyssey-podcast {
+    padding: 3rem 0;
+    background-color: var(--color-background);
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.25rem;
+      color: var(--color-white);
+    }
+
+    .podcast-embed {
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
   }
 }

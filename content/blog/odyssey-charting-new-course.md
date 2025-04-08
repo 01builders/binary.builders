@@ -80,6 +80,7 @@ We believe in transparency and open communication. By documenting our journey, w
 - Follow Binary on [X](https://twitter.com/binary_builders)
 - Follow Odyssey on [X](https://x.com/OdysseyBIS)
 - Listen to us on [Spotify](https://open.spotify.com/show/4SKLuK9iE3wVITs50xAGPu)
+- Listen to us on [Apple](https://podcasts.apple.com/de/podcast/odyssey/id1807255112)
 - Join our Community on [Telegram](https://t.me/OdysseyBiS)
 
 *Always keep building* 
