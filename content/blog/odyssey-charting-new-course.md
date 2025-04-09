@@ -15,6 +15,16 @@ author: "Onur Akpolat"
 
 Today, we embark on a new journey - Odyssey. This initiative represents our commitment to pushing the boundaries of what's possible in technology, focusing on rapid innovation and product development. In this post, we'll share our vision, theses, and approach to building in this dynamic landscape.
 
+## What is Odyssey?
+
+Odyssey is our framework for building at the intersection of AI & crypto. We're creating products in public, using AI tools to accelerate our process, and sharing insights as we go. This manifests in three key outputs:
+
+1. products shipped rapidly
+2. a podcast documenting our journey and key learnings
+3. a community of like-minded builders.
+
+Odyssey represents both our methodology and the journey itself—a practical approach to building better and faster in today's landscape.
+
 What are our underlying theses on which sectors to build in, and what is our framework and approach to shipping products faster and better than larger and heavily funded teams?
 
 ![Odyssey Launch](/images/blog/2025/odyssey-launch.png)
