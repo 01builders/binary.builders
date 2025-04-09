@@ -25,7 +25,7 @@ resources:
     icon: "telegram-logo"
     url: "https://t.me/OdysseyBiS"
   - name: "Apple"
-    icon: "apple-logo"
+    icon: "apple-podcasts-logo"
     url: "https://podcasts.apple.com/de/podcast/odyssey/id1807255112"
   - name: "Spotify"
     icon: "spotify-logo"
