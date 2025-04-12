@@ -15,6 +15,8 @@ author: "Onur Akpolat"
 
 Today, we embark on a new journey - Odyssey. This initiative represents our commitment to pushing the boundaries of what's possible in technology, focusing on rapid innovation and product development. In this post, we'll share our vision, theses, and approach to building in this dynamic landscape.
 
+![Odyssey](/images/odyssey/odysee-logo.png)
+
 ## What is Odyssey?
 
 Odyssey is our framework for building at the intersection of AI & crypto. We're creating products in public, using AI tools to accelerate our process, and sharing insights as we go. This manifests in three key outputs:
