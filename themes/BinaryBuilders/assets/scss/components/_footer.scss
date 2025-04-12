@@ -117,15 +117,16 @@
     font-size: 0.875rem;
     
     @media (min-width: 768px) {
-      font-size: 1rem;
+      font-size: 0.875rem;
       line-height: 1.5;
     }
   }
   
   &__legal-text {
     margin-top: 0.75rem;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     color: var(--color-text-muted);
+    line-height: 1.4;
     
     @media (min-width: 768px) {
       margin-top: 1rem;
@@ -136,9 +137,10 @@
   &__copyright {
     font-size: 0.75rem;
     color: var(--color-text-muted);
+    line-height: 1.4;
     
     @media (min-width: 768px) {
-      font-size: 0.875rem;
+      font-size: 0.75rem;
     }
   }
 } 
