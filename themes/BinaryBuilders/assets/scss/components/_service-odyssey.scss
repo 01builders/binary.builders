@@ -166,6 +166,7 @@
       grid-template-columns: repeat(1, 1fr);
       gap: 1.5rem;
       margin-bottom: 3rem;
+      align-items: stretch;
       
       @media (min-width: 768px) {
         grid-template-columns: repeat(3, 1fr);
@@ -177,7 +178,7 @@
         background-color: var(--color-bg-secondary);
         padding: 2.5rem;
         width: 100%;
-        height: 200px;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -191,13 +192,17 @@
           margin-bottom: 0.25rem;
           color: var(--color-white);
           z-index: 1;
+          text-align: center;
+          line-height: 1.2;
         }
 
         &__label {
           font-size: 1.2rem;
           color: var(--color-text-muted);
           z-index: 1;
-          margin-top: 1.25rem;
+          margin-top: 0.75rem;
+          text-align: center;
+          line-height: 1.4;
         }
 
         pixel-hover {
@@ -211,6 +216,53 @@
           transition: opacity 0.3s ease;
           --pixel-color: var(--color-primary);
           --pixel-speed: 1;
+        }
+
+        &__logo {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          width: 40px;
+          height: 40px;
+          z-index: 2;
+          
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1.2);
+          }
+        }
+
+        &__logo-centered {
+          width: 60px;
+          height: 60px;
+          margin: 0 auto 1rem;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(1.2);
+          }
+        }
+
+        &__link {
+          position: absolute;
+          inset: 0;
+          text-decoration: none;
+          color: inherit;
+          z-index: 3;
+          
+          &:hover {
+            .stat-box__overlay {
+              opacity: 1;
+            }
+          }
         }
 
         &__overlay {
@@ -227,8 +279,6 @@
 
         .coming-soon {
           text-align: center;
-          padding: 0.5rem;
-          margin: 2rem 0 0.5rem;
           
           span {
             font-size: 1.2rem;
@@ -239,6 +289,29 @@
             background: var(--gradient-text);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+          }
+        }
+
+        .live-status {
+          text-align: center;
+          
+          span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--color-white);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            
+            &::before {
+              content: '●';
+              color: #22c55e;
+              margin-right: 0.5rem;
+              animation: pulse 2s infinite;
+            }
           }
         }
 

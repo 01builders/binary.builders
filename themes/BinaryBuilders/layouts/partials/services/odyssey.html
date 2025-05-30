@@ -49,19 +49,36 @@
       <div class="odyssey-overview__stats">
         {{ range .Params.stats }}
         <div class="stat-box" {{ if .status }}data-status="{{ .status }}"{{ end }}>
+          {{ if eq .status "live" }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="stat-box__link">
+          {{ end }}
           <pixel-hover 
             data-colors="{{ .colors }}"
             data-gap="6"
             data-speed="30">
           </pixel-hover>
-          <div class="stat-box__value">{{ .value }}</div>
-          <div class="stat-box__label">{{ .label }}</div>
+          {{ if eq .status "live" }}
+            <div class="stat-box__value">{{ .value }}</div>
+            <div class="stat-box__label">{{ .label }}</div>
+          {{ else }}
+            <div class="stat-box__value">{{ .value }}</div>
+            <div class="stat-box__label">{{ .label }}</div>
+          {{ end }}
           {{ if eq .status "coming_soon" }}
           <div class="stat-box__overlay">
             <div class="coming-soon">
               <span>Coming Soon</span>
             </div>
           </div>
+          {{ else if eq .status "live" }}
+          <div class="stat-box__overlay">
+            <div class="live-status">
+              <span>Live Now</span>
+            </div>
+          </div>
+          {{ end }}
+          {{ if eq .status "live" }}
+          </a>
           {{ end }}
         </div>
         {{ end }}

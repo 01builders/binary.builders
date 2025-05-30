@@ -5,6 +5,11 @@ layout: "odyssey"
 hero_image: "/images/services/odyssey.png"
 show_supported_networks: false
 stats:
+  - value: "Picojeet"
+    label: "Sell the pico top"
+    colors: "#7B4DFF,#5435B4,#E464FF"
+    status: "live"
+    url: "https://picojeet.com"
   - value: "Swypt"
     label: "Long & short tokens with ease"
     colors: "#7B4DFF,#5435B4,#E464FF"
