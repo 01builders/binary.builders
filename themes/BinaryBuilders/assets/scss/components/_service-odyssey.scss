@@ -163,13 +163,20 @@
 
     &__stats {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
       gap: 1.5rem;
-      margin-bottom: 3rem;
-      align-items: stretch;
+      grid-template-columns: repeat(1, 1fr);
+      grid-auto-rows: 1fr;
+      
+      @media (min-width: 576px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
       
       @media (min-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @media (min-width: 992px) {
+        grid-template-columns: repeat(4, 1fr);
       }
 
       .stat-box {
@@ -179,6 +186,7 @@
         padding: 2.5rem;
         width: 100%;
         height: 100%;
+        min-height: 250px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -257,6 +265,10 @@
           text-decoration: none;
           color: inherit;
           z-index: 3;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
           
           &:hover {
             .stat-box__overlay {
