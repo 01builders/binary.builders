@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $dynamicTexts := .Params.hero.dynamic_texts | default (slice "Networks" "Protocols" "Validators" "Solutions") }}
 <section class="home-hero">
   <div class="home-hero__bg">
     <div class="home-hero__shape home-hero__shape--1"></div>
@@ -13,7 +14,15 @@
     <div class="particle"></div>
   </div>
   <div class="home-hero__container">
-    <h1 class="home-hero__title">Binary Builders</h1>
+    <h1 class="home-hero__title">
+      <div class="home-hero__title-line">
+        <span class="home-hero__static-text">Building</span>
+        <div class="home-hero__dynamic-wrapper">
+          <div class="home-hero__dynamic-container" id="dynamicContainer"
+               data-texts="{{ range $index, $text := $dynamicTexts }}{{ if $index }},{{ end }}{{ $text }}{{ end }}"></div>
+        </div>
+      </div>
+    </h1>
     <p class="home-hero__subtitle">{{ .Params.hero.subtitle }}</p>
     <div class="home-hero__cta">
       {{ with .Params.hero.primary_cta }}
@@ -25,4 +34,51 @@
     </div>
   </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.getElementById('dynamicContainer');
+  const textsAttr = container.getAttribute('data-texts');
+  const texts = textsAttr ? textsAttr.split(',') : ['Networks', 'Protocols', 'Validators', 'Solutions'];
+
+  let currentIndex = 0;
+  let isAnimating = false;
+
+  function createTextElement(text, isInitial = false) {
+    const element = document.createElement('div');
+    element.className = 'home-hero__dynamic-text';
+    element.textContent = text;
+    if (!isInitial) {
+      element.style.transform = 'translateY(100%)';
+      element.style.opacity = '0';
+    }
+    return element;
+  }
+
+  function animate() {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const currentElement = container.children[0];
+    const nextIndex = (currentIndex + 1) % texts.length;
+    const newElement = createTextElement(texts[nextIndex]);
+
+    container.appendChild(newElement);
+    newElement.offsetHeight;
+
+    currentElement.style.animation = 'slideOutUp 0.5s ease-in-out forwards';
+    newElement.style.animation = 'slideInUp 0.5s ease-in-out forwards';
+
+    setTimeout(() => {
+      container.removeChild(currentElement);
+      isAnimating = false;
+    }, 500);
+
+    currentIndex = nextIndex;
+  }
+
+  container.appendChild(createTextElement(texts[0], true));
+  setInterval(animate, 3000);
+});
+</script>
 {{ end }}
