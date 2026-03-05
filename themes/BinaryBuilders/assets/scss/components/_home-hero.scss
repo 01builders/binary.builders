@@ -213,19 +213,37 @@
   }
 
   &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.05em;
+    width: 100%;
+    max-width: 100%;
     font-size: 4.5rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
+    margin: 0 auto 1.5rem;
+    line-height: 0.98;
     text-align: center;
     background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
+  &__title-static {
+    display: block;
+  }
+
+  &__dynamic-slot {
+    display: block;
+    min-height: 1em;
+    text-align: center;
+  }
+
   &__dynamic-text {
     display: inline-block;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    white-space: nowrap;
     background: linear-gradient(
       135deg,
       #6B3FA0 0%,
@@ -275,6 +293,7 @@
 
     &__title {
       font-size: 2.75rem;
+      line-height: 1;
     }
 
 

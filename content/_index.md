@@ -7,7 +7,6 @@ hero:
   dynamic_texts:
     - "Networks"
     - "Protocols"
-    - "Validators"
     - "Solutions"
   primary_cta:
     url: "/thesis"

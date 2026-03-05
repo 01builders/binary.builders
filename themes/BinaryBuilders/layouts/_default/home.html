@@ -14,7 +14,12 @@
     <div class="particle"></div>
   </div>
   <div class="home-hero__container">
-    <h1 class="home-hero__title">Building <span class="home-hero__dynamic-text" id="dynamicText">{{ index $dynamicTexts 0 }}</span></h1>
+    <h1 class="home-hero__title">
+      <span class="home-hero__title-static">Building</span>
+      <span class="home-hero__dynamic-slot" id="dynamicTextSlot">
+        <span class="home-hero__dynamic-text" id="dynamicText">{{ index $dynamicTexts 0 }}</span>
+      </span>
+    </h1>
     <p class="home-hero__subtitle">{{ .Params.hero.subtitle }}</p>
     <div class="home-hero__cta">
       {{ with .Params.hero.primary_cta }}
@@ -29,9 +34,15 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  var texts = {{ $dynamicTexts | jsonify }};
+  var rawTexts = {{ $dynamicTexts | jsonify }};
+  var texts = Array.isArray(rawTexts) ? rawTexts : JSON.parse(rawTexts);
   var el = document.getElementById('dynamicText');
   var i = 0;
+
+  if (!el || texts.length === 0) {
+    return;
+  }
+
   setInterval(function() {
     el.style.opacity = '0';
     el.style.transform = 'translateY(8px)';
