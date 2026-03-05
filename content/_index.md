@@ -3,7 +3,7 @@ title: "Binary Builders"
 description: "Building at the frontier of crypto."
 layout: "home"
 hero:
-  subtitle: "We build, invest in, and advise teams pushing crypto forward."
+  subtitle: "Binary Builders is pioneering innovation in crypto and beyond. Join us in shaping the future with expertise, passion, and collaboration."
   dynamic_texts:
     - "Networks"
     - "Protocols"
