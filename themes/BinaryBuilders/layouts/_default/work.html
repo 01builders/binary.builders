@@ -1,0 +1,93 @@
+{{ define "main" }}
+<main class="page-content work-page">
+  <div class="work-header">
+    <div class="container">
+      <h1 class="work-title"><span class="gradient-text">{{ .Title }}</span></h1>
+      <p class="work-description">{{ .Description }}</p>
+    </div>
+  </div>
+
+  {{ with .Params.capabilities }}
+  <section class="work-capabilities">
+    <div class="container">
+      <div class="work-capabilities__grid">
+        {{ range . }}
+        <div class="work-capabilities__item">
+          <h3>{{ .title }}</h3>
+          <p>{{ .description }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ range .Params.sections }}
+  <section class="work-section">
+    <div class="container">
+      <div class="work-section__header">
+        <h2>{{ .title }}</h2>
+        <p class="work-section__description">{{ .description }}</p>
+      </div>
+
+      {{ if .items }}
+      {{ if eq .style "compact" }}
+      <div class="work-list">
+        {{ range .items }}
+        <div class="work-list__item">
+          <span class="work-list__name">
+            {{ if .url }}<a href="{{ .url }}" {{ if not (hasPrefix .url "/") }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ .name }}</a>{{ else }}{{ .name }}{{ end }}
+          </span>
+        </div>
+        {{ end }}
+      </div>
+      {{ else }}
+      <div class="work-grid">
+        {{ range .items }}
+        <div class="work-card">
+          <div class="work-card__content">
+            {{ if .logo }}
+            <div class="work-card__logo">
+              <img src="{{ .logo }}" alt="{{ .name }}" loading="lazy">
+            </div>
+            {{ end }}
+            <h3 class="work-card__name">
+              {{ if .url }}<a href="{{ .url }}" {{ if not (hasPrefix .url "/") }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ .name }}</a>{{ else }}{{ .name }}{{ end }}
+            </h3>
+            {{ with .description }}
+            <p class="work-card__description">{{ . }}</p>
+            {{ end }}
+            {{ with .status }}
+            <span class="work-card__status work-card__status--{{ . }}">
+              {{ if eq . "live" }}Live{{ else if eq . "coming_soon" }}Coming Soon{{ end }}
+            </span>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if .Params.testimonials }}
+  {{ partial "testimonials.html" . }}
+  {{ end }}
+
+  <section class="get-in-touch">
+    <div class="container">
+      <h2 class="features__title">
+        <span class="features__title-glow">{{ .Params.cta_title | default "Work With Us" }}</span>
+      </h2>
+      <p class="section-description text-center">{{ .Params.cta_description }}</p>
+      <div class="cta-button text-center">
+        {{ with .Params.primary_cta }}
+        <a href="{{ .url }}" class="site-header__cta-button">{{ .text }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

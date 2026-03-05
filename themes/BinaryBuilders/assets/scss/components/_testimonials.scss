@@ -89,7 +89,7 @@
 
 .testimonial-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--color-surface);
   backdrop-filter: blur(10px);
   border-radius: 0;
   padding: 2rem;

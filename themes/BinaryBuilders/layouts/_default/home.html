@@ -1,9 +1,28 @@
 {{ define "main" }}
-  {{ partial "hero.html" . }}
-  {{ partial "supported-networks.html" . }}
-  {{ partial "metrics.html" . }}
-  {{ partial "features.html" . }}
-  {{ partial "testimonials.html" . }}
-  {{ partial "latest-insights.html" . }}
-  {{ partial "get-in-touch.html" . }}
+<section class="home-hero">
+  <div class="home-hero__bg">
+    <div class="home-hero__shape home-hero__shape--1"></div>
+    <div class="home-hero__shape home-hero__shape--2"></div>
+    <div class="home-hero__shape home-hero__shape--3"></div>
+    <div class="home-hero__shape home-hero__shape--4"></div>
+    <div class="home-hero__shape home-hero__shape--5"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="home-hero__container">
+    <h1 class="home-hero__title">Binary Builders</h1>
+    <p class="home-hero__subtitle">{{ .Params.hero.subtitle }}</p>
+    <div class="home-hero__cta">
+      {{ with .Params.hero.primary_cta }}
+      <a href="{{ .url }}" class="button button--primary">{{ .text }} <span class="button__arrow">→</span></a>
+      {{ end }}
+      {{ with .Params.hero.secondary_cta }}
+      <a href="{{ .url }}" class="button button--secondary">{{ .text }} <span class="button__arrow">→</span></a>
+      {{ end }}
+    </div>
+  </div>
+</section>
 {{ end }}
