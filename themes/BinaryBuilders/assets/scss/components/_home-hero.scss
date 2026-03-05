@@ -216,51 +216,16 @@
     font-size: 4.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    line-height: 1.2;
+    line-height: 1.1;
     text-align: center;
     background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  &__title-line {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25em;
-    height: 1.2em;
-  }
-
-  &__static-text {
-    line-height: 1.2;
-  }
-
-  &__dynamic-wrapper {
-    display: inline-block;
-    height: 1.2em;
-    overflow: hidden;
-    position: relative;
-    vertical-align: top;
-  }
-
-  &__dynamic-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-  }
-
   &__dynamic-text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backface-visibility: hidden;
-    will-change: transform, opacity;
-    line-height: 1.2;
-    font-weight: 800;
-    white-space: nowrap;
+    display: inline-block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     background: linear-gradient(
       135deg,
       #6B3FA0 0%,

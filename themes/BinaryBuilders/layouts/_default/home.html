@@ -14,15 +14,7 @@
     <div class="particle"></div>
   </div>
   <div class="home-hero__container">
-    <h1 class="home-hero__title">
-      <div class="home-hero__title-line">
-        <span class="home-hero__static-text">Building</span>
-        <div class="home-hero__dynamic-wrapper">
-          <div class="home-hero__dynamic-container" id="dynamicContainer"
-               data-texts="{{ range $index, $text := $dynamicTexts }}{{ if $index }},{{ end }}{{ $text }}{{ end }}"></div>
-        </div>
-      </div>
-    </h1>
+    <h1 class="home-hero__title">Building <span class="home-hero__dynamic-text" id="dynamicText">{{ index $dynamicTexts 0 }}</span></h1>
     <p class="home-hero__subtitle">{{ .Params.hero.subtitle }}</p>
     <div class="home-hero__cta">
       {{ with .Params.hero.primary_cta }}
@@ -37,69 +29,19 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const container = document.getElementById('dynamicContainer');
-  const textsAttr = container.getAttribute('data-texts');
-  const texts = textsAttr ? textsAttr.split(',') : ['Networks', 'Protocols', 'Validators', 'Solutions'];
-
-  let currentIndex = 0;
-  let isAnimating = false;
-
-  function createTextElement(text, isInitial = false) {
-    const element = document.createElement('div');
-    element.className = 'home-hero__dynamic-text';
-    element.textContent = text;
-    if (!isInitial) {
-      element.style.transform = 'translateY(100%)';
-      element.style.opacity = '0';
-    }
-    return element;
-  }
-
-  function animate() {
-    if (isAnimating) return;
-    isAnimating = true;
-
-    const currentElement = container.children[0];
-    const nextIndex = (currentIndex + 1) % texts.length;
-    const newElement = createTextElement(texts[nextIndex]);
-
-    container.appendChild(newElement);
-    newElement.offsetHeight;
-
-    currentElement.style.animation = 'slideOutUp 0.5s ease-in-out forwards';
-    newElement.style.animation = 'slideInUp 0.5s ease-in-out forwards';
-
-    setTimeout(() => {
-      container.removeChild(currentElement);
-      isAnimating = false;
-    }, 500);
-
-    currentIndex = nextIndex;
-  }
-
-  // Measure widest word and set wrapper width
-  const wrapper = container.parentElement;
-  const title = wrapper.closest('.home-hero__title');
-  const titleStyle = window.getComputedStyle(title);
-  let maxWidth = 0;
-  texts.forEach(function(text) {
-    const measure = document.createElement('span');
-    measure.style.position = 'absolute';
-    measure.style.visibility = 'hidden';
-    measure.style.whiteSpace = 'nowrap';
-    measure.style.fontSize = titleStyle.fontSize;
-    measure.style.fontWeight = '800';
-    measure.style.fontFamily = titleStyle.fontFamily;
-    measure.textContent = text;
-    document.body.appendChild(measure);
-    const w = measure.getBoundingClientRect().width;
-    if (w > maxWidth) maxWidth = w;
-    document.body.removeChild(measure);
-  });
-  wrapper.style.width = Math.ceil(maxWidth + 10) + 'px';
-
-  container.appendChild(createTextElement(texts[0], true));
-  setInterval(animate, 3000);
+  var texts = {{ $dynamicTexts | jsonify }};
+  var el = document.getElementById('dynamicText');
+  var i = 0;
+  setInterval(function() {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(8px)';
+    setTimeout(function() {
+      i = (i + 1) % texts.length;
+      el.textContent = texts[i];
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 300);
+  }, 3000);
 });
 </script>
 {{ end }}
