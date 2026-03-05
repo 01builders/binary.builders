@@ -1,9 +1,58 @@
 {{ define "main" }}
-  {{ partial "hero.html" . }}
-  {{ partial "supported-networks.html" . }}
-  {{ partial "metrics.html" . }}
-  {{ partial "features.html" . }}
-  {{ partial "testimonials.html" . }}
-  {{ partial "latest-insights.html" . }}
-  {{ partial "get-in-touch.html" . }}
+{{ $dynamicTexts := .Params.hero.dynamic_texts | default (slice "Networks" "Protocols" "Validators" "Solutions") }}
+<section class="home-hero">
+  <div class="home-hero__bg">
+    <div class="home-hero__shape home-hero__shape--1"></div>
+    <div class="home-hero__shape home-hero__shape--2"></div>
+    <div class="home-hero__shape home-hero__shape--3"></div>
+    <div class="home-hero__shape home-hero__shape--4"></div>
+    <div class="home-hero__shape home-hero__shape--5"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="home-hero__container">
+    <h1 class="home-hero__title">
+      <span class="home-hero__title-static">Building</span>
+      <span class="home-hero__dynamic-slot" id="dynamicTextSlot">
+        <span class="home-hero__dynamic-text" id="dynamicText">{{ index $dynamicTexts 0 }}</span>
+      </span>
+    </h1>
+    <p class="home-hero__subtitle">{{ .Params.hero.subtitle }}</p>
+    <div class="home-hero__cta">
+      {{ with .Params.hero.primary_cta }}
+      <a href="{{ .url }}" class="button button--primary">{{ .text }} <span class="button__arrow">→</span></a>
+      {{ end }}
+      {{ with .Params.hero.secondary_cta }}
+      <a href="{{ .url }}" class="button button--secondary">{{ .text }} <span class="button__arrow">→</span></a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var rawTexts = {{ $dynamicTexts | jsonify }};
+  var texts = Array.isArray(rawTexts) ? rawTexts : JSON.parse(rawTexts);
+  var el = document.getElementById('dynamicText');
+  var i = 0;
+
+  if (!el || texts.length === 0) {
+    return;
+  }
+
+  setInterval(function() {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(8px)';
+    setTimeout(function() {
+      i = (i + 1) % texts.length;
+      el.textContent = texts[i];
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 300);
+  }, 3000);
+});
+</script>
 {{ end }}

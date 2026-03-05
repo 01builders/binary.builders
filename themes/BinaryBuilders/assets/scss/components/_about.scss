@@ -176,7 +176,7 @@
       background: var(--color-background);
       padding: 2.5rem;
       border-radius: 0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--color-border-light);
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
@@ -201,7 +201,7 @@
 
         h4 {
           font-size: 1.25rem;
-          color: var(--color-white);
+          color: var(--color-text);
           margin-bottom: 1rem;
           font-weight: var(--font-weight-semibold);
         }
@@ -259,7 +259,7 @@
 
           h4 {
             font-size: 1.25rem;
-            color: var(--color-white);
+            color: var(--color-text);
             margin-bottom: 1rem;
             font-weight: var(--font-weight-semibold);
           }
@@ -334,12 +334,12 @@
 
           &:hover {
             background: var(--color-surface);
-            color: var(--color-white);
+            color: var(--color-text);
           }
 
           &.active {
             background: var(--color-surface);
-            color: var(--color-white);
+            color: var(--color-text);
             border-left: 3px solid var(--color-primary);
           }
 
@@ -378,7 +378,7 @@
 
           h3 {
             font-size: 2rem;
-            color: var(--color-white);
+            color: var(--color-text);
             margin-bottom: 1.5rem;
             font-weight: var(--font-weight-semibold);
             line-height: 1.2;
@@ -448,7 +448,7 @@
         h3 {
           font-size: 1.5rem;
           margin-bottom: 1rem;
-          color: var(--color-white);
+          color: var(--color-text);
           font-weight: var(--font-weight-semibold);
         }
 
@@ -520,7 +520,7 @@
 
         &--secondary {
           background: var(--color-surface);
-          color: var(--color-white);
+          color: var(--color-text);
           border: 1px solid var(--color-border-light);
 
           &:hover {
@@ -551,7 +551,7 @@
       font-size: 2.5rem;
       font-weight: var(--font-weight-bold);
       margin-bottom: 2rem;
-      color: var(--color-white);
+      color: var(--color-text);
       line-height: 1.2;
       background: var(--gradient-text);
       -webkit-background-clip: text;
@@ -590,14 +590,14 @@
       font-size: 3.5rem;
       text-align: center;
       margin-bottom: 1.5rem;
-      color: var(--color-white);
-      
+      color: var(--color-text);
+
       @media (max-width: 768px) {
         font-size: 2.75rem;
         margin-bottom: 1rem;
       }
     }
-    
+
     .expertise-description {
       font-size: 1.75rem;
       text-align: center;
@@ -624,7 +624,7 @@
         text-align: center;
         margin-bottom: 1.5rem;
         margin-top: 0;
-        color: var(--color-white);
+        color: var(--color-text);
         
         @media (max-width: 768px) {
           font-size: 2.75rem;
@@ -643,7 +643,7 @@
       
       .expertise-divider {
         height: 1px;
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--color-border-light);
         margin: 3.5rem 0;
         position: relative;
         width: 100vw;
@@ -673,7 +673,7 @@
         
         h3 {
           font-size: 2.5rem;
-          color: var(--color-white);
+          color: var(--color-text);
           font-weight: 700;
           margin: 0;
           

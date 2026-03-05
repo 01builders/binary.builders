@@ -8,22 +8,15 @@
   &__container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2rem;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem 5rem;
+    text-align: center;
   }
   
   &__column {
-    margin-bottom: 1.5rem;
-    
-    @media (min-width: 768px) {
-      margin-bottom: 0;
-    }
+    margin-bottom: 0;
   }
   
   &__heading {
@@ -100,14 +93,6 @@
     align-items: center;
     text-align: center;
     gap: 1rem;
-
-    @media (min-width: 768px) {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
   }
   
   &__address {

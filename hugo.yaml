@@ -45,27 +45,24 @@ markup:
       unsafe: true
 
 params:
-  description: "Binary Builders - Building the Future of Blockchain Infrastructure"
-  author: "Özgür Celebi"
+  description: "Binary Builders - Building at the frontier of crypto."
+  author: "Binary Builders"
   images: ["images/og-default.jpg"]
   contact:
     email: "contact@binary.builders"
-    notion:
-      databaseId: "YOUR_NOTION_DATABASE_ID"
-      apiKey: "YOUR_NOTION_API_KEY"
-  
+
   # Social Media
   social:
-    twitter: "binarybuilders"
-    github: "binarybuilders"
+    twitter: "binary_builders"
+    github: "01builders"
     linkedin: "company/binary-builders"
 
   # SEO
-  defaultKeywords: ["blockchain", "infrastructure", "binary builders", "web3"]
-  
+  defaultKeywords: ["crypto", "blockchain", "binary builders", "web3", "building"]
+
   # Analytics
-  googleAnalytics: ""  # Add your GA ID
-  
+  googleAnalytics: ""
+
   # Features
   features:
     search: true

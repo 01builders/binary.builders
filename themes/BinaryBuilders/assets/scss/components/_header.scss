@@ -36,7 +36,7 @@ html {
   &__logo {
     a {
       text-decoration: none;
-      color: var(--color-white);
+      color: var(--color-text);
     }
 
     .binary-title {
@@ -44,7 +44,7 @@ html {
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: 0.05em;
-      color: var(--color-white);
+      color: var(--color-text);
       margin: 0;
       display: flex;
       align-items: center;
@@ -115,7 +115,7 @@ html {
     }
 
     &-button {
-      color: var(--color-white);
+      color: var(--color-text);
       font-size: 1rem;
       padding: 0.75rem 1rem;
       cursor: pointer;
@@ -135,7 +135,7 @@ html {
 
       &:hover {
         background: var(--color-background-alt);
-        color: var(--color-white);
+        color: var(--color-text);
 
         .ph {
           opacity: 1;
@@ -191,7 +191,7 @@ html {
       width: 240px;
       height: 100%;
       padding: 0.75rem;
-      background: #0d0624;
+      background: var(--color-background-alt);
       border: 1px solid var(--color-border-light);
       border-radius: 0;
     }
@@ -208,7 +208,7 @@ html {
       align-items: center;
       gap: 0.75rem;
       padding: 0.75rem;
-      color: var(--color-white);
+      color: var(--color-text);
       text-decoration: none;
       border-radius: 0;
       transition: background-color 0.2s ease;
@@ -226,7 +226,7 @@ html {
         img {
           width: 18px;
           height: 18px;
-          filter: invert(1);
+          filter: none;
         }
       }
 
@@ -258,7 +258,7 @@ html {
         display: flex;
         align-items: center;
         padding: 0.75rem;
-        color: var(--color-white);
+        color: var(--color-text);
         text-decoration: none;
         border-radius: 0;
         font-size: 0.95rem;
@@ -361,7 +361,7 @@ html {
     svg {
       path {
         &[fill="#FFFFFF"] {
-          fill: var(--color-white);
+          fill: var(--color-text);
         }
         &[fill="#D2E5F1"],
         &[fill="#B5CFE4"] {
@@ -414,7 +414,7 @@ html {
       align-items: center;
       gap: 0.5rem;
       padding: 0.75rem 1.5rem;
-      background: rgba(123, 63, 228, 0.15);
+      background: var(--color-primary);
       color: var(--color-white);
       text-decoration: none;
       border-radius: 0;
@@ -488,7 +488,7 @@ html {
       display: block;
       width: 24px;
       height: 2px;
-      background-color: var(--color-white);
+      background-color: var(--color-text);
       transition: transform 0.3s ease, opacity 0.3s ease;
       
       & + .hamburger-line {
@@ -620,12 +620,12 @@ html {
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: var(--color-white);
+        color: var(--color-text);
         position: relative;
 
         &.has-submenu {
           cursor: pointer;
-          
+
           &:after {
             content: '+';
             font-size: 1.2rem;
@@ -663,7 +663,7 @@ html {
         &-item {
           padding: 0.75rem 1rem;
           justify-content: flex-end;
-          color: var(--color-white);
+          color: var(--color-text);
           text-decoration: none;
           display: flex;
           font-size: 0.95rem;
@@ -672,7 +672,7 @@ html {
 
           &:hover {
             opacity: 1;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.2);
             border-radius: 0;
           }
         }
@@ -721,7 +721,7 @@ html {
     .item-icon {
       .ph {
         font-size: 1.25rem;
-        color: var(--color-white);
+        color: var(--color-text);
         opacity: 0.9;
         transition: opacity 0.2s ease;
       }

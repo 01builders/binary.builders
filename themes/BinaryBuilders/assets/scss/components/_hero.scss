@@ -83,7 +83,7 @@
   align-items: center;
   justify-content: center;
   padding: 5rem 2rem 3rem;
-  background-color: #0A041D;
+  background-color: var(--color-background);
   color: var(--color-text);
   position: relative;
   overflow: hidden;
@@ -95,7 +95,7 @@
   &__circle {
     position: absolute;
     pointer-events: none;
-    background: rgba(10, 4, 29, 0.95);
+    background: rgba(247, 246, 243, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 50%;
     box-shadow: 
@@ -110,10 +110,10 @@
       border-radius: inherit;
       background: linear-gradient(
         135deg,
-        rgba(255, 107, 107, 0.7) 0%,
-        rgba(78, 205, 196, 0.7) 25%,
-        rgba(150, 201, 61, 0.7) 50%,
-        rgba(255, 107, 107, 0.7) 75%
+        rgba(107, 63, 160, 0.7) 0%,
+        rgba(155, 111, 212, 0.7) 25%,
+        rgba(139, 107, 191, 0.7) 50%,
+        rgba(107, 63, 160, 0.7) 75%
       );
       background-size: 300% 300%;
       mask: linear-gradient(#fff 0 0) content-box,
@@ -150,7 +150,7 @@
   &__number {
     position: absolute;
     pointer-events: none;
-    background: rgba(10, 4, 29, 0.95);
+    background: rgba(247, 246, 243, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 
       inset 0 0 50px rgba(255, 255, 255, 0.1),
@@ -163,10 +163,10 @@
       inset: -2px;
       background: linear-gradient(
         135deg,
-        rgba(255, 107, 107, 0.7) 0%,
-        rgba(78, 205, 196, 0.7) 25%,
-        rgba(150, 201, 61, 0.7) 50%,
-        rgba(255, 107, 107, 0.7) 75%
+        rgba(107, 63, 160, 0.7) 0%,
+        rgba(155, 111, 212, 0.7) 25%,
+        rgba(139, 107, 191, 0.7) 50%,
+        rgba(107, 63, 160, 0.7) 75%
       );
       background-size: 300% 300%;
       mask: linear-gradient(#fff 0 0) content-box,
@@ -346,13 +346,13 @@
     justify-content: flex-start;
     background: linear-gradient(
       135deg,
-      #FF6B6B 0%,
-      #FF758C 15%,
-      #4ECDC4 30%,
-      #6EE7B7 45%,
-      #96C93D 60%,
-      #A7D129 75%,
-      #FF6B6B 90%
+      #6B3FA0 0%,
+      #8B6BBF 15%,
+      #9B6FD4 30%,
+      #7B4DFF 45%,
+      #6B3FA0 60%,
+      #4E2D73 75%,
+      #6B3FA0 90%
     );
     background-size: 200% 200%;
     animation: gradient-shift 15s ease-in-out infinite;
@@ -384,12 +384,12 @@
 
     &:hover .button--primary {
       background-color: transparent;
-      color: #FFFFFF;
+      color: var(--color-text);
     }
 
     &:hover .button--primary:hover {
-      background-color: #FFFFFF;
-      color: #000000;
+      background-color: var(--color-primary);
+      color: var(--color-white);
     }
 
     @media (max-width: 768px) {
@@ -434,17 +434,17 @@
   }
 
   &--primary {
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: var(--color-primary);
+    color: var(--color-white);
   }
 
   &--secondary {
     background-color: transparent;
-    color: #FFFFFF;
+    color: var(--color-text);
 
     &:hover {
-      background-color: #FFFFFF;
-      color: #000000;
+      background-color: var(--color-primary);
+      color: var(--color-white);
     }
   }
 }
