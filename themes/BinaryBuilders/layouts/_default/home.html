@@ -79,20 +79,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Measure widest word and set wrapper width
   const wrapper = container.parentElement;
+  const title = wrapper.closest('.home-hero__title');
+  const titleStyle = window.getComputedStyle(title);
   let maxWidth = 0;
   texts.forEach(function(text) {
     const measure = document.createElement('span');
-    measure.className = 'home-hero__dynamic-text';
     measure.style.position = 'absolute';
     measure.style.visibility = 'hidden';
     measure.style.whiteSpace = 'nowrap';
+    measure.style.fontSize = titleStyle.fontSize;
+    measure.style.fontWeight = '800';
+    measure.style.fontFamily = titleStyle.fontFamily;
     measure.textContent = text;
     document.body.appendChild(measure);
     const w = measure.getBoundingClientRect().width;
     if (w > maxWidth) maxWidth = w;
     document.body.removeChild(measure);
   });
-  wrapper.style.width = Math.ceil(maxWidth + 5) + 'px';
+  wrapper.style.width = Math.ceil(maxWidth + 10) + 'px';
 
   container.appendChild(createTextElement(texts[0], true));
   setInterval(animate, 3000);
