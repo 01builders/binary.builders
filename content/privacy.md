@@ -16,7 +16,7 @@ Binary Builders AG ("we," "our," or "us"), a company registered in Switzerland, 
 
 <address>
 Binary Builders AG<br>
-Bergliweg 15<br>
+Nordstrasse 1<br>
 6300 Zug<br>
 Switzerland<br>
 Email: privacy@binary.builders
@@ -102,7 +102,7 @@ For questions or concerns about this Privacy Policy or our privacy practices, pl
 
 <address>
 Binary Builders AG<br>
-Bergliweg 15<br>
+Nordstrasse 1<br>
 6300 Zug<br>
 Switzerland<br>
 Email: privacy@binary.builders

@@ -16,7 +16,7 @@ Welcome to Binary Builders AG ("Company," "we," "us," or "our"). These Terms of 
 
 <address>
 Binary Builders AG<br>
-Bergliweg 15<br>
+Nordstrasse 1<br>
 6300 Zug<br>
 Switzerland<br>
 Email: legal@binary.builders
@@ -150,7 +150,7 @@ If you have any questions about these Terms, please contact us at:
 
 <address>
 Binary Builders AG<br>
-Bergliweg 15<br>
+Nordstrasse 1<br>
 6300 Zug<br>
 Switzerland<br>
 Email: legal@binary.builders
