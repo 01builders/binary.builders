@@ -1,0 +1,150 @@
+:root {
+  --sky: #d5dde6;
+  --ink: #14171c;
+  --spark: #2147ff;
+  --font-display: "Syne", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--sky);
+  color: var(--ink);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--spark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--spark);
+  outline-offset: 3px;
+}
+
+.top,
+.foot {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 28px;
+}
+
+.top {
+  top: 0;
+}
+
+.foot {
+  bottom: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  mix-blend-mode: multiply;
+}
+
+.brand img {
+  width: 26px;
+  height: 26px;
+  filter: grayscale(1) contrast(1.4);
+  mix-blend-mode: multiply;
+}
+
+.write {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--spark);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  display: grid;
+  place-items: end start;
+  padding: 0 28px 12vh;
+}
+
+.field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.hero__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(48px, 9vw, 128px);
+  line-height: 0.88;
+  letter-spacing: -0.06em;
+  max-width: 12ch;
+}
+
+.hero__title span {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .top,
+  .hero,
+  .foot {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero {
+    padding-bottom: 14vh;
+  }
+
+  .hero__title {
+    font-size: clamp(40px, 14vw, 72px);
+  }
+
+  .foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
