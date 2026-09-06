@@ -55,10 +55,23 @@ a:hover {
 
 .foot {
   bottom: 0;
-  font-size: 13px;
+  align-items: flex-end;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  flex-wrap: wrap;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+}
+
+.foot address {
+  margin: 0;
+  font-style: normal;
+}
+
+.foot__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
 }
 
 .brand {
@@ -130,7 +143,7 @@ a:hover {
   }
 
   .hero {
-    padding-bottom: 14vh;
+    padding-bottom: 22vh;
   }
 
   .hero__title {
@@ -139,6 +152,11 @@ a:hover {
 
   .foot {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .foot__links {
     align-items: flex-start;
   }
 }
