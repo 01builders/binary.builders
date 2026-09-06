@@ -2,7 +2,19 @@
   --sky: #d5dde6;
   --ink: #14171c;
   --spark: #2147ff;
+  --field-fade: 213, 221, 230;
+  --field-line: 20, 23, 28;
+  --field-cobalt: 33, 71, 255;
   --font-display: "Syne", sans-serif;
+}
+
+html.dark {
+  --sky: #0b0d11;
+  --ink: #e8edf2;
+  --spark: #6d8cff;
+  --field-fade: 11, 13, 17;
+  --field-line: 214, 220, 230;
+  --field-cobalt: 90, 130, 255;
 }
 
 *,
@@ -90,6 +102,39 @@ a:hover {
   height: 26px;
   filter: grayscale(1) contrast(1.4);
   mix-blend-mode: multiply;
+}
+
+html.dark .brand,
+html.dark .brand img {
+  mix-blend-mode: normal;
+}
+
+html.dark .brand img {
+  filter: grayscale(1) invert(1) contrast(1.15);
+}
+
+.top__actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.theme {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.theme:hover {
+  color: var(--spark);
 }
 
 .write {

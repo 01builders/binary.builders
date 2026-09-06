@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Binary Builders</title>
     <meta name="description" content="We research. We do things." />
-    <meta name="theme-color" content="#d5dde6" />
+    <meta name="theme-color" content="#d5dde6" id="theme-color" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon-32x32.png" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -21,6 +21,13 @@
     <meta property="og:url" content="https://binary.builders" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@binary_builders" />
+    <script>
+      try {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <header class="top">
@@ -28,7 +35,10 @@
         <img src="/mark.svg" width="28" height="28" alt="" />
         Binary Builders
       </a>
-      <a class="write" href="mailto:contact@binary.builders">Write</a>
+      <div class="top__actions">
+        <button type="button" class="theme" id="theme" aria-pressed="false">Dark</button>
+        <a class="write" href="mailto:contact@binary.builders">Write</a>
+      </div>
     </header>
 
     <main class="hero" id="hero">

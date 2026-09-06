@@ -1,15 +1,15 @@
-const N = 1800;
+const N = 1600;
+const TAIL = 22;
 
 interface Speck {
   x: number;
   y: number;
-  px: number;
-  py: number;
   life: number;
   rate: number;
   phase: number;
   pulse: number;
   ink: boolean;
+  trail: number[];
 }
 
 export function mountField(host: HTMLElement): void {
@@ -42,11 +42,12 @@ export function mountField(host: HTMLElement): void {
   };
 
   const tick = (): void => {
-    t += 0.005;
-    ctx.fillStyle = "rgba(213, 221, 230, 0.07)";
+    t += 0.0016;
+    const pal = palette();
+    ctx.fillStyle = pal.sky;
     ctx.fillRect(0, 0, w, h);
     step(specks, w, h, t, mouse, reduced);
-    paint(ctx, specks, w, h, t);
+    paint(ctx, specks, w, h, t, pal);
     if (!reduced) requestAnimationFrame(tick);
   };
 
@@ -62,9 +63,22 @@ export function mountField(host: HTMLElement): void {
 
   new ResizeObserver(resize).observe(host);
   resize();
-  ctx.fillStyle = "#d5dde6";
-  ctx.fillRect(0, 0, w, h);
   tick();
+}
+
+function palette(): {
+  sky: string;
+  fade: string;
+  line: string;
+  cobalt: string;
+} {
+  const s = getComputedStyle(document.documentElement);
+  return {
+    sky: s.getPropertyValue("--sky").trim() || "#d5dde6",
+    fade: s.getPropertyValue("--field-fade").trim() || "213, 221, 230",
+    line: s.getPropertyValue("--field-line").trim() || "20, 23, 28",
+    cobalt: s.getPropertyValue("--field-cobalt").trim() || "33, 71, 255",
+  };
 }
 
 function seed(): Speck[] {
@@ -75,13 +89,12 @@ function seed(): Speck[] {
     specks.push({
       x,
       y,
-      px: x,
-      py: y,
       life: Math.random(),
-      rate: 0.0007 + Math.random() * 0.0022,
+      rate: 0.0008 + Math.random() * 0.0018,
       phase: Math.random() * Math.PI * 2,
       pulse: 0.25 + Math.random() * 0.9,
       ink: i % 4 === 0,
+      trail: [],
     });
   }
   return specks;
@@ -98,11 +111,9 @@ function step(
   if (frozen) return;
   const aspect = w / Math.max(h, 1);
   for (const s of specks) {
-    s.px = s.x;
-    s.py = s.y;
     const f = curl(s.x * aspect * 2.4, s.y * 2.4, t);
-    let vx = f.x * 0.0026;
-    let vy = f.y * 0.0026;
+    let vx = f.x * 0.001;
+    let vy = f.y * 0.001;
     if (mouse.on) {
       const dx = s.x - mouse.x;
       const dy = s.y - mouse.y;
@@ -114,14 +125,14 @@ function step(
     s.y += vy;
     s.life += s.rate;
     if (s.x < 0 || s.x > 1 || s.y < 0 || s.y > 1 || s.life > 1) {
-      const nx = Math.random();
-      const ny = Math.random();
-      s.x = nx;
-      s.y = ny;
-      s.px = nx;
-      s.py = ny;
+      s.x = Math.random();
+      s.y = Math.random();
       s.life = 0;
+      s.trail.length = 0;
+      continue;
     }
+    s.trail.push(s.x, s.y);
+    if (s.trail.length > TAIL * 2) s.trail.splice(0, 2);
   }
 }
 
@@ -131,19 +142,32 @@ function paint(
   w: number,
   h: number,
   t: number,
+  pal: { line: string; cobalt: string },
 ): void {
   ctx.lineCap = "round";
+  ctx.lineJoin = "round";
   for (const s of specks) {
+    const pts = s.trail;
+    const n = pts.length / 2;
+    if (n < 2) continue;
     const fade = envelope(s, t);
     if (fade < 0.04) continue;
-    ctx.strokeStyle = s.ink
-      ? `rgba(33, 71, 255, ${0.62 * fade})`
-      : `rgba(20, 23, 28, ${0.48 * fade})`;
+    const rgb = s.ink ? pal.cobalt : pal.line;
+    const peak = s.ink ? 0.7 : 0.52;
     ctx.lineWidth = s.ink ? 1.8 : 1.15;
-    ctx.beginPath();
-    ctx.moveTo(s.px * w, s.py * h);
-    ctx.lineTo(s.x * w, s.y * h);
-    ctx.stroke();
+    for (let i = 1; i < n; i += 1) {
+      const x0 = pts[(i - 1) * 2] ?? 0;
+      const y0 = pts[(i - 1) * 2 + 1] ?? 0;
+      const x1 = pts[i * 2] ?? 0;
+      const y1 = pts[i * 2 + 1] ?? 0;
+      if (Math.abs(x1 - x0) > 0.08 || Math.abs(y1 - y0) > 0.08) continue;
+      const a = (i / (n - 1)) * fade * peak;
+      ctx.strokeStyle = `rgba(${rgb}, ${a})`;
+      ctx.beginPath();
+      ctx.moveTo(x0 * w, y0 * h);
+      ctx.lineTo(x1 * w, y1 * h);
+      ctx.stroke();
+    }
   }
 }
 
