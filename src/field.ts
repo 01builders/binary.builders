@@ -26,28 +26,45 @@ export function mountField(host: HTMLElement): void {
   const mouse = { x: 0.5, y: 0.5, on: false };
   let w = 0;
   let h = 0;
-  let dpr = 1;
   let t = 0;
+  let ax = 0;
+  let ay = 2.4;
+
+  const draw = (): void => {
+    if (w < 1 || h < 1) return;
+    ctx.setTransform(canvas.width / w, 0, 0, canvas.height / h, 0, 0);
+    const pal = palette();
+    ctx.fillStyle = pal.sky;
+    ctx.fillRect(0, 0, w, h);
+    paint(ctx, specks, w, h, t, pal);
+  };
 
   const resize = (): void => {
     const rect = host.getBoundingClientRect();
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    w = Math.max(1, Math.floor(rect.width));
-    h = Math.max(1, Math.floor(rect.height));
-    canvas.width = Math.floor(w * dpr);
-    canvas.height = Math.floor(h * dpr);
-    canvas.style.width = `${w}px`;
-    canvas.style.height = `${h}px`;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (rect.width < 2 || rect.height < 2) return;
+    const nextDpr = Math.min(window.devicePixelRatio || 1, 2);
+    const nextW = rect.width;
+    const nextH = rect.height;
+    const bufW = Math.max(1, Math.round(nextW * nextDpr));
+    const bufH = Math.max(1, Math.round(nextH * nextDpr));
+    if (w > 0 && canvas.width === bufW && canvas.height === bufH) {
+      w = nextW;
+      h = nextH;
+      return;
+    }
+
+    if (ax === 0) ax = (nextW / nextH) * 2.4;
+    w = nextW;
+    h = nextH;
+    canvas.width = bufW;
+    canvas.height = bufH;
+    draw();
   };
 
   const tick = (): void => {
     t += 0.0016;
-    const pal = palette();
-    ctx.fillStyle = pal.sky;
-    ctx.fillRect(0, 0, w, h);
-    step(specks, w, h, t, mouse, reduced);
-    paint(ctx, specks, w, h, t, pal);
+    step(specks, w, h, t, mouse, ax, ay, reduced);
+    draw();
     if (!reduced) requestAnimationFrame(tick);
   };
 
@@ -62,6 +79,7 @@ export function mountField(host: HTMLElement): void {
   });
 
   new ResizeObserver(resize).observe(host);
+  window.addEventListener("resize", resize);
   resize();
   tick();
 }
@@ -106,12 +124,13 @@ function step(
   h: number,
   t: number,
   mouse: { x: number; y: number; on: boolean },
+  ax: number,
+  ay: number,
   frozen: boolean,
 ): void {
-  if (frozen) return;
-  const aspect = w / Math.max(h, 1);
+  if (frozen || w < 1 || h < 1) return;
   for (const s of specks) {
-    const f = curl(s.x * aspect * 2.4, s.y * 2.4, t);
+    const f = curl(s.x * ax, s.y * ay, t);
     let vx = f.x * 0.001;
     let vy = f.y * 0.001;
     if (mouse.on) {
@@ -160,7 +179,7 @@ function paint(
       const y0 = pts[(i - 1) * 2 + 1] ?? 0;
       const x1 = pts[i * 2] ?? 0;
       const y1 = pts[i * 2 + 1] ?? 0;
-      if (Math.abs(x1 - x0) > 0.08 || Math.abs(y1 - y0) > 0.08) continue;
+      if (Math.abs(x1 - x0) * w > 48 || Math.abs(y1 - y0) * h > 48) continue;
       const a = (i / (n - 1)) * fade * peak;
       ctx.strokeStyle = `rgba(${rgb}, ${a})`;
       ctx.beginPath();
