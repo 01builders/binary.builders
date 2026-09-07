@@ -87,9 +87,6 @@ a:hover {
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.04em;
@@ -97,20 +94,8 @@ a:hover {
   mix-blend-mode: multiply;
 }
 
-.brand img {
-  width: 26px;
-  height: 26px;
-  filter: grayscale(1) contrast(1.4);
-  mix-blend-mode: multiply;
-}
-
-html.dark .brand,
-html.dark .brand img {
+html.dark .brand {
   mix-blend-mode: normal;
-}
-
-html.dark .brand img {
-  filter: grayscale(1) invert(1) contrast(1.15);
 }
 
 .top__actions {

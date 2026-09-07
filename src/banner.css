@@ -1,0 +1,34 @@
+html,
+body.banner {
+  width: 1500px;
+  height: 500px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--sky);
+  color: var(--ink);
+}
+
+body.banner .hero {
+  width: 1500px;
+  height: 500px;
+  padding: 0 80px;
+  place-items: center start;
+}
+
+body.banner .hero__title {
+  font-size: 92px;
+  max-width: 11ch;
+}
+
+.banner__brand {
+  position: absolute;
+  top: 28px;
+  left: 80px;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
