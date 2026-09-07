@@ -2,16 +2,7 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
-hugo.exe
-hugo.darwin
-hugo.linux
-.hugo_build.lock
+Thumbs.db
 
 # Node
 node_modules/
@@ -25,6 +16,8 @@ dist/
 .vscode/
 *.swp
 *.swo
+*.sublime-project
+*.sublime-workspace
 
 # Logs
 logs
@@ -40,14 +33,4 @@ NOTES.md
 # Build and temp files
 *.bak
 *.tmp
-
-# OS and editor specific files
-Thumbs.db
-*.sublime-project
-*.sublime-workspace
-
-# Git specific files
 *.orig
-
-# Theme files
-themes/AdrianFreeTheme
